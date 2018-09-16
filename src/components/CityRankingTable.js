@@ -9,16 +9,13 @@ export default class CityRankingTable extends Component {
     const columns = [{
       title: 'City',
       dataIndex: 'cityName',
-      render: val => {
-        return <Link to={{
-          pathname: `/city/${val}`,
-          state: { cityName: val },
-        }}>{val}</Link>;
-      },
+      render: val => <Link to={{ pathname: `/city/${val}`, state: { cityName: val } }}>{val}</Link>,
+      sorter: (a,b) => a.cityName.localeCompare(b.cityName),
     }, {
       title: 'Ranking',
       dataIndex: 'ranking',
-      render: val => <span key={val}>{val}</span>
+      render: val => <span key={val}>{val}</span>,
+      sorter: (a, b) => a.ranking - b.ranking,
     }];
 
     return (<Table dataSource={data} columns={columns} rowKey={record => record.key}/>);
