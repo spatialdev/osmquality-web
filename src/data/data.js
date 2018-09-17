@@ -5,7 +5,9 @@ const data = [
     ranking: 1.5,
     flags: 100,
     features: 1000,
-    image: null,
+    totalArea: 10,
+    gridSize: 1,
+    image: 'relative/path',
   },
   {
     key: 2,
@@ -13,7 +15,9 @@ const data = [
     ranking: 3,
     flags: 800,
     features: 1300,
-    image: null,
+    totalArea: 10,
+    gridSize: 1,
+    image: 'relative/path',
   },
   {
     key: 3,
@@ -21,7 +25,9 @@ const data = [
     ranking: 10,
     flags: 600,
     features: 900,
-    image: null,
+    totalArea: 10,
+    gridSize: 1,
+    image: 'relative/path',
   },
   {
     key: 4,
@@ -29,7 +35,9 @@ const data = [
     ranking: 2,
     flags: 500,
     features: 1400,
-    image: null,
+    totalArea: 10,
+    gridSize: 1,
+    image: 'relative/path',
   },
   {
     key: 5,
@@ -37,7 +45,9 @@ const data = [
     ranking: 7,
     flags: 300,
     features: 2000,
-    image: null,
+    totalArea: 10,
+    gridSize: 1,
+    image: 'relative/path',
   },
 ];
 
