@@ -1,5 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
 body {
-  margin: 0;
-  padding: 10px;
-  font-family: sans-serif;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#root {
+    overflow: hidden;
+    display: block;
+    position: relative;
 }

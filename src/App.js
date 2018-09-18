@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{ position: 'relative', height: '100%' }}>
         <Header/>
         <Main/>
         <Footer/>

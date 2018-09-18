@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
 
-h1 {
+h1, h2, h3, div {
     font-family: 'Playfair Display', serif;
 }
 
-span {
+h4, span {
     font-family: 'Open Sans', sans-serif;
+}
+
+span {
     font-size: 12px;
+
+}
+
+h3 {
+    font-size: 22px;
+    color: #484848;
+    line-height: 30px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 38px;
 
 }

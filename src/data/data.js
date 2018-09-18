@@ -2,12 +2,13 @@ const data = [
   {
     key: 1,
     cityName: 'Seattle',
-    ranking: 1.5,
+    ranking: 5,
     flags: 100,
     features: 1000,
     totalArea: 10,
     gridSize: 1,
-    image: 'relative/path',
+    mapImage: 'images/map.png',
+    headerImage: 'images/seattle.jpg',
   },
   {
     key: 2,
@@ -17,7 +18,8 @@ const data = [
     features: 1300,
     totalArea: 10,
     gridSize: 1,
-    image: 'relative/path',
+    mapImage: 'images/map.png',
+    headerImage: 'images/seattle.jpg',
   },
   {
     key: 3,
@@ -27,7 +29,8 @@ const data = [
     features: 900,
     totalArea: 10,
     gridSize: 1,
-    image: 'relative/path',
+    mapImage: 'images/map.png',
+    headerImage: 'images/seattle.jpg',
   },
   {
     key: 4,
@@ -37,7 +40,8 @@ const data = [
     features: 1400,
     totalArea: 10,
     gridSize: 1,
-    image: 'relative/path',
+    mapImage: 'images/map.png',
+    headerImage: 'images/seattle.jpg',
   },
   {
     key: 5,
@@ -47,7 +51,8 @@ const data = [
     features: 2000,
     totalArea: 10,
     gridSize: 1,
-    image: 'relative/path',
+    mapImage: 'images/map.png',
+    headerImage: 'images/seattle.jpg',
   },
 ];
 

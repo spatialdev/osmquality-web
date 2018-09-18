@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ListView, SearchBar, WingBlank } from 'antd-mobile';
 import data from '../data/data';
 
 // export default class CityRankingTable extends Component {
@@ -330,11 +329,11 @@ class EnhancedTable extends React.Component {
                     </TableRow>
                   );
                 })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 49 * emptyRows }}>
-                  <TableCell colSpan={6}/>
-                </TableRow>
-              )}
+              {/*{emptyRows > 0 && (*/}
+                {/*/!*<TableRow style={{ height: 49 * emptyRows }}>*!/*/}
+                  {/*// <TableCell colSpan={6}/>*/}
+                {/*// </TableRow>*/}
+              {/*)}*/}
             </TableBody>
           </Table>
         </div>
