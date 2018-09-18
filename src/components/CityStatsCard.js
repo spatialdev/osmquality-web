@@ -23,47 +23,53 @@ const CityStatsCard = props => {
         </h3>
         <div className="gridRoot">
           <GridList cellHeight={160} className="gridList" cols={2}>
-            <GridListTile key={data.features} cols={1} className="gridTile">
-              <div>
-                <Settings className="icon"/>
-                <div>
-                  <h4 style={{ margin: 0, display: 'inline' }}>{data.features}</h4>
-                  <p>Number of OSM Features</p>
-                </div>
+            <GridListTile key={data.features} cols={1} classes={{
+              tile: 'gridTileTile',
+              root: 'gridTileRoot'
+            }}>
+              <div className="statDiv">
+                <Settings className="statsIcon"/>
+                <h4 style={{ margin: 0, display: 'inline' }}>{data.features}</h4>
+                <p>No. of OSM Features</p>
               </div>
             </GridListTile>
-            <GridListTile key={data.flags} cols={1} className="gridTile">
+            <GridListTile key={data.flags} cols={1} classes={{
+              tile: 'gridTileTile',
+              root: 'gridTileRoot'
+            }}>
               <div>
-                <OutlinedFlag className="icon"/>
-                <div>
-                  <h4 style={{ margin: 0, display: 'inline' }}>{data.flags}</h4>
-                  <p>Number of Atlas Checks Flags</p>
-                </div>
+                <OutlinedFlag className="statsIcon"/>
+                <h4 style={{ margin: 0, display: 'inline' }}>{data.flags}</h4>
+                <p>Number of Atlas Checks Flags</p>
               </div>
             </GridListTile>
-            <GridListTile key={data.totalArea} cols={1} className="gridTile">
+            <GridListTile key={data.totalArea} cols={1} classes={{
+              tile: 'gridTileTile',
+              root: 'gridTileRoot'
+            }}>
               <div>
-                <Map className="icon"/>
-                <div>
-                  <h4 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h4>
-                  <p>Total City Area (km2)</p>
-                </div>
+                <Map className="statsIcon"/>
+                <h4 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h4>
+                <p>Total City Area (km2)</p>
+
               </div>
             </GridListTile>
-            <GridListTile key={data.gridSize} cols={1} className="gridTile">
+            <GridListTile key={data.gridSize} cols={1} classes={{
+              tile: 'gridTileTile',
+              root: 'gridTileRoot'
+            }}>
               <div>
-                <GridOn className="icon"/>
-                <div>
-                  <h4 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h4>
-                  <p>Grid Cell Size</p>
-                </div>
+                <GridOn className="statsIcon"/>
+                <h4 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h4>
+                <p>Grid Cell Size</p>
               </div>
+
             </GridListTile>
           </GridList>
         </div>
       </CardContent>
     </Card>
-);
+  );
 };
 
 CityStatsCard.propTypes = {

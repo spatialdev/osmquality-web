@@ -32,45 +32,46 @@ p {
     font-size: 14px;
     color: #484848;
 }
+
 /*
 City Profile Card Component
 
  */
 
 /*.rankingIcon {*/
-    /*width: 40px;*/
-    /*height: 40px;*/
-    /*border-radius: 50%;*/
-    /*text-align: center;*/
-    /*font-size: 40px;*/
-    /*border: 2px solid #ffffff;*/
-    /*display: inline-block;*/
-    /*margin-right: 10px;*/
+/*width: 40px;*/
+/*height: 40px;*/
+/*border-radius: 50%;*/
+/*text-align: center;*/
+/*font-size: 40px;*/
+/*border: 2px solid #ffffff;*/
+/*display: inline-block;*/
+/*margin-right: 10px;*/
 /*}*/
 
 /*.cityHeader {*/
-    /*display: inline-block;*/
-    /*width:100%;*/
+/*display: inline-block;*/
+/*width:100%;*/
 /*}*/
 
 /*.alignIconHeader {*/
-    /*position: absolute;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
+/*position: absolute;*/
+/*top: 50%;*/
+/*left: 50%;*/
+/*transform: translate(-50%, -50%);*/
 /*}*/
 
 /*.headerContainer {*/
-    /*height: 150px;*/
-    /*position: relative;*/
-    /*text-align: center;*/
-    /*color: #ffffff;*/
+/*height: 150px;*/
+/*position: relative;*/
+/*text-align: center;*/
+/*color: #ffffff;*/
 /*}*/
 
 /*.media {*/
-    /*cursor: default;*/
-    /*object-fit: cover;*/
-    /*width: 100%;*/
+/*cursor: default;*/
+/*object-fit: cover;*/
+/*width: 100%;*/
 /*}*/
 
 /*
@@ -96,25 +97,35 @@ City Profile Card Component
     overflow: hidden;
 }
 
-.gridList {
-    width: 100%;
-    border: 1px solid #979797;
-}
-
-.gridTile{
+.gridTileRoot {
     border: 1px solid rgba(151, 151, 151, 0.27);
+    padding: 0;
 }
 
-.stat {
-    padding: 4px 2px;
-    margin-right: 20px;
-    display: block;
+.gridTileTile {
+    padding:20px;
 }
 
-.stat svg {
-    display: inline;
-    vertical-align: middle;
-    height: 38px;
-    width: 38px;
+.gridTileRoot:nth-child(even) {
+    border-right: none;
+}
+.gridTileRoot:nth-child(odd) {
+    border-left:none;
 }
 
+.statsIcon {
+    transform: scale(1.8);
+    color: #7AC143;
+    margin-right: 10px;
+}
+
+.statDiv {
+    line-height: 40px;
+    padding: 10px 0px;
+    font-size: 14px;
+}
+
+.statDiv p {
+    margin-top: 0;
+    text-align: left;
+}

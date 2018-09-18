@@ -20,7 +20,7 @@ const styles = {
   },
    root: {
      borderRadius: 0,
-     margin: '0 10px',
+     margin: '10px',
    },
   header: {
     textAlign: 'center',
@@ -30,6 +30,10 @@ const styles = {
     position: 'relative',
     textAlign: 'center',
     color: '#ffffff',
+  },
+  graphContainer: {
+    height: '300px',
+    position: 'relative',
   },
   cityHeader: {
     display: 'inline-block',
@@ -93,16 +97,22 @@ class CityProfileCard extends Component {
               {cityData.cityName} Map Quality
             </h3>
           </CardContent>
-          <CardActionArea style={{ width: '100%' }}>
             <CardMedia
               component="img"
               className={classes.media}
               height="323px"
               image={require('../' + cityData.mapImage)}
             />
-          </CardActionArea>
         </Card>
         <CityStatsCard data={cityData}/>
+        <Card className={classes.root}>
+          <CardMedia
+            component="img"
+            className={classes.media}
+            height="323px"
+            image={require('../' + cityData.graphImage)}
+          />
+        </Card>
       </div>
     );
   }

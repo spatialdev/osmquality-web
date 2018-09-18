@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import Icon from '@material-ui/core/Icon';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import { mdiFacebookBox, mdiTwitterBox, mdiInstagram, mdiLinkedinBox } from '@mdi/js';
+
 
 const styles = {
   root: {
@@ -16,13 +15,23 @@ const styles = {
     bottom: 0,
     height: '100px',
     overflow: 'hidden',
+    padding: '5px',
   },
+  share: {
+    color: '#ffffff',
+  }
 };
 
 
 class Footer extends Component {
   state = {
     value: 'recents',
+  };
+
+  flexContainer = {
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 0,
   };
 
   handleChange = (event, value) => {
@@ -35,13 +44,28 @@ class Footer extends Component {
 
     return (
       <BottomNavigation value={value} onChange={this.handleChange} className={classes.root}>
-        <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon/>}/>
-        <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon/>}/>
-        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon/>}/>
-        <BottomNavigationAction label="Folder" value="folder" icon={<Icon>folder</Icon>}/>
+        <div>
+          <p className={classes.share}>Share this:</p>
+          <List style={this.flexContainer}>
+            <ListItem><Icon path={mdiFacebookBox}/></ListItem>
+            <ListItem
+              primaryText="foo2"
+              secondaryText="bar2"/>
+          </List>
+        </div>
+
       </BottomNavigation>
     );
   }
+}
+
+function Icon(props) {
+  return (
+    <svg viewBox="0 0 24 24"
+         style={{ width: '24px', height: '24px' }}>
+      <path d={props.path}/>
+    </svg>
+  );
 }
 
 Footer.propTypes = {

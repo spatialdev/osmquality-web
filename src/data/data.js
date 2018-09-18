@@ -9,6 +9,7 @@ const data = [
     gridSize: 1,
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
+    graphImage: 'images/graph.png',
   },
   {
     key: 2,
@@ -20,6 +21,8 @@ const data = [
     gridSize: 1,
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
+    graphImage: 'images/graph.png',
+
   },
   {
     key: 3,
@@ -31,6 +34,8 @@ const data = [
     gridSize: 1,
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
+    graphImage: 'images/graph.png',
+
   },
   {
     key: 4,
@@ -42,6 +47,8 @@ const data = [
     gridSize: 1,
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
+    graphImage: 'images/graph.png',
+
   },
   {
     key: 5,
@@ -53,6 +60,7 @@ const data = [
     gridSize: 1,
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
+    graphImage: 'images/graph.png',
   },
 ];
 
