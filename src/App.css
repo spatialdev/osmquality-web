@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
 
 h1, h2, h3, div {
     font-family: 'Playfair Display', serif;
@@ -26,45 +26,52 @@ h4 {
 
 }
 
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #484848;
+}
 /*
 City Profile Card Component
 
  */
 
-.rankingIcon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 40px;
-    border: 2px solid #ffffff;
-    display: inline-block;
-    margin-right: 10px;
-}
+/*.rankingIcon {*/
+    /*width: 40px;*/
+    /*height: 40px;*/
+    /*border-radius: 50%;*/
+    /*text-align: center;*/
+    /*font-size: 40px;*/
+    /*border: 2px solid #ffffff;*/
+    /*display: inline-block;*/
+    /*margin-right: 10px;*/
+/*}*/
 
-.cityHeader {
-    display: inline-block;
-}
+/*.cityHeader {*/
+    /*display: inline-block;*/
+    /*width:100%;*/
+/*}*/
 
-.alignIconHeader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+/*.alignIconHeader {*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+/*}*/
 
-.headerContainer {
-    height: 150px;
-    position: relative;
-    text-align: center;
-    color: #ffffff;
-}
+/*.headerContainer {*/
+    /*height: 150px;*/
+    /*position: relative;*/
+    /*text-align: center;*/
+    /*color: #ffffff;*/
+/*}*/
 
-.media {
-    cursor: default;
-    object-fit: cover;
-    width: 100%;
-}
+/*.media {*/
+    /*cursor: default;*/
+    /*object-fit: cover;*/
+    /*width: 100%;*/
+/*}*/
 
 /*
  City Stats Card Component
@@ -77,6 +84,7 @@ City Profile Card Component
 
 .cardHeader {
     text-align: center;
+    margin-bottom: 0;
     border-bottom: 1px solid rgba(151, 151, 151, 0.27);
     padding: 4px 0 20px 0;
 }
@@ -89,7 +97,24 @@ City Profile Card Component
 }
 
 .gridList {
-    width: 500px;
-    border: 1px center #979797 100%;
+    width: 100%;
+    border: 1px solid #979797;
+}
+
+.gridTile{
+    border: 1px solid rgba(151, 151, 151, 0.27);
+}
+
+.stat {
+    padding: 4px 2px;
+    margin-right: 20px;
+    display: block;
+}
+
+.stat svg {
+    display: inline;
+    vertical-align: middle;
+    height: 38px;
+    width: 38px;
 }
 

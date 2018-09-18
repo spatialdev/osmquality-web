@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
+import { withStyles } from '@material-ui/core/styles';
 
 import CityStatsCard from '../components/CityStatsCard';
 import Spin from '../components/Spin';
@@ -12,7 +13,46 @@ import data from '../data/data';
 
 import '../App.css';
 
-export default class CityProfileCard extends Component {
+const styles = {
+  media: {
+    cursor: 'default',
+    width: '100%',
+  },
+   root: {
+     borderRadius: 0,
+     margin: '0 10px',
+   },
+  header: {
+    textAlign: 'center',
+  },
+  headerContainer: {
+    height: '150px',
+    position: 'relative',
+    textAlign: 'center',
+    color: '#ffffff',
+  },
+  cityHeader: {
+    display: 'inline-block',
+  },
+  rankingIcon: {
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%',
+    textAlign: 'center',
+    fontSize: '40px',
+    border: '2px solid #ffffff',
+    display: 'inline-block',
+    marginRight: '10px',
+  },
+  alignIconHeader: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+class CityProfileCard extends Component {
   state = {
     cityData: null,
   };
@@ -30,6 +70,8 @@ export default class CityProfileCard extends Component {
 
   render() {
     const { cityData } = this.state;
+    const { classes } = this.props;
+
 
     if (!cityData) {
       return <Spin/>;
@@ -37,24 +79,24 @@ export default class CityProfileCard extends Component {
 
     return (
       <div>
-        <div className="headerContainer">
+        <div className={classes.headerContainer}>
           <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
                style={{ width: '100%', height: '100%' }}/>
-          <div className="alignIconHeader">
-            <div className="rankingIcon">{cityData.ranking}</div>
-            <h1 className="cityHeader">{cityData.cityName}</h1>
+          <div className={classes.alignIconHeader}>
+            <div className={classes.rankingIcon}>{cityData.ranking}</div>
+            <h1 className={classes.cityHeader}>{cityData.cityName}</h1>
           </div>
         </div>
-        <Card style={{ margin: '10px' }}>
-          <CardContent>
-            <h3 style={{textAlign: 'center'}}>
+        <Card className={classes.root}>
+          <CardContent style={{margin: '5px'}}>
+            <h3 style={{textAlign: 'center', margin: 0}}>
               {cityData.cityName} Map Quality
             </h3>
           </CardContent>
           <CardActionArea style={{ width: '100%' }}>
             <CardMedia
               component="img"
-              className="cardMedia"
+              className={classes.media}
               height="323px"
               image={require('../' + cityData.mapImage)}
             />
@@ -65,4 +107,10 @@ export default class CityProfileCard extends Component {
     );
   }
 }
+
+CityProfileCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(CityProfileCard);
 

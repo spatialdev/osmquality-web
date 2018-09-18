@@ -43,9 +43,8 @@ const styles = {
     color: '#FFFFFF',
     position: 'absolute',
     right: 0,
-  }
+  },
 };
-
 
 class Header extends Component {
   render() {
