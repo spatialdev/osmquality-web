@@ -4,7 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { mdiFacebookBox, mdiTwitterBox, mdiInstagram, mdiLinkedinBox } from '@mdi/js';
+
+import logo_critigen from '../images/logo_critigen.svg';
+import icon_fb from '../images/icon_fb.svg';
+import icon_twitter from '../images/icon_twitter.svg';
+import icon_insta from '../images/icon_insta.svg';
+import icon_linkedIn from '../images/icon_linkedIn.svg';
 
 
 const styles = {
@@ -17,8 +22,25 @@ const styles = {
     overflow: 'hidden',
     padding: '5px',
   },
-  share: {
+  footer: {
+    width: '100%',
+    padding: '0 16px'
+  },
+  footerP: {
     color: '#ffffff',
+    marginBottom: '5px'
+  },
+  socialShare: {
+    display: 'inline',
+    float: 'left',
+  },
+  logoDiv : {
+    display: 'inline',
+    float: 'right',
+  },
+  socialShareIcon: {
+    height:'30px',
+    width: '30px',
   }
 };
 
@@ -44,28 +66,29 @@ class Footer extends Component {
 
     return (
       <BottomNavigation value={value} onChange={this.handleChange} className={classes.root}>
-        <div>
-          <p className={classes.share}>Share this:</p>
+        <div className={classes.footer}>
+          <div className={classes.socialShare}>
+          <p className={classes.footerP}>Share this:</p>
           <List style={this.flexContainer}>
-            <ListItem><Icon path={mdiFacebookBox}/></ListItem>
+            <ListItem style={{paddingRight: '8px', paddingLeft: '0', paddingTop: '0'}}><object data={icon_fb} className={classes.socialShareIcon}>Facebook</object></ListItem>
+            <ListItem style={{paddingRight: '8px', paddingLeft: '0', paddingTop: '0'}}><object data={icon_twitter} className={classes.socialShareIcon}>Twitter</object></ListItem>
+            <ListItem style={{paddingRight: '8px', paddingLeft: '0', paddingTop: '0'}}><object data={icon_insta} className={classes.socialShareIcon}>Instagram</object></ListItem>
+            <ListItem style={{ paddingLeft: '0', paddingTop: '0'}}><object data={icon_linkedIn} className={classes.socialShareIcon}>LinkedIn</object></ListItem>
+
             <ListItem
               primaryText="foo2"
               secondaryText="bar2"/>
           </List>
+          </div>
+          <div className={classes.logoDiv}>
+            <p className={classes.footerP}>Brought to you by:</p>
+            <object data={logo_critigen}>Critigen Logo</object>
+          </div>
         </div>
 
       </BottomNavigation>
     );
   }
-}
-
-function Icon(props) {
-  return (
-    <svg viewBox="0 0 24 24"
-         style={{ width: '24px', height: '24px' }}>
-      <path d={props.path}/>
-    </svg>
-  );
 }
 
 Footer.propTypes = {

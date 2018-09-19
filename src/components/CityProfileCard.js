@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -39,11 +38,11 @@ const styles = {
     display: 'inline-block',
   },
   rankingIcon: {
-    width: '40px',
-    height: '40px',
+    width: '36px',
+    height: '36px',
     borderRadius: '50%',
     textAlign: 'center',
-    fontSize: '40px',
+    fontSize: '30px',
     border: '2px solid #ffffff',
     display: 'inline-block',
     marginRight: '10px',

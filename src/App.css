@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
 
+@font-face {
+    font-family: Dense;
+    src: url('Dense-Regular.otf') format('opentype');
+}
 h1, h2, h3, div {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dense', serif;
 }
 
 h4, span {
@@ -29,7 +32,7 @@ h4 {
 p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     color: #484848;
 }
 
@@ -103,7 +106,7 @@ City Profile Card Component
 }
 
 .gridTileTile {
-    padding:20px;
+    padding:8px;
 }
 
 .gridTileRoot:nth-child(even) {
@@ -114,15 +117,24 @@ City Profile Card Component
 }
 
 .statsIcon {
-    transform: scale(1.8);
-    color: #7AC143;
-    margin-right: 10px;
+    margin-top:12px;
+    margin-right:8px;
+    height: 30px;
+    width:30px;
+    flex: 1;
+    float:left;
 }
 
 .statDiv {
-    line-height: 40px;
-    padding: 10px 0px;
-    font-size: 14px;
+    max-width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.statDiv div {
+    float:right;
+    margin: 0 auto;
 }
 
 .statDiv p {

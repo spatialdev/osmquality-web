@@ -6,8 +6,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import Share from '@material-ui/icons/Share';
 import MoreHoriz from '@material-ui/icons/MoreHoriz';
+
+import share from '../images/share.svg';
+
 
 const styles = {
   root: {
@@ -22,7 +24,7 @@ const styles = {
     textAlign: 'center',
     color: '#FFFFFF',
     width: '100%',
-    fontSize: '25px',
+    fontSize: '38px',
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)',
@@ -33,7 +35,7 @@ const styles = {
   },
   buttonLeft: {
     position: 'absolute',
-    left: 0,
+    left: '-8px',
   },
   buttonRight: {
     position: 'absolute',
@@ -43,6 +45,16 @@ const styles = {
     color: '#FFFFFF',
     position: 'absolute',
     right: 0,
+  },
+  shareIcon: {
+    height: '20px',
+    width:'20px',
+    marginLeft: '5px',
+  },
+  backIcon: {
+    height: '20px',
+    width:'20px',
+    marginLeft: '5px',
   },
 };
 
@@ -62,8 +74,8 @@ class Header extends Component {
           <Toolbar className={classes.toolbar}>
             {location.pathname !== '/' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.goBack()}><KeyboardArrowLeft/>Back</Button> : null}
-            <Button className={classes.buttonRight}>Share<Share/></Button>
+                      onClick={() => history.push('/')}><KeyboardArrowLeft className={classes.backIcon}/>Back</Button> : null}
+            <Button className={classes.buttonRight}>Share<object data={share} className={classes.shareIcon}>Share Icon</object></Button>
           </Toolbar>
         </AppBar>
       </div>
