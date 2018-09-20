@@ -82,7 +82,7 @@ class Footer extends Component {
           </div>
           <div className={classes.logoDiv}>
             <p className={classes.footerP}>Brought to you by:</p>
-            <object data={logo_critigen}>Critigen Logo</object>
+            {/*<a href="https://www.critigen.com"><object data={logo_critigen}>Critigen Logo</object></a>*/}
           </div>
         </div>
 

@@ -6,6 +6,8 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
 import '../App.css';
+import Chart from '../components/PieChart';
+
 
 
 import flag_icon from '../images/flag_icon.svg';
@@ -83,6 +85,20 @@ const CityStatsCard = props => {
           </GridList>
         </div>
       </CardContent>
+        <div className="pieChart">
+          <Chart chartData={data}/>
+          <div className='my-legend'>
+            <div className='legend-title'>The Title or Explanation of your Map</div>
+            <div className='legend-scale'>
+              <ul className='legend-labels'>
+                <li><span style={{ background: '#E4BC43' }}/>Road Tags</li>
+                <li><span style={{ background: '#F26522' }}/>Road Relations</li>
+                <li><span style={{ background: '#676766' }}/>Roundabouts</li>
+                <li><span style={{ background: '#47ACB1' }}/>Road Connections</li>
+              </ul>
+            </div>
+          </div>
+        </div>
     </Card>
   );
 };

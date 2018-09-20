@@ -10,6 +10,7 @@ import CityStatsCard from '../components/CityStatsCard';
 import Spin from '../components/Spin';
 import data from '../data/data';
 
+
 import '../App.css';
 
 const styles = {
@@ -17,10 +18,10 @@ const styles = {
     cursor: 'default',
     width: '100%',
   },
-   root: {
-     borderRadius: 0,
-     margin: '10px',
-   },
+  root: {
+    borderRadius: 0,
+    margin: '10px',
+  },
   header: {
     textAlign: 'center',
   },
@@ -91,27 +92,20 @@ class CityProfileCard extends Component {
           </div>
         </div>
         <Card className={classes.root}>
-          <CardContent style={{margin: '5px'}}>
-            <h3 style={{textAlign: 'center', margin: 0}}>
+          <CardContent style={{ margin: '5px' }}>
+            <h3 style={{ textAlign: 'center', margin: 0 }}>
               {cityData.cityName} Map Quality
             </h3>
           </CardContent>
-            <CardMedia
-              component="img"
-              className={classes.media}
-              height="323px"
-              image={require('../' + cityData.mapImage)}
-            />
-        </Card>
-        <CityStatsCard data={cityData}/>
-        <Card className={classes.root}>
           <CardMedia
             component="img"
             className={classes.media}
             height="323px"
-            image={require('../' + cityData.graphImage)}
+            image={require('../' + cityData.mapImage)}
           />
         </Card>
+        <CityStatsCard data={cityData}/>
+
       </div>
     );
   }

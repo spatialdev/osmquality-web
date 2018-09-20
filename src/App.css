@@ -4,6 +4,7 @@
     font-family: Dense;
     src: url('Dense-Regular.otf') format('opentype');
 }
+
 h1, h2, h3, div {
     font-family: 'Dense', serif;
 }
@@ -106,23 +107,24 @@ City Profile Card Component
 }
 
 .gridTileTile {
-    padding:8px;
+    padding: 8px;
 }
 
 .gridTileRoot:nth-child(even) {
     border-right: none;
 }
+
 .gridTileRoot:nth-child(odd) {
-    border-left:none;
+    border-left: none;
 }
 
 .statsIcon {
-    margin-top:12px;
-    margin-right:8px;
+    margin-top: 12px;
+    margin-right: 8px;
     height: 30px;
-    width:30px;
+    width: 30px;
     flex: 1;
-    float:left;
+    float: left;
 }
 
 .statDiv {
@@ -133,11 +135,71 @@ City Profile Card Component
 }
 
 .statDiv div {
-    float:right;
-    margin: 0 auto;
+    float: right;
+    margin-left: 10px;
 }
 
 .statDiv p {
     margin-top: 0;
     text-align: left;
+}
+
+/*
+Pie Chart
+ */
+.pieChart {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(151, 151, 151, 0.27);
+
+}
+
+.pieChart svg {
+    display: inline;
+    height: 60%;
+    width: 60%;
+    margin-right: 20px;
+}
+
+/*
+Legend
+
+ */
+
+.my-legend {
+    display: inline;
+    float: right;}
+
+.my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.my-legend .legend-scale ul {
+    margin: 0 0 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+}
+
+.my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+}
+
+.my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+}
+
+.my-legend div {
+    font-family: 'Open Sans', sans-serif;
 }

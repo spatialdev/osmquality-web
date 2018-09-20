@@ -1,26 +1,4 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import data from '../data/data';
-
-// export default class CityRankingTable extends Component {
-// //   render() {
-// //     const columns = [{
-// //       title: 'City',
-// //       dataIndex: 'cityName',
-// //       render: val => <Link to={{ pathname: `/city/${val}`, state: { cityName: val } }}>{val}</Link>,
-// //       sorter: (a,b) => a.cityName.localeCompare(b.cityName),
-// //     }, {
-// //       title: 'Ranking',
-// //       dataIndex: 'ranking',
-// //       render: val => <span key={val}>{val}</span>,
-// //       sorter: (a, b) => a.ranking - b.ranking,
-// //     }];
-// //
-// //     return (<ListView dataSource={data} columns={columns} rowKey={record => record.key}/>);
-// //   }
-// // }
-
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -37,11 +15,13 @@ import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
+import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
-let counter = 0;
+import data from '../data/data';
 
+let counter = 0;
 function createData(name, calories, fat, carbs, protein) {
   counter += 1;
   return { id: counter, name, calories, fat, carbs, protein };
@@ -61,9 +41,7 @@ function stableSort(array, cmp) {
   const stabilizedThis = array.map((el, index) => [el, index]);
   stabilizedThis.sort((a, b) => {
     const order = cmp(a[0], b[0]);
-    if (order !== 0) {
-      return order;
-    }
+    if (order !== 0) return order;
     return a[1] - b[1];
   });
   return stabilizedThis.map(el => el[0]);
@@ -74,8 +52,11 @@ function getSorting(order, orderBy) {
 }
 
 const rows = [
-  { id: 'Ranking', numeric: true, disablePadding: true, label: null },
-  { id: 'City', numeric: false, disablePadding: false, label: null },
+  // { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
+  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
+  // { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
+  // { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
+  // { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -89,13 +70,13 @@ class EnhancedTableHead extends React.Component {
     return (
       <TableHead>
         <TableRow>
-          <TableCell padding="checkbox">
-            <Checkbox
-              indeterminate={numSelected > 0 && numSelected < rowCount}
-              checked={numSelected === rowCount}
-              onChange={onSelectAllClick}
-            />
-          </TableCell>
+          {/*<TableCell padding="checkbox">*/}
+            {/*<Checkbox*/}
+              {/*indeterminate={numSelected > 0 && numSelected < rowCount}*/}
+              {/*checked={numSelected === rowCount}*/}
+              {/*onChange={onSelectAllClick}*/}
+            {/*/>*/}
+          {/*</TableCell>*/}
           {rows.map(row => {
             return (
               <TableCell
@@ -114,7 +95,7 @@ class EnhancedTableHead extends React.Component {
                     direction={order}
                     onClick={this.createSortHandler(row.id)}
                   >
-                    {row.label}
+                    {/*}{row.label*/}
                   </TableSortLabel>
                 </Tooltip>
               </TableCell>
@@ -180,13 +161,21 @@ let EnhancedTableToolbar = props => {
           </Typography>
         )}
       </div>
-      <div className={classes.spacer}/>
+      <div className={classes.spacer} />
       <div className={classes.actions}>
-        <Tooltip title="Filter list">
-          <IconButton aria-label="Filter list">
-            <FilterListIcon/>
-          </IconButton>
-        </Tooltip>
+        {numSelected > 0 ? (
+          <Tooltip title="Delete">
+            <IconButton aria-label="Delete">
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <Tooltip title="Filter list">
+            <IconButton aria-label="Filter list">
+              <FilterListIcon />
+            </IconButton>
+          </Tooltip>
+        )}
       </div>
     </Toolbar>
   );
@@ -215,23 +204,9 @@ const styles = theme => ({
 class EnhancedTable extends React.Component {
   state = {
     order: 'asc',
-    orderBy: 'calories',
+    orderBy: 'ranking',
     selected: [],
-    data: [
-      createData('Cupcake', 305, 3.7, 67, 4.3),
-      createData('Donut', 452, 25.0, 51, 4.9),
-      createData('Eclair', 262, 16.0, 24, 6.0),
-      createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-      createData('Gingerbread', 356, 16.0, 49, 3.9),
-      createData('Honeycomb', 408, 3.2, 87, 6.5),
-      createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-      createData('Jelly Bean', 375, 0.0, 94, 0.0),
-      createData('KitKat', 518, 26.0, 65, 7.0),
-      createData('Lollipop', 392, 0.2, 98, 0.0),
-      createData('Marshmallow', 318, 0, 81, 2.0),
-      createData('Nougat', 360, 19.0, 9, 37.0),
-      createData('Oreo', 437, 18.0, 63, 4.0),
-    ],
+    data: data,
     page: 0,
     rowsPerPage: 5,
   };
@@ -245,14 +220,6 @@ class EnhancedTable extends React.Component {
     }
 
     this.setState({ order, orderBy });
-  };
-
-  handleSelectAllClick = event => {
-    if (event.target.checked) {
-      this.setState(state => ({ selected: state.data.map(n => n.id) }));
-      return;
-    }
-    this.setState({ selected: [] });
   };
 
   handleClick = (event, id) => {
@@ -276,14 +243,6 @@ class EnhancedTable extends React.Component {
     this.setState({ selected: newSelected });
   };
 
-  handleChangePage = (event, page) => {
-    this.setState({ page });
-  };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({ rowsPerPage: event.target.value });
-  };
-
   isSelected = id => this.state.selected.indexOf(id) !== -1;
 
   render() {
@@ -293,14 +252,14 @@ class EnhancedTable extends React.Component {
 
     return (
       <Paper className={classes.root}>
-        <EnhancedTableToolbar numSelected={selected.length}/>
+        <EnhancedTableToolbar numSelected={selected.length} />
         <div className={classes.tableWrapper}>
           <Table className={classes.table} aria-labelledby="tableTitle">
             <EnhancedTableHead
-              numSelected={selected.length}
+              numSelected={null}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={this.handleSelectAllClick}
+              onSelectAllClick={null}
               onRequestSort={this.handleRequestSort}
               rowCount={data.length}
             />
@@ -320,37 +279,20 @@ class EnhancedTable extends React.Component {
                       selected={isSelected}
                     >
                       <TableCell component="th" scope="row" padding="none">
-                        {n.name}
+                        {n.cityName}
                       </TableCell>
-                      <TableCell numeric>{n.calories}</TableCell>
-                      <TableCell numeric>{n.fat}</TableCell>
-                      <TableCell numeric>{n.carbs}</TableCell>
-                      <TableCell numeric>{n.protein}</TableCell>
+                      <TableCell numeric>{n.ranking}</TableCell>
                     </TableRow>
                   );
                 })}
-              {/*{emptyRows > 0 && (*/}
-                {/*/!*<TableRow style={{ height: 49 * emptyRows }}>*!/*/}
-                  {/*// <TableCell colSpan={6}/>*/}
-                {/*// </TableRow>*/}
-              {/*)}*/}
+              {emptyRows > 0 && (
+                <TableRow style={{ height: 49 * emptyRows }}>
+                  <TableCell colSpan={6} />
+                </TableRow>
+              )}
             </TableBody>
           </Table>
         </div>
-        <TablePagination
-          component="div"
-          count={data.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          backIconButtonProps={{
-            'aria-label': 'Previous Page',
-          }}
-          nextIconButtonProps={{
-            'aria-label': 'Next Page',
-          }}
-          onChangePage={this.handleChangePage}
-          onChangeRowsPerPage={this.handleChangeRowsPerPage}
-        />
       </Paper>
     );
   }

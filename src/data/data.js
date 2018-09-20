@@ -10,6 +10,10 @@ const data = [
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
     graphImage: 'images/graph.png',
+    roadConnections: 0.20,
+    roadTag: 0.10,
+    roundabout: 0.50,
+    roadRelation: 0.20,
   },
   {
     key: 2,
@@ -22,6 +26,11 @@ const data = [
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
     graphImage: 'images/graph.png',
+    roadConnections: 0.20,
+    roadTag: 0.10,
+    roundabout: 0.50,
+    roadRelation: 0.20,
+
 
   },
   {
@@ -35,7 +44,10 @@ const data = [
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
     graphImage: 'images/graph.png',
-
+    roadConnections: 0.20,
+    roadTag: 0.10,
+    roundabout: 0.50,
+    roadRelation: 0.20,
   },
   {
     key: 4,
@@ -48,6 +60,10 @@ const data = [
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
     graphImage: 'images/graph.png',
+    roadConnections: 0.20,
+    roadTag: 0.10,
+    roundabout: 0.50,
+    roadRelation: 0.20,
 
   },
   {
@@ -61,6 +77,10 @@ const data = [
     mapImage: 'images/map.png',
     headerImage: 'images/seattle.jpg',
     graphImage: 'images/graph.png',
+    roadConnections: 0.20,
+    roadTag: 0.10,
+    roundabout: 0.50,
+    roadRelation: 0.20,
   },
 ];
 

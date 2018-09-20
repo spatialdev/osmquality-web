@@ -29,6 +29,7 @@ const styles = {
     top: '50%',
     transform: 'translateY(-50%)',
     margin: 0,
+    cursor: 'pointer',
   },
   toolbar: {
     height: '27px',
@@ -67,7 +68,7 @@ class Header extends Component {
         <AppBar position="static" color="default">
           <div className={classes.headerDiv}>
             <Button className={classes.moreIcon}><MoreHoriz/></Button>
-            <h1 className={classes.header}>
+            <h1 className={classes.header} onClick={() => history.push('/')}>
               App Title Here
             </h1>
           </div>
