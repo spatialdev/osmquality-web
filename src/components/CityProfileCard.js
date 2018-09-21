@@ -103,6 +103,17 @@ class CityProfileCard extends Component {
             height="323px"
             image={require('../' + cityData.mapImage)}
           />
+          <div className='horizontalLegend'>
+            <div className='horizontalLegend-title'>The Title or Explanation of your Map</div>
+            <div className='horizontalLegend-scale'>
+              <ul className='horizontalLegend-labels'>
+                <li><span style={{background:'#ffc033'}}></span>Low</li>
+                <li><span style={{background:'#fc6e35'}}></span>Medium</li>
+                <li><span style={{background:'#ff0000'}}></span>High</li>
+              </ul>
+            </div>
+          </div>
+
         </Card>
         <CityStatsCard data={cityData}/>
 

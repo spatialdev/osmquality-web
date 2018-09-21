@@ -5,11 +5,11 @@
     src: url('Dense-Regular.otf') format('opentype');
 }
 
-h1, h2, h3, div {
+h1, h2, h3 {
     font-family: 'Dense', serif;
 }
 
-h4, span {
+h4, span, div {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -132,11 +132,11 @@ City Profile Card Component
     height: 100%;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 
 .statDiv div {
     float: right;
-    margin-left: 10px;
 }
 
 .statDiv p {
@@ -151,7 +151,7 @@ Pie Chart
     display: flex;
     align-items: center;
     border-top: 1px solid rgba(151, 151, 151, 0.27);
-
+    padding: 20px 0;
 }
 
 .pieChart svg {
@@ -159,6 +159,37 @@ Pie Chart
     height: 60%;
     width: 60%;
     margin-right: 20px;
+}
+/*
+Horizontal Legend
+ */
+
+.horizontalLegend {
+    text-align: center;
+}
+.horizontalLegend .horizontalLegend-title {
+    margin-bottom: 8px;
+}
+.horizontalLegend .horizontalLegend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+}
+.horizontalLegend .horizontalLegend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+}
+.horizontalLegend ul.horizontalLegend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
 }
 
 /*
@@ -202,4 +233,17 @@ Legend
 
 .my-legend div {
     font-family: 'Open Sans', sans-serif;
+}
+
+
+a.critigenLogo {
+    position: relative;
+}
+a.critigenLogo:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
 }

@@ -9,7 +9,6 @@ import '../App.css';
 import Chart from '../components/PieChart';
 
 
-
 import flag_icon from '../images/flag_icon.svg';
 import gear_icon from '../images/gear_icon.svg';
 import shape_icon from '../images/shape_icon.svg';
@@ -17,6 +16,11 @@ import grid_icon from '../images/grid_icon.svg';
 
 const CityStatsCard = props => {
   const { data } = props;
+  const roadTagPercentage = data.roadTag * 100;
+  const roadRelationPercentage = data.roadRelation * 100;
+  const roadConnectionPercentage = data.roadConnections * 100;
+  const roundaboutPercentage = data.roundabout * 100;
+
   return (
     <Card className="statsCard" style={{ margin: '10px' }}>
       <CardContent style={{ padding: 0 }}>
@@ -25,7 +29,7 @@ const CityStatsCard = props => {
         </h3>
         <div className="gridRoot">
           <GridList cellHeight={160} className="gridList" cols={2}>
-            <GridListTile key={data.features} cols={1} style={{height: '100px'}} classes={{
+            <GridListTile key={data.features} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',
               root: 'gridTileRoot'
             }}>
@@ -40,7 +44,7 @@ const CityStatsCard = props => {
                 </div>
               </div>
             </GridListTile>
-            <GridListTile key={data.flags} cols={1} style={{height: '100px'}} classes={{
+            <GridListTile key={data.flags} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',
               root: 'gridTileRoot'
             }}>
@@ -54,7 +58,7 @@ const CityStatsCard = props => {
                 </div>
               </div>
             </GridListTile>
-            <GridListTile key={data.totalArea} cols={1} style={{height: '100px'}} classes={{
+            <GridListTile key={data.totalArea} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',
               root: 'gridTileRoot'
             }}>
@@ -68,7 +72,7 @@ const CityStatsCard = props => {
                 </div>
               </div>
             </GridListTile>
-            <GridListTile key={data.gridSize} cols={1} style={{height: '100px'}} classes={{
+            <GridListTile key={data.gridSize} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',
               root: 'gridTileRoot'
             }}>
@@ -85,20 +89,20 @@ const CityStatsCard = props => {
           </GridList>
         </div>
       </CardContent>
-        <div className="pieChart">
-          <Chart chartData={data}/>
-          <div className='my-legend'>
-            <div className='legend-title'>The Title or Explanation of your Map</div>
-            <div className='legend-scale'>
-              <ul className='legend-labels'>
-                <li><span style={{ background: '#E4BC43' }}/>Road Tags</li>
-                <li><span style={{ background: '#F26522' }}/>Road Relations</li>
-                <li><span style={{ background: '#676766' }}/>Roundabouts</li>
-                <li><span style={{ background: '#47ACB1' }}/>Road Connections</li>
-              </ul>
-            </div>
+      <div className="pieChart">
+        <Chart chartData={data}/>
+        <div className='my-legend'>
+          <div className='legend-title'>The Title or Explanation of your Map</div>
+          <div className='legend-scale'>
+            <ul className='legend-labels'>
+              <li><span style={{ background: '#E4BC43' }}/>Road Tags ({roadTagPercentage}%)</li>
+              <li><span style={{ background: '#F26522' }}/>Road Relations ({roadRelationPercentage}%)</li>
+              <li><span style={{ background: '#676766' }}/>Roundabouts ({roundaboutPercentage}%)</li>
+              <li><span style={{ background: '#47ACB1' }}/>Road Connections ({roadConnectionPercentage}%)</li>
+            </ul>
           </div>
         </div>
+      </div>
     </Card>
   );
 };
