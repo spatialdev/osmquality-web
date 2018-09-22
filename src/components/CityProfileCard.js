@@ -39,8 +39,8 @@ const styles = {
     display: 'inline-block',
   },
   rankingIcon: {
-    width: '36px',
-    height: '36px',
+    width: '42px',
+    height: '42px',
     borderRadius: '50%',
     textAlign: 'center',
     fontSize: '30px',
@@ -104,12 +104,12 @@ class CityProfileCard extends Component {
             image={require('../' + cityData.mapImage)}
           />
           <div className='horizontalLegend'>
-            <div className='horizontalLegend-title'>The Title or Explanation of your Map</div>
+            <div className='horizontalLegend-title'>Legend header</div>
             <div className='horizontalLegend-scale'>
               <ul className='horizontalLegend-labels'>
-                <li><span style={{background:'#ffc033'}}></span>Low</li>
-                <li><span style={{background:'#fc6e35'}}></span>Medium</li>
-                <li><span style={{background:'#ff0000'}}></span>High</li>
+                <li><span style={{background:'#ffc033'}}/>Low</li>
+                <li><span style={{background:'#fc6e35'}}/>Medium</li>
+                <li><span style={{background:'#ff0000'}}/>High</li>
               </ul>
             </div>
           </div>

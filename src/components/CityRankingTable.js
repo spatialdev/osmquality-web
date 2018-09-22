@@ -1,31 +1,19 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/es/Card/Card';
+import CardContent from '@material-ui/core/es/CardContent/CardContent';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 import data from '../data/data';
 
-let counter = 0;
-function createData(name, calories, fat, carbs, protein) {
-  counter += 1;
-  return { id: counter, name, calories, fat, carbs, protein };
-}
 
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -41,7 +29,9 @@ function stableSort(array, cmp) {
   const stabilizedThis = array.map((el, index) => [el, index]);
   stabilizedThis.sort((a, b) => {
     const order = cmp(a[0], b[0]);
-    if (order !== 0) return order;
+    if (order !== 0) {
+      return order;
+    }
     return a[1] - b[1];
   });
   return stabilizedThis.map(el => el[0]);
@@ -52,11 +42,8 @@ function getSorting(order, orderBy) {
 }
 
 const rows = [
-  // { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  // { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  // { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  // { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
+  { id: 'ranking', numeric: true, disablePadding: false, label: 'Ranking' },
+
 ];
 
 class EnhancedTableHead extends React.Component {
@@ -65,18 +52,11 @@ class EnhancedTableHead extends React.Component {
   };
 
   render() {
-    const { onSelectAllClick, order, orderBy, numSelected, rowCount } = this.props;
+    const { order, orderBy } = this.props;
 
     return (
       <TableHead>
         <TableRow>
-          {/*<TableCell padding="checkbox">*/}
-            {/*<Checkbox*/}
-              {/*indeterminate={numSelected > 0 && numSelected < rowCount}*/}
-              {/*checked={numSelected === rowCount}*/}
-              {/*onChange={onSelectAllClick}*/}
-            {/*/>*/}
-          {/*</TableCell>*/}
           {rows.map(row => {
             return (
               <TableCell
@@ -95,7 +75,6 @@ class EnhancedTableHead extends React.Component {
                     direction={order}
                     onClick={this.createSortHandler(row.id)}
                   >
-                    {/*}{row.label*/}
                   </TableSortLabel>
                 </Tooltip>
               </TableCell>
@@ -116,85 +95,13 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-const toolbarStyles = theme => ({
-  root: {
-    paddingRight: theme.spacing.unit,
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-        color: theme.palette.secondary.main,
-        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-      }
-      : {
-        color: theme.palette.text.primary,
-        backgroundColor: theme.palette.secondary.dark,
-      },
-  spacer: {
-    flex: '1 1 100%',
-  },
-  actions: {
-    color: theme.palette.text.secondary,
-  },
-  title: {
-    flex: '0 0 auto',
-  },
-});
-
-let EnhancedTableToolbar = props => {
-  const { numSelected, classes } = props;
-
-  return (
-    <Toolbar
-      className={classNames(classes.root, {
-        [classes.highlight]: numSelected > 0,
-      })}
-    >
-      <div className={classes.title}>
-        {numSelected > 0 ? (
-          <Typography color="inherit" variant="subheading">
-            {numSelected} selected
-          </Typography>
-        ) : (
-          <Typography variant="title" id="tableTitle">
-            Nutrition
-          </Typography>
-        )}
-      </div>
-      <div className={classes.spacer} />
-      <div className={classes.actions}>
-        {numSelected > 0 ? (
-          <Tooltip title="Delete">
-            <IconButton aria-label="Delete">
-              <DeleteIcon />
-            </IconButton>
-          </Tooltip>
-        ) : (
-          <Tooltip title="Filter list">
-            <IconButton aria-label="Filter list">
-              <FilterListIcon />
-            </IconButton>
-          </Tooltip>
-        )}
-      </div>
-    </Toolbar>
-  );
-};
-
-EnhancedTableToolbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  numSelected: PropTypes.number.isRequired,
-};
-
-EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
-
 const styles = theme => ({
   root: {
     width: '100%',
     marginTop: theme.spacing.unit * 3,
   },
   table: {
-    minWidth: 1020,
+    minWidth: 414,
   },
   tableWrapper: {
     overflowX: 'auto',
@@ -207,8 +114,6 @@ class EnhancedTable extends React.Component {
     orderBy: 'ranking',
     selected: [],
     data: data,
-    page: 0,
-    rowsPerPage: 5,
   };
 
   handleRequestSort = (event, property) => {
@@ -222,41 +127,16 @@ class EnhancedTable extends React.Component {
     this.setState({ order, orderBy });
   };
 
-  handleClick = (event, id) => {
-    const { selected } = this.state;
-    const selectedIndex = selected.indexOf(id);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, id);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
-      );
-    }
-
-    this.setState({ selected: newSelected });
-  };
-
-  isSelected = id => this.state.selected.indexOf(id) !== -1;
 
   render() {
     const { classes } = this.props;
-    const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
+    const { data, order, orderBy, } = this.state;
 
     return (
       <Paper className={classes.root}>
-        <EnhancedTableToolbar numSelected={selected.length} />
         <div className={classes.tableWrapper}>
           <Table className={classes.table} aria-labelledby="tableTitle">
             <EnhancedTableHead
-              numSelected={null}
               order={order}
               orderBy={orderBy}
               onSelectAllClick={null}
@@ -265,31 +145,22 @@ class EnhancedTable extends React.Component {
             />
             <TableBody>
               {stableSort(data, getSorting(order, orderBy))
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(n => {
-                  const isSelected = this.isSelected(n.id);
                   return (
                     <TableRow
                       hover
-                      onClick={event => this.handleClick(event, n.id)}
-                      role="checkbox"
-                      aria-checked={isSelected}
-                      tabIndex={-1}
+                      onClick={() => this.props.history.push(`/city/${n.cityName}`)}
                       key={n.id}
-                      selected={isSelected}
                     >
-                      <TableCell component="th" scope="row" padding="none">
-                        {n.cityName}
+                      <TableCell numeric>
+
+                            {n.cityName}
+                            {n.ranking}
                       </TableCell>
-                      <TableCell numeric>{n.ranking}</TableCell>
                     </TableRow>
-                  );
+                  )
+                    ;
                 })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 49 * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
             </TableBody>
           </Table>
         </div>

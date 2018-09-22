@@ -13,7 +13,7 @@ h4, span, div {
     font-family: 'Open Sans', sans-serif;
 }
 
-span {
+span, li {
     font-size: 12px;
 
 }
@@ -173,7 +173,6 @@ Horizontal Legend
 .horizontalLegend .horizontalLegend-scale ul {
     margin: 0;
     padding: 0;
-    float: left;
     list-style: none;
 }
 .horizontalLegend .horizontalLegend-scale ul li {
@@ -190,6 +189,15 @@ Horizontal Legend
     float: left;
     height: 15px;
     width: 50px;
+}
+
+.horizontalLegend ul.horizontalLegend-labels {
+    display:table;
+    margin: 0 auto;
+}
+
+.horizontalLegend ul.horizontalLegend-labels li {
+   display:inline;
 }
 
 /*
@@ -214,7 +222,6 @@ Legend
 }
 
 .my-legend .legend-scale ul li {
-    font-size: 80%;
     list-style: none;
     margin-left: 0;
     line-height: 18px;
