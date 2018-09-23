@@ -2,6 +2,7 @@ const data = [
   {
     key: 1,
     cityName: 'Seattle',
+    state: 'WA',
     ranking: 5,
     flags: 100,
     features: 1000,
@@ -17,6 +18,7 @@ const data = [
   {
     key: 2,
     cityName: 'San Francisco',
+    state: 'CA',
     ranking: 3,
     flags: 800,
     features: 1300,
@@ -32,6 +34,7 @@ const data = [
   {
     key: 3,
     cityName: 'Portland',
+    state: 'OR',
     ranking: 10,
     flags: 600,
     features: 900,
@@ -47,6 +50,7 @@ const data = [
   {
     key: 4,
     cityName: 'New York',
+    state: 'NY',
     ranking: 2,
     flags: 500,
     features: 1400,
@@ -63,6 +67,7 @@ const data = [
   {
     key: 5,
     cityName: 'Boston',
+    state: 'MA',
     ranking: 7,
     flags: 300,
     features: 2000,

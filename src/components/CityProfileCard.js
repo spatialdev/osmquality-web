@@ -14,45 +14,9 @@ import data from '../data/data';
 import '../App.css';
 
 const styles = {
-  media: {
-    cursor: 'default',
-    width: '100%',
-  },
   root: {
     borderRadius: 0,
     margin: '10px',
-  },
-  header: {
-    textAlign: 'center',
-  },
-  headerContainer: {
-    height: '150px',
-    position: 'relative',
-    textAlign: 'center',
-    color: '#ffffff',
-  },
-  graphContainer: {
-    height: '300px',
-    position: 'relative',
-  },
-  cityHeader: {
-    display: 'inline-block',
-  },
-  rankingIcon: {
-    width: '42px',
-    height: '42px',
-    borderRadius: '50%',
-    textAlign: 'center',
-    fontSize: '30px',
-    border: '2px solid #ffffff',
-    display: 'inline-block',
-    marginRight: '10px',
-  },
-  alignIconHeader: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
   },
 };
 
@@ -83,12 +47,12 @@ class CityProfileCard extends Component {
 
     return (
       <div>
-        <div className={classes.headerContainer}>
+        <div className="headerContainer">
           <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
                style={{ width: '100%', height: '100%' }}/>
-          <div className={classes.alignIconHeader}>
-            <div className={classes.rankingIcon}>{cityData.ranking}</div>
-            <h1 className={classes.cityHeader}>{cityData.cityName}</h1>
+          <div className="alignIconHeader">
+            <div className="rankingIcon">{cityData.ranking}</div>
+            <h1 className="cityHeader">{cityData.cityName}</h1>
           </div>
         </div>
         <Card className={classes.root}>
@@ -99,7 +63,7 @@ class CityProfileCard extends Component {
           </CardContent>
           <CardMedia
             component="img"
-            className={classes.media}
+            className="media"
             height="323px"
             image={require('../' + cityData.mapImage)}
           />
@@ -107,9 +71,9 @@ class CityProfileCard extends Component {
             <div className='horizontalLegend-title'>Legend header</div>
             <div className='horizontalLegend-scale'>
               <ul className='horizontalLegend-labels'>
-                <li><span style={{background:'#ffc033'}}/>Low</li>
-                <li><span style={{background:'#fc6e35'}}/>Medium</li>
-                <li><span style={{background:'#ff0000'}}/>High</li>
+                <li><span style={{ background: '#ffc033' }}/>Low</li>
+                <li><span style={{ background: '#fc6e35' }}/>Medium</li>
+                <li><span style={{ background: '#ff0000' }}/>High</li>
               </ul>
             </div>
           </div>

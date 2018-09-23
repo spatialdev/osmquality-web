@@ -36,9 +36,8 @@ const CityStatsCard = props => {
               <div className="statDiv">
                 <div>
                   <object data={gear_icon} className="statsIcon">Gear Icon</object>
-
                   <div>
-                    <h4 style={{ margin: 0, display: 'inline' }}>{data.features}</h4>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{data.features}</h2>
                     <p>No. of OSM Features</p>
                   </div>
                 </div>
@@ -52,7 +51,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={flag_icon} className="statsIcon">Flag Icon</object>
                   <div>
-                    <h4 style={{ margin: 0, display: 'inline' }}>{data.flags}</h4>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{data.flags}</h2>
                     <p>No. of Atlas Checks Flags</p>
                   </div>
                 </div>
@@ -64,9 +63,10 @@ const CityStatsCard = props => {
             }}>
               <div className="statDiv">
                 <div>
+
                   <object data={shape_icon} className="statsIcon">Shape Icon</object>
                   <div>
-                    <h4 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h4>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h2>
                     <p>Total City Area (km2)</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={grid_icon} className="statsIcon">Grid Icon</object>
                   <div>
-                    <h4 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h4>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h2>
                     <p>Grid Cell Size</p>
                   </div>
                 </div>

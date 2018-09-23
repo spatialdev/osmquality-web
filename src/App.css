@@ -5,11 +5,11 @@
     src: url('Dense-Regular.otf') format('opentype');
 }
 
-h1, h2, h3 {
+h1, h3 {
     font-family: 'Dense', serif;
 }
 
-h4, span, div {
+h2, h4, p, span, div {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -24,59 +24,101 @@ h3 {
     line-height: 30px;
 }
 
-h4 {
-    font-family: 'Open Sans', sans-serif;
+h2 {
     font-size: 38px;
 
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 12px;
     color: #484848;
 }
 
 /*
-City Profile Card Component
+City list view
+ */
+.cityRankingList h3 {
+    margin-left: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
 
+.cityRankingCard {
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    margin: 20px;
+}
+
+.cityRankingCard h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 10px;
+    color: #484848;
+    opacity: 0.27;
+    font-size: 65px;
+    margin: 5px 0;
+}
+
+.cityTableImage {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+.cardText {
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+}
+
+.cardText h4 {
+    margin: 0;
+    color: #484848;
+}
+
+.cardText p {
+    margin: 5px 0;
+}
+
+/*
+City Profile Card
  */
 
-/*.rankingIcon {*/
-/*width: 40px;*/
-/*height: 40px;*/
-/*border-radius: 50%;*/
-/*text-align: center;*/
-/*font-size: 40px;*/
-/*border: 2px solid #ffffff;*/
-/*display: inline-block;*/
-/*margin-right: 10px;*/
-/*}*/
+.headerContainer {
+    height: 150px;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+}
 
-/*.cityHeader {*/
-/*display: inline-block;*/
-/*width:100%;*/
-/*}*/
+.alignIconHeader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-/*.alignIconHeader {*/
-/*position: absolute;*/
-/*top: 50%;*/
-/*left: 50%;*/
-/*transform: translate(-50%, -50%);*/
-/*}*/
+.rankingIcon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid #ffffff;
+    display: inline-block;
+    margin-right: 10px;
+}
 
-/*.headerContainer {*/
-/*height: 150px;*/
-/*position: relative;*/
-/*text-align: center;*/
-/*color: #ffffff;*/
-/*}*/
+.cityHeader {
+    display: inline-block;
+}
 
-/*.media {*/
-/*cursor: default;*/
-/*object-fit: cover;*/
-/*width: 100%;*/
-/*}*/
+.media {
+    width: 100%;
+}
 
 /*
  City Stats Card Component
@@ -152,6 +194,7 @@ Pie Chart
     align-items: center;
     border-top: 1px solid rgba(151, 151, 151, 0.27);
     padding: 20px 0;
+    margin: 10px;
 }
 
 .pieChart svg {
@@ -160,6 +203,7 @@ Pie Chart
     width: 60%;
     margin-right: 20px;
 }
+
 /*
 Horizontal Legend
  */
@@ -167,14 +211,17 @@ Horizontal Legend
 .horizontalLegend {
     text-align: center;
 }
+
 .horizontalLegend .horizontalLegend-title {
     margin-bottom: 8px;
 }
+
 .horizontalLegend .horizontalLegend-scale ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 .horizontalLegend .horizontalLegend-scale ul li {
     display: block;
     float: left;
@@ -184,6 +231,7 @@ Horizontal Legend
     font-size: 80%;
     list-style: none;
 }
+
 .horizontalLegend ul.horizontalLegend-labels li span {
     display: block;
     float: left;
@@ -192,12 +240,12 @@ Horizontal Legend
 }
 
 .horizontalLegend ul.horizontalLegend-labels {
-    display:table;
+    display: table;
     margin: 0 auto;
 }
 
 .horizontalLegend ul.horizontalLegend-labels li {
-   display:inline;
+    display: inline;
 }
 
 /*
@@ -207,7 +255,8 @@ Legend
 
 .my-legend {
     display: inline;
-    float: right;}
+    float: right;
+}
 
 .my-legend .legend-title {
     text-align: left;
@@ -242,15 +291,51 @@ Legend
     font-family: 'Open Sans', sans-serif;
 }
 
-
 a.critigenLogo {
     position: relative;
 }
+
 a.critigenLogo:after {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left:0;
+    left: 0;
+}
+
+/*
+Footer
+ */
+.footer {
+    background-color: #404040;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 16px;
+    position: relative;
+}
+
+.footerP {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.socialShare {
+    position: absolute;
+    left: 0;
+    padding: 0 16px;
+}
+
+.logoDiv {
+    position: absolute;
+    right: 0;
+    padding: 0 16px;
+}
+
+.socialShareIcon {
+    height: 30px;
+    width: 30px;
 }
