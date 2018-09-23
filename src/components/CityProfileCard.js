@@ -17,6 +17,7 @@ const styles = {
   root: {
     borderRadius: 0,
     margin: '10px',
+    maxWidth: '700px',
   },
 };
 
