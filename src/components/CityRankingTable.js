@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-import Card from '@material-ui/core/es/Card/Card';
-import CardContent from '@material-ui/core/es/CardContent/CardContent';
+import Card from '@material-ui/core/Card/Card';
+import CardContent from '@material-ui/core/CardContent/CardContent';
 
 import data from '../data/data';
 import '../App.css';
-
 
 export default class CityRankingTable extends Component {
   render() {

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import MoreHoriz from '@material-ui/icons/MoreHoriz';
+
 
 import share from '../images/share.svg';
 
@@ -49,12 +50,12 @@ const styles = {
   },
   shareIcon: {
     height: '20px',
-    width:'20px',
+    width: '20px',
     marginLeft: '5px',
   },
   backIcon: {
     height: '20px',
-    width:'20px',
+    width: '20px',
     marginLeft: '5px',
   },
 };
@@ -75,8 +76,11 @@ class Header extends Component {
           <Toolbar className={classes.toolbar}>
             {location.pathname !== '/' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/')}><KeyboardArrowLeft className={classes.backIcon}/>Back</Button> : null}
-            <Button className={classes.buttonRight}>Share<object data={share} className={classes.shareIcon}>Share Icon</object></Button>
+                      onClick={() => history.push('/')}><KeyboardArrowLeft
+                className={classes.backIcon}/>Back</Button> : null}
+            <Button className={classes.buttonRight}>Share
+              <object data={share} className={classes.shareIcon}>Share Icon</object>
+            </Button>
           </Toolbar>
         </AppBar>
       </div>

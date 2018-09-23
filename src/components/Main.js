@@ -6,8 +6,8 @@ import CityProfileCard from './CityProfileCard';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={CityRankingTable}/>
-      <Route exact path="/city/:cityName" component={CityProfileCard}/>
+      <Route exact path="/map-quality-measurement/" component={CityRankingTable}/>
+      <Route exact path="/map-quality-measurement/city/:cityName" component={CityProfileCard}/>
     </Switch>
   </main>
 );

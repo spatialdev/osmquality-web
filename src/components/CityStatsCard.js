@@ -8,7 +8,6 @@ import GridListTile from '@material-ui/core/GridListTile';
 import '../App.css';
 import Chart from '../components/PieChart';
 
-
 import flag_icon from '../images/flag_icon.svg';
 import gear_icon from '../images/gear_icon.svg';
 import shape_icon from '../images/shape_icon.svg';
