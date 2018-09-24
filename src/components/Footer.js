@@ -5,7 +5,6 @@ import ListItem from '@material-ui/core/ListItem';
 import logo_critigen from '../images/logo_critigen.svg';
 import icon_fb from '../images/icon_fb.svg';
 import icon_twitter from '../images/icon_twitter.svg';
-import icon_insta from '../images/icon_insta.svg';
 import icon_linkedIn from '../images/icon_linkedIn.svg';
 
 import '../App.css';
@@ -29,9 +28,6 @@ export default class Footer extends Component {
             </ListItem>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
               <object data={icon_twitter} className="socialShareIcon">Twitter</object>
-            </ListItem>
-            <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <object data={icon_insta} className="socialShareIcon">Instagram</object>
             </ListItem>
             <ListItem style={{ paddingLeft: '0', paddingTop: '0' }}>
               <object data={icon_linkedIn} className="socialShareIcon">LinkedIn</object>

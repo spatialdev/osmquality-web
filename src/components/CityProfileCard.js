@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import CircularProgress from '@material-ui/core/CircularProgress'
 import withStyles from '@material-ui/core/styles/withStyles';
 
 import CityStatsCard from '../components/CityStatsCard';
-import Spin from '../components/Spin';
+import MapLegend from '../components/MapLegend';
 import data from '../data/data';
 
 
@@ -43,7 +44,10 @@ class CityProfileCard extends Component {
 
 
     if (!cityData) {
-      return <Spin/>;
+      return (
+        <div>
+          <CircularProgress/>
+        </div>);
     }
 
     return (
@@ -68,16 +72,7 @@ class CityProfileCard extends Component {
             height="323px"
             image={require('../' + cityData.mapImage)}
           />
-          <div className='horizontalLegend'>
-            <div className='horizontalLegend-title'>Legend header</div>
-            <div className='horizontalLegend-scale'>
-              <ul className='horizontalLegend-labels'>
-                <li><span style={{ background: '#ffc033' }}/>Low</li>
-                <li><span style={{ background: '#fc6e35' }}/>Medium</li>
-                <li><span style={{ background: '#ff0000' }}/>High</li>
-              </ul>
-            </div>
-          </div>
+         <MapLegend/>
 
         </Card>
         <CityStatsCard data={cityData}/>
