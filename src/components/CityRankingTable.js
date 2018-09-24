@@ -13,7 +13,7 @@ export default class CityRankingTable extends Component {
         <h3>City Ranking Lorem Ipsum</h3>
         {data.sort((a, b) => a.ranking - b.ranking).map(city => {
           return (<Card className="cityRankingCard" key={city.ranking}
-                        onClick={() => this.props.history.push(`/city/${city.cityName}`)}>
+                        onClick={() => this.props.history.push(`/mqm/city/${city.cityName}`)}>
             <CardContent>
               <div className="cardBody">
                 <img className="cityTableImage" src={require('../' + city.headerImage)}

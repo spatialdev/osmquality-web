@@ -69,14 +69,14 @@ class Header extends Component {
         <AppBar position="static" color="default">
           <div className={classes.headerDiv}>
             <Button className={classes.moreIcon}><MoreHoriz/></Button>
-            <h1 className={classes.header} onClick={() => history.push('/')}>
+            <h1 className={classes.header} onClick={() => history.push('/mqm')}>
               App Title Here
             </h1>
           </div>
           <Toolbar className={classes.toolbar}>
-            {location.pathname !== '/' ?
+            {location.pathname !== '/mqm' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/')}><KeyboardArrowLeft
+                      onClick={() => history.push('/mqm')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
             <Button className={classes.buttonRight}>Share
               <object data={share} className={classes.shareIcon}>Share Icon</object>
