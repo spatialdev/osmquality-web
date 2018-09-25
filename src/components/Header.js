@@ -4,15 +4,14 @@ import { withRouter } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import Drawer from '@material-ui/core/Drawer/Drawer';
+import List from '@material-ui/core/List/List';
+import ListItem from '@material-ui/core/ListItem/ListItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import MoreHoriz from '@material-ui/icons/MoreHoriz';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
 import share from '../images/share.svg';
-import List from '@material-ui/core/List/List';
-import ListItem from '@material-ui/core/ListItem/ListItem';
-import SwipeableDrawer from '@material-ui/core/es/SwipeableDrawer/SwipeableDrawer';
 
 
 const styles = {
