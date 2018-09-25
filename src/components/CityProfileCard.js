@@ -14,12 +14,14 @@ import MapLegend from '../components/MapLegend';
 import data from '../data/data';
 
 import '../App.css';
+import Grid from '@material-ui/core/es/Grid/Grid';
+import Hidden from '@material-ui/core/es/Hidden/Hidden';
 
 const styles = theme => ({
   root: {
-    borderRadius: 0,
     margin: '10px',
-    maxWidth: '700px',
+    maxWidth: '768px',
+    padding: 0,
   },
 
   paper: {
@@ -27,6 +29,7 @@ const styles = theme => ({
     position: 'relative',
     margin: theme.spacing.unit,
   },
+
 });
 
 class CityProfileCard extends Component {
@@ -38,11 +41,11 @@ class CityProfileCard extends Component {
   componentDidMount() {
     const { match: { params: { cityName } } } = this.props;
     this.getCityData(cityName);
-    this.initializeSlide()
+    this.initializeSlide();
   }
 
   initializeSlide = () => {
-    this.setState({checked: true});
+    this.setState({ checked: true });
   };
 
   getCityData = cityName => {
@@ -67,31 +70,35 @@ class CityProfileCard extends Component {
       <div>
         <Slide direction="right" in={this.state.checked} mountOnEnter unmountOnExit>
           <Paper elevation={4} className={classes.paper}>
-
-          <div className="headerContainer">
-            <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
-                 style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
-            <div className="alignIconHeader">
-              <h1 className="rankingIcon">{cityData.ranking}</h1>
-              <h1 className="cityHeader">{cityData.cityName}</h1>
+            <div className="headerContainer">
+              <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
+                   style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
+              <div className="alignIconHeader">
+                <h1 className="rankingIcon">{cityData.ranking}</h1>
+                <h1 className="cityHeader">{cityData.cityName}</h1>
+              </div>
             </div>
-          </div>
-          <Card className={classes.root}>
-            <CardContent style={{ margin: '5px' }}>
-              <h3 style={{ textAlign: 'center', margin: 0 }}>
-                {cityData.cityName} Map Quality
-              </h3>
-            </CardContent>
-            <CardMedia
-              component="img"
-              className="media"
-              height="323px"
-              image={require('../' + cityData.mapImage)}
-            />
-            <MapLegend/>
-
-          </Card>
-          <CityStatsCard data={cityData}/>
+            <Grid container>
+              <Grid item md={6} sm={12} xs={12} className={classes.gridItem}>
+                <Card className={classes.root}>
+                  <CardContent style={{padding: 0}}>
+                    <h3 className="cardHeader">
+                      {cityData.cityName} Map Quality
+                    </h3>
+                  </CardContent>
+                  <CardMedia
+                    component="img"
+                    className="media"
+                    height="323px"
+                    image={require('../' + cityData.mapImage)}
+                  />
+                  <MapLegend/>
+                </Card>
+              </Grid>
+              <Grid item md={6} sm={12} xs={12} className={classes.gridItem}>
+                <CityStatsCard data={cityData}/>
+              </Grid>
+            </Grid>
           </Paper>
         </Slide>
 

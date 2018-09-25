@@ -18,7 +18,9 @@ const CityStatsCard = props => {
   const { data } = props;
 
   return (
-    <Card className="statsCard" style={{ margin: '10px' }}>
+    <Card className="statsCard" style={{
+      margin: '10px', maxWidth: '768px',
+    }}>
       <CardContent style={{ padding: 0 }}>
         <h3 className="cardHeader">
           Quick Stats
@@ -63,7 +65,7 @@ const CityStatsCard = props => {
                   <object data={shape_icon} className="statsIcon">Shape Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h2>
-                    <p>Total City Area (km2)</p>
+                    <p>Total City Area (km<sup>2</sup>)</p>
                   </div>
                 </div>
               </div>
@@ -77,7 +79,7 @@ const CityStatsCard = props => {
                   <object data={grid_icon} className="statsIcon">Grid Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h2>
-                    <p>Grid Cell Size</p>
+                    <p>Grid Cell Size (km<sup>2</sup>)</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +89,7 @@ const CityStatsCard = props => {
       </CardContent>
       <div className="pieChart">
         <Chart chartData={data}/>
-        <PieChartLegend legendData={data} />
+        <PieChartLegend legendData={data}/>
       </div>
     </Card>
   );
