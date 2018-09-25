@@ -42,6 +42,16 @@ p {
 }
 
 /*
+Header
+ */
+
+.drawerItem h3 {
+    border-bottom: 1px solid #f4f4f4;
+    margin: 10px;
+    padding-bottom: 15px;
+}
+
+/*
 City list view
  */
 .cityRankingList h3 {

@@ -50,7 +50,7 @@ const styles = {
     position: 'absolute',
     right: 0,
     transform: 'scale(1.5)',
-    top:0,
+    top: 0,
   },
   shareIcon: {
     height: '20px',
@@ -79,7 +79,6 @@ class Header extends Component {
   };
 
   toggleDrawer = (side, open) => () => {
-    console.log(open);
     this.setState({
       [side]: open,
     });
@@ -109,15 +108,17 @@ class Header extends Component {
                 role="button"
                 onClick={this.toggleDrawer('right', false)}
                 onKeyDown={this.toggleDrawer('right', false)}
-                style={{width: '250px'}}
+                style={{ width: '250px' }}
               >
                 <List>
-                  <ListItem>About Us</ListItem>
-                  <ListItem>Methodology</ListItem>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/mqm/about-us')}>About Us</h3>
+                  </ListItem>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/mqm/methodology')}>Methodology</h3>
+                  </ListItem>
                 </List>
               </div>
             </SwipeableDrawer>
-            </div>
+          </div>
 
           <Toolbar className={classes.toolbar}>
             {location.pathname !== '/mqm' ?
@@ -125,9 +126,9 @@ class Header extends Component {
                       onClick={() => history.push('/mqm')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
             {location.pathname !== '/mqm' ?
-            <Button className={classes.buttonRight}>Share
-              <object data={share} className={classes.shareIcon}>Share Icon</object>
-            </Button> : null}
+              <Button className={classes.buttonRight}>Share
+                <object data={share} className={classes.shareIcon}>Share Icon</object>
+              </Button> : null}
           </Toolbar>
         </AppBar>
       </div>
