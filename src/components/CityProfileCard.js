@@ -5,8 +5,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Slide from '@material-ui/core/Slide/Slide';
+import Grid from '@material-ui/core/Grid/Grid';
 import Paper from '@material-ui/core/Paper/Paper';
+import Slide from '@material-ui/core/Slide/Slide';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 import CityStatsCard from '../components/CityStatsCard';
@@ -14,8 +15,6 @@ import MapLegend from '../components/MapLegend';
 import data from '../data/data';
 
 import '../App.css';
-import Grid from '@material-ui/core/es/Grid/Grid';
-import Hidden from '@material-ui/core/es/Hidden/Hidden';
 
 const styles = theme => ({
   root: {
