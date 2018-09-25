@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
 
+@font-face {
+    font-family: Dense;
+    src: url('Dense-Regular.otf') format('opentype');
+}
+
 h1, h3 {
     font-family: 'Playfair Display', serif;
 }
@@ -55,8 +60,12 @@ Header
 /*
 City list view
  */
+.ranking {
+    font-family: 'Dense', serif;
+}
 .cityRankingList h3 {
     margin-left: 24px;
+    margin-bottom: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
@@ -95,6 +104,7 @@ City list view
 .cardText h4 {
     margin: 0;
     color: #484848;
+    font-size: 22px;
 }
 
 .cardText p {
@@ -132,6 +142,7 @@ City Profile Card
 
 .cityHeader {
     display: inline-block;
+    font-size: 30px;
 }
 
 .media {

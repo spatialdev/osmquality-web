@@ -27,7 +27,7 @@ const styles = {
     textAlign: 'center',
     color: '#FFFFFF',
     width: '100%',
-    fontSize: '38px',
+    fontSize: '30px',
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)',
@@ -121,11 +121,11 @@ class Header extends Component {
           </div>
 
           <Toolbar className={classes.toolbar}>
-            {location.pathname !== '/mqm' ?
+            {location.pathname !== '/mqm/' ?
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/mqm')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
-            {location.pathname !== '/mqm' ?
+            {location.pathname !== '/mqm/' ?
               <Button className={classes.buttonRight}>Share
                 <object data={share} className={classes.shareIcon}>Share Icon</object>
               </Button> : null}

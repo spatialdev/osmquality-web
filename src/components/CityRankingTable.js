@@ -15,7 +15,9 @@ const styles = theme => ({
   paper: {
     zIndex: 1,
     position: 'relative',
-    margin: theme.spacing.unit,
+    margin: 0,
+    backgroundColor: '#F4F4F4',
+    boxShadow: 'none'
   },
 });
 
@@ -49,10 +51,9 @@ class CityRankingTable extends Component {
                            alt={`${city.cityName} Header`}/>
                       <div className="cardText">
                         <h4>{city.cityName + ', ' + city.state}</h4>
-                        <p>Some other text goes here</p>
                       </div>
                     </div>
-                    <h1>{city.ranking < 10 ? '0' + city.ranking.toString() : city.ranking}</h1>
+                    <h1 className="ranking">{city.ranking < 10 ? '0' + city.ranking.toString() : city.ranking}</h1>
                   </CardContent>
                 </Card>);
               })

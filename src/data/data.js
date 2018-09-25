@@ -18,7 +18,7 @@ const data = [
   },
   {
     'key':3,
-    'cityName':'Denver ',
+    'cityName':'Denver',
     'state':'CO',
     'ranking':2,
     'flags':2551,

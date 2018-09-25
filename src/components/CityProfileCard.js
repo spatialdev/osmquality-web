@@ -26,7 +26,9 @@ const styles = theme => ({
   paper: {
     zIndex: 1,
     position: 'relative',
-    margin: theme.spacing.unit,
+    margin: 0,
+    backgroundColor: '#F4F4F4',
+    boxShadow: 'none'
   },
 
 });
@@ -68,7 +70,7 @@ class CityProfileCard extends Component {
     return (
       <div>
         <Slide direction="right" in={this.state.checked} mountOnEnter unmountOnExit>
-          <Paper elevation={4} className={classes.paper}>
+          <Paper className={classes.paper}>
             <div className="headerContainer">
               <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
                    style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
