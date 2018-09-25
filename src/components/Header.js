@@ -123,7 +123,7 @@ class Header extends Component {
           <Toolbar className={classes.toolbar}>
             {location.pathname !== '/mqm/' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/mqm')}><KeyboardArrowLeft
+                      onClick={() => history.push('/mqm/')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
             {location.pathname !== '/mqm/' ?
               <Button className={classes.buttonRight}>Share
