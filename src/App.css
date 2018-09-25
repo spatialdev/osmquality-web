@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
-
-@font-face {
-    font-family: Dense;
-    src: url('Dense-Regular.otf') format('opentype');
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
 
 h1, h3 {
-    font-family: 'Dense', serif;
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    font-weight: 600;
 }
 
 h2, h4, p, span, div {
@@ -15,7 +15,14 @@ h2, h4, p, span, div {
 
 span, li {
     font-size: 12px;
+}
 
+span {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 32px;
 }
 
 h3 {
@@ -26,12 +33,11 @@ h3 {
 
 h2 {
     font-size: 38px;
-
 }
 
 p {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     color: #484848;
 }
 
@@ -125,7 +131,7 @@ City Profile Card
  */
 
 .statsCard {
-    min-width: 414px;
+    min-width: 360px;
     border-radius: 0;
     max-width: 700px;
 }
@@ -274,7 +280,7 @@ Legend
 .my-legend .legend-scale ul li {
     list-style: none;
     margin-left: 0;
-    line-height: 18px;
+    padding: 5px 0;
     margin-bottom: 2px;
 }
 
@@ -282,7 +288,8 @@ Legend
     display: block;
     float: left;
     height: 16px;
-    width: 30px;
+    width: 16px;
+    border-radius: 50%;
     margin-right: 5px;
     margin-left: 0;
     border: 1px solid #999;
@@ -337,6 +344,6 @@ Footer
 }
 
 .socialShareIcon {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
 }

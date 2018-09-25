@@ -54,9 +54,9 @@ class CityProfileCard extends Component {
       <div>
         <div className="headerContainer">
           <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
-               style={{ width: '100%', height: '100%' }}/>
+               style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
           <div className="alignIconHeader">
-            <div className="rankingIcon">{cityData.ranking}</div>
+            <h1 className="rankingIcon">{cityData.ranking}</h1>
             <h1 className="cityHeader">{cityData.cityName}</h1>
           </div>
         </div>

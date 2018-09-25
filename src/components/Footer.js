@@ -36,7 +36,7 @@ export default class Footer extends Component {
         </div>
         <div className="logoDiv">
           <p className="footerP">Brought to you by:</p>
-          <a href="https://www.critigen.com" className="critigenLogo">
+          <a href="https://www.critigen.com" target="_blank" className="critigenLogo">
             <object data={logo_critigen} type="image/svg+xml">Critigen Logo</object>
           </a>
         </div>
