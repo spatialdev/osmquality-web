@@ -28,5 +28,5 @@
   "devDependencies": {
     "gh-pages": "^2.0.0"
   },
-  "homepage": "https://spatialdev.github.io/osmquality-web/"
+  "homepage": "http://osmquality.io"
 }
