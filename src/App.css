@@ -130,24 +130,31 @@ City Profile Card
         left: 0;
         top: 0;
         z-index: -1;
-        height:50% !important;
+        height: 70% !important;
 
     }
 
     .headerContainer {
         position: static;
+        height: 150px;
     }
 
-    .alignIconHeader{
+    .alignIconHeader {
         float: right;
         text-align: right;
-        padding-right: 100px;
-        padding-top: 50px;
-        top:auto !important;
-        left:auto !important;
-        transform:none !important;
+        padding-right: 40px;
+        padding-top: 100px;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
         position: static !important;
         -webkit-transform: none !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .headerContainer {
+        height: 350px;
     }
 }
 
@@ -173,11 +180,20 @@ canvas {
 
 .media {
     width: 100%;
-    padding: 0 5px;
+    padding: 5px;
 }
 
 .gridItem {
     display: flex;
+}
+
+@media (min-width: 960px) {
+    .cardGrid {
+        margin: 0 auto;
+        padding: 5px 30px 0 30px;
+
+    }
+
 }
 
 /*
@@ -185,16 +201,15 @@ canvas {
  */
 
 .statsCard {
-    /*min-width: 360px;*/
     border-radius: 0;
-    /*max-width: 700px;*/
+    width: 100%;
 }
 
 .cardHeader {
     text-align: center;
     margin: 0;
     border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 4px 0 20px 0;
+    padding: 15px 0 20px 0;
 }
 
 .gridRoot {
@@ -219,6 +234,10 @@ canvas {
 
 .gridTileRoot:nth-child(odd) {
     border-left: none;
+}
+
+.gridList {
+    width: 100%;
 }
 
 .statsIcon {
@@ -286,6 +305,7 @@ Pie Chart
 .pieChart {
     display: flex;
     align-items: center;
+    justify-content: center;
     border-top: 1px solid rgba(151, 151, 151, 0.27);
     padding: 20px 0;
     margin: 10px;
@@ -298,12 +318,19 @@ Pie Chart
     margin-right: 20px;
 }
 
+@media (min-width: 960px) {
+    .pieChart svg {
+        height: 30%;
+        width: 30%;
+    }
+}
+
 /*
 Horizontal Legend
  */
 
 .horizontalLegend {
-    float:right;
+    float: right;
     margin-right: 20px;
     margin-top: 5px;
 }
@@ -417,7 +444,7 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position: relative;
+    position: fixed;
 }
 
 .footerP {

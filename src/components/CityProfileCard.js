@@ -80,7 +80,7 @@ class CityProfileCard extends Component {
                 <h1 className="cityHeader">{cityData.cityName}</h1>
               </div>
             </div>
-            <Grid container>
+            <Grid container className="cardGrid">
               <Grid item md={6} sm={12} xs={12} className="gridItem">
                 <Card className={classes.root}>
                   <div>
