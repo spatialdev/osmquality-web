@@ -77,7 +77,6 @@ class CityProfileCard extends Component {
                    style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
               <div className="alignIconHeader">
                 <RankingIcon cityData={cityData}/>
-                {/*<h1 className="rankingIcon" id="ranking">{cityData.ranking}</h1>*/}
                 <h1 className="cityHeader">{cityData.cityName}</h1>
               </div>
             </div>
@@ -85,14 +84,14 @@ class CityProfileCard extends Component {
               <Grid item md={6} sm={12} xs={12} className="gridItem">
                 <Card className={classes.root}>
                   <div>
-                  <CardContent style={{padding: 0}}>
+                    <CardContent style={{ padding: 0 }}>
+                    </CardContent>
+                    <CardMedia
+                      component="img"
+                      className="media"
+                      image={require('../' + cityData.mapImage)}
+                    />
                     <MapLegend/>
-                  </CardContent>
-                  <CardMedia
-                    component="img"
-                    className="media"
-                    image={require('../' + cityData.mapImage)}
-                  />
                   </div>
 
                 </Card>

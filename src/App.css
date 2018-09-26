@@ -303,7 +303,8 @@ Horizontal Legend
  */
 
 .horizontalLegend {
-    text-align: center;
+    float:right;
+    margin-right: 20px;
     margin-top: 5px;
 }
 
