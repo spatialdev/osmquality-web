@@ -131,21 +131,16 @@ City Profile Card
     transform: translate(-50%, -50%);
     width: 70%;
 }
-
-.rankingIcon {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    border: 2px solid #ffffff;
+canvas {
     display: inline-block;
-    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .cityHeader {
     display: inline-block;
+    vertical-align: middle;
     font-size: 30px;
+    padding-left: 8px;
 }
 
 .media {

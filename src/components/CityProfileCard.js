@@ -15,6 +15,7 @@ import MapLegend from '../components/MapLegend';
 import data from '../data/data';
 
 import '../App.css';
+import RankingIcon from './RankingIcon';
 
 const styles = () => ({
   root: {
@@ -76,7 +77,8 @@ class CityProfileCard extends Component {
               <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
                    style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
               <div className="alignIconHeader">
-                <h1 className="rankingIcon">{cityData.ranking}</h1>
+                <RankingIcon cityData={cityData}/>
+                {/*<h1 className="rankingIcon" id="ranking">{cityData.ranking}</h1>*/}
                 <h1 className="cityHeader">{cityData.cityName}</h1>
               </div>
             </div>
