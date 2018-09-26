@@ -20,7 +20,6 @@ import RankingIcon from './RankingIcon';
 const styles = () => ({
   root: {
     margin: '10px',
-    maxWidth: '768px',
     display: 'inline-flex',
     alignItems: 'center',
   },

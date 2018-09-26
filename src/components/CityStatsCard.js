@@ -19,7 +19,7 @@ const CityStatsCard = props => {
 
   return (
     <Card className="statsCard" style={{
-      margin: '10px', maxWidth: '768px',
+      margin: '10px'
     }}>
       <CardContent style={{ padding: 0 }}>
         <h3 className="cardHeader">
@@ -61,7 +61,6 @@ const CityStatsCard = props => {
             }}>
               <div className="statDiv">
                 <div>
-
                   <object data={shape_icon} className="statsIcon">Shape Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h2>
