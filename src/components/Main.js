@@ -9,10 +9,10 @@ import AboutUs from './AboutUs';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/mqm" component={CityRankingTable}/>
-      <Route exact path="/mqm/city/:cityName" component={CityProfileCard}/>
-      <Route exact path="/mqm/about-us" component={AboutUs}/>
-      <Route exact path="/mqm/methodology" component={Methodology}/>
+      <Route exact path="/osmquality-web" component={CityRankingTable}/>
+      <Route exact path="/osmquality-web/city/:cityName" component={CityProfileCard}/>
+      <Route exact path="/osmquality-web/about-us" component={AboutUs}/>
+      <Route exact path="/osmquality-web/methodology" component={Methodology}/>
     </Switch>
   </main>
 );

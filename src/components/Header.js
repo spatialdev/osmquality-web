@@ -91,7 +91,7 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className={classes.headerDiv}>
-            <h1 className={classes.header} onClick={() => history.push('/mqm')}>
+            <h1 className={classes.header} onClick={() => history.push('/osmquality-web')}>
               App Title Here
             </h1>
             <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><MoreHoriz/></Button>
@@ -111,9 +111,9 @@ class Header extends Component {
                 style={{ width: '250px' }}
               >
                 <List>
-                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/mqm/about-us')}>About Us</h3>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/osmquality-web/about-us')}>About Us</h3>
                   </ListItem>
-                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/mqm/methodology')}>Methodology</h3>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/osmquality-web/methodology')}>Methodology</h3>
                   </ListItem>
                 </List>
               </div>
@@ -121,11 +121,11 @@ class Header extends Component {
           </div>
 
           <Toolbar className={classes.toolbar}>
-            {location.pathname !== '/mqm/' ?
+            {location.pathname !== '/osmquality-web/' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/mqm/')}><KeyboardArrowLeft
+                      onClick={() => history.push('/osmquality-web/')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
-            {location.pathname !== '/mqm/' ?
+            {location.pathname !== '/osmquality-web/' ?
               <Button className={classes.buttonRight}>Share
                 <object data={share} className={classes.shareIcon}>Share Icon</object>
               </Button> : null}
