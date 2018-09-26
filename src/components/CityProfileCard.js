@@ -16,11 +16,12 @@ import data from '../data/data';
 
 import '../App.css';
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     margin: '10px',
     maxWidth: '768px',
-    padding: 0,
+    display: 'inline-flex',
+    alignItems: 'center',
   },
 
   paper: {
@@ -80,23 +81,22 @@ class CityProfileCard extends Component {
               </div>
             </div>
             <Grid container>
-              <Grid item md={6} sm={12} xs={12} className={classes.gridItem}>
+              <Grid item md={6} sm={12} xs={12} className="gridItem">
                 <Card className={classes.root}>
+                  <div>
                   <CardContent style={{padding: 0}}>
-                    <h3 className="cardHeader">
-                      {cityData.cityName} Map Quality
-                    </h3>
+                    <MapLegend/>
                   </CardContent>
                   <CardMedia
                     component="img"
                     className="media"
-                    height="323px"
                     image={require('../' + cityData.mapImage)}
                   />
-                  <MapLegend/>
+                  </div>
+
                 </Card>
               </Grid>
-              <Grid item md={6} sm={12} xs={12} className={classes.gridItem}>
+              <Grid item md={6} sm={12} xs={12} className="gridItem">
                 <CityStatsCard data={cityData}/>
               </Grid>
             </Grid>

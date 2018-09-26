@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
 
 @font-face {
@@ -38,6 +38,7 @@ h3 {
 
 h2 {
     font-size: 38px;
+    font-weight: 800;
 }
 
 p {
@@ -63,6 +64,7 @@ City list view
 .ranking {
     font-family: 'Dense', serif;
 }
+
 .cityRankingList h3 {
     margin-left: 24px;
     margin-bottom: 0;
@@ -127,6 +129,7 @@ City Profile Card
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 70%;
 }
 
 .rankingIcon {
@@ -150,14 +153,17 @@ City Profile Card
     padding: 0 5px;
 }
 
+.gridItem {
+    display: flex;
+}
 /*
  City Stats Card Component
  */
 
 .statsCard {
-    min-width: 360px;
+    /*min-width: 360px;*/
     border-radius: 0;
-    max-width: 700px;
+    /*max-width: 700px;*/
 }
 
 .cardHeader {
@@ -180,7 +186,7 @@ City Profile Card
 }
 
 .gridTileTile {
-    padding: 8px;
+    padding: 4px;
 }
 
 .gridTileRoot:nth-child(even) {
@@ -215,12 +221,12 @@ City Profile Card
 .statDiv p {
     margin-top: 0;
     text-align: left;
+    white-space: nowrap;
 }
-
 
 @media (max-width: 480px) {
     .statDiv h2 {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .statDiv p {
@@ -230,7 +236,23 @@ City Profile Card
     .statsIcon {
         height: 20px;
         width: 20px;
-        margin-right: 4px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 320px) {
+    .statDiv h2 {
+        font-size: 20px;
+    }
+
+    .statDiv p {
+        font-size: 11px;
+    }
+
+    .statsIcon {
+        height: 20px;
+        width: 20px;
+        margin: 4px;
     }
 }
 
@@ -258,6 +280,7 @@ Horizontal Legend
 
 .horizontalLegend {
     text-align: center;
+    margin-top: 5px;
 }
 
 .horizontalLegend .horizontalLegend-title {
@@ -283,7 +306,7 @@ Horizontal Legend
 .horizontalLegend ul.horizontalLegend-labels li span {
     display: block;
     float: left;
-    height: 15px;
+    height: 7px;
     width: 50px;
 }
 
@@ -323,17 +346,22 @@ Legend
     margin-left: 0;
     padding: 5px 0;
     margin-bottom: 2px;
+    display: table;
 }
 
 .my-legend ul.legend-labels li span {
-    display: block;
     float: left;
-    height: 16px;
-    width: 16px;
+    height: 10px;
+    width: 10px;
     border-radius: 50%;
     margin-right: 5px;
-    margin-left: 0;
     border: 1px solid #999;
+    display: table-cell;
+}
+
+.my-legend ul.legend-labels li p {
+    display: table-cell;
+    font-size: 12px;
 }
 
 .my-legend div {

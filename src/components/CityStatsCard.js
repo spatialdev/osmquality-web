@@ -36,7 +36,7 @@ const CityStatsCard = props => {
                   <object data={gear_icon} className="statsIcon">Gear Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{data.features}</h2>
-                    <p>No. of OSM Features</p>
+                    <p>OSM Features</p>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@ const CityStatsCard = props => {
                   <object data={flag_icon} className="statsIcon">Flag Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{data.flags}</h2>
-                    <p>No. of Atlas Checks Flags</p>
+                    <p>Atlas Checks Flags</p>
                   </div>
                 </div>
               </div>

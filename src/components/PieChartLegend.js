@@ -11,10 +11,10 @@ const PieChartLegend = props => {
       <div className='legend-title'>The Title or Explanation of your Map</div>
       <div className='legend-scale'>
         <ul className='legend-labels'>
-          <li><span style={{ background: '#E4BC43' }}/>Road Tags ({roadTagPercentage.toFixed(0)}%)</li>
-          <li><span style={{ background: '#F26522' }}/>Road Relations ({roadRelationPercentage.toFixed(0)}%)</li>
-          <li><span style={{ background: '#676766' }}/>Roundabouts ({roundaboutPercentage.toFixed(0)}%)</li>
-          <li><span style={{ background: '#47ACB1' }}/>Road Connections ({roadConnectionPercentage.toFixed(0)}%)</li>
+          <li><span style={{ background: '#E4BC43' }}/><p>Road Tags ({roadTagPercentage.toFixed(0)}%)</p></li>
+          <li><span style={{ background: '#F26522' }}/><p>Road Relations ({roadRelationPercentage.toFixed(0)}%)</p></li>
+          <li><span style={{ background: '#676766' }}/><p>Roundabouts ({roundaboutPercentage.toFixed(0)}%)</p></li>
+          <li><span style={{ background: '#47ACB1' }}/><p>Road Connections ({roadConnectionPercentage.toFixed(0)}%)</p></li>
         </ul>
       </div>
     </div>
