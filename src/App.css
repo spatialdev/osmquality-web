@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
 
 @font-face {
-    font-family: Dense;
+    font-family: Dense-Regular;
     src: url('Dense-Regular.otf') format('opentype');
 }
 
@@ -121,7 +121,7 @@ Header
 City list view
  */
 .ranking {
-    font-family: 'Dense', serif;
+    font-family: 'Dense-Regular', serif;
 }
 
 
@@ -142,6 +142,7 @@ City list view
     opacity: 0.27;
     font-size: 65px;
     margin: 0;
+    letter-spacing: -3px;
 }
 
 .cityTableImage {
@@ -522,7 +523,7 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position: absolute;
+    position:absolute;
 }
 
 .footerP {

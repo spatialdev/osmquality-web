@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div style={{ position: 'relative', height: '100%' }}>
+      <div style={{ position: 'relative', minHeight: '100vh' }}>
         {window.location.pathname !== '/' ? <Header/>: null}
         <Main/>
         {window.location.pathname !== '/' ?  <Footer/> : null}

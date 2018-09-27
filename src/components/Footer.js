@@ -44,8 +44,6 @@ export default class Footer extends Component {
             <object data={logo_critigen} type="image/svg+xml">Critigen Logo</object>
           </a>
         </div>
-
-
       </div>
     );
   }
