@@ -373,6 +373,14 @@ Pie Chart
     }
 }
 
+@media(min-width: 600px)
+    and (orientation: landscape) {
+    .pieChart svg {
+        height: 40%;
+        width: 40%;
+    }
+}
+
 /*
 Horizontal Legend
  */

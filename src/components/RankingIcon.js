@@ -12,17 +12,29 @@ class RankingIcon extends Component {
     this.updateCanvas(cityData);
 
 
+
   }
 
-  updateCanvas(cityData) {
-    const ctx = this.canvas.current.getContext('2d');
+  updateCanvas = cityData => {
+    let ctx = this.canvas.current.getContext('2d');
+
     const height = this.canvas.current.height;
     const width = this.canvas.current.width;
+
+    this.canvas.current.style.width = width + "px";
+    this.canvas.current.style.height = height + "px";
+    let scale = window.devicePixelRatio;
+
+    this.canvas.current.width = width * scale;
+    this.canvas.current.height =  height * scale;
+
+    ctx.scale(scale, scale);
+
 
     // Canvas Styling
     ctx.font = cityData.ranking > 10 ? 'bold 25px Open Sans' : 'bold 30px Open Sans';
     ctx.fillStyle = 'blue';
-    ctx.fillText(cityData.ranking, cityData.ranking > 10 ? 11: 14, cityData.ranking > 10 ? 33: 31);
+    ctx.fillText(cityData.ranking, cityData.ranking > 10 ? 11 : 14, cityData.ranking > 10 ? 33 : 31);
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.globalCompositeOperation = 'xor';
@@ -30,12 +42,12 @@ class RankingIcon extends Component {
     ctx.fillStyle = 'white';
     ctx.arc(height / 2, width / 2, height / 2, 0, 2 * Math.PI);
     ctx.fill();
-  }
+  };
 
   render() {
-    const {cityData} = this.props;
+    const { cityData } = this.props;
     return (
-      <canvas ref={this.canvas} width={cityData.ranking > 10 ? 50 : 45 } height={cityData.ranking > 10 ? 50 : 45}/>
+      <canvas ref={this.canvas} width={cityData.ranking > 10 ? 50 : 45} height={cityData.ranking > 10 ? 50 : 45}/>
     );
   }
 }
