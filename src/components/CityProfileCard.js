@@ -87,7 +87,6 @@ class CityProfileCard extends Component {
     const nextCityState = nextCityData.cityName + nextCityData.state;
     this.props.history.push(`/city/${nextCityState}`);
     this.getCityData(nextCityState);
-    this.initializeSlide();
   }
 
   handleNavBackward = () => {
@@ -95,7 +94,6 @@ class CityProfileCard extends Component {
     const prevCityState = prevCityData.cityName + prevCityData.state;
     this.props.history.push(`/city/${prevCityState}`);
     this.getCityData(prevCityState);
-    this.initializeSlide();
   }
 
   render() {

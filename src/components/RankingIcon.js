@@ -1,16 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
 
-class RankingIcon extends PureComponent {
+class RankingIcon extends Component {
   constructor(props) {
     super(props);
     this.canvas = React.createRef();
   }
 
-  componentDidUpdate() {
-    const { cityData } = this.props;
-    this.updateCanvas(cityData);
-  }
+
 
   componentDidMount() {
     const { cityData } = this.props;
