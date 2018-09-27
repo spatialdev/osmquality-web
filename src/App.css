@@ -101,10 +101,20 @@ Header
  */
 
 .drawerItem h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #484848;
     border-bottom: 1px solid #f4f4f4;
     margin: 10px;
     padding-bottom: 15px;
     cursor: pointer;
+}
+
+.rankingHeader {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
 }
 
 /*
@@ -114,12 +124,6 @@ City list view
     font-family: 'Dense', serif;
 }
 
-.cityRankingList h3 {
-    margin-left: 24px;
-    margin-bottom: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-}
 
 .cityRankingCard {
     cursor: pointer;
@@ -137,18 +141,19 @@ City list view
     color: #484848;
     opacity: 0.27;
     font-size: 65px;
-    margin: 5px 0;
+    margin: 0;
 }
 
 .cityTableImage {
     height: 75px;
     width: 75px;
     border-radius: 50%;
+    vertical-align: middle;
 }
 
 .cardText {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     padding: 10px;
 }
 
@@ -156,6 +161,13 @@ City list view
     margin: 0;
     color: #484848;
     font-size: 22px;
+}
+
+@media (max-width: 600px) {
+.cardText h4 {
+    font-size: 18px;
+}
+
 }
 
 .cardText p {
@@ -278,7 +290,7 @@ canvas {
 }
 
 .gridTileRoot {
-    border: 1px solid rgba(151, 151, 151, 0.27);
+    /*border: 1px solid rgba(151, 151, 151, 0.27);*/
     padding: 0;
 }
 
@@ -287,11 +299,12 @@ canvas {
 }
 
 .gridTileRoot:nth-child(even) {
-    border-right: none;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
 }
 
 .gridTileRoot:nth-child(odd) {
-    border-left: none;
+    border-right: 1px solid rgba(151, 151, 151, 0.27);
+    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
 }
 
 .gridList {
@@ -365,8 +378,7 @@ Pie Chart
     align-items: center;
     justify-content: center;
     border-top: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 20px 0;
-    margin: 10px;
+    padding: 20px 10px;
 }
 
 .pieChart svg {
@@ -417,7 +429,7 @@ Horizontal Legend
     width: 30px;
     margin-bottom: 6px;
     text-align: center;
-    font-size: 40%;
+    font-size: 8px;
     list-style: none;
 }
 
@@ -510,7 +522,7 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position: fixed;
+    position: absolute;
 }
 
 .footerP {

@@ -8,7 +8,7 @@ import Splash from './Splash';
 
 
 const Main = () => (
-  <main className={window.location.pathname !== '/' ? 'padding' : null}>
+  <main>
     <Switch>
       <Route exact path="/" component={Splash}/>
       <Route exact path="/rankings" component={CityRankingTable}/>

@@ -27,6 +27,7 @@ class CityRankingTable extends Component {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.initializeSlide();
   }
 
@@ -38,7 +39,6 @@ class CityRankingTable extends Component {
     const { classes } = this.props;
     return (
       <div className="cityRankingList">
-        <h3>City Ranking Lorem Ipsum</h3>
         <Slide direction="left" in={this.state.checked} mountOnEnter unmountOnExit>
           <Paper className={classes.paper}>
             <div style={{ padding: '5px 0' }}>
@@ -47,7 +47,7 @@ class CityRankingTable extends Component {
                               onClick={() => this.props.history.push(`/city/${city.cityName}`)}>
                   <CardContent>
                     <div className="cardBody">
-                      <img className="cityTableImage" src={require('../' + city.headerImage)}
+                      <img className="cityTableImage" src={require('../' + city.thumbnail)}
                            alt={`${city.cityName} Header`}/>
                       <div className="cardText">
                         <h4>{city.cityName + ', ' + city.state}</h4>

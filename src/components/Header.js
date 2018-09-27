@@ -27,7 +27,7 @@ const styles = {
     textAlign: 'center',
     color: '#FFFFFF',
     width: '100%',
-    fontSize: '30px',
+    fontSize: '20px',
     position: 'relative',
     top: '50%',
     transform: 'translateY(-50%)',
@@ -92,7 +92,7 @@ class Header extends Component {
         <AppBar position="static" color="default">
           <div className={classes.headerDiv}>
             <h1 className={classes.header} onClick={() => history.push('/rankings')}>
-              App Title Here
+              OSM Quality Ranking
             </h1>
             <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><MoreHoriz/></Button>
             <SwipeableDrawer
@@ -121,6 +121,8 @@ class Header extends Component {
           </div>
 
           <Toolbar className={classes.toolbar}>
+            {location.pathname === '/rankings' ?
+              <h3 className="rankingHeader">City Ranking Lorem Ipsum</h3> : null}
             {location.pathname !== '/rankings' ?
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/rankings')}><KeyboardArrowLeft
