@@ -10,9 +10,6 @@ class RankingIcon extends Component {
   componentDidMount() {
     const { cityData } = this.props;
     this.updateCanvas(cityData);
-
-
-
   }
 
   updateCanvas = cityData => {
