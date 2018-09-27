@@ -1021,8 +1021,14 @@
       'roadRelation':0.0018331810000000001,
       'roadTag':0.19,
       'roundabout':0.0,
+<<<<<<< HEAD
       'score':0.047580000000000004,
       'factName':'Fun Demographic Fact',
       'fact':" This city is the second-most ractially diverse city in the US. The city's Branck Brook Park is home to the largest collection of cherry blossom trees (5,000)/"
    }
+=======
+      'score':0.047580000000000004
+  }
+ 
+>>>>>>> 8a025f3348778646964b78f284fb6726cb4e9d49
 ]

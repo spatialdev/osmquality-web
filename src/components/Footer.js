@@ -17,19 +17,20 @@ export default class Footer extends Component {
     padding: 0,
   };
 
-  render() {
-    console.log(this.props);
 
+  render() {
     return (
       <div className="footer">
         <div className="socialShare">
           <p className="footerP">Share this:</p>
           <List style={this.flexContainer}>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=`} title="Share on Facebook" target="_blank"><img src={icon_fb} className="socialShareIcon"/></a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=`} title="Share on Facebook" target="_blank"><img
+                src={icon_fb} className="socialShareIcon"/></a>
             </ListItem>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href="https://twitter.com/home?status=test" title="Share on Twitter" target="_blank"><img src={icon_twitter} className="socialShareIcon"/></a>
+              <a href="https://twitter.com/home?status=test" title="Share on Twitter" target="_blank"><img
+                src={icon_twitter} className="socialShareIcon"/></a>
             </ListItem>
             <ListItem style={{ paddingLeft: '0', paddingTop: '0' }}>
               <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" title="Share on LinkedIn"
