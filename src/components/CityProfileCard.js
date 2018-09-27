@@ -42,6 +42,7 @@ class CityProfileCard extends Component {
 
   componentDidMount() {
     const { match: { params: { cityName } } } = this.props;
+    window.scrollTo(0, 0);
     this.getCityData(cityName);
     this.initializeSlide();
   }

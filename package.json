@@ -15,7 +15,8 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "react-svg-piechart": "^2.1.1"
+    "react-svg-piechart": "^2.1.1",
+    "react-swipeable-views": "^0.13.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,5 +29,5 @@
   "devDependencies": {
     "gh-pages": "^2.0.0"
   },
-  "homepage": "http://osmquality.io"
+  "homepage": "https://www.osmquality.io"
 }

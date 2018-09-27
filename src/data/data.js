@@ -920,7 +920,8 @@ const data = [
       'roadTag':0.19,
       'roundabout':0.0,
       'score':0.047580000000000004
-   }
+  }
+ 
 ]
 
 export default data;
