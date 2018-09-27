@@ -47,7 +47,6 @@ class CityProfileCard extends Component {
   };
 
   componentDidMount() {
-    console.log('mount');
     const { match: { params: { cityState } } } = this.props;
     this.getCityData(cityState);
     this.initializeSlide();
@@ -82,7 +81,6 @@ class CityProfileCard extends Component {
   }
 
   handleNavForward = () => {
-    console.log('navForward');
     const { nextCityData } = this.state;
     const nextCityState = nextCityData.cityName + nextCityData.state;
     this.props.history.push(`/city/${nextCityState}`);
