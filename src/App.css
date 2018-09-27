@@ -52,10 +52,11 @@ Splash
  */
 .splashPage {
     background-color: #7ac143;
-    height:100vh;
-    display:table;
-    width:100%;
+    height: 100vh;
+    display: table;
+    width: 100%;
 }
+
 .splashContent {
     text-align: center;
     display: table-cell;
@@ -64,18 +65,18 @@ Splash
 
 .splashContent .osmTeamLogo {
     height: 300px;
-    width:300px;
+    width: 300px;
 }
 
-@media (min-width: 960px){
+@media (min-width: 960px) {
     .splashContent {
         height: 400px;
-        width:400px;
+        width: 400px;
     }
 
 }
 
-.splashContent button{
+.splashContent button {
     border: 2px solid #fff;
     color: #ffffff;
     text-transform: none;
@@ -172,6 +173,13 @@ City Profile Card
     color: #FFFFFF;
 }
 
+@media (min-width: 600px)
+and (orientation: landscape) {
+    .headerContainer {
+        height: 250px;
+    }
+}
+
 @media (min-width: 960px) {
     .headerContainer img {
         position: absolute;
@@ -224,6 +232,7 @@ canvas {
     vertical-align: middle;
     font-size: 30px;
     padding-left: 8px;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .media {
@@ -233,6 +242,7 @@ canvas {
 
 .gridItem {
     display: flex;
+    margin-top:5px;
 }
 
 @media (min-width: 960px) {
@@ -373,8 +383,8 @@ Pie Chart
     }
 }
 
-@media(min-width: 600px)
-    and (orientation: landscape) {
+@media (min-width: 600px)
+and (orientation: landscape) {
     .pieChart svg {
         height: 40%;
         width: 40%;
@@ -404,10 +414,10 @@ Horizontal Legend
 .horizontalLegend .horizontalLegend-scale ul li {
     display: block;
     float: left;
-    width: 50px;
+    width: 30px;
     margin-bottom: 6px;
     text-align: center;
-    font-size: 80%;
+    font-size: 40%;
     list-style: none;
 }
 
@@ -415,7 +425,7 @@ Horizontal Legend
     display: block;
     float: left;
     height: 7px;
-    width: 50px;
+    width: 30px;
 }
 
 .horizontalLegend ul.horizontalLegend-labels {

@@ -34,7 +34,7 @@ class RankingIcon extends Component {
     // Canvas Styling
     ctx.font = cityData.ranking > 10 ? 'bold 25px Open Sans' : 'bold 30px Open Sans';
     ctx.fillStyle = 'blue';
-    ctx.fillText(cityData.ranking, cityData.ranking > 10 ? 11 : 14, cityData.ranking > 10 ? 33 : 31);
+    ctx.fillText(cityData.ranking, cityData.ranking >= 10 ? cityData.ranking === 10 ? 4 : 10 : 13, cityData.ranking >= 10 ? 34 : 33);
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.globalCompositeOperation = 'xor';
