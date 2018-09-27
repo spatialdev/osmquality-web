@@ -91,7 +91,7 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className={classes.headerDiv}>
-            <h1 className={classes.header} onClick={() => history.push('/')}>
+            <h1 className={classes.header} onClick={() => history.push('/rankings')}>
               App Title Here
             </h1>
             <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><MoreHoriz/></Button>
@@ -121,11 +121,11 @@ class Header extends Component {
           </div>
 
           <Toolbar className={classes.toolbar}>
-            {location.pathname !== '/' ?
+            {location.pathname !== '/rankings' ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/')}><KeyboardArrowLeft
+                      onClick={() => history.push('/rankings')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
-            {location.pathname !== '/' ?
+            {location.pathname !== '/rankings' ?
               <Button className={classes.buttonRight}>Share
                 <object data={share} className={classes.shareIcon}>Share Icon</object>
               </Button> : null}

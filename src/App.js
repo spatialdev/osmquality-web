@@ -9,9 +9,9 @@ class App extends Component {
   render() {
     return (
       <div style={{ position: 'relative', height: '100%' }}>
-        <Header/>
+        {window.location.pathname !== '/' ? <Header/>: null}
         <Main/>
-        <Footer/>
+        {window.location.pathname !== '/' ?  <Footer/> : null}
       </div>
     );
   }
