@@ -224,6 +224,7 @@ City Profile Card
     z-index: 2;
     width: 50px !important;
     height: 50px !important;
+    cursor: pointer;
 }
 
 .navArrowRight {
@@ -236,6 +237,7 @@ City Profile Card
     z-index: 2;
     width: 50px !important;
     height: 50px !important;
+    cursor: pointer;
 }
 
 canvas {

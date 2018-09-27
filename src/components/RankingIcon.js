@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 
-class RankingIcon extends Component {
+class RankingIcon extends PureComponent {
   constructor(props) {
     super(props);
     this.canvas = React.createRef();
+  }
+
+  componentDidUpdate() {
+    const { cityData } = this.props;
+    this.updateCanvas(cityData);
   }
 
   componentDidMount() {
@@ -17,6 +22,7 @@ class RankingIcon extends Component {
     const height = this.canvas.current.height;
     const width = this.canvas.current.width;
 
+    ctx.clearRect(0, 0, width, height);
     // Canvas Styling
     ctx.font = cityData.ranking > 10 ? 'bold 25px Open Sans' : 'bold 30px Open Sans';
     ctx.fillStyle = 'blue';
