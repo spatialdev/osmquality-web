@@ -117,6 +117,32 @@ Header
     font-size: 14px;
 }
 
+
+
+.headerDiv {
+    background-color: #7AC143;
+    position: relative;
+    height: 60px;
+}
+
+
+.header {
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    font-size: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    cursor: pointer;
+}
+
+.toolbar {
+    height: 27px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 /*
 City list view
  */
@@ -129,7 +155,8 @@ City list view
     cursor: pointer;
     position: relative;
     padding: 10px;
-    margin: 20px;
+    margin: 20px auto;
+    max-width: 960px;
 
 }
 
@@ -180,16 +207,21 @@ City Profile Card
  */
 
 .headerContainer {
-    height: 150px;
+    height: 220px;
     position: relative;
     text-align: center;
     color: #FFFFFF;
 }
 
-@media (min-width: 600px)
-and (orientation: landscape) {
+@media (min-width: 480px) {
     .headerContainer {
-        height: 250px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 600px) {
+    .headerContainer {
+        height: 400px;
     }
 }
 

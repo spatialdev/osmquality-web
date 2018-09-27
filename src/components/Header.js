@@ -8,50 +8,30 @@ import List from '@material-ui/core/List/List';
 import ListItem from '@material-ui/core/ListItem/ListItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import MoreHoriz from '@material-ui/icons/MoreHoriz';
+import Menu from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
 import share from '../images/share.svg';
+
+import '../App.css';
 
 
 const styles = {
   root: {
     flexGrow: 1,
   },
-  headerDiv: {
-    backgroundColor: '#7AC143',
-    position: 'relative',
-    height: '60px',
-  },
-  header: {
-    textAlign: 'center',
-    color: '#FFFFFF',
-    width: '100%',
-    fontSize: '20px',
-    position: 'relative',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    margin: 0,
-    cursor: 'pointer',
-  },
-  toolbar: {
-    height: '27px',
-  },
-  buttonLeft: {
-    position: 'absolute',
-    left: '-8px',
-  },
-  buttonRight: {
-    position: 'absolute',
-    right: 0,
+
+  list: {
+    width: 250,
   },
   moreIcon: {
     color: '#FFFFFF',
     position: 'absolute',
     right: 0,
-    transform: 'scale(1.5)',
     top: 0,
+    height: '100%',
   },
+
   shareIcon: {
     height: '20px',
     width: '20px',
@@ -62,9 +42,16 @@ const styles = {
     width: '20px',
     marginLeft: '5px',
   },
-  list: {
-    width: 250,
+  buttonLeft: {
+    position: 'absolute',
+    left: '-8px',
+    height: '100%',
   },
+  buttonRight: {
+    position: 'absolute',
+    right: 0,
+    height: '100%',
+  }
 };
 
 const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -90,11 +77,11 @@ class Header extends Component {
     return (
       <div className={classes.root}>
         <AppBar position="static" color="default">
-          <div className={classes.headerDiv}>
-            <h1 className={classes.header} onClick={() => history.push('/rankings')}>
+          <div className="headerDiv">
+            <h1 className="header" onClick={() => history.push('/rankings')}>
               OSM Quality Ranking
             </h1>
-            <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><MoreHoriz/></Button>
+            <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><Menu/></Button>
             <SwipeableDrawer
               disableBackdropTransition={!iOS}
               disableDiscovery={iOS}
@@ -120,7 +107,7 @@ class Header extends Component {
             </SwipeableDrawer>
           </div>
 
-          <Toolbar className={classes.toolbar}>
+          <Toolbar className="toolbar">
             {location.pathname === '/rankings' ?
               <h3 className="rankingHeader">City Ranking Lorem Ipsum</h3> : null}
             {location.pathname !== '/rankings' ?
