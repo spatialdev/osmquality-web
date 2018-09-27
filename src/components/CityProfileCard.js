@@ -12,6 +12,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
+import Hammer from 'react-hammerjs';
 
 import CityStatsCard from '../components/CityStatsCard';
 import MapLegend from '../components/MapLegend';
@@ -45,15 +46,8 @@ class CityProfileCard extends Component {
     checked: false,
   };
 
-  componentDidUpdate() {
-    const { match: { params: { cityState } } } = this.props;
-    if(cityState.toLowerCase() !== this.state.cityData.cityName.toLowerCase() + this.state.cityData.state.toLowerCase()) {
-      this.getCityData(cityState);
-      this.initializeSlide();
-    }
-  }
-
   componentDidMount() {
+    console.log('mount');
     const { match: { params: { cityState } } } = this.props;
     window.scrollTo(0, 0);
     this.getCityData(cityState);
@@ -75,6 +69,36 @@ class CityProfileCard extends Component {
     });
   };
 
+  handleSwipe = (e) => {
+    const { prevCityData } = this.state;
+    const { nextCityData } = this.state;
+    //swipe right
+    if(e.direction === 4 && this.state.prevCityData) {
+      this.handleNavBackward();
+    }
+    //swipe left
+    if(e.direction === 2 && this.state.nextCityData) {
+      this.handleNavForward();
+    }
+  }
+
+  handleNavForward = () => {
+    console.log('navForward');
+    const { nextCityData } = this.state;
+    const nextCityState = nextCityData.cityName + nextCityData.state;
+    this.props.history.push(`/city/${nextCityState}`);
+    this.getCityData(nextCityState);
+    this.initializeSlide();
+  }
+
+  handleNavBackward = () => {
+    const { prevCityData } = this.state;
+    const prevCityState = prevCityData.cityName + prevCityData.state;
+    this.props.history.push(`/city/${prevCityState}`);
+    this.getCityData(prevCityState);
+    this.initializeSlide();
+  }
+
   render() {
     const { cityData } = this.state;
     const { prevCityData } = this.state;
@@ -90,50 +114,50 @@ class CityProfileCard extends Component {
     }
 
     return (
-      <div>
-        <Slide direction="right" in={this.state.checked} mountOnEnter unmountOnExit>
-          <Paper className={classes.paper}>
-            <div className="headerContainer">
-              {prevCityData != null ? 
-                <KeyboardArrowLeft 
-                  className="navArrowLeft" 
-                  onClick={() => this.props.history.push(`/city/${prevCityData.cityName}${prevCityData.state}`)} /> : null }
-              <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
-                   style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
-              <div className="alignIconHeader">
-                <RankingIcon cityData={cityData}/>
-                <h1 className="cityHeader">{cityData.cityName}</h1>
+      <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
+        <div>
+          <Slide direction="right" in={this.state.checked} mountOnEnter unmountOnExit>
+            <Paper className={classes.paper}>
+              <div className="headerContainer">
+                {prevCityData != null ? 
+                  <KeyboardArrowLeft 
+                    className="navArrowLeft" 
+                    onClick={this.handleNavBackward} /> : null }
+                <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
+                    style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
+                <div className="alignIconHeader">
+                  <RankingIcon cityData={cityData}/>
+                  <h1 className="cityHeader">{cityData.cityName}</h1>
+                </div>
+                {nextCityData != null ? 
+                  <KeyboardArrowRight 
+                    className="navArrowRight"
+                    onClick={this.handleNavForward}/> : null }
               </div>
-              {nextCityData != null ? 
-                <KeyboardArrowRight 
-                  className="navArrowRight"
-                  onClick={() => this.props.history.push(`/city/${nextCityData.cityName}${nextCityData.state}`)}/> : null }
-            </div>
-            <Grid container className="cardGrid">
-              <Grid item md={6} sm={12} xs={12} className="gridItem">
-                <Card className={classes.root}>
-                  <div>
-                    <CardContent style={{ padding: 0 }}>
-                    </CardContent>
-                    <CardMedia
-                      component="img"
-                      className="media"
-                      image={require('../' + cityData.mapImage)}
-                    />
-                    <MapLegend/>
-                  </div>
+              <Grid container className="cardGrid">
+                <Grid item md={6} sm={12} xs={12} className="gridItem">
+                  <Card className={classes.root}>
+                    <div>
+                      <CardContent style={{ padding: 0 }}>
+                      </CardContent>
+                      <CardMedia
+                        component="img"
+                        className="media"
+                        image={require('../' + cityData.mapImage)}
+                      />
+                      <MapLegend/>
+                    </div>
 
-                </Card>
+                  </Card>
+                </Grid>
+                <Grid item md={6} sm={12} xs={12} className="gridItem">
+                  <CityStatsCard data={cityData}/>
+                </Grid>
               </Grid>
-              <Grid item md={6} sm={12} xs={12} className="gridItem">
-                <CityStatsCard data={cityData}/>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Slide>
-
-
-      </div>
+            </Paper>
+          </Slide>
+        </div>
+      </Hammer>
     );
   }
 }
