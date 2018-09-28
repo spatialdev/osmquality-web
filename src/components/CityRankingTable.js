@@ -44,7 +44,7 @@ class CityRankingTable extends Component {
             <div style={{ padding: '5px 0' }}>
               {data.sort((a, b) => a.ranking - b.ranking).map(city => {
                 return (<Card className="cityRankingCard" key={city.ranking}
-                              onClick={() => this.props.history.push(`/city/${city.cityName}`)}>
+                              onClick={() => this.props.history.push(`/city/${city.cityName}${city.state}`)}>
                   <CardContent>
                     <div className="cardBody">
                       <img className="cityTableImage" src={require('../' + city.thumbnail)}

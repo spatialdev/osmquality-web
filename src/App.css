@@ -267,6 +267,32 @@ City Profile Card
     width: 70%;
 }
 
+.navArrowLeft {
+    position: absolute;
+    color: white;
+    fill: white;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
+}
+
+.navArrowRight {
+    position: absolute;
+    color: white;
+    fill: white;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
+}
+
 canvas {
     display: inline-block;
     vertical-align: middle;
