@@ -68,15 +68,14 @@ class CityProfileCard extends Component {
     });
   };
 
-  handleSwipe = (e) => {
-    const { prevCityData } = this.state;
-    const { nextCityData } = this.state;
+  handleSwipe = e => {
+    const { prevCityData, nextCityData } = this.state;
     //swipe right
-    if(e.direction === 4 && this.state.prevCityData) {
+    if(e.direction === 4 && prevCityData) {
       this.handleNavBackward();
     }
     //swipe left
-    if(e.direction === 2 && this.state.nextCityData) {
+    if(e.direction === 2 && nextCityData) {
       this.handleNavForward();
     }
   }
@@ -96,9 +95,7 @@ class CityProfileCard extends Component {
   }
 
   render() {
-    const { cityData } = this.state;
-    const { prevCityData } = this.state;
-    const { nextCityData } = this.state;
+    const { cityData, prevCityData, nextCityData, checked } = this.state;
     const { classes } = this.props;
 
 
@@ -112,10 +109,10 @@ class CityProfileCard extends Component {
     return (
       <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
         <div>
-          <Slide direction="right" in={this.state.checked} mountOnEnter unmountOnExit>
+          <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Paper className={classes.paper}>
               <div className="headerContainer">
-                {prevCityData != null ? 
+                {prevCityData ? 
                   <KeyboardArrowLeft 
                     className="navArrowLeft" 
                     onClick={this.handleNavBackward} /> : null }
@@ -125,7 +122,7 @@ class CityProfileCard extends Component {
                   <RankingIcon cityData={cityData}/>
                   <h1 className="cityHeader">{cityData.cityName}</h1>
                 </div>
-                {nextCityData != null ? 
+                {nextCityData ? 
                   <KeyboardArrowRight 
                     className="navArrowRight"
                     onClick={this.handleNavForward}/> : null }
