@@ -146,6 +146,18 @@ class CityProfileCard extends Component {
                 <Grid item md={6} sm={12} xs={12} className="gridItem">
                   <CityStatsCard data={cityData}/>
                 </Grid>
+                <Grid item md={12} sm={12} xs={12} className="gridItem">
+                  <Card className={classes.root}>
+                    <div>
+                      <CardContent style={{ padding: 15 }}>
+                        <h3 style={{textAlign: 'center'}}>Lorem</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula gravida felis, a
+                          ultricies diam. Etiam vitae diam quis nulla vulputate euismod. Suspendisse potenti. Class aptent
+                          taciti sociosqu ad litora.</p>
+                      </CardContent>
+                    </div>
+                  </Card>
+                </Grid>
               </Grid>
             </Paper>
           </Slide>
