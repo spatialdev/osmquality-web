@@ -26,6 +26,7 @@ const styles = () => ({
     margin: '10px',
     display: 'inline-flex',
     alignItems: 'center',
+    width: '100%'
   },
 
   paper: {
@@ -34,6 +35,11 @@ const styles = () => ({
     margin: 0,
     backgroundColor: '#F4F4F4',
     boxShadow: 'none'
+  },
+  
+  center: {
+    textAlign: 'center',
+    margin: 'auto'
   }
 
 });
