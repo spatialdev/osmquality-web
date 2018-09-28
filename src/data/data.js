@@ -1,4 +1,4 @@
-const data = [
+const data =[
    {
       'key':14,
       'cityName':'Boise',
@@ -17,8 +17,7 @@ const data = [
       'roundabout':0.002777778,
       'score':0.007509999999999999,
       'factName':'Fun History Fact',
-      'fact':' This city was named by French-Canadian fur trappers after the trees (les bois) that line its namesake river (though accounts differ). '
-
+      'fact':'This city was named by French-Canadian fur trappers after the trees (les bois) that line its namesake river (though accounts differ).'
    },
    {
       'key':3,
@@ -38,8 +37,7 @@ const data = [
       'roundabout':0.008235294,
       'score':0.008440000000000001,
       'factName':'Fun Demographic Facts',
-      'fact':' The front range megalopolis or urban corridor is home to a population of approximately 5 Million and Denver is the most populus city within a 500-mile radius. '
-
+      'fact':'The front range megalopolis or urban corridor is home to a population of approximately 5 million and Denver is the most populous city within a 500-mile radius.'
    },
    {
       'key':46,
@@ -59,8 +57,7 @@ const data = [
       'roundabout':0.001278772,
       'score':0.00855,
       'factName':'Fun Geography Fact',
-      'fact':' This city was founded on an isthmus between Lake Monona and Lake Mendota'
-
+      'fact':'This city was founded on an isthmus between Lake Monona and Lake Mendota'
    },
    {
       'key':2,
@@ -79,7 +76,7 @@ const data = [
       'roadTag':0.12,
       'roundabout':0.025728987999999998,
       'score':0.00878,
-      'fact':' This city is known to have been inhabit for about 12,000 years and derives it\'s name  from the Papago-Pima language meaning "at the base of the black (hill)"',
+      'fact':'This city is known to have been inhabited for about 12,000 years and derives its name from the Papago-Pima language meaning "at the base of the black (hill)"',
       'factName':'Fun History Fact'
    },
    {
@@ -100,8 +97,7 @@ const data = [
       'roundabout':0.0,
       'score':0.00926,
       'factName':'Fun History Fact',
-      'fact':" A nearby landmakr, Pompey's Pillar, was named by William Clark (of Lewis and Clark fame) after the son of Sacajawea. "
-
+      'fact':'A nearby landmark, Pompey\'s Pillar, was named by William Clark (of Lewis and Clark fame) after the son of Sacajawea.'
    },
    {
       'key':6,
@@ -121,7 +117,7 @@ const data = [
       'roundabout':0.0,
       'score':0.00938,
       'factName':'Fun Fact',
-      'fact':' This city is nicknamed "Rocket City" for it\'s long association with U.S. space missions and is home to NASA\'s Marshall Space Flight Center.'
+      'fact':'This city is nicknamed "Rocket City" for it\'s long association with U.S. space missions and is home to NASA\'s Marshall Space Flight Center.'
    },
    {
       'key':34,
@@ -141,7 +137,7 @@ const data = [
       'roundabout':0.00596853,
       'score':0.00946,
       'factName':'Fun Geography Fact',
-      'fact':' This city sits on the "floor" of the Mojave Desert. On average, the temperate exceeds 100 degrees F on 74 days during the year. '
+      'fact':'This city sits on the "floor" of the Mojave Desert. On average, the temperature exceeds 100&deg F on 74 days during the year.'
    },
    {
       'key':49,
@@ -161,7 +157,7 @@ const data = [
       'roundabout':0.004366812,
       'score':0.01034,
       'factName':'Fun Geography Fact',
-      'fact':' This city is nearly equidistant to New York City, Tokyo and Frankfurt (Germany) which makes it a major international cargo hub. '
+      'fact':'This city is nearly equidistant to New York City, Tokyo and Frankfurt(Germany), which makes it a major international cargo hub.'
    },
    {
       'key':23,
@@ -181,7 +177,7 @@ const data = [
       'roundabout':0.003521127,
       'score':0.01075,
       'factName':'Fun Fact',
-      'fact':' Cadillac automobiles (headquartered in this city) was named after the founder of Detroit, Antoine de la Mothe Cadillac. '
+      'fact':'Cadillac Automobiles (headquartered in this city) was named after the founder of Detroit, Antoine de la Mothe Cadillac.'
    },
    {
       'key':48,
@@ -201,7 +197,7 @@ const data = [
       'roundabout':0.0015321760000000001,
       'score':0.01077,
       'factName':'Fun Fact',
-      'fact':' None of the facts about Columbus are really that fun. The Ohio State University "Horseshoe" Stadium is the third largest in the U.S.'
+      'fact':'None of the facts about Columbus are really that fun. The Ohio State University "Horseshoe" Stadium is the third largest in the U.S.'
    },
    {
       'key':33,
@@ -221,7 +217,7 @@ const data = [
       'roundabout':0.002597403,
       'score':0.01126,
       'factName':'Fun Fact',
-      'fact':" Albuquerque is host to the International Balloon Fiesta, the world's largest gathering of hot-air balloons in the world!"
+      'fact':'Albuquerque is host to the International Balloon Fiesta, the world\'s largest gathering of hot-air balloons in the world!'
    },
    {
       'key':36,
@@ -241,7 +237,7 @@ const data = [
       'roundabout':0.0,
       'score':0.01127,
       'factName':'Fun Fact',
-      'fact':" This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine's capital city from 1820 to 1832. "
+      'fact':'This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine\'s capital city from 1820 to 1832.'
    },
    {
       'key':25,
@@ -261,8 +257,7 @@ const data = [
       'roundabout':0.00138217,
       'score':0.01127,
       'factName':'Fun Fact',
-      'fact':" This city is comprised of more than 240 neighborhoods which trace their roots as independent cities or sites of major events."
-
+      'fact':'This city is comprised of more than 240 neighborhoods which trace their roots as independent cities or sites of major events.'
    },
    {
       'key':13,
@@ -282,7 +277,7 @@ const data = [
       'roundabout':0.0013368979999999998,
       'score':0.011359999999999999,
       'factName':'Fun Fact',
-      'fact': 'This city means "from the monks" or "of the monks" based on the original name give by French colonists… or for the Algonquian name for "loon" (Moingona). '
+      'fact':'This city means "from the monks" or "of the monks" based on the original name given by French colonists, or for the Algonquian name for "loon" (Moingona).'
    },
    {
       'key':29,
@@ -302,7 +297,7 @@ const data = [
       'roundabout':0.0,
       'score':0.01153,
       'factName':'Fun Fact',
-      'fact':' 1 in 5 North Dakotans call Fargo home. Fargo was renamed for William Fargo of Wells Fargo fame form the original name of Centralia. '
+      'fact':'1 in 5 North Dakotans call Fargo home. Fargo was renamed for William Fargo of Wells Fargo from the original name of Centralia.'
    },
    {
       'key':39,
@@ -322,7 +317,7 @@ const data = [
       'roundabout':0.0,
       'score':0.01225,
       'factName':'Fun Geography Fact',
-      'fact':' the Columbia fall line, separates the Piedmont region and the Altantic Coastal Plain. Rivers drop as falls or rapids across this line. '
+      'fact':'The Columbia fall line separates the Piedmont region and the Atlantic Coastal Plain. Rivers drop as falls or rapids across this line.'
    },
    {
       'key':5,
@@ -342,7 +337,7 @@ const data = [
       'roundabout':0.005,
       'score':0.01258,
       'factName':'Fun Cultural Fact',
-      'fact':" This city's music scene has produced or nurtured the carreers of Ray Charles, Quincy Jones, Ernestine Anderson, Jimi Hendix, Nirvana and Soundgarden. "
+      'fact':'This city\'s music scene has produced or nurtured the careers of Ray Charles, Quincy Jones, Ernestine Anderson, Jimi Hendrix, Nirvana and Soundgarden.'
    },
    {
       'key':30,
@@ -362,7 +357,7 @@ const data = [
       'roundabout':0.008308895,
       'score':0.01287,
       'factName':'Fun Demographic Fact',
-      'fact':' This city has several ethnic enclaves including Little Italy, Little Bohemia, Little Mexico and Greek Town. '
+      'fact':'This city has several ethnic enclaves including Little Italy, Little Bohemia, Little Mexico and Greek Town.'
    },
    {
       'key':41,
@@ -382,7 +377,7 @@ const data = [
       'roundabout':0.003475239,
       'score':0.013040000000000001,
       'factName':'Fun Fact',
-      'fact':' This city is a major hub in the transportation and shipping industry with four interstate highways, river barges and the worlds second busiest cargo airport.'
+      'fact':'This city is a major hub in the transportation and shipping industry with four interstate highways, river barges and the world’s second busiest cargo airport.'
    },
    {
       'key':35,
@@ -402,7 +397,7 @@ const data = [
       'roundabout':0.002951594,
       'score':0.013340000000000001,
       'factName':'Fun Weather Fact',
-      'fact':' This city  lies within "Tornado Alley" and has been struck by thirteen strong tornadoes - eleven rated F4 and 2 rated F5 on the Fujita scale. '
+      'fact':'This city lies within "Tornado Alley" and has been struck by thirteen strong tornadoes - eleven rated F4 and 2 rated F5 on the Fujita scale.'
    },
    {
       'key':16,
@@ -422,7 +417,7 @@ const data = [
       'roundabout':0.029744449,
       'score':0.01335,
       'factName':'Fun History Fact',
-      'fact':' This city is a "planned city" that was laid out by Alexander Ralston who had previously worked on the plan for Washington D.C. '
+      'fact':'This city is a "planned city" that was laid out by Alexander Ralston who had previously worked on the plan for Washington D.C.'
    },
    {
       'key':40,
@@ -442,7 +437,7 @@ const data = [
       'roundabout':0.0,
       'score':0.0134,
       'factName':'Fun History Fact',
-      'fact':' Drawn to the cascades of the Big Sioux River, the Ho-Chunk, Ioway, Otoe, Missouri, Omaha, Quapaw, Kansa, Osage, Arikira, Dakota and Cheyenne all inhabited the area previous to european settlement. '
+      'fact':'Drawn to the cascades of the Big Sioux River, the Ho-Chunk, Ioway, Otoe, Missouri, Omaha, Quapaw, Kansa, Osage, Arikira, Dakota and Cheyenne all inhabited the area previous to european settlement.'
    },
    {
       'key':12,
@@ -462,7 +457,7 @@ const data = [
       'roundabout':0.030884808,
       'score':0.013680000000000001,
       'factName':'Fun History Fact',
-      'fact':' This city was decimated during the Civil War and therefore lacks the architectural heritage one would expect for a city of its age. '
+      'fact':'This city was decimated during the Civil War and therefore lacks the architectural heritage one would expect for a city of its age.'
    },
    {
       'key':44,
@@ -482,7 +477,7 @@ const data = [
       'roundabout':0.0,
       'score':0.01377,
       'factName':'Fun Geography Fact',
-      'fact':' This city is listed by the Guiness Book of Records as having the longest pleasure beach in the world. '
+      'fact':'This city is listed by the Guinness Book of Records as having the longest pleasure beach in the world.'
    },
    {
       'key':43,
@@ -502,7 +497,7 @@ const data = [
       'roundabout':0.007662835,
       'score':0.01385,
       'factName':'Fun Geography Fact',
-      'fact':' the Salt Lake Valley floor is the ancient lakebed of Lake Bonneville which existed at the end of the last Ice Age. '
+      'fact':'The Salt Lake Valley floor is the ancient lakebed of Lake Bonneville which existed at the end of the last Ice Age.'
    },
    {
       'key':31,
@@ -522,7 +517,7 @@ const data = [
       'roundabout':0.11492891,
       'score':0.014230000000000001,
       'factName':'Fun History Fact',
-      'fact':' This city was developed as a great industrial center and was at one time host to the largest cotton mill in the world. '
+      'fact':'This city was developed as a great industrial center and was at one time host to the largest cotton mill in the world.'
    },
    {
       'key':11,
@@ -542,7 +537,7 @@ const data = [
       'roundabout':0.004069767,
       'score':0.01462,
       'factName':'Fun Fact',
-      'fact':' This city is one of the most visited tourist destinations. Major attractions include Walt Disney World and Universal Studios Florida. '
+      'fact':'This city is one of the most visited tourist destinations. Major attractions include Walt Disney World and Universal Studios Florida.'
    },
    {
       'key':45,
@@ -562,7 +557,7 @@ const data = [
       'roundabout':0.0028985509999999996,
       'score':0.014669999999999999,
       'factName':'Fun Geography Fact',
-      'fact':' This city is situated on the eastern shore of Lake Champlain which is home to Champ, a well known lake monster.  '
+      'fact':'This city is situated on the eastern shore of Lake Champlain which is home to Champ, a well-known lake monster.'
    },
    {
       'key':28,
@@ -582,7 +577,7 @@ const data = [
       'roundabout':0.002791347,
       'score':0.01489,
       'factName':'Fun History Fact',
-      'fact':' This city was named in honor of German princess Charlotte of Mecklenburg-Strelitz and enjoys the nickname "The Hornet\'s Nest". '
+      'fact':'This city was named in honor of German princess Charlotte of Mecklenburg-Strelitz and enjoys the nickname "The Hornet\'s Nest".'
    },
    {
       'key':51,
@@ -602,7 +597,7 @@ const data = [
       'roundabout':0.0,
       'score':0.015040000000000001,
       'factName':'Fun Geography Fact',
-      'fact':' This city, located in the southeastern corner of Wyoming just 9 miles from the Colorado border, is the least centrally located state capitals.   '
+      'fact':'This city, located in the southeastern corner of Wyoming just 9 miles from the Colorado border, is the least centrally located state capital.'
    },
    {
       'key':17,
@@ -622,7 +617,7 @@ const data = [
       'roundabout':0.0,
       'score':0.0151,
       'factName':'Fun Fact',
-      'fact':' This city is a major center for the aviation industry, referred to the "Air Capital of the World" with several major aircraft manufacturors and aerospace companies located there. '
+      'fact':'This city is a major center for the aviation industry, referred to the "Air Capital of the World" with several major aircraft manufacturers and aerospace companies located there.'
    },
    {
       'key':26,
@@ -642,7 +637,7 @@ const data = [
       'roundabout':0.0015360979999999998,
       'score':0.01546,
       'factName':'Fun Geography Fact',
-      'fact':' This city sits atop an extinct volcano which is buried almost 3,000 feet underground. '
+      'fact':'This city sits atop an extinct volcano which is buried almost 3,000 feet underground.'
    },
    {
       'key':24,
@@ -662,7 +657,7 @@ const data = [
       'roundabout':0.0017641129999999999,
       'score':0.01549,
       'factName':'Fun Fact',
-      'fact':' This city has a twin, Saint Paul, and straddles both banks of the Mississippi. It also has 13 lakes within the city limits. '
+      'fact':'This city has a twin, Saint Paul, and straddles both banks of the Mississippi. It also has 13 lakes within the city limits.'
    },
    {
       'key':37,
@@ -682,7 +677,7 @@ const data = [
       'roundabout':0.005684755,
       'score':0.01583,
       'factName':'Fun History Fact',
-      'fact':' This city is a city of firsts - first public library, hospital, medical school, national capital, stock exchange, zoo and business school. '
+      'fact':'This city is a city of firsts - first public library, hospital, medical school, national capital, stock exchange, zoo and business school.'
    },
    {
       'key':22,
@@ -702,7 +697,7 @@ const data = [
       'roundabout':0.001748252,
       'score':0.01697,
       'factName':'Fun Fact',
-      'fact':" This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine's capital city from 1820 to 1832. "
+      'fact':'This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine\'s capital city from 1820 to 1832.'
    },
    {
       'key':38,
@@ -722,7 +717,7 @@ const data = [
       'roundabout':0.001351351,
       'score':0.017269999999999997,
       'factName':'Fun Fact',
-      'fact':" "
+      'fact':' '
    },
    {
       'key':47,
@@ -742,7 +737,7 @@ const data = [
       'roundabout':0.0,
       'score':0.01754,
       'factName':'Fun Fact',
-      'fact':' Adjacent to this city, Kanawha Salines, was once the top salt producer in the world. Mea Cuppa is the best coffee in town. '
+      'fact':'Adjacent to this city, Kanawha Salines, was once the top salt producer in the world. Mea Cuppa is the best coffee in town.'
    },
    {
       'key':7,
@@ -762,8 +757,7 @@ const data = [
       'roundabout':0.004145937,
       'score':0.018009999999999998,
       'factName':'Fun Fact',
-      'fact':' Human habitation of this city dates to 3,000 BC and was an important center for the Spanish and Mexican empires. '
-
+      'fact':'Human habitation of this city dates to 3,000 BC. San Francisco was an important center for the Spanish and Mexican empires.'
    },
    {
       'key':1,
@@ -783,7 +777,7 @@ const data = [
       'roundabout':0.0034602079999999998,
       'score':0.018359999999999998,
       'factName':'Fun Fact',
-      'fact':' This city is home to the American Taekwondo Association World Headquarters as well as several other Taekwondo organizations. '
+      'fact':'This city is home to the American Taekwondo Association World Headquarters as well as several other Taekwondo organizations.'
    },
    {
       'key':10,
@@ -803,7 +797,7 @@ const data = [
       'roundabout':0.004592423,
       'score':0.01867,
       'factName':'Fun Fact',
-      'fact':" Owing to it's business-friendly legal climate, this city is a center for the credit card industry and  corporate domicile for more than 50% of US publicly-traded companies."
+      'fact':'Owing to its business-friendly legal climate, this city is a center for the credit card industry and corporate domicile for more than 50% of US publicly-traded companies.'
    },
    {
       'key':15,
@@ -823,7 +817,7 @@ const data = [
       'roundabout':0.029569892,
       'score':0.01906,
       'factName':'Fun Fact',
-      'fact':' This city is the second most visited city in the US with 55 million domestic and international visitors in 2017. Second only to NYC. '
+      'fact':'This city is the second most visited city in the US with 55 million domestic and international visitors in 2017, second only to NYC.'
    },
    {
       'key':21,
@@ -843,7 +837,7 @@ const data = [
       'roundabout':0.0,
       'score':0.02029,
       'factName':'Fun Fact',
-      'fact':' This city has been dubbed a "city of neighborhoods" with hundreds of identified districts. It also leads the nation in public statues and monuments per capita. '
+      'fact':'This city has been dubbed "city of neighborhoods" with hundreds of identified districts. It also leads the nation in public statues and monuments per capita.'
    },
    {
       'key':19,
@@ -863,7 +857,7 @@ const data = [
       'roundabout':0.00257732,
       'score':0.0218,
       'factName':'Fun Cultural Fact',
-      'fact':' This city is world-renowned for the Mardi Gras festival which involves 2 weeks of celebrations culminating with parades and masquerade balls organized by krewes.'
+      'fact':'This city is world-renowned for the Mardi Gras festival which involves 2 weeks of celebrations culminating with parades and masquerade balls organized by krewes.'
    },
    {
       'key':9,
@@ -883,7 +877,7 @@ const data = [
       'roundabout':0.01007326,
       'score':0.02295,
       'factName':'Fun Fact',
-      'fact':' This city is 19% parks by area (9,122 acres) whicm makes it the second-highest percentage of parks among high-density US cities. '
+      'fact':'This city is 19% parks by area (9,122 acres), which makes it the city with the second-highest percentage of parks among high-density US cities.'
    },
    {
       'key':8,
@@ -903,7 +897,7 @@ const data = [
       'roundabout':0.00074239,
       'score':0.0251,
       'factName':'Fun Fact',
-      'fact':' This city is nickmamed "Insuranc Capital of the World" as it hosts many insurance company headquarters and is the regions major industry. '
+      'fact':'This city is nicknamed "Insurance Capital of the World" as it hosts many insurance company headquarters and insurance is the region’s major industry.'
    },
    {
       'key':18,
@@ -923,7 +917,7 @@ const data = [
       'roundabout':0.0,
       'score':0.02584,
       'factName':'Fun Fact',
-      'fact':' This city is the birthplace of Cassius Clay, known as Muhammad Ali at the peak of his fame. The city is also the home of KFC.  '
+      'fact':'This city is the birthplace of Cassius Clay, known as Muhammad Ali at the peak of his fame. The city is also the home of KFC.'
    },
    {
       'key':50,
@@ -943,7 +937,7 @@ const data = [
       'roundabout':0.004711425,
       'score':0.026660000000000003,
       'factName':'Fun Fact',
-      'fact':' This city consistently ranks high on the world livability rankings and is the second most-populous city in Oceania (after Auckland).'
+      'fact':'This city consistently ranks high on the world livability rankings.'
    },
    {
       'key':42,
@@ -963,7 +957,7 @@ const data = [
       'roundabout':0.002447232,
       'score':0.02835,
       'factName':'Fun Fact',
-      'fact':' This city is known for inventing the frozen margarita. Almost 80% of Dallas commuters drive to work alone. '
+      'fact':'This city is known for inventing the frozen margarita. Almost 80% of Dallas commuters drive to work alone.'
    },
    {
       'key':20,
@@ -983,7 +977,7 @@ const data = [
       'roundabout':0.004495825,
       'score':0.03615,
       'factName':'Fun Geography Fact',
-      'fact':' This city is the third most densely populated large US city. The city is home to some of the most renowned and highly ranked universities in the world. '
+      'fact':'This city is the third most densely populated large US city. The city is home to some of the most renowned and highly ranked universities in the world.'
    },
    {
       'key':4,
@@ -1003,7 +997,7 @@ const data = [
       'roundabout':0.0,
       'score':0.04261,
       'factName':'Fun Fact',
-      'fact':' This city has been described as the cultural, financial and media capital of the world. As host to UN headquarters, It is also a center for international diplomacy. '
+      'fact':'This city has been described as the cultural, financial and media capital of the world. As host to UN headquarters, it is also a center for international diplomacy.'
    },
    {
       'key':32,
@@ -1023,9 +1017,8 @@ const data = [
       'roundabout':0.0,
       'score':0.047580000000000004,
       'factName':'Fun Demographic Fact',
-      'fact':" This city is the second-most ractially diverse city in the US. The city's Branck Brook Park is home to the largest collection of cherry blossom trees (5,000)/"
+      'fact':'This city is the second-most racially diverse city in the US. The city\'s Branck Brook Park is home to the largest collection of cherry blossom trees (5,000).'
    }
 ]
-
 
 export default data;
