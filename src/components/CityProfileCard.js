@@ -148,12 +148,10 @@ class CityProfileCard extends Component {
                 </Grid>
                 <Grid item md={12} sm={12} xs={12} className="gridItem">
                   <Card className={classes.root} style={{width: '100%'}}>
-                    <div style={{width: '100%'}}>
                       <CardContent style={{ padding: 15, width: '100%', textAlign: 'center' }}>
                         <h3>{cityData.factName}</h3>
                         <p>{cityData.fact}</p>
                       </CardContent>
-                    </div>
                   </Card>
                 </Grid>
               </Grid>
