@@ -15,7 +15,7 @@ const PieChartLegend = props => {
 
   return (
     <div className='my-legend'>
-      <div className='legend-title'>The Title or Explanation of your Map</div>
+      <div className='legend-title'>Map Errors by Type</div>
       <div className='legend-scale'>
         <ul className='legend-labels'>
           <li><span style={{ background: '#47ACB1' }}/><p>Road Connections ({roadConnectionString}%)</p></li>
