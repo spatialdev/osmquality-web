@@ -114,10 +114,6 @@ class Header extends Component {
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/rankings')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back</Button> : null}
-            {location.pathname !== '/rankings' ?
-              <Button className={classes.buttonRight}>Share
-                <object data={share} className={classes.shareIcon}>Share Icon</object>
-              </Button> : null}
           </Toolbar>
         </AppBar>
       </div>
