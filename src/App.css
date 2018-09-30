@@ -117,14 +117,11 @@ Header
     font-size: 14px;
 }
 
-
-
 .headerDiv {
     background-color: #7AC143;
     position: relative;
     height: 60px;
 }
-
 
 .header {
     text-align: center;
@@ -149,7 +146,6 @@ City list view
 .ranking {
     font-family: 'Dense-Regular', serif;
 }
-
 
 .cityRankingCard {
     cursor: pointer;
@@ -192,9 +188,9 @@ City list view
 }
 
 @media (max-width: 600px) {
-.cardText h4 {
-    font-size: 18px;
-}
+    .cardText h4 {
+        font-size: 18px;
+    }
 
 }
 
@@ -313,7 +309,7 @@ canvas {
 
 .gridItem {
     display: flex;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 @media (min-width: 960px) {
@@ -476,6 +472,14 @@ Horizontal Legend
     margin-bottom: 8px;
 }
 
+.horizontalLegend-scale p {
+    float: left;
+    margin: 0;
+    padding-right: 10px;
+    font-size: 8px;
+    color: #000000;
+}
+
 .horizontalLegend .horizontalLegend-scale ul {
     margin: 0;
     padding: 0;
@@ -580,7 +584,7 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position:absolute;
+    position: absolute;
 }
 
 .footerP {
