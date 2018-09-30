@@ -11,8 +11,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import Menu from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
-import share from '../images/share.svg';
-
 import '../App.css';
 
 
