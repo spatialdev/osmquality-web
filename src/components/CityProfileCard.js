@@ -130,7 +130,7 @@ class CityProfileCard extends Component {
 
     return (
       <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
-        <div>
+        <div className="cityProfileCard">
           <Slide direction={direction} in={checked} mountOnEnter unmountOnExit>
             <Paper className={classes.paper}>
               <div className="headerContainer">

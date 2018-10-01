@@ -2,7 +2,7 @@ import React from 'react';
 
 const Methodology = () => {
   return (
-    <div>Methodology goes here</div>
+    <div className="methodology">Methodology goes here</div>
   );
 };
 
