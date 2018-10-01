@@ -76,7 +76,7 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className="headerDiv">
-            <h1 className="header" onClick={() => history.push('/rankings')}>
+            <h1 className="header" onClick={() => history.push('/')}>
               OSM Quality Ranking
             </h1>
             <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><Menu/></Button>
@@ -111,7 +111,7 @@ class Header extends Component {
             {location.pathname !== '/rankings' ?
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/rankings')}><KeyboardArrowLeft
-                className={classes.backIcon}/>Back</Button> : null}
+                className={classes.backIcon}/>Back to list</Button> : null}
           </Toolbar>
         </AppBar>
       </div>

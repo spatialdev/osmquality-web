@@ -50,6 +50,7 @@ class CityProfileCard extends Component {
     prevCityData: null,
     nextCityData: null,
     checked: false,
+    direction: null
   };
 
   componentDidMount() {
@@ -60,6 +61,15 @@ class CityProfileCard extends Component {
   }
 
   initializeSlide = () => {
+    const { direction } = this.state;
+
+    // default direction when arriving from list
+    if(direction === null) {
+      this.setState({
+        direction: 'right'
+      });
+    }
+
     this.setState({ checked: true });
   };
 
@@ -91,6 +101,9 @@ class CityProfileCard extends Component {
     const nextCityState = nextCityData.cityName + nextCityData.state;
     this.props.history.push(`/city/${nextCityState}`);
     this.getCityData(nextCityState);
+    this.setState({
+      direction: 'left'
+    });
   }
 
   handleNavBackward = () => {
@@ -98,10 +111,13 @@ class CityProfileCard extends Component {
     const prevCityState = prevCityData.cityName + prevCityData.state;
     this.props.history.push(`/city/${prevCityState}`);
     this.getCityData(prevCityState);
+    this.setState({
+      direction: 'right'
+    });
   }
 
   render() {
-    const { cityData, prevCityData, nextCityData, checked } = this.state;
+    const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes } = this.props;
 
 
@@ -115,7 +131,7 @@ class CityProfileCard extends Component {
     return (
       <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
         <div>
-          <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
+          <Slide direction={direction} in={checked} mountOnEnter unmountOnExit>
             <Paper className={classes.paper}>
               <div className="headerContainer">
                 {prevCityData ? 
