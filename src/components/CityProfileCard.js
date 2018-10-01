@@ -64,7 +64,7 @@ class CityProfileCard extends Component {
     const { direction } = this.state;
 
     // default direction when arriving from list
-    if(direction === null) {
+    if(!direction) {
       this.setState({
         direction: 'right'
       });
@@ -190,4 +190,3 @@ CityProfileCard.propTypes = {
 };
 
 export default withStyles(styles)(CityProfileCard);
-
