@@ -30,7 +30,7 @@ const Methodology = props => {
         <h4>Quality Scores</h4>
         <p>
           The Critigen Map Quality Score is based on a number of primary checks using the
-          <a href="https://github.com/osmlab/atlas-checks" target="_blank"> Atlas-Checks</a> suite of tools published on
+          <a href="https://github.com/osmlab/atlas-checks" target="_blank" rel="noopener noreferrer"> Atlas-Checks</a> suite of tools published on
           OSM Lab.
           Checks used to establish rankings include: road connections, road tags and roundabout integrity.
           Specific checks used to develop the ranking include the following:</p>
@@ -99,13 +99,13 @@ const Methodology = props => {
         <p>These checks can be downloaded for use from the OSMLab
           <a
             href="https://github.com/osmlab/atlas-checks/tree/dev/src/main/java/org/openstreetmap/atlas/checks/validation"
-            target="_blank">Atlas-Checks</a> repository.</p>
+            target="_blank" rel="noopener noreferrer">Atlas-Checks</a> repository.</p>
 
         <h4>City Selection</h4>
         <p>Cities were chosen based on whether they were the capital city of a state or whether they were the most
           populous city within a state.
           <a href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population"
-             target="_blank">Wikipedia</a> was a used to identify the most populous city in each state.</p>
+             target="_blank" rel="noopener noreferrer">Wikipedia</a> was a used to identify the most populous city in each state.</p>
 
         <h4>Grid Generation</h4>
         <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error
