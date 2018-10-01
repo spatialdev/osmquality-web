@@ -53,47 +53,65 @@ Splash
 .splashPage {
     background-color: #7ac143;
     height: 100vh;
-    display: table;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
 }
 
 .splashContent {
-    text-align: center;
-    display: table-cell;
-    vertical-align: bottom;
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .splashContent .osmTeamLogo {
-    height: 300px;
-    width: 300px;
+    height: 240px;
+    width: 240px;
 }
 
 @media (min-width: 960px) {
-    .splashContent {
-        height: 400px;
-        width: 400px;
+    .splashContent .osmTeamLogo {
+        padding-top: 80px;
+        width: 40vw;
+        height: 40vw;
+        max-height: 400px;
+        max-width: 400px;
     }
-
 }
 
-.splashContent button {
-    border: 2px solid #fff;
+.flexItem button {
+    border: 3px solid #fff;
     color: #ffffff;
+    border-radius: 8px;
     text-transform: none;
-    font-size: 14px;
     margin-bottom: 50px;
+    padding: 20px 30px;
+}
+
+.flexItem button span {
+    font-size: 20px;
 }
 
 .splashContent h4 {
     color: #ffffff;
+    font-weight: normal;
 }
 
-.splashContent img {
+.splashContent img, .critigenLogo {
     height: 100px;
     width: 100px;
     display: block;
     margin: 0 auto;
+}
 
+.critigenLogo {
+    flex: 1;
+    align-self: end;
 }
 
 /*
@@ -209,6 +227,10 @@ City Profile Card
     color: #FFFFFF;
 }
 
+.headerContainer img {
+    object-fit: cover;
+}
+
 @media (min-width: 480px) {
     .headerContainer {
         height: 300px;
@@ -218,34 +240,6 @@ City Profile Card
 @media (min-width: 600px) {
     .headerContainer {
         height: 400px;
-    }
-}
-
-@media (min-width: 960px) {
-    .headerContainer img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        height: 70% !important;
-
-    }
-
-    .headerContainer {
-        position: static;
-        height: 150px;
-    }
-
-    .alignIconHeader {
-        float: right;
-        text-align: right;
-        padding-right: 40px;
-        padding-top: 100px;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        position: static !important;
-        -webkit-transform: none !important;
     }
 }
 
@@ -261,6 +255,32 @@ City Profile Card
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
+}
+
+@media (min-width: 960px) {
+    .headerContainer img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 70% !important;
+        object-fit: cover;
+    }
+
+    .headerContainer {
+        position: static;
+        height: 150px;
+    }
+
+    .alignIconHeader {
+        width: 100%;
+        text-align: center;
+        padding-top: 23px;
+        top: auto !important;
+        transform: none !important;
+        position: static !important;
+        -webkit-transform: none !important;
+    }
 }
 
 .navArrowLeft {
@@ -313,10 +333,23 @@ canvas {
 }
 
 @media (min-width: 960px) {
+    .cityHeader {
+        font-size: 45px;
+    }
     .cardGrid {
         margin: 0 auto;
-        padding: 5px 30px 0 30px;
+        padding: 5px 8vw 0 8vw;
 
+    }
+    .navArrowLeft {
+        top: 90px;
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .navArrowRight {
+        top: 90px;
+        width: 60px !important;
+        height: 60px !important;
     }
 
 }
@@ -607,4 +640,9 @@ Footer
 .socialShareIcon {
     height: 40px;
     width: 40px;
+}
+
+/* add bottom padding to all views except splash for the site footer */
+.cityRankingList, .cityProfileCard, .aboutUs, .methodology {
+    padding-bottom: 100px;
 }

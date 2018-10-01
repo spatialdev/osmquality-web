@@ -17,7 +17,8 @@ const styles = theme => ({
     position: 'relative',
     margin: 0,
     backgroundColor: '#F4F4F4',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderRadius: '0px'
   },
 });
 
@@ -41,9 +42,9 @@ class CityRankingTable extends Component {
       <div className="cityRankingList">
         <Slide direction="left" in={this.state.checked} mountOnEnter unmountOnExit>
           <Paper className={classes.paper}>
-            <div style={{ padding: '5px 0' }}>
+            <div style={{ padding: '5px 15px' }}>
               {data.sort((a, b) => a.ranking - b.ranking).map(city => {
-                return (<Card className="cityRankingCard" key={city.ranking}
+                return (<Card className="cityRankingCard" key={city.ranking} direction="1"
                               onClick={() => this.props.history.push(`/city/${city.cityName}${city.state}`)}>
                   <CardContent>
                     <div className="cardBody">
