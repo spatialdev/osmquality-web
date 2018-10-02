@@ -36,17 +36,21 @@ const Methodology = props => {
         <Divider/>
         <h4>Quality Scores</h4>
         <p>
-          The Critigen Map Quality Score is based on a number of primary checks using the
-          <a href="https://github.com/osmlab/atlas-checks" target="_blank" rel="noopener noreferrer"> Atlas-Checks</a> suite of tools published on
-          OSM Lab.
-          Checks used to establish rankings include: road connections, road tags and roundabout integrity.
-          Specific checks used to develop the ranking include the following:</p>
+          The Critigen Map Quality Score is based on a number of primary OSM
+          Integrity checks using the Atlas Checks framework published on OSM
+          Lab. Built on top of Atlas, a scalable OSM graph network, Atlas Checks
+          allows your to write quality assurance algorithms for OSM data.
+        </p>
+        <p>
+          Specific integrity checks used to develop the ranking include the
+          following:
+        </p>
 
         <Grid container className="cardGrid">
           <Grid item md={3} sm={6} xs={12} className="gridItem">
             <Card className={classes.root}>
               <CardContent style={{ padding: 0 }}>
-                <h5>Road Connection Checks</h5>
+                <h5>Road Connections</h5>
                 <Divider/>
                 <List>
                   <ListItem>BuildingRoadIntersectionCheck</ListItem>
@@ -62,7 +66,7 @@ const Methodology = props => {
           <Grid item md={3} sm={6} xs={12} className="gridItem">
             <Card className={classes.root}>
               <CardContent style={{ padding: 0 }}>
-                <h5>Road Relation Checks</h5>
+                <h5>Road Relations</h5>
                 <Divider/>
                 <List>
                   <ListItem>InvalidTurnRestrictionCheck</ListItem>
@@ -74,7 +78,7 @@ const Methodology = props => {
           <Grid item md={3} sm={6} xs={12} className="gridItem">
             <Card className={classes.root}>
               <CardContent style={{ padding: 0 }}>
-                <h5>Road Tag Checks</h5>
+                <h5>Road Tags</h5>
                 <Divider/>
                 <List>
                   <ListItem>InvalidAccessTagCheck</ListItem>
@@ -90,10 +94,9 @@ const Methodology = props => {
           <Grid item md={3} sm={6} xs={12} className="gridItem">
             <Card className={classes.root}>
               <CardContent style={{ padding: 0 }}>
-                <h5>Roundabout Checks</h5>
+                <h5>Roundabouts</h5>
                 <Divider/>
                 <List>
-                  <ListItem>InvalidMiniRoundaboutCheck</ListItem>
                   <ListItem>MalformedRoundaboutCheck</ListItem>
                   <ListItem>RoundaboutClosedLoopCheck</ListItem>
                   <ListItem>RoundaboutValenceCheck</ListItem>
@@ -103,9 +106,9 @@ const Methodology = props => {
           </Grid>
         </Grid>
 
-        <p>These checks can be downloaded for use from the OSMLab <a
-            href="https://github.com/osmlab/atlas-checks/tree/dev/src/main/java/org/openstreetmap/atlas/checks/validation"
-            target="_blank" rel="noopener noreferrer">Atlas-Checks</a> repository.</p>
+        <p>These checks can be downloaded for use at: <a
+            href="https://github.com/osmlab/atlas-checks"
+            target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a></p>
 
         <h4>City Selection</h4>
         <p>Cities were chosen based on whether they were the capital city of a state or whether they were the most
@@ -115,14 +118,14 @@ const Methodology = props => {
         <h4>Grid Generation</h4>
         <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error
           density.
-          The tool automates a process to find the optimal heat-map grid size that represents an area containing a
+          The tool automates a process to find the optimal heat-map grid size which is an area containing a
           critical mass of errors that represents a reasonable task for an editor. The resulting grid is thematically
           styled as a choropleth heat map and used by editors to prioritize their work. For each grid cell, the
           following statistics are summarized:</p>
         <Grid item xs={12} className="gridItem">
           <Card className={classes.root}>
             <CardContent style={{ padding: 0 }}>
-              <h5>Statistics</h5>
+              <h5>Summarized Statistics</h5>
               <Divider/>
               <List>
                 <ListItem>grid size in km<sup>2</sup></ListItem>
@@ -134,6 +137,28 @@ const Methodology = props => {
             </CardContent>
           </Card>
         </Grid>
+
+        <p>Afterwards, the grid-based statistics are used to generate the following statistics in a given city:</p>
+
+        <Grid item xs={12} className="gridItem">
+          <Card className={classes.root}>
+            <CardContent style={{ padding: 0 }}>
+              <h5>Generated Statistics</h5>
+              <Divider/>
+              <List>
+                <ListItem>Total OSM Features</ListItem>
+                <ListItem>Total Atlas Checks Flags</ListItem>
+                <ListItem>Total City Area</ListItem>
+                <ListItem>Map Errors by Atlas Check Type</ListItem>
+              </List>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <h4>City Ranking</h4>
+        <p>Cities are ranked based on the number of atlas checks flags per OSM road feature, 
+          which is calculated by dividing total Atlas Checks Flags by total OSM features. The fewer flags per feature a city 
+          has, the better its road network quality is and the higher it is ranked</p>
       </CardContent>
     </Card>
   );
