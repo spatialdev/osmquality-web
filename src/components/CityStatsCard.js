@@ -9,6 +9,8 @@ import '../App.css';
 import Chart from '../components/PieChart';
 import PieChartLegend from '../components/PieChartLegend';
 
+import numberWithCommas from '../helpers/helpers';
+
 import flag_icon from '../images/flag_icon.svg';
 import gear_icon from '../images/gear_icon.svg';
 import shape_icon from '../images/shape_icon.svg';
@@ -35,7 +37,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={gear_icon} className="statsIcon">Gear Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{data.features}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.features)}</h2>
                     <p>OSM Features</p>
                   </div>
                 </div>
@@ -49,7 +51,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={flag_icon} className="statsIcon">Flag Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{data.flags}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.flags)}</h2>
                     <p>Atlas Checks Flags</p>
                   </div>
                 </div>
@@ -63,7 +65,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={shape_icon} className="statsIcon">Shape Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{data.totalArea}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.totalArea)}</h2>
                     <p>Total City Area (km<sup>2</sup>)</p>
                   </div>
                 </div>
@@ -77,7 +79,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={grid_icon} className="statsIcon">Grid Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{data.gridSize}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.gridSize)}</h2>
                     <p>Grid Cell Size (km<sup>2</sup>)</p>
                   </div>
                 </div>

@@ -26,7 +26,7 @@ const styles = () => ({
     margin: '7px 10px',
     display: 'inline-flex',
     alignItems: 'center',
-    width: '100%'
+    width: 'calc(100% - 20px)'
   },
   paper: {
     zIndex: 1,
