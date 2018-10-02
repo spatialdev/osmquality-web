@@ -28,22 +28,6 @@ const CityStatsCard = props => {
           Quick Stats
         </h3>
         <div className="gridRoot">
-          <GridList cellHeight={160} className="gridList" cols={1}>
-          <GridListTile key={data.features} cols={1} style={{ height: '100px' }} classes={{
-              tile: 'gridTileTile',
-              root: 'gridTileRoot'
-            }}>
-              <div className="statDiv statDivFull">
-                <div>
-                  <object data={gear_icon} className="statsIcon">Gear Icon</object>
-                  <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{(data.score * 100).toFixed(2)}</h2>
-                    <p>Quality Score</p>
-                  </div>
-                </div>
-              </div>
-            </GridListTile>
-          </GridList>
           <GridList cellHeight={160} className="gridList" cols={2}>
             <GridListTile key={data.features} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',

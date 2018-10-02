@@ -63,6 +63,7 @@ class CityRankingTable extends Component {
                            alt={`${city.cityName} Header`}/>
                       <div className="cardText">
                         <h4>{city.cityName + ', ' + city.state}</h4>
+                        <div className="score">Score: {(city.score * 100).toFixed(2)}</div>
                       </div>
                     </div>
                     <h1 className="ranking">{city.ranking < 10 ? '0' + city.ranking.toString() : city.ranking}</h1>
