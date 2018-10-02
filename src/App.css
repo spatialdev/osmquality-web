@@ -169,7 +169,7 @@ City list view
     cursor: pointer;
     position: relative;
     padding: 10px;
-    margin: 20px auto;
+    margin: 16px auto;
     max-width: 960px;
 
 }
@@ -471,9 +471,9 @@ Pie Chart
 
 .pieChart svg {
     display: inline;
-    height: 60%;
-    width: 60%;
-    margin-right: 20px;
+    height: 50%;
+    width: 50%;
+    margin-right: 15px;
 }
 
 @media (min-width: 960px) {
@@ -509,7 +509,8 @@ Horizontal Legend
     float: left;
     margin: 0;
     padding-right: 10px;
-    font-size: 8px;
+    font-size: 10px;
+    font-weight: 600;
     color: #000000;
 }
 
@@ -558,6 +559,8 @@ Legend
 .my-legend .legend-title {
     text-align: left;
     margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .my-legend .legend-scale ul {
@@ -586,7 +589,7 @@ Legend
 
 .my-legend ul.legend-labels li p {
     display: table-cell;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .my-legend div {
@@ -623,6 +626,7 @@ Footer
 .footerP {
     color: #ffffff;
     margin-bottom: 5px;
+    font-size:13px;
 }
 
 .socialShare {
@@ -638,8 +642,8 @@ Footer
 }
 
 .socialShareIcon {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
 }
 
 /* add bottom padding to all views except splash for the site footer */

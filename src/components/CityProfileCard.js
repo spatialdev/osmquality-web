@@ -23,7 +23,7 @@ import RankingIcon from './RankingIcon';
 
 const styles = () => ({
   root: {
-    margin: '10px',
+    margin: '7px 10px',
     display: 'inline-flex',
     alignItems: 'center',
     width: '100%'
@@ -170,7 +170,7 @@ class CityProfileCard extends Component {
                 </Grid>
                 <Grid item md={12} sm={12} xs={12} className="gridItem">
                   <Card className={classes.root} style={{width: '100%'}}>
-                      <CardContent style={{ padding: 15, width: '100%', textAlign: 'center' }}>
+                      <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
                         <h3>{cityData.factName}</h3>
                         <p>{cityData.fact}</p>
                       </CardContent>
