@@ -35,7 +35,7 @@ const styles = () => ({
     backgroundColor: '#F4F4F4',
     boxShadow: 'none'
   },
-  
+
   center: {
     textAlign: 'center',
     margin: 'auto'
@@ -62,7 +62,7 @@ class CityProfileCard extends Component {
     const { direction } = this.state;
 
     // default direction when arriving from list
-    if(!direction) {
+    if (!direction) {
       this.setState({
         direction: 'right'
       });
@@ -102,7 +102,7 @@ class CityProfileCard extends Component {
     this.setState({
       direction: 'left'
     });
-  }
+  };
 
   handleNavBackward = () => {
     const { prevCityData } = this.state;
@@ -112,7 +112,7 @@ class CityProfileCard extends Component {
     this.setState({
       direction: 'right'
     });
-  }
+  };
 
   render() {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
@@ -166,11 +166,11 @@ class CityProfileCard extends Component {
                   <CityStatsCard data={cityData}/>
                 </Grid>
                 <Grid item md={12} sm={12} xs={12} className="gridItem">
-                  <Card className={classes.root} style={{width: '100%'}}>
-                      <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
-                        <h3>{cityData.factName}</h3>
-                        <p>{cityData.fact}</p>
-                      </CardContent>
+                  <Card className={classes.root} style={{ width: '100%' }}>
+                    <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
+                      <h3>{cityData.factName}</h3>
+                      <p>{cityData.fact}</p>
+                    </CardContent>
                   </Card>
                 </Grid>
               </Grid>

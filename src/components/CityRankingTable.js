@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import data from '../data/data';
 import '../App.css';
+import * as ReactGA from 'react-ga';
 
 const styles = theme => ({
   paper: {
@@ -36,6 +37,16 @@ class CityRankingTable extends Component {
     this.setState({ checked: true });
   };
 
+  handleCityClick = city => {
+    ReactGA.event({
+      category: 'City View',
+      action: `Clicked from Table`,
+      value: `${city.cityName}, ${city.state}`
+    });
+
+    this.props.history.push(`/city/${city.cityName}${city.state}`)
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -45,7 +56,7 @@ class CityRankingTable extends Component {
             <div style={{ padding: '5px 15px' }}>
               {data.sort((a, b) => a.ranking - b.ranking).map(city => {
                 return (<Card className="cityRankingCard" key={city.ranking} direction="1"
-                              onClick={() => this.props.history.push(`/city/${city.cityName}${city.state}`)}>
+                              onClick={() => this.handleCityClick(city) }>
                   <CardContent>
                     <div className="cardBody">
                       <img className="cityTableImage" src={require('../' + city.thumbnail)}

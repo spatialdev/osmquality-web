@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card/Card';
 import CardContent from '@material-ui/core/CardContent/CardContent';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Grid from '@material-ui/core/es/Grid/Grid';
-import Divider from '@material-ui/core/es/Divider/Divider';
-import List from '@material-ui/core/es/List/List';
-import ListItem from '@material-ui/core/es/ListItem/ListItem';
+import Grid from '@material-ui/core/Grid/Grid';
+import Divider from '@material-ui/core/Divider/Divider';
+import List from '@material-ui/core/List/List';
+import ListItem from '@material-ui/core/ListItem/ListItem';
 
 
 const styles = () => ({
