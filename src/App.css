@@ -429,7 +429,7 @@ canvas {
 .statDivFull {
     text-align: center;
     width: 100%;
-    max-width: 159px;
+    max-width: 175px;
 }
 
 @media (max-width: 480px) {

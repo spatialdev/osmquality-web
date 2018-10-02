@@ -37,7 +37,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={gear_icon} className="statsIcon">Gear Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>XX.XX</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{(data.score * 100).toFixed(2)}</h2>
                     <p>Quality Score</p>
                   </div>
                 </div>
