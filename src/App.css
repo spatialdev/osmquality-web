@@ -428,17 +428,17 @@ canvas {
 
 @media (max-width: 480px) {
     .statDiv h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .statDiv p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .statsIcon {
-        height: 20px;
-        width: 20px;
-        margin: 8px;
+        height: 25px;
+        width: 25px;
+        margin-left: 0;
     }
 }
 
