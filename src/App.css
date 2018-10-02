@@ -62,7 +62,7 @@ Splash
 }
 
 .splashContent {
-    flex: 6;
+    flex: 12;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -74,15 +74,6 @@ Splash
     width: 240px;
 }
 
-@media (min-width: 767px) {
-    .splashContent .osmTeamLogo {
-        padding-top: 80px;
-        width: 60vw;
-        height: 60vw;
-        max-height: 500px;
-        max-width: 500px;
-    }
-}
 
 .flexItem button {
     border: 3px solid #fff;
@@ -100,6 +91,28 @@ Splash
 .splashContent h4 {
     color: #ffffff;
     font-weight: normal;
+}
+
+@media (min-width: 767px) {
+    .splashContent .osmTeamLogo {
+        padding-top: 80px;
+        width: 60vw;
+        height: 60vw;
+        max-height: 500px;
+        max-width: 500px;
+    }
+
+    .splashContent h4 {
+        font-size: 19px;
+    }
+
+    .flexItem button {
+        padding: 30px 45px;
+    }
+
+    .flexItem button span {
+        font-size: 24px;
+    }
 }
 
 .splashContent img, .critigenLogo {
@@ -170,7 +183,7 @@ City list view
     position: relative;
     padding: 10px;
     margin: 16px auto;
-    max-width: 960px;
+    max-width: 540px;
 
 }
 
@@ -196,13 +209,14 @@ City list view
 .cardText {
     display: inline-block;
     vertical-align: middle;
-    padding: 10px;
+    padding-left: 15px;
 }
 
 .cardText h4 {
     margin: 0;
     color: #484848;
     font-size: 22px;
+    font-weight: 600;
 }
 
 @media (max-width: 600px) {
