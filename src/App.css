@@ -74,13 +74,13 @@ Splash
     width: 240px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 767px) {
     .splashContent .osmTeamLogo {
         padding-top: 80px;
-        width: 40vw;
-        height: 40vw;
-        max-height: 400px;
-        max-width: 400px;
+        width: 60vw;
+        height: 60vw;
+        max-height: 500px;
+        max-width: 500px;
     }
 }
 
@@ -336,7 +336,7 @@ canvas {
     .cityHeader {
         font-size: 45px;
     }
-    .cardGrid {
+    .cityProfileCard .cardGrid {
         margin: 0 auto;
         padding: 5px 8vw 0 8vw;
 
@@ -645,4 +645,9 @@ Footer
 /* add bottom padding to all views except splash for the site footer */
 .cityRankingList, .cityProfileCard, .aboutUs, .methodology {
     padding-bottom: 100px;
+}
+
+.gridItem h5 {
+    padding-left: 16px;
+    padding-right: 16px;
 }
