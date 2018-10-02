@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import data from '../data/data';
 import '../App.css';
+import * as ReactGA from 'react-ga';
 
 const styles = theme => ({
   paper: {
@@ -17,7 +18,8 @@ const styles = theme => ({
     position: 'relative',
     margin: 0,
     backgroundColor: '#F4F4F4',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderRadius: '0px'
   },
 });
 
@@ -35,16 +37,26 @@ class CityRankingTable extends Component {
     this.setState({ checked: true });
   };
 
+  handleCityClick = city => {
+    ReactGA.event({
+      category: 'City View',
+      action: 'Clicked from Table',
+      label: `${city.cityName}, ${city.state}`
+    });
+
+    this.props.history.push(`/city/${city.cityName}${city.state}`)
+  };
+
   render() {
     const { classes } = this.props;
     return (
       <div className="cityRankingList">
         <Slide direction="left" in={this.state.checked} mountOnEnter unmountOnExit>
           <Paper className={classes.paper}>
-            <div style={{ padding: '5px 0' }}>
+            <div style={{ padding: '5px 15px' }}>
               {data.sort((a, b) => a.ranking - b.ranking).map(city => {
-                return (<Card className="cityRankingCard" key={city.ranking}
-                              onClick={() => this.props.history.push(`/city/${city.cityName}`)}>
+                return (<Card className="cityRankingCard" key={city.ranking} direction="1"
+                              onClick={() => this.handleCityClick(city) }>
                   <CardContent>
                     <div className="cardBody">
                       <img className="cityTableImage" src={require('../' + city.thumbnail)}

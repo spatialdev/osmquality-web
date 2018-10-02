@@ -25,23 +25,27 @@ export default class Footer extends Component {
           <p className="footerP">Share this:</p>
           <List style={this.flexContainer}>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=`} title="Share on Facebook" target="_blank"><img
-                src={icon_fb} className="socialShareIcon"/></a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=`} title="Share on Facebook" target="_blank" rel="noopener noreferrer">
+                <img src={icon_fb} alt="Facebook Share" className="socialShareIcon"/>
+              </a>
             </ListItem>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href="https://twitter.com/home?status=test" title="Share on Twitter" target="_blank"><img
-                src={icon_twitter} className="socialShareIcon"/></a>
+              <a href="https://twitter.com/home?status=test" title="Share on Twitter" target="_blank" rel="noopener noreferrer">
+                <img src={icon_twitter} alt="Twitter Share" className="socialShareIcon"/>
+              </a>
             </ListItem>
             <ListItem style={{ paddingLeft: '0', paddingTop: '0' }}>
               <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" title="Share on LinkedIn"
-                 target="_blank"><img src={icon_linkedIn} className="socialShareIcon"/></a>
+                 target="_blank" rel="noopener noreferrer">
+                <img src={icon_linkedIn} alt="LinkedIn Share" className="socialShareIcon"/>
+              </a>
             </ListItem>
           </List>
         </div>
         <div className="logoDiv">
           <p className="footerP">Brought to you by:</p>
-          <a href="https://www.critigen.com" target="_blank" className="critigenLogo">
-            <object data={logo_critigen} type="image/svg+xml">Critigen Logo</object>
+          <a href="https://www.critigen.com" target="_blank" rel="noopener noreferrer" className="critigenLogo">
+            <img src={logo_critigen} alt="Critigen"/>
           </a>
         </div>
       </div>

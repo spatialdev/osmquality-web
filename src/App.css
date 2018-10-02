@@ -53,47 +53,65 @@ Splash
 .splashPage {
     background-color: #7ac143;
     height: 100vh;
-    display: table;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
 }
 
 .splashContent {
-    text-align: center;
-    display: table-cell;
-    vertical-align: bottom;
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .splashContent .osmTeamLogo {
-    height: 300px;
-    width: 300px;
+    height: 240px;
+    width: 240px;
 }
 
-@media (min-width: 960px) {
-    .splashContent {
-        height: 400px;
-        width: 400px;
+@media (min-width: 767px) {
+    .splashContent .osmTeamLogo {
+        padding-top: 80px;
+        width: 60vw;
+        height: 60vw;
+        max-height: 500px;
+        max-width: 500px;
     }
-
 }
 
-.splashContent button {
-    border: 2px solid #fff;
+.flexItem button {
+    border: 3px solid #fff;
     color: #ffffff;
+    border-radius: 8px;
     text-transform: none;
-    font-size: 14px;
     margin-bottom: 50px;
+    padding: 20px 30px;
+}
+
+.flexItem button span {
+    font-size: 20px;
 }
 
 .splashContent h4 {
     color: #ffffff;
+    font-weight: normal;
 }
 
-.splashContent img {
+.splashContent img, .critigenLogo {
     height: 100px;
     width: 100px;
     display: block;
     margin: 0 auto;
+}
 
+.critigenLogo {
+    flex: 1;
+    align-self: end;
 }
 
 /*
@@ -117,14 +135,11 @@ Header
     font-size: 14px;
 }
 
-
-
 .headerDiv {
     background-color: #7AC143;
     position: relative;
     height: 60px;
 }
-
 
 .header {
     text-align: center;
@@ -150,12 +165,11 @@ City list view
     font-family: 'Dense-Regular', serif;
 }
 
-
 .cityRankingCard {
     cursor: pointer;
     position: relative;
     padding: 10px;
-    margin: 20px auto;
+    margin: 16px auto;
     max-width: 960px;
 
 }
@@ -192,9 +206,9 @@ City list view
 }
 
 @media (max-width: 600px) {
-.cardText h4 {
-    font-size: 18px;
-}
+    .cardText h4 {
+        font-size: 18px;
+    }
 
 }
 
@@ -213,6 +227,10 @@ City Profile Card
     color: #FFFFFF;
 }
 
+.headerContainer img {
+    object-fit: cover;
+}
+
 @media (min-width: 480px) {
     .headerContainer {
         height: 300px;
@@ -222,34 +240,6 @@ City Profile Card
 @media (min-width: 600px) {
     .headerContainer {
         height: 400px;
-    }
-}
-
-@media (min-width: 960px) {
-    .headerContainer img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        height: 70% !important;
-
-    }
-
-    .headerContainer {
-        position: static;
-        height: 150px;
-    }
-
-    .alignIconHeader {
-        float: right;
-        text-align: right;
-        padding-right: 40px;
-        padding-top: 100px;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        position: static !important;
-        -webkit-transform: none !important;
     }
 }
 
@@ -265,6 +255,58 @@ City Profile Card
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
+}
+
+@media (min-width: 960px) {
+    .headerContainer img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 70% !important;
+        object-fit: cover;
+    }
+
+    .headerContainer {
+        position: static;
+        height: 150px;
+    }
+
+    .alignIconHeader {
+        width: 100%;
+        text-align: center;
+        padding-top: 23px;
+        top: auto !important;
+        transform: none !important;
+        position: static !important;
+        -webkit-transform: none !important;
+    }
+}
+
+.navArrowLeft {
+    position: absolute;
+    color: white;
+    fill: white;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
+}
+
+.navArrowRight {
+    position: absolute;
+    color: white;
+    fill: white;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 50px !important;
+    height: 50px !important;
+    cursor: pointer;
 }
 
 canvas {
@@ -287,14 +329,27 @@ canvas {
 
 .gridItem {
     display: flex;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 @media (min-width: 960px) {
-    .cardGrid {
+    .cityHeader {
+        font-size: 45px;
+    }
+    .cityProfileCard .cardGrid {
         margin: 0 auto;
-        padding: 5px 30px 0 30px;
+        padding: 5px 8vw 0 8vw;
 
+    }
+    .navArrowLeft {
+        top: 90px;
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .navArrowRight {
+        top: 90px;
+        width: 60px !important;
+        height: 60px !important;
     }
 
 }
@@ -416,9 +471,9 @@ Pie Chart
 
 .pieChart svg {
     display: inline;
-    height: 60%;
-    width: 60%;
-    margin-right: 20px;
+    height: 50%;
+    width: 50%;
+    margin-right: 15px;
 }
 
 @media (min-width: 960px) {
@@ -448,6 +503,15 @@ Horizontal Legend
 
 .horizontalLegend .horizontalLegend-title {
     margin-bottom: 8px;
+}
+
+.horizontalLegend-scale p {
+    float: left;
+    margin: 0;
+    padding-right: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #000000;
 }
 
 .horizontalLegend .horizontalLegend-scale ul {
@@ -495,6 +559,8 @@ Legend
 .my-legend .legend-title {
     text-align: left;
     margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .my-legend .legend-scale ul {
@@ -518,13 +584,12 @@ Legend
     width: 10px;
     border-radius: 50%;
     margin-right: 5px;
-    border: 1px solid #999;
     display: table-cell;
 }
 
 .my-legend ul.legend-labels li p {
     display: table-cell;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .my-legend div {
@@ -555,12 +620,13 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position:absolute;
+    position: absolute;
 }
 
 .footerP {
     color: #ffffff;
     margin-bottom: 5px;
+    font-size:13px;
 }
 
 .socialShare {
@@ -576,6 +642,16 @@ Footer
 }
 
 .socialShareIcon {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
+}
+
+/* add bottom padding to all views except splash for the site footer */
+.cityRankingList, .cityProfileCard, .aboutUs, .methodology {
+    padding-bottom: 100px;
+}
+
+.gridItem h5 {
+    padding-left: 16px;
+    padding-right: 16px;
 }
