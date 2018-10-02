@@ -6,7 +6,7 @@
     src: url('Dense-Regular.otf') format('opentype');
 }
 
-h1, h3 {
+h1, h2.cityScore, h3 {
     font-family: 'Playfair Display', serif;
 }
 
@@ -146,6 +146,7 @@ Header
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    text-align: center;
 }
 
 .headerDiv {
@@ -209,7 +210,7 @@ City list view
 .cardText {
     display: inline-block;
     vertical-align: middle;
-    padding-left: 15px;
+    padding: 15px;
 }
 
 .cardText h4 {
@@ -219,11 +220,16 @@ City list view
     font-weight: 600;
 }
 
+.cardText .score {
+    color: #a3a3a3;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
 @media (max-width: 600px) {
     .cardText h4 {
         font-size: 18px;
     }
-
 }
 
 .cardText p {
@@ -308,6 +314,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
+    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
+            filter: drop-shadow( 2px 2px 5px #000 );
 }
 
 .navArrowRight {
@@ -321,6 +329,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
+    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
+            filter: drop-shadow( 2px 2px 5px #000 );
 }
 
 canvas {
@@ -334,6 +344,25 @@ canvas {
     font-size: 30px;
     padding-left: 8px;
     text-shadow: 2px 2px 5px #000;
+}
+
+.scoreContainer {
+    text-align: center;
+}
+
+h2.cityScore {
+    display: inline-block;
+    padding: 10px;
+    font-size: 26px;
+    margin: 10px;
+}
+
+@media (min-width: 960px) {
+    h2.cityScore {
+        color: white;
+        text-shadow: 2px 2px 5px #000;
+        font-size: 36px;
+    }
 }
 
 .media {
