@@ -28,6 +28,22 @@ const CityStatsCard = props => {
           Quick Stats
         </h3>
         <div className="gridRoot">
+          <GridList cellHeight={160} className="gridList" cols={1}>
+          <GridListTile key={data.features} cols={1} style={{ height: '100px' }} classes={{
+              tile: 'gridTileTile',
+              root: 'gridTileRoot'
+            }}>
+              <div className="statDiv statDivFull">
+                <div>
+                  <object data={gear_icon} className="statsIcon">Gear Icon</object>
+                  <div>
+                    <h2 style={{ margin: 0, display: 'inline' }}>XX.XX</h2>
+                    <p>Quality Score</p>
+                  </div>
+                </div>
+              </div>
+            </GridListTile>
+          </GridList>
           <GridList cellHeight={160} className="gridList" cols={2}>
             <GridListTile key={data.features} cols={1} style={{ height: '100px' }} classes={{
               tile: 'gridTileTile',
@@ -65,7 +81,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={shape_icon} className="statsIcon">Shape Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.totalArea)}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.totalArea.toFixed(0))}</h2>
                     <p>Total City Area (km<sup>2</sup>)</p>
                   </div>
                 </div>
@@ -79,7 +95,7 @@ const CityStatsCard = props => {
                 <div>
                   <object data={grid_icon} className="statsIcon">Grid Icon</object>
                   <div>
-                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.gridSize)}</h2>
+                    <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.gridSize.toFixed(1))}</h2>
                     <p>Grid Cell Size (km<sup>2</sup>)</p>
                   </div>
                 </div>

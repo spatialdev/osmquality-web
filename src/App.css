@@ -426,6 +426,12 @@ canvas {
     white-space: nowrap;
 }
 
+.statDivFull {
+    text-align: center;
+    width: 100%;
+    max-width: 159px;
+}
+
 @media (max-width: 480px) {
     .statDiv h2 {
         font-size: 26px;
@@ -439,6 +445,10 @@ canvas {
         height: 25px;
         width: 25px;
         margin-left: 0;
+    }
+
+    .statDivFull {
+        max-width: 120px;
     }
 }
 
