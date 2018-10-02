@@ -40,8 +40,7 @@ class CityRankingTable extends Component {
   handleCityClick = city => {
     ReactGA.event({
       category: 'City View',
-      action: `Clicked from Table`,
-      value: `${city.cityName}, ${city.state}`
+      action: `Clicked ${city.cityName}, ${city.state} from Table`,
     });
 
     this.props.history.push(`/city/${city.cityName}${city.state}`)
