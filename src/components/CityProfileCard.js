@@ -28,7 +28,6 @@ const styles = () => ({
     alignItems: 'center',
     width: '100%'
   },
-
   paper: {
     zIndex: 1,
     position: 'relative',
@@ -41,7 +40,6 @@ const styles = () => ({
     textAlign: 'center',
     margin: 'auto'
   }
-
 });
 
 class CityProfileCard extends Component {
@@ -87,14 +85,14 @@ class CityProfileCard extends Component {
   handleSwipe = e => {
     const { prevCityData, nextCityData } = this.state;
     //swipe right
-    if(e.direction === 4 && prevCityData) {
+    if (e.direction === 4 && prevCityData) {
       this.handleNavBackward();
     }
     //swipe left
-    if(e.direction === 2 && nextCityData) {
+    if (e.direction === 2 && nextCityData) {
       this.handleNavForward();
     }
-  }
+  };
 
   handleNavForward = () => {
     const { nextCityData } = this.state;
@@ -120,7 +118,6 @@ class CityProfileCard extends Component {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes } = this.props;
 
-
     if (!cityData) {
       return (
         <div>
@@ -134,20 +131,20 @@ class CityProfileCard extends Component {
           <Slide direction={direction} in={checked} mountOnEnter unmountOnExit>
             <Paper className={classes.paper}>
               <div className="headerContainer">
-                {prevCityData ? 
-                  <KeyboardArrowLeft 
-                    className="navArrowLeft" 
-                    onClick={this.handleNavBackward} /> : null }
+                {prevCityData ?
+                  <KeyboardArrowLeft
+                    className="navArrowLeft"
+                    onClick={this.handleNavBackward}/> : null}
                 <img src={require('../' + cityData.headerImage)} alt={`${cityData.cityName} Header`}
-                    style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
+                     style={{ width: '100%', height: '100%', filter: 'brightness(60%)' }}/>
                 <div className="alignIconHeader">
                   <RankingIcon cityData={cityData}/>
                   <h1 className="cityHeader">{cityData.cityName}</h1>
                 </div>
-                {nextCityData ? 
-                  <KeyboardArrowRight 
+                {nextCityData ?
+                  <KeyboardArrowRight
                     className="navArrowRight"
-                    onClick={this.handleNavForward}/> : null }
+                    onClick={this.handleNavForward}/> : null}
               </div>
               <Grid container className="cardGrid">
                 <Grid item md={6} sm={12} xs={12} className="gridItem">
