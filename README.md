@@ -1,6 +1,6 @@
 ### OSM Quality Measurement App
 
-This project serves as a viewer for OSM Map Quality as defined by the number of [Atlas Checks](https://github.com/osmlab/atlas-checks) flags
+This project serves as a viewer for OSM Map Quality as defined by the number of [Atlas Checks](https://github.com/osmlab/atlas-checks) flags. The map quality grids were generated using [OSM Quality](https://github.com/spatialdev/osmquality).
 
 This project was bootstrapped with Create React App, and uses [Material UI](https://material-ui.com/).
 
