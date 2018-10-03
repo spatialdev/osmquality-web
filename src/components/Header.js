@@ -96,6 +96,8 @@ class Header extends Component {
                 style={{ width: '250px' }}
               >
                 <List>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/rankings')}>Rankings</h3>
+                  </ListItem>
                   <ListItem className="drawerItem"><h3 onClick={() => history.push('/about-us')}>About Us</h3>
                   </ListItem>
                   <ListItem className="drawerItem"><h3 onClick={() => history.push('/methodology')}>Methodology</h3>
@@ -108,7 +110,7 @@ class Header extends Component {
           <Toolbar className="toolbar">
             {location.pathname === '/rankings' ?
               <h3 className="rankingHeader">Explore city rankings based on their OSM quality</h3> : null}
-            {location.pathname !== '/rankings' ?
+            {location.pathname !== '/rankings' && location.pathname !== '/methodology' && location.pathname !== '/about-us' ?
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/rankings')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back to list</Button> : null}

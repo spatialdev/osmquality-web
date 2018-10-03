@@ -38,7 +38,7 @@ const CityStatsCard = props => {
                   <object data={gear_icon} className="statsIcon">Gear Icon</object>
                   <div>
                     <h2 style={{ margin: 0, display: 'inline' }}>{numberWithCommas(data.features)}</h2>
-                    <p>OSM Features</p>
+                    <p>Flagged OSM Features</p>
                   </div>
                 </div>
               </div>
