@@ -21,7 +21,7 @@ const Splash = props => {
           </div>
         </div>
         <div className="critigenLogo">
-          <img src={logo_critigen} alt="Critigen OSM Team"/>
+          <a href="http://www.critigen.com" target="_blank"><img src={logo_critigen} alt="Critigen OSM Team"/></a>
         </div>
     </div>
   );

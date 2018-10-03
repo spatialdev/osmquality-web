@@ -6,7 +6,7 @@
     src: url('Dense-Regular.otf') format('opentype');
 }
 
-h1, h3 {
+h1, h2.cityScore, h3 {
     font-family: 'Playfair Display', serif;
 }
 
@@ -62,7 +62,7 @@ Splash
 }
 
 .splashContent {
-    flex: 6;
+    flex: 12;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -74,15 +74,6 @@ Splash
     width: 240px;
 }
 
-@media (min-width: 767px) {
-    .splashContent .osmTeamLogo {
-        padding-top: 80px;
-        width: 60vw;
-        height: 60vw;
-        max-height: 500px;
-        max-width: 500px;
-    }
-}
 
 .flexItem button {
     border: 3px solid #fff;
@@ -100,6 +91,28 @@ Splash
 .splashContent h4 {
     color: #ffffff;
     font-weight: normal;
+}
+
+@media (min-width: 767px) {
+    .splashContent .osmTeamLogo {
+        padding-top: 80px;
+        width: 60vw;
+        height: 60vw;
+        max-height: 500px;
+        max-width: 500px;
+    }
+
+    .splashContent h4 {
+        font-size: 19px;
+    }
+
+    .flexItem button {
+        padding: 30px 45px;
+    }
+
+    .flexItem button span {
+        font-size: 24px;
+    }
 }
 
 .splashContent img, .critigenLogo {
@@ -133,6 +146,7 @@ Header
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    text-align: center;
 }
 
 .headerDiv {
@@ -170,7 +184,7 @@ City list view
     position: relative;
     padding: 10px;
     margin: 16px auto;
-    max-width: 960px;
+    max-width: 540px;
 
 }
 
@@ -196,20 +210,26 @@ City list view
 .cardText {
     display: inline-block;
     vertical-align: middle;
-    padding: 10px;
+    padding: 15px;
 }
 
 .cardText h4 {
     margin: 0;
     color: #484848;
     font-size: 22px;
+    font-weight: 600;
+}
+
+.cardText .score {
+    color: #a3a3a3;
+    font-size: 14px;
+    padding-top: 5px;
 }
 
 @media (max-width: 600px) {
     .cardText h4 {
         font-size: 18px;
     }
-
 }
 
 .cardText p {
@@ -294,6 +314,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
+    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
+            filter: drop-shadow( 2px 2px 5px #000 );
 }
 
 .navArrowRight {
@@ -307,6 +329,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
+    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
+            filter: drop-shadow( 2px 2px 5px #000 );
 }
 
 canvas {
@@ -320,6 +344,25 @@ canvas {
     font-size: 30px;
     padding-left: 8px;
     text-shadow: 2px 2px 5px #000;
+}
+
+.scoreContainer {
+    text-align: center;
+}
+
+h2.cityScore {
+    display: inline-block;
+    padding: 10px;
+    font-size: 26px;
+    margin: 10px;
+}
+
+@media (min-width: 960px) {
+    h2.cityScore {
+        color: white;
+        text-shadow: 2px 2px 5px #000;
+        font-size: 36px;
+    }
 }
 
 .media {
@@ -426,19 +469,29 @@ canvas {
     white-space: nowrap;
 }
 
+.statDivFull {
+    text-align: center;
+    width: 100%;
+    max-width: 175px;
+}
+
 @media (max-width: 480px) {
     .statDiv h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .statDiv p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .statsIcon {
-        height: 20px;
-        width: 20px;
-        margin: 8px;
+        height: 25px;
+        width: 25px;
+        margin-left: 0;
+    }
+
+    .statDivFull {
+        max-width: 120px;
     }
 }
 

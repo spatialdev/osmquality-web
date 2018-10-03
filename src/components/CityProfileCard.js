@@ -23,10 +23,10 @@ import RankingIcon from './RankingIcon';
 
 const styles = () => ({
   root: {
-    margin: '7px 10px',
+    margin: '10px',
     display: 'inline-flex',
     alignItems: 'center',
-    width: '100%'
+    width: 'calc(100% - 20px)'
   },
   paper: {
     zIndex: 1,
@@ -145,6 +145,9 @@ class CityProfileCard extends Component {
                   <KeyboardArrowRight
                     className="navArrowRight"
                     onClick={this.handleNavForward}/> : null}
+              </div>
+              <div className="scoreContainer">
+                  <h2 className="cityScore">Score: {(cityData.score * 100).toFixed(2)}</h2>
               </div>
               <Grid container className="cardGrid">
                 <Grid item md={6} sm={12} xs={12} className="gridItem">
