@@ -34,16 +34,14 @@ const Methodology = props => {
       <CardContent style={{ padding: '15px 20px' }}>
         <h3 style={{ textAlign: 'center' }}>Methodology and Data</h3>
         <Divider/>
-        <h4>Quality Scores</h4>
+        <h4>Map Quality Evaluation</h4>
         <p>
-          The Critigen Map Quality Score is based on a number of primary OSM
-          Integrity checks using the Atlas Checks framework published on OSM
-          Lab. Built on top of Atlas, a scalable OSM graph network, Atlas Checks
-          allows your to write quality assurance algorithms for OSM data.
+            Map quality is evaluated by looking at the OSM features (Ways, Nodes, and Relations) detected (flagged) by Atlas Checks. 
+            Built on top of Atlas, a scalable OSM graph network, Atlas Checks allows users to write quality assurance algorithms 
+            to find map errors in OSM data.
         </p>
         <p>
-          Specific integrity checks used to develop the ranking include the
-          following:
+          The following Atlas Checks were used:
         </p>
 
         <Grid container className="cardGrid">
@@ -106,63 +104,56 @@ const Methodology = props => {
           </Grid>
         </Grid>
 
-        <p>These checks can be downloaded for use at: <a
+        <p>These checks can be downloaded for at: <a
           href="https://github.com/osmlab/atlas-checks"
           target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a></p>
 
         <h4>City Selection</h4>
-        <p>Cities were chosen based on whether they were the capital city of a state or whether they were the most
-          populous city within a state. <a
+        <p>The most populous city in each state is selected. <a
             href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population"
-            target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify the most populous city in each
-          state.</p>
-
-        <h4>Grid Generation</h4>
-        <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error
-          density.
-          The tool automates a process to find the optimal heat-map grid size which is an area containing a
-          critical mass of errors that represents a reasonable task for an editor. The resulting grid is thematically
-          styled as a choropleth heat map and used by editors to prioritize their work. For each grid cell, the
-          following statistics are summarized:</p>
-        <Grid item xs={12} className="gridItem">
-          <Card className={classes.root}>
-            <CardContent style={{ padding: 0 }}>
-              <h5>Summarized Statistics</h5>
-              <Divider/>
-              <List>
-                <ListItem>grid size in km<sup>2</sup></ListItem>
-                <ListItem>% of road segments within the cell with map error</ListItem>
-                <ListItem>count of OSM features with the cell area (km <sup>2</sup>)</ListItem>
-                <ListItem>count of error flags within the cell</ListItem>
-                <ListItem>count of checks detecting error within the cell</ListItem>
-              </List>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <p>Afterwards, the grid-based statistics are used to generate the following statistics in a given city:</p>
-
-        <Grid item xs={12} className="gridItem">
-          <Card className={classes.root}>
-            <CardContent style={{ padding: 0 }}>
-              <h5>Generated Statistics</h5>
-              <Divider/>
-              <List>
-                <ListItem>Total OSM Features</ListItem>
-                <ListItem>Total Atlas Checks Flags</ListItem>
-                <ListItem>Total City Area</ListItem>
-                <ListItem>Map Errors by Atlas Check Type</ListItem>
-              </List>
-            </CardContent>
-          </Card>
-        </Grid>
+            target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify those cities.</p>
 
         <h4>City Ranking</h4>
-        <p>Cities are ranked based on the number of atlas checks flags per OSM road feature,
-          which is calculated by dividing total Atlas Checks Flags by total OSM features. The fewer flags per feature a
-          city has, the better its road network quality is and the higher it is ranked</p>
-        <br/>
-        <p style={{ fontSize: '10px' }}>City facts used under CC BY-SA license from Wikipedia via Wikiwand</p>
+        <p>Cities are ranked based on the map error rate which is calculated as below.</p>
+        <p>For atlas features within the subject area:</p>
+        <img className="equation" src={require('../images/formula_simple.png')} alt="equation for calculating city ranking" />
+        <p>The lower error rate a city has, the higher it is ranked. The error rate is normalized so that more weights are 
+          assigned to atlas features that are flagged multiple times.</p>
+
+        <h4>Grid Generation and Statistics</h4>
+        <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error density. 
+          The tool automates a process to find the optimal heat-map grid size, an area containing a critical mass of errors that represents 
+          a reasonable task for an editor. The resulting grids are thematically styled as choropleth heat maps that can be used by editors 
+          to prioritize their work. For each grid cell, the following statistics are generated:</p>
+        <Grid item xs={12} className="gridItem">
+          <Card className={classes.root}>
+            <CardContent style={{ padding: 0 }}>
+              <List>
+                <ListItem>Count of flagged Atlas features</ListItem>
+                <ListItem>Count of flagged OSM features</ListItem>
+                <ListItem>Count of flags</ListItem>
+                <ListItem>Grid cell size</ListItem>
+                <ListItem>Count of checks by type</ListItem>
+              </List>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <p>Afterwards, the grid-based statistics are used to generate the following statistics shown in the 'Quick Stats' section for each city:</p>
+
+        <Grid item xs={12} className="gridItem">
+          <Card className={classes.root}>
+            <CardContent style={{ padding: 0 }}>
+              <List>
+                <ListItem>Count of total flagged OSM features (called OSM features)</ListItem>
+                <ListItem>Count of total Atlas Checks flags (called Atlas Checks Flags)</ListItem>
+                <ListItem>Total city area that are analyzed (called Total City Area)</ListItem>
+                <ListItem>Percentages of checks by type</ListItem>
+              </List>
+            </CardContent>
+          </Card>
+        </Grid>
+
       </CardContent>
     </Card>
   );

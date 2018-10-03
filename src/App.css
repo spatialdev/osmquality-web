@@ -712,3 +712,7 @@ Footer
     padding-left: 16px;
     padding-right: 16px;
 }
+
+.equation {
+    width: 100%;
+}
