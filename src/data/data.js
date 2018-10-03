@@ -237,7 +237,7 @@ const data =[
       'roundabout':0.0,
       'score':0.01127,
       'factName':'Fun Fact',
-      'fact':'This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine\'s capital city from 1820 to 1832.'
+      'fact':'This city has one of the largest urban parks in the nation and one of the smallest parks in the world!'
    },
    {
       'key':25,
