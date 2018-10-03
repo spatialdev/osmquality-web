@@ -715,4 +715,9 @@ Footer
 
 .equation {
     width: 100%;
+    max-width: 400px;
+}
+
+.methodologyContent a {
+    color: #3f91cc;
 }
