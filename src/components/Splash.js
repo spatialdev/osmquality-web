@@ -2,8 +2,8 @@ import React from 'react';
 
 import Button from '@material-ui/core/Button/Button';
 
-import logo_COSMT from '../images/logo_COSMT.svg';
-import logo_critigen from '../images/logo_critigen.svg';
+import logo_COSMT from '../images/logo_COSMT.min.svg';
+import logo_critigen from '../images/logo_critigen.min.svg';
 
 
 import '../App.css';

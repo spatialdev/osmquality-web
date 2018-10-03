@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import logo_critigen from '../images/logo_critigen.svg';
+import logo_critigen from '../images/logo_critigen.min.svg';
 import icon_fb from '../images/icon_fb.svg';
 import icon_twitter from '../images/icon_twitter.svg';
 import icon_linkedIn from '../images/icon_linkedIn.svg';
