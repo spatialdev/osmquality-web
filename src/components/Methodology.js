@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import Card from '@material-ui/core/Card/Card';
 import CardContent from '@material-ui/core/CardContent/CardContent';
-import withStyles from '@material-ui/core/styles/withStyles';
-import Grid from '@material-ui/core/Grid/Grid';
 import Divider from '@material-ui/core/Divider/Divider';
+import Grid from '@material-ui/core/Grid/Grid';
 import List from '@material-ui/core/List/List';
 import ListItem from '@material-ui/core/ListItem/ListItem';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 
 const styles = () => ({
@@ -107,13 +107,15 @@ const Methodology = props => {
         </Grid>
 
         <p>These checks can be downloaded for use at: <a
-            href="https://github.com/osmlab/atlas-checks"
-            target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a></p>
+          href="https://github.com/osmlab/atlas-checks"
+          target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a></p>
 
         <h4>City Selection</h4>
         <p>Cities were chosen based on whether they were the capital city of a state or whether they were the most
-          populous city within a state. <a href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population"
-             target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify the most populous city in each state.</p>
+          populous city within a state. <a
+            href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population"
+            target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify the most populous city in each
+          state.</p>
 
         <h4>Grid Generation</h4>
         <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error
@@ -156,9 +158,11 @@ const Methodology = props => {
         </Grid>
 
         <h4>City Ranking</h4>
-        <p>Cities are ranked based on the number of atlas checks flags per OSM road feature, 
-          which is calculated by dividing total Atlas Checks Flags by total OSM features. The fewer flags per feature a city 
-          has, the better its road network quality is and the higher it is ranked</p>
+        <p>Cities are ranked based on the number of atlas checks flags per OSM road feature,
+          which is calculated by dividing total Atlas Checks Flags by total OSM features. The fewer flags per feature a
+          city has, the better its road network quality is and the higher it is ranked</p>
+        <br/>
+        <p style={{ fontSize: '10px' }}>City facts used under CC BY-SA license from Wikipedia via Wikiwand</p>
       </CardContent>
     </Card>
   );

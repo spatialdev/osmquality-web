@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import * as ReactGA from 'react-ga';
 
 import Card from '@material-ui/core/Card/Card';
 import CardContent from '@material-ui/core/CardContent/CardContent';
 import Paper from '@material-ui/core/Paper';
 import Slide from '@material-ui/core/Slide';
-import { withStyles } from '@material-ui/core/styles';
-
+import withStyles from '@material-ui/core/styles/withStyles';
 
 import data from '../data/data';
 import '../App.css';
-import * as ReactGA from 'react-ga';
 
-const styles = theme => ({
+
+const styles = () => ({
   paper: {
     zIndex: 1,
     position: 'relative',
@@ -44,7 +44,7 @@ class CityRankingTable extends Component {
       label: `${city.cityName}, ${city.state}`
     });
 
-    this.props.history.push(`/city/${city.cityName}${city.state}`)
+    this.props.history.push(`/city/${city.cityName}${city.state}`);
   };
 
   render() {
@@ -56,14 +56,14 @@ class CityRankingTable extends Component {
             <div style={{ padding: '5px 15px' }}>
               {data.sort((a, b) => a.ranking - b.ranking).map(city => {
                 return (<Card className="cityRankingCard" key={city.ranking} direction="1"
-                              onClick={() => this.handleCityClick(city) }>
+                              onClick={() => this.handleCityClick(city)}>
                   <CardContent>
                     <div className="cardBody">
                       <img className="cityTableImage" src={require('../' + city.thumbnail)}
                            alt={`${city.cityName} Header`}/>
                       <div className="cardText">
                         <h4>{city.cityName + ', ' + city.state}</h4>
-                        <div className="score">Score: {(city.score * 100).toFixed(2)}</div>
+                        <div className="score">Errors: {(city.score * 100).toFixed(2)}%</div>
                       </div>
                     </div>
                     <h1 className="ranking">{city.ranking < 10 ? '0' + city.ranking.toString() : city.ranking}</h1>

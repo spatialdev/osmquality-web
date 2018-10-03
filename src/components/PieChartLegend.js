@@ -6,7 +6,7 @@ const PieChartLegend = props => {
   const roadRelationPercentage = legendData.roadRelation * 100;
   const roadConnectionPercentage = legendData.roadConnections * 100;
   const roundaboutPercentage = legendData.roundabout * 100;
-  
+
   const roadTagString = roadTagPercentage > 0 && roadTagPercentage < 1 ? '<1' : roadTagPercentage.toFixed(0);
   const roadRelationString = roadRelationPercentage > 0 && roadRelationPercentage < 1 ? '<1' : roadRelationPercentage.toFixed(0);
   const roadConnectionString = roadConnectionPercentage > 0 && roadConnectionPercentage < 1 ? '<1' : roadConnectionPercentage.toFixed(0);

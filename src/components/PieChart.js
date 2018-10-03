@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactSvgPieChart from 'react-svg-piechart';
 
 export default class Chart extends Component {
 
   render() {
-    const {chartData} = this.props;
+    const { chartData } = this.props;
 
     const data = [
       { title: (chartData.roadTag * 100).toString(), value: chartData.roadTag * 10, color: '#E4BC43' },
@@ -17,6 +17,6 @@ export default class Chart extends Component {
       <ReactSvgPieChart
         data={data}
       />
-    )
+    );
   }
 }

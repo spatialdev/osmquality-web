@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid/Grid';
 import Paper from '@material-ui/core/Paper/Paper';
 import Slide from '@material-ui/core/Slide/Slide';
 import withStyles from '@material-ui/core/styles/withStyles';
+
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
@@ -147,7 +148,7 @@ class CityProfileCard extends Component {
                     onClick={this.handleNavForward}/> : null}
               </div>
               <div className="scoreContainer">
-                  <h2 className="cityScore">Score: {(cityData.score * 100).toFixed(2)}</h2>
+                <h2 className="cityScore">Errors: {(cityData.score * 100).toFixed(2)}%</h2>
               </div>
               <Grid container className="cardGrid">
                 <Grid item md={6} sm={12} xs={12} className="gridItem">
