@@ -7,12 +7,10 @@ class RankingIcon extends Component {
     this.canvas = React.createRef();
   }
 
+
   componentDidMount() {
     const { cityData } = this.props;
     this.updateCanvas(cityData);
-
-
-
   }
 
   updateCanvas = cityData => {
@@ -21,15 +19,16 @@ class RankingIcon extends Component {
     const height = this.canvas.current.height;
     const width = this.canvas.current.width;
 
-    this.canvas.current.style.width = width + "px";
-    this.canvas.current.style.height = height + "px";
+    this.canvas.current.style.width = width + 'px';
+    this.canvas.current.style.height = height + 'px';
     let scale = window.devicePixelRatio;
 
     this.canvas.current.width = width * scale;
-    this.canvas.current.height =  height * scale;
+    this.canvas.current.height = height * scale;
 
     ctx.scale(scale, scale);
 
+    ctx.clearRect(0, 0, width, height);
 
     // Canvas Styling
     ctx.font = cityData.ranking > 10 ? 'bold 25px Open Sans' : 'bold 30px Open Sans';

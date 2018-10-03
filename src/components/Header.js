@@ -11,8 +11,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import Menu from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
-import share from '../images/share.svg';
-
 import '../App.css';
 
 
@@ -27,7 +25,7 @@ const styles = {
   moreIcon: {
     color: '#FFFFFF',
     position: 'absolute',
-    right: 0,
+    left: 0,
     top: 0,
     height: '100%',
   },
@@ -78,23 +76,23 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className="headerDiv">
-            <h1 className="header" onClick={() => history.push('/rankings')}>
+            <h1 className="header" onClick={() => history.push('/')}>
               OSM Quality Ranking
             </h1>
-            <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><Menu/></Button>
+            <Button className={classes.moreIcon} onClick={this.toggleDrawer('left', true)}><Menu/></Button>
             <SwipeableDrawer
               disableBackdropTransition={!iOS}
               disableDiscovery={iOS}
-              anchor="right"
-              open={this.state.right}
-              onClose={this.toggleDrawer('right', false)}
-              onOpen={this.toggleDrawer('right', true)}
+              anchor="left"
+              open={this.state.left}
+              onClose={this.toggleDrawer('left', false)}
+              onOpen={this.toggleDrawer('left', true)}
             >
               <div
                 tabIndex={0}
                 role="button"
-                onClick={this.toggleDrawer('right', false)}
-                onKeyDown={this.toggleDrawer('right', false)}
+                onClick={this.toggleDrawer('left', false)}
+                onKeyDown={this.toggleDrawer('left', false)}
                 style={{ width: '250px' }}
               >
                 <List>
@@ -109,15 +107,11 @@ class Header extends Component {
 
           <Toolbar className="toolbar">
             {location.pathname === '/rankings' ?
-              <h3 className="rankingHeader">City Ranking Lorem Ipsum</h3> : null}
+              <h3 className="rankingHeader">Explore city rankings based on their OSM quality</h3> : null}
             {location.pathname !== '/rankings' ?
               <Button className={classes.buttonLeft}
                       onClick={() => history.push('/rankings')}><KeyboardArrowLeft
-                className={classes.backIcon}/>Back</Button> : null}
-            {location.pathname !== '/rankings' ?
-              <Button className={classes.buttonRight}>Share
-                <object data={share} className={classes.shareIcon}>Share Icon</object>
-              </Button> : null}
+                className={classes.backIcon}/>Back to list</Button> : null}
           </Toolbar>
         </AppBar>
       </div>

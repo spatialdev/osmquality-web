@@ -12,11 +12,18 @@ const Splash = props => {
   return (
     <div className="splashPage">
       <div className="splashContent">
-        <img className="osmTeamLogo" src={logo_COSMT} alt="Critigen OSM Team"/>
-        <h4>Which city has the best OSM quality?</h4>
-        <Button onClick={() => props.history.push('/rankings')}>Explore OSM Quality Ranking</Button>
-        <img src={logo_critigen} alt="Critigen OSM Team"/>
-
+        <div className="flexItem">
+          <img className="osmTeamLogo" src={logo_COSMT} alt="Critigen OSM Team"/>
+        </div>
+        <div className="flexItem">
+          <h4>Which city has the best OSM quality?</h4>
+          <Button onClick={() => props.history.push('/rankings')}>Explore OSM Quality Ranking</Button>
+        </div>
+      </div>
+      <div className="critigenLogo">
+        <a href="http://www.critigen.com" target="_blank" rel="noopener noreferrer">
+          <img src={logo_critigen} alt="Critigen OSM Team"/>
+        </a>
       </div>
     </div>
   );
