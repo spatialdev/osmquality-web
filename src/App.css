@@ -51,6 +51,7 @@ a {
     color: #456823;
     text-decoration: none;
 }
+
 /*
 Splash
  */
@@ -77,7 +78,6 @@ Splash
     height: 240px;
     width: 240px;
 }
-
 
 .flexItem button {
     border: 3px solid #fff;
@@ -141,7 +141,7 @@ Header
     font-size: 10px;
     padding-left: 7px;
     font-weight: 600;
-    margin:0;
+    margin: 0;
     vertical-align: middle;
 }
 
@@ -168,6 +168,7 @@ Header
     position: relative;
     height: 60px;
     display: table;
+    width: 100%;
 }
 
 .header {
@@ -325,8 +326,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
-    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
-            filter: drop-shadow( 2px 2px 5px #000 );
+    -webkit-filter: drop-shadow(2px 2px 5px #000);
+    filter: drop-shadow(2px 2px 5px #000);
 }
 
 .navArrowRight {
@@ -340,8 +341,8 @@ City Profile Card
     width: 50px !important;
     height: 50px !important;
     cursor: pointer;
-    -webkit-filter: drop-shadow( 2px 2px 5px #000 ); 
-            filter: drop-shadow( 2px 2px 5px #000 );
+    -webkit-filter: drop-shadow(2px 2px 5px #000);
+    filter: drop-shadow(2px 2px 5px #000);
 }
 
 canvas {
@@ -391,16 +392,19 @@ h2.cityScore {
     .cityHeader {
         font-size: 45px;
     }
+
     .cityProfileCard .cardGrid {
         margin: 0 auto;
         padding: 5px 8vw 0 8vw;
 
     }
+
     .navArrowLeft {
         top: 90px;
         width: 60px !important;
         height: 60px !important;
     }
+
     .navArrowRight {
         top: 90px;
         width: 60px !important;
@@ -691,7 +695,7 @@ Footer
 .footerP {
     color: #ffffff;
     margin-bottom: 5px;
-    font-size:13px;
+    font-size: 13px;
 }
 
 .socialShare {
