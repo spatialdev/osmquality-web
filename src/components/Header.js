@@ -76,9 +76,13 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className="headerDiv">
-            <h1 className="header" onClick={() => history.push('/')}>
-              OSM Quality Ranking
-            </h1>
+            <div style={{ textAlign: 'center', display: 'table-cell', verticalAlign: 'middle', cursor: 'pointer' }}
+                 onClick={() => history.push('/')}>
+              <h1 className="header">
+                OSM Quality Ranking
+              </h1>
+              <p className="beta">BETA</p>
+            </div>
             <Button className={classes.moreIcon} onClick={this.toggleDrawer('left', true)}><Menu/></Button>
             <SwipeableDrawer
               disableBackdropTransition={!iOS}

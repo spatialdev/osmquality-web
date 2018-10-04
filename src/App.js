@@ -22,7 +22,6 @@ class App extends Component {
         {window.location.pathname !== '/' ? <Header/> : null}
         <Main/>
         {window.location.pathname !== '/' ? <Footer/> : null}
-        <div style={{ fontFamily: 'Open Sans' }}/>
       </div>
     );
   }

@@ -18,7 +18,6 @@ export default class Footer extends Component {
     padding: 0,
   };
 
-
   render() {
     return (
       <div className="footer">
@@ -26,19 +25,20 @@ export default class Footer extends Component {
           <p className="footerP">Share this:</p>
           <List style={this.flexContainer}>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=`} title="Share on Facebook" target="_blank"
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=https://osmquality.io/`} title="Share on Facebook" target="_blank"
                  rel="noopener noreferrer">
                 <img src={icon_fb} alt="Facebook Share" className="socialShareIcon"/>
               </a>
             </ListItem>
             <ListItem style={{ paddingRight: '8px', paddingLeft: '0', paddingTop: '0' }}>
-              <a href="https://twitter.com/home?status=test" title="Share on Twitter" target="_blank"
+              <a href="http://twitter.com/share?text=Check out how your city stacks up!&url=https://osmquality.io/&hashtags=OpenStreetMap,StateOfTheMap" title="Share on Twitter" target="_blank"
                  rel="noopener noreferrer">
                 <img src={icon_twitter} alt="Twitter Share" className="socialShareIcon"/>
               </a>
             </ListItem>
             <ListItem style={{ paddingLeft: '0', paddingTop: '0' }}>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" title="Share on LinkedIn"
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://osmquality.io/
+" title="Share on LinkedIn"
                  target="_blank" rel="noopener noreferrer">
                 <img src={icon_linkedIn} alt="LinkedIn Share" className="socialShareIcon"/>
               </a>

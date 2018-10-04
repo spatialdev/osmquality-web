@@ -135,6 +135,16 @@ Splash
 Header
  */
 
+.beta {
+    color: white;
+    display: inline-block;
+    font-size: 10px;
+    padding-left: 7px;
+    font-weight: 600;
+    margin:0;
+    vertical-align: middle;
+}
+
 .drawerItem h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -157,18 +167,15 @@ Header
     background-color: #7AC143;
     position: relative;
     height: 60px;
+    display: table;
 }
 
 .header {
-    text-align: center;
+    display: inline-block;
     color: #FFFFFF;
-    width: 100%;
     font-size: 20px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     margin: 0;
-    cursor: pointer;
+    vertical-align: middle;
 }
 
 .toolbar {
@@ -340,6 +347,7 @@ City Profile Card
 canvas {
     display: inline-block;
     vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .cityHeader {
