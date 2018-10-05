@@ -121,6 +121,11 @@ const Methodology = props => {
           <p>The lower error rate a city has, the higher it is ranked. The error rate is normalized so that more weights are 
             assigned to atlas features that are flagged multiple times.</p>
 
+          <h4>Data Processing</h4>
+          <p>OSM data used in analyses were downloaded September 2018. Processing time for a given city region including data extraction, atlas-check processing and grid generation
+            ran about 30 minutes for this exercise. When machine environment settings are optimized for data processing,
+            the time required for all 51 cities to run in batch mode is approximately 24 hours.</p>
+
           <h4>Grid Generation and Statistics</h4>
           <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error density. 
             The tool automates a process to find the optimal heat-map grid size, an area containing a critical mass of errors that represents 
