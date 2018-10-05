@@ -42,6 +42,19 @@ const AboutUs = props => {
           and building tools. We love being part of the community building a free and open map of the world for
           everyone.
         </p>
+        <p>
+          Follow us on Twitter: <a href="https://twitter.com/osmquality" target="_blank"
+                                   rel="noopener noreferrer">https://twitter.com/osmquality</a>
+        </p>
+        <p>
+          We’re hiring: <a href="https://www.critigen.com/about/careers/" target="_blank"
+                           rel="noopener noreferrer">https://www.critigen.com/about/careers</a>
+        </p>
+        <p>
+          Check out our work: <a href="http://spatialdev.github.io" target="_blank"
+                           rel="noopener noreferrer">http://spatialdev.github.io</a>
+        </p>
+
       </CardContent>
     </Card>
   );
