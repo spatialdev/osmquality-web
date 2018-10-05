@@ -122,7 +122,7 @@ const Methodology = props => {
             assigned to atlas features that are flagged multiple times.</p>
 
           <h4>Data Processing</h4>
-          <p>OSM data used in analyses were downloaded September 2018. Processing time for a given city region including data extraction, atlas-check processing and grid generation
+          <p>OSM data used in analyses were downloaded from <a href="https://extract.bbbike.org/" target="_blank" rel="noopener noreferrer">BBBike</a> September 2018. Processing time for a given city region including data extraction, atlas-check processing and grid generation
             ran about 30 minutes for this exercise. When machine environment settings are optimized for data processing,
             the time required for all 51 cities to run in batch mode is approximately 24 hours.</p>
 
