@@ -153,7 +153,7 @@ class CityProfileCard extends Component {
               <Grid container className="cardGrid">
                 <Grid item md={6} sm={12} xs={12} className="gridItem">
                   <Card className={classes.root}>
-                    <div>
+                    <div style={{margin: '0 auto'}}>
                       <CardContent style={{ padding: 0 }}>
                       </CardContent>
                       <CardMedia
