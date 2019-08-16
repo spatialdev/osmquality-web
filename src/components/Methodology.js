@@ -49,7 +49,7 @@ const Methodology = props => {
             <Grid item md={6} sm={12} xs={24} className="gridItem">
               <Card className={classes.root}>
                 <CardContent style={{ padding: 0 }}>
-                  <h5>Road Geometry Checks (6 checks)</h5>
+                  <h5>Road Geometry Checks</h5>
                   <Divider/>
                   <List>
                     <ListItem>BuildingRoadIntersectionCheck</ListItem>
@@ -65,11 +65,10 @@ const Methodology = props => {
             <Grid item md={6} sm={12} xs={24} className="gridItem">
               <Card className={classes.root}>
                 <CardContent style={{ padding: 0 }}>
-                  <h5>Road Tags and Relations Checks (7 Checks)</h5>
+                  <h5>Road Tags and Relations Checks</h5>
                   <Divider/>
                   <List>
                     <ListItem>InvalidTurnRestrictionCheck</ListItem>
-                    <ListItem>HighwayToFerryTagCheck</ListItem>
                     <ListItem>InvalidAccessTagCheck</ListItem>
                     <ListItem>InvalidLanesTagCheck</ListItem>
                     <ListItem>SignPostcheck</ListItem>
