@@ -53,7 +53,6 @@ const Methodology = props => {
                   <Divider/>
                   <List>
                     <ListItem>BuildingRoadIntersectionCheck</ListItem>
-                    <ListItem>OverlappingEdgeCheck</ListItem>
                     <ListItem>EdgeCrossingEdgeCheck</ListItem>
                     <ListItem>SnakeRoadCheck</ListItem>
                     <ListItem>RoundaboutValenceCheck</ListItem>
