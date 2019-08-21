@@ -17,7 +17,11 @@ import Hammer from 'react-hammerjs';
 
 import CityStatsCard from '../components/CityStatsCard';
 import MapLegend from '../components/MapLegend';
+import Map from '../components/Map';
+import Reparentable from './Reparentable';
 import data from '../data/data';
+
+import MapContext from '../helpers/MapContext';
 
 import '../App.css';
 import RankingIcon from './RankingIcon';
@@ -57,6 +61,18 @@ class CityProfileCard extends Component {
     window.scrollTo(0, 0);
     this.getCityData(cityState);
     this.initializeSlide();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const {cityData: prevCityData} = prevState;
+    const {cityData: currCityData} = this.state;
+    // if we've changed data, change the bounds of the map
+    if ((prevCityData !== null && currCityData !== null && prevCityData.key !== currCityData.key)
+      || (prevCityData === null && currCityData !== null))
+    {
+      const bbox = [[currCityData.swLong, currCityData.swLat], [currCityData.neLong, currCityData.neLat]];
+      this.context.updateBounds(bbox);
+    }
   }
 
   initializeSlide = () => {
@@ -125,7 +141,6 @@ class CityProfileCard extends Component {
           <CircularProgress/>
         </div>);
     }
-
     return (
       <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
         <div className="cityProfileCard">
@@ -156,11 +171,7 @@ class CityProfileCard extends Component {
                     <div style={{margin: '0 auto'}}>
                       <CardContent style={{ padding: 0 }}>
                       </CardContent>
-                      <CardMedia
-                        component="img"
-                        className="media"
-                        image={require('../' + cityData.mapImage)}
-                      />
+                      <Reparentable el={this.context.container}/>
                       <MapLegend/>
                     </div>
 
@@ -186,6 +197,7 @@ class CityProfileCard extends Component {
   }
 }
 
+CityProfileCard.contextType = MapContext;
 CityProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
