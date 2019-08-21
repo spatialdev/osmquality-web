@@ -3,6 +3,7 @@ const data = [{
    "fact": "This city was named by French-Canadian fur trappers after the trees (les bois) that line its namesake river (though accounts differ).",
    "roadGeometry": 28.0,
    "flags": 82,
+   "mapImage": "images\/SOTM-10-02-18-images\/UID-300.jpeg",
    "swLong": -116.3656827,
    "roadAttributes": 54.0,
    "swLat": 43.50939634,
@@ -18,12 +19,16 @@ const data = [{
    "score_2018": 0.009,
    "neLong": -116.0941571,
    "factName": "Fun History Fact",
-   "key": 14
+   "key": 14,
+   "roadRelation": 0.004166667,
+   "roundabout": 0.002777778,
+   "totalArea": 3930.74
 }, {
    "thumbnail": "images\/thumbnails_cities\/CO_Denver.jpg",
    "fact": "The front range megalopolis or urban corridor is home to a population of approximately 5 million and Denver is the most populous city within a 500-mile radius.",
    "roadGeometry": 144.0,
    "flags": 352,
+   "mapImage": "images\/SOTM-10-02-18-images\/UCO-300.jpeg",
    "swLong": -105.109927,
    "roadAttributes": 208.0,
    "swLat": 39.614423,
@@ -39,12 +44,16 @@ const data = [{
    "score_2018": 0.0094,
    "neLong": -104.600302,
    "factName": "Fun Demographic Facts",
-   "key": 3
+   "key": 3,
+   "roadRelation": 0.001960784,
+   "roundabout": 0.008235294,
+   "totalArea": 1188.12
 }, {
    "thumbnail": "images\/thumbnails_cities\/WI_madison_thumbnail.jpg",
    "fact": "This city was founded on an isthmus between Lake Monona and Lake Mendota",
    "roadGeometry": 37.0,
    "flags": 184,
+   "mapImage": "images\/SOTM-10-02-18-images\/UWI-300.jpeg",
    "swLong": -89.57165312,
    "roadAttributes": 147.0,
    "swLat": 42.99814672,
@@ -60,12 +69,16 @@ const data = [{
    "score_2018": 0.0104,
    "neLong": -89.24677978,
    "factName": "Fun Geography Fact",
-   "key": 46
+   "key": 46,
+   "roadRelation": 0.001278772,
+   "roundabout": 0.001278772,
+   "totalArea": 683.56
 }, {
    "thumbnail": "images\/thumbnails_cities\/AZ_tucson.jpg",
    "fact": "This city is known to have been inhabited for about 12,000 years and derives its name from the Papago-Pima language meaning \"at the base of the black (hill)\"",
    "roadGeometry": 57.0,
    "flags": 185,
+   "mapImage": "images\/SOTM-10-02-18-images\/UAZ-300.jpeg",
    "swLong": -111.058753,
    "roadAttributes": 128.0,
    "swLat": 31.99026933,
@@ -81,12 +94,16 @@ const data = [{
    "score_2018": 0.0106,
    "neLong": -110.7062086,
    "factName": "Fun History Fact",
-   "key": 2
+   "key": 2,
+   "roadRelation": 0.005145798,
+   "roundabout": 0.025728987999999998,
+   "totalArea": 987.78
 }, {
    "thumbnail": "images\/thumbnails_cities\/MT_Billings.jpg",
    "fact": "A nearby landmark, Pompey's Pillar, was named by William Clark (of Lewis and Clark fame) after the son of Sacajawea.",
    "roadGeometry": 7.0,
    "flags": 33,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMT-300.jpeg",
    "swLong": -108.7092578,
    "roadAttributes": 26.0,
    "swLat": 45.71087771,
@@ -102,12 +119,16 @@ const data = [{
    "score_2018": 0.0143,
    "neLong": -108.4360128,
    "factName": "Fun History Fact",
-   "key": 27
+   "key": 27,
+   "roadRelation": 0.0,
+   "roundabout": 0.0,
+   "totalArea": 830.1
 }, {
    "thumbnail": "images\/thumbnails_cities\/AL_huntsville_AL.jpg",
    "fact": "This city is nicknamed \"Rocket City\" for it's long association with U.S. space missions and is home to NASA's Marshall Space Flight Center.",
    "roadGeometry": 40.0,
    "flags": 232,
+   "mapImage": "images\/SOTM-10-02-18-images\/UAL-300.jpeg",
    "swLong": -86.93115,
    "roadAttributes": 192.0,
    "swLat": 34.538107,
@@ -123,12 +144,16 @@ const data = [{
    "score_2018": 0.0176,
    "neLong": -86.413707,
    "factName": "Fun Fact",
-   "key": 6
+   "key": 6,
+   "roadRelation": 0.006802720999999999,
+   "roundabout": 0.0,
+   "totalArea": 1807.48
 }, {
    "thumbnail": "images\/thumbnails_cities\/NV_LV.jpg",
    "fact": "This city sits on the \"floor\" of the Mojave Desert. On average, the temperature exceeds 100&deg F on 74 days during the year.",
    "roadGeometry": 39.0,
    "flags": 182,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNV-300.jpeg",
    "swLong": -115.4065871,
    "roadAttributes": 143.0,
    "swLat": 36.12956352,
@@ -144,12 +169,16 @@ const data = [{
    "score_2018": 0.0086,
    "neLong": -115.0620894,
    "factName": "Fun Geography Fact",
-   "key": 34
+   "key": 34,
+   "roadRelation": 0.00596853,
+   "roundabout": 0.00596853,
+   "totalArea": 2240.42
 }, {
    "thumbnail": "images\/thumbnails_cities\/AK_Anchorage_AK.jpg",
    "fact": "This city is nearly equidistant to New York City, Tokyo and Frankfurt(Germany), which makes it a major international cargo hub.",
    "roadGeometry": 20.0,
    "flags": 165,
+   "mapImage": "images\/SOTM-10-02-18-images\/UAK-300.jpeg",
    "swLong": -150.4359739,
    "roadAttributes": 145.0,
    "swLat": 60.73301702,
@@ -165,12 +194,16 @@ const data = [{
    "score_2018": 0.021,
    "neLong": -148.4624263,
    "factName": "Fun Geography Fact",
-   "key": 49
+   "key": 49,
+   "roadRelation": 0.0,
+   "roundabout": 0.004366812,
+   "totalArea": 846.96
 }, {
    "thumbnail": "images\/thumbnails_cities\/MI_Detroit.jpg",
    "fact": "Cadillac Automobiles (headquartered in this city) was named after the founder of Detroit, Antoine de la Mothe Cadillac.",
    "roadGeometry": 22.0,
    "flags": 136,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMI-300.jpeg",
    "swLong": -83.28780572,
    "roadAttributes": 114.0,
    "swLat": 42.2549605,
@@ -186,12 +219,16 @@ const data = [{
    "score_2018": 0.004,
    "neLong": -82.9104229,
    "factName": "Fun Fact",
-   "key": 23
+   "key": 23,
+   "roadRelation": 0.0039612679999999996,
+   "roundabout": 0.003521127,
+   "totalArea": 1879.38
 }, {
    "thumbnail": "images\/thumbnails_cities\/OH_Columbus.jpg",
    "fact": "None of the facts about Columbus are really that fun. The Ohio State University \"Horseshoe\" Stadium is the third largest in the U.S.",
    "roadGeometry": 93.0,
    "flags": 442,
+   "mapImage": "images\/SOTM-10-02-18-images\/UOH-300.jpeg",
    "swLong": -83.2102232,
    "roadAttributes": 349.0,
    "swLat": 39.80883523,
@@ -207,12 +244,16 @@ const data = [{
    "score_2018": 0.0148,
    "neLong": -82.77133481,
    "factName": "Fun Fact",
-   "key": 48
+   "key": 48,
+   "roadRelation": 0.012257406,
+   "roundabout": 0.0015321760000000001,
+   "totalArea": 2404.36
 }, {
    "thumbnail": "images\/thumbnails_cities\/NM_Alberquerque.jpg",
    "fact": "Albuquerque is host to the International Balloon Fiesta, the world's largest gathering of hot-air balloons in the world!",
    "roadGeometry": 90.0,
    "flags": 276,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNM-300.jpeg",
    "swLong": -106.8727865,
    "roadAttributes": 186.0,
    "swLat": 34.9471162,
@@ -228,12 +269,16 @@ const data = [{
    "score_2018": 0.0136,
    "neLong": -106.4711832,
    "factName": "Fun Fact",
-   "key": 33
+   "key": 33,
+   "roadRelation": 0.0,
+   "roundabout": 0.002597403,
+   "totalArea": 720.48
 }, {
    "thumbnail": "images\/thumbnails_cities\/OR_Portland.jpg",
    "fact": "This city has one of the largest urban parks in the nation and one of the smallest parks in the world!",
    "roadGeometry": 21.0,
    "flags": 188,
+   "mapImage": "images\/SOTM-10-02-18-images\/UOR-300.jpeg",
    "swLong": -122.8367636,
    "roadAttributes": 167.0,
    "swLat": 45.43254153,
@@ -249,12 +294,16 @@ const data = [{
    "score_2018": 0.0055,
    "neLong": -122.4720384,
    "factName": "Fun Fact",
-   "key": 36
+   "key": 36,
+   "roadRelation": 0.02543235,
+   "roundabout": 0.0,
+   "totalArea": 385.74
 }, {
    "thumbnail": "images\/thumbnails_cities\/MO_KC.jpg",
    "fact": "This city is comprised of more than 240 neighborhoods which trace their roots as independent cities or sites of major events.",
    "roadGeometry": 67.0,
    "flags": 181,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMO-300.jpeg",
    "swLong": -94.76563846,
    "roadAttributes": 114.0,
    "swLat": 38.82470888,
@@ -270,12 +319,16 @@ const data = [{
    "score_2018": 0.0076,
    "neLong": -94.3853608,
    "factName": "Fun Fact",
-   "key": 25
+   "key": 25,
+   "roadRelation": 0.00829302,
+   "roundabout": 0.00138217,
+   "totalArea": 5248.76
 }, {
    "thumbnail": "images\/thumbnails_cities\/IA_Desmoines.jpg",
    "fact": "This city means \"from the monks\" or \"of the monks\" based on the original name given by French colonists, or for the Algonquian name for \"loon\" (Moingona).",
    "roadGeometry": 8.0,
    "flags": 48,
+   "mapImage": "images\/SOTM-10-02-18-images\/UIA-300.jpeg",
    "swLong": -93.709817,
    "roadAttributes": 40.0,
    "swLat": 41.479264,
@@ -291,12 +344,16 @@ const data = [{
    "score_2018": 0.0055,
    "neLong": -93.492881,
    "factName": "Fun Fact",
-   "key": 13
+   "key": 13,
+   "roadRelation": 0.005347594000000001,
+   "roundabout": 0.0013368979999999998,
+   "totalArea": 2455.54
 }, {
    "thumbnail": "images\/thumbnails_cities\/ND_Fargo.jpg",
    "fact": "1 in 5 North Dakotans call Fargo home. Fargo was renamed for William Fargo of Wells Fargo from the original name of Centralia.",
    "roadGeometry": 50.0,
    "flags": 97,
+   "mapImage": "images\/SOTM-10-02-18-images\/UND-300.jpeg",
    "swLong": -96.90334168,
    "roadAttributes": 47.0,
    "swLat": 46.70286192,
@@ -312,12 +369,16 @@ const data = [{
    "score_2018": 0.0265,
    "neLong": -96.75273315,
    "factName": "Fun Fact",
-   "key": 29
+   "key": 29,
+   "roadRelation": 0.0,
+   "roundabout": 0.0,
+   "totalArea": 5087.38
 }, {
    "thumbnail": "images\/thumbnails_cities\/SC_Columbia.jpg",
    "fact": "The Columbia fall line separates the Piedmont region and the Atlantic Coastal Plain. Rivers drop as falls or rapids across this line.",
    "roadGeometry": 33.0,
    "flags": 72,
+   "mapImage": "images\/SOTM-10-02-18-images\/USC-300.jpeg",
    "swLong": -81.171237,
    "roadAttributes": 39.0,
    "swLat": 33.935425,
@@ -333,12 +394,16 @@ const data = [{
    "score_2018": 0.0102,
    "neLong": -80.703933,
    "factName": "Fun Geography Fact",
-   "key": 39
+   "key": 39,
+   "roadRelation": 0.001199041,
+   "roundabout": 0.0,
+   "totalArea": 2119.72
 }, {
    "thumbnail": "images\/thumbnails_cities\/WA_Seattle.jpg",
    "fact": "This city's music scene has produced or nurtured the careers of Ray Charles, Quincy Jones, Ernestine Anderson, Jimi Hendrix, Nirvana and Soundgarden.",
    "roadGeometry": 113.0,
    "flags": 263,
+   "mapImage": "images\/SOTM-10-02-18-images\/UWA-300.jpeg",
    "swLong": -122.4359581,
    "roadAttributes": 150.0,
    "swLat": 47.49551358,
@@ -354,12 +419,16 @@ const data = [{
    "score_2018": 0.0102,
    "neLong": -122.2361244,
    "factName": "Fun Cultural Fact",
-   "key": 5
+   "key": 5,
+   "roadRelation": 0.031875,
+   "roundabout": 0.005,
+   "totalArea": 646.9
 }, {
    "thumbnail": "images\/thumbnails_cities\/NE_Omaha.jpg",
    "fact": "This city has several ethnic enclaves including Little Italy, Little Bohemia, Little Mexico and Greek Town.",
    "roadGeometry": 75.0,
    "flags": 192,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNE-300.jpeg",
    "swLong": -96.2681081,
    "roadAttributes": 117.0,
    "swLat": 41.19058056,
@@ -375,12 +444,16 @@ const data = [{
    "score_2018": 0.0082,
    "neLong": -95.87113942,
    "factName": "Fun Demographic Fact",
-   "key": 30
+   "key": 30,
+   "roadRelation": 4.887590000000001E-4,
+   "roundabout": 0.008308895,
+   "totalArea": 7021.8
 }, {
    "thumbnail": "images\/thumbnails_cities\/TN_Memphis.jpg",
    "fact": "This city is a major hub in the transportation and shipping industry with four interstate highways, river barges and the world\u2019s second busiest cargo airport.",
    "roadGeometry": 73.0,
    "flags": 319,
+   "mapImage": "images\/SOTM-10-02-18-images\/UTN-300.jpeg",
    "swLong": -90.303051,
    "roadAttributes": 246.0,
    "swLat": 34.994188,
@@ -396,12 +469,16 @@ const data = [{
    "score_2018": 0.0168,
    "neLong": -89.637089,
    "factName": "Fun Fact",
-   "key": 41
+   "key": 41,
+   "roadRelation": 0.0,
+   "roundabout": 0.003475239,
+   "totalArea": 2937.54
 }, {
    "thumbnail": "images\/thumbnails_cities\/OK_OklahomaCity.jpg",
    "fact": "This city lies within \"Tornado Alley\" and has been struck by thirteen strong tornadoes - eleven rated F4 and 2 rated F5 on the Fujita scale.",
    "roadGeometry": 120.0,
    "flags": 528,
+   "mapImage": "images\/SOTM-10-02-18-images\/UOK-300.jpeg",
    "swLong": -97.83092373,
    "roadAttributes": 408.0,
    "swLat": 35.29069522,
@@ -417,12 +494,16 @@ const data = [{
    "score_2018": 0.0159,
    "neLong": -97.12471763,
    "factName": "Fun Weather Fact",
-   "key": 35
+   "key": 35,
+   "roadRelation": 0.003541913,
+   "roundabout": 0.002951594,
+   "totalArea": 2368.86
 }, {
    "thumbnail": "images\/thumbnails_cities\/IN_INdianapolis.jpg",
    "fact": "This city is a \"planned city\" that was laid out by Alexander Ralston who had previously worked on the plan for Washington D.C.",
    "roadGeometry": 215.0,
    "flags": 469,
+   "mapImage": "images\/SOTM-10-02-18-images\/UIN-300.jpeg",
    "swLong": -86.32815239,
    "roadAttributes": 254.0,
    "swLat": 39.63218836,
@@ -438,12 +519,16 @@ const data = [{
    "score_2018": 0.0129,
    "neLong": -85.93805709,
    "factName": "Fun History Fact",
-   "key": 16
+   "key": 16,
+   "roadRelation": 0.003351487,
+   "roundabout": 0.029744449,
+   "totalArea": 2030.02
 }, {
    "thumbnail": "images\/thumbnails_cities\/SD_SiouxFalls.jpg",
    "fact": "Drawn to the cascades of the Big Sioux River, the Ho-Chunk, Ioway, Otoe, Missouri, Omaha, Quapaw, Kansa, Osage, Arikira, Dakota and Cheyenne all inhabited the area previous to european settlement.",
    "roadGeometry": 13.0,
    "flags": 98,
+   "mapImage": "images\/SOTM-10-02-18-images\/USD-300.jpeg",
    "swLong": -96.84889078,
    "roadAttributes": 85.0,
    "swLat": 43.46429659,
@@ -459,12 +544,16 @@ const data = [{
    "score_2018": 0.0167,
    "neLong": -96.60127412,
    "factName": "Fun History Fact",
-   "key": 40
+   "key": 40,
+   "roadRelation": 0.0,
+   "roundabout": 0.0,
+   "totalArea": 802.64
 }, {
    "thumbnail": "images\/thumbnails_cities\/GA_Atlanta.jpg",
    "fact": "This city was decimated during the Civil War and therefore lacks the architectural heritage one would expect for a city of its age.",
    "roadGeometry": 246.0,
    "flags": 324,
+   "mapImage": "images\/SOTM-10-02-18-images\/UGA-300.jpeg",
    "swLong": -84.55084965,
    "roadAttributes": 78.0,
    "swLat": 33.64798788,
@@ -480,12 +569,16 @@ const data = [{
    "score_2018": 0.0176,
    "neLong": -84.28962051,
    "factName": "Fun History Fact",
-   "key": 12
+   "key": 12,
+   "roadRelation": 0.007095159,
+   "roundabout": 0.030884808,
+   "totalArea": 1885.22
 }, {
    "thumbnail": "images\/thumbnails_cities\/VA_VirginiaBeach.jpg",
    "fact": "This city is listed by the Guinness Book of Records as having the longest pleasure beach in the world.",
    "roadGeometry": 93.0,
    "flags": 209,
+   "mapImage": "images\/SOTM-10-02-18-images\/UVA-300.jpeg",
    "swLong": -76.49140583,
    "roadAttributes": 116.0,
    "swLat": 36.54990276,
@@ -501,12 +594,16 @@ const data = [{
    "score_2018": 0.0272,
    "neLong": -76.06519894,
    "factName": "Fun Geography Fact",
-   "key": 44
+   "key": 44,
+   "roadRelation": 6.6357E-4,
+   "roundabout": 0.0,
+   "totalArea": 1415.54
 }, {
    "thumbnail": "images\/thumbnails_cities\/UT_SLC.jpg",
    "fact": "The Salt Lake Valley floor is the ancient lakebed of Lake Bonneville which existed at the end of the last Ice Age.",
    "roadGeometry": 56.0,
    "flags": 131,
+   "mapImage": "images\/SOTM-10-02-18-images\/UUT-300.jpeg",
    "swLong": -112.10135,
    "roadAttributes": 75.0,
    "swLat": 40.6999814,
@@ -522,12 +619,16 @@ const data = [{
    "score_2018": 0.0138,
    "neLong": -111.73937,
    "factName": "Fun Geography Fact",
-   "key": 43
+   "key": 43,
+   "roadRelation": 0.001094691,
+   "roundabout": 0.007662835,
+   "totalArea": 4193.88
 }, {
    "thumbnail": "images\/thumbnails_cities\/NH_Manchester.jpg",
    "fact": "This city was developed as a great industrial center and was at one time host to the largest cotton mill in the world.",
    "roadGeometry": 5.0,
    "flags": 23,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNH-300.jpeg",
    "swLong": -71.51276732,
    "roadAttributes": 18.0,
    "swLat": 42.89039879,
@@ -543,12 +644,16 @@ const data = [{
    "score_2018": 0.0106,
    "neLong": -71.37543509,
    "factName": "Fun History Fact",
-   "key": 31
+   "key": 31,
+   "roadRelation": 0.030805687000000002,
+   "roundabout": 0.11492891,
+   "totalArea": 1199.28
 }, {
    "thumbnail": "images\/thumbnails_cities\/FL_Orlando.jpg",
    "fact": "This city is one of the most visited tourist destinations. Major attractions include Walt Disney World and Universal Studios Florida.",
    "roadGeometry": 58.0,
    "flags": 173,
+   "mapImage": "images\/SOTM-10-02-18-images\/UFL-300.jpeg",
    "swLong": -81.50753051,
    "roadAttributes": 115.0,
    "swLat": 28.34806959,
@@ -564,12 +669,16 @@ const data = [{
    "score_2018": 0.0098,
    "neLong": -81.20062369,
    "factName": "Fun Fact",
-   "key": 11
+   "key": 11,
+   "roadRelation": 0.002616279,
+   "roundabout": 0.004069767,
+   "totalArea": 3348.9
 }, {
    "thumbnail": "images\/thumbnails_cities\/VT_Burlington.jpg",
    "fact": "This city is situated on the eastern shore of Lake Champlain which is home to Champ, a well-known lake monster.",
    "roadGeometry": 3.0,
    "flags": 14,
+   "mapImage": "images\/SOTM-10-02-18-images\/UVT-300.jpeg",
    "swLong": -73.27776357,
    "roadAttributes": 11.0,
    "swLat": 44.4459156,
@@ -585,12 +694,16 @@ const data = [{
    "score_2018": 0.0102,
    "neLong": -73.17579693,
    "factName": "Fun Geography Fact",
-   "key": 45
+   "key": 45,
+   "roadRelation": 0.0028985509999999996,
+   "roundabout": 0.0028985509999999996,
+   "totalArea": 2076.66
 }, {
    "thumbnail": "images\/thumbnails_cities\/NC_Charlotte.jpg",
    "fact": "This city was named in honor of German princess Charlotte of Mecklenburg-Strelitz and enjoys the nickname \"The Hornet's Nest\".",
    "roadGeometry": 208.0,
    "flags": 482,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNC-300.jpeg",
    "swLong": -81.057983,
    "roadAttributes": 274.0,
    "swLat": 35.00167,
@@ -606,12 +719,16 @@ const data = [{
    "score_2018": 0.0181,
    "neLong": -80.556258,
    "factName": "Fun History Fact",
-   "key": 28
+   "key": 28,
+   "roadRelation": 0.00209351,
+   "roundabout": 0.002791347,
+   "totalArea": 2055.98
 }, {
    "thumbnail": "images\/thumbnails_cities\/WY_Cheyenne.jpg",
    "fact": "This city, located in the southeastern corner of Wyoming just 9 miles from the Colorado border, is the least centrally located state capital.",
    "roadGeometry": 4.0,
    "flags": 25,
+   "mapImage": "images\/SOTM-10-02-18-images\/UWY-300.jpeg",
    "swLong": -104.8850316,
    "roadAttributes": 21.0,
    "swLat": 41.06282578,
@@ -627,12 +744,16 @@ const data = [{
    "score_2018": 0.015,
    "neLong": -104.6749256,
    "factName": "Fun Geography Fact",
-   "key": 51
+   "key": 51,
+   "roadRelation": 0.017751479,
+   "roundabout": 0.0,
+   "totalArea": 998.4
 }, {
    "thumbnail": "images\/thumbnails_cities\/KS_Wichita.jpg",
    "fact": "This city is a major center for the aviation industry, referred to the \"Air Capital of the World\" with several major aircraft manufacturers and aerospace companies located there.",
    "roadGeometry": 24.0,
    "flags": 157,
+   "mapImage": "images\/SOTM-10-02-18-images\/UKS-300.jpeg",
    "swLong": -97.73426519,
    "roadAttributes": 133.0,
    "swLat": 37.48913293,
@@ -648,12 +769,16 @@ const data = [{
    "score_2018": 0.016,
    "neLong": -97.15291869,
    "factName": "Fun Fact",
-   "key": 17
+   "key": 17,
+   "roadRelation": 0.0,
+   "roundabout": 0.0,
+   "totalArea": 1950.04
 }, {
    "thumbnail": "images\/thumbnails_cities\/MS_Jackson.jpg",
    "fact": "This city sits atop an extinct volcano which is buried almost 3,000 feet underground.",
    "roadGeometry": 12.0,
    "flags": 128,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMS-300.jpeg",
    "swLong": -90.329895,
    "roadAttributes": 116.0,
    "swLat": 32.195459,
@@ -669,12 +794,16 @@ const data = [{
    "score_2018": 0.0244,
    "neLong": -90.05567,
    "factName": "Fun Geography Fact",
-   "key": 26
+   "key": 26,
+   "roadRelation": 0.003072197,
+   "roundabout": 0.0015360979999999998,
+   "totalArea": 4599.64
 }, {
    "thumbnail": "images\/thumbnails_cities\/MN_Minneapolis.jpg",
    "fact": "This city has a twin, Saint Paul, and straddles both banks of the Mississippi. It also has 13 lakes within the city limits.",
    "roadGeometry": 39.0,
    "flags": 155,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMN-300.jpeg",
    "swLong": -93.32910837,
    "roadAttributes": 116.0,
    "swLat": 44.89058851,
@@ -690,12 +819,16 @@ const data = [{
    "score_2018": 0.0135,
    "neLong": -93.19432852,
    "factName": "Fun Fact",
-   "key": 24
+   "key": 24,
+   "roadRelation": 0.001008065,
+   "roundabout": 0.0017641129999999999,
+   "totalArea": 3127.6
 }, {
    "thumbnail": "images\/thumbnails_cities\/PA_Phil_thumbnail.jpg",
    "fact": "This city is a city of firsts - first public library, hospital, medical school, national capital, stock exchange, zoo and business school.",
    "roadGeometry": 125.0,
    "flags": 296,
+   "mapImage": "images\/SOTM-10-02-18-images\/UPA-300.jpeg",
    "swLong": -75.28030495,
    "roadAttributes": 171.0,
    "swLat": 39.86746381,
@@ -711,12 +844,16 @@ const data = [{
    "score_2018": 0.014,
    "neLong": -74.95574685,
    "factName": "Fun History Fact",
-   "key": 37
+   "key": 37,
+   "roadRelation": 0.006718346,
+   "roundabout": 0.005684755,
+   "totalArea": 815.08
 }, {
    "thumbnail": "images\/thumbnails_cities\/ME_Portland.jpg",
    "fact": "This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine's capital city from 1820 to 1832.",
    "roadGeometry": 14.0,
    "flags": 38,
+   "mapImage": "images\/SOTM-10-02-18-images\/UME-300.jpeg",
    "swLong": -70.34739931,
    "roadAttributes": 24.0,
    "swLat": 43.63214691,
@@ -732,12 +869,16 @@ const data = [{
    "score_2018": 0.0206,
    "neLong": -70.08763202,
    "factName": "Fun Fact",
-   "key": 22
+   "key": 22,
+   "roadRelation": 0.006993007,
+   "roundabout": 0.001748252,
+   "totalArea": 1667.8
 }, {
    "thumbnail": "images\/thumbnails_cities\/RI_RI.jpg",
    "fact": "The city motto is \"What Cheer?\", which is how the Narragansett Native Americans are said to have greeted Roger Williams - the founder of the city.",
    "roadGeometry": 15.0,
    "flags": 85,
+   "mapImage": "images\/SOTM-10-02-18-images\/URI-300.jpeg",
    "swLong": -71.472667,
    "roadAttributes": 70.0,
    "swLat": 41.772414,
@@ -753,12 +894,16 @@ const data = [{
    "score_2018": 0.0276,
    "neLong": -71.369694,
    "factName": "Fun Fact",
-   "key": 38
+   "key": 38,
+   "roadRelation": 0.004484305,
+   "roundabout": 0.0,
+   "totalArea": 27.23
 }, {
    "thumbnail": "images\/thumbnails_cities\/WV_Charleston.jpg",
    "fact": "Adjacent to this city, Kanawha Salines, was once the top salt producer in the world. Mea Cuppa is the best coffee in town.",
    "roadGeometry": 20.0,
    "flags": 32,
+   "mapImage": "images\/SOTM-10-02-18-images\/UWV-300.jpeg",
    "swLong": -81.727777,
    "roadAttributes": 12.0,
    "swLat": 38.281139,
@@ -774,12 +919,16 @@ const data = [{
    "score_2018": 0.0141,
    "neLong": -81.55931,
    "factName": "Fun Fact",
-   "key": 47
+   "key": 47,
+   "roadRelation": 0.0,
+   "roundabout": 0.0,
+   "totalArea": 2094.02
 }, {
    "thumbnail": "images\/thumbnails_cities\/CA_SF.jpg",
    "fact": "Human habitation of this city dates to 3,000 BC. San Francisco was an important center for the Spanish and Mexican empires.",
    "roadGeometry": 57.0,
    "flags": 108,
+   "mapImage": "images\/SOTM-10-02-18-images\/UCA-300.jpeg",
    "swLong": -123.108027,
    "roadAttributes": 51.0,
    "swLat": 37.693065,
@@ -795,12 +944,16 @@ const data = [{
    "score_2018": 0.0088,
    "neLong": -122.327681,
    "factName": "Fun Fact",
-   "key": 7
+   "key": 7,
+   "roadRelation": 0.014096186,
+   "roundabout": 0.004145937,
+   "totalArea": 840.64
 }, {
    "thumbnail": "images\/thumbnails_cities\/AR_LittleRock_AR.jpg",
    "fact": "This city is home to the American Taekwondo Association World Headquarters as well as several other Taekwondo organizations.",
    "roadGeometry": 17.0,
    "flags": 116,
+   "mapImage": "images\/SOTM-10-02-18-images\/UAR-300.jpeg",
    "swLong": -92.52160952,
    "roadAttributes": 99.0,
    "swLat": 34.62569865,
@@ -816,12 +969,16 @@ const data = [{
    "score_2018": 0.0145,
    "neLong": -92.150649,
    "factName": "Fun Fact",
-   "key": 1
+   "key": 1,
+   "roadRelation": 0.002306805,
+   "roundabout": 0.0034602079999999998,
+   "totalArea": 1788.58
 }, {
    "thumbnail": "images\/thumbnails_cities\/DE_Wilmington_thumbnail.jpg",
    "fact": "Owing to its business-friendly legal climate, this city is a center for the credit card industry and corporate domicile for more than 50% of US publicly-traded companies.",
    "roadGeometry": 3.0,
    "flags": 11,
+   "mapImage": "images\/SOTM-10-02-18-images\/UDE-300.jpeg",
    "swLong": -75.588502,
    "roadAttributes": 8.0,
    "swLat": 39.686519,
@@ -837,12 +994,16 @@ const data = [{
    "score_2018": 0.0083,
    "neLong": -75.47049,
    "factName": "Fun Fact",
-   "key": 10
+   "key": 10,
+   "roadRelation": 0.003444317,
+   "roundabout": 0.004592423,
+   "totalArea": 902.66
 }, {
    "thumbnail": "images\/thumbnails_cities\/IL_Chicago.jpg",
    "fact": "This city is the second most visited city in the US with 55 million domestic and international visitors in 2017, second only to NYC.",
    "roadGeometry": 374.0,
    "flags": 965,
+   "mapImage": "images\/SOTM-10-02-18-images\/UIL-300.jpeg",
    "swLong": -87.94011408,
    "roadAttributes": 591.0,
    "swLat": 41.64454312,
@@ -858,12 +1019,16 @@ const data = [{
    "score_2018": 0.0211,
    "neLong": -87.5241371,
    "factName": "Fun Fact",
-   "key": 15
+   "key": 15,
+   "roadRelation": 0.010080645,
+   "roundabout": 0.029569892,
+   "totalArea": 347.3
 }, {
    "thumbnail": "images\/thumbnails_cities\/MD_Baltimore.jpg",
    "fact": "This city has been dubbed \"city of neighborhoods\" with hundreds of identified districts. It also leads the nation in public statues and monuments per capita.",
    "roadGeometry": 101.0,
    "flags": 192,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMD-300.jpeg",
    "swLong": -76.71140754,
    "roadAttributes": 91.0,
    "swLat": 39.19724131,
@@ -879,12 +1044,16 @@ const data = [{
    "score_2018": 0.0201,
    "neLong": -76.5296764,
    "factName": "Fun Fact",
-   "key": 21
+   "key": 21,
+   "roadRelation": 0.006384676999999999,
+   "roundabout": 0.0,
+   "totalArea": 382.28
 }, {
    "thumbnail": "images\/thumbnails_cities\/LA_NO.jpg",
    "fact": "This city is world-renowned for the Mardi Gras festival which involves 2 weeks of celebrations culminating with parades and masquerade balls organized by krewes.",
    "roadGeometry": 127.0,
    "flags": 301,
+   "mapImage": "images\/SOTM-10-02-18-images\/ULA-300.jpeg",
    "swLong": -90.14006819,
    "roadAttributes": 174.0,
    "swLat": 29.86546505,
@@ -900,12 +1069,16 @@ const data = [{
    "score_2018": 0.0484,
    "neLong": -89.62778695,
    "factName": "Fun Cultural Fact",
-   "key": 19
+   "key": 19,
+   "roadRelation": 0.0,
+   "roundabout": 0.00257732,
+   "totalArea": 8028.38
 }, {
    "thumbnail": "images\/thumbnails_cities\/DC_Washington.jpg",
    "fact": "This city is 19% parks by area (9,122 acres), which makes it the city with the second-highest percentage of parks among high-density US cities.",
    "roadGeometry": 224.0,
    "flags": 357,
+   "mapImage": "images\/SOTM-10-02-18-images\/UDC-300.jpeg",
    "swLong": -77.11979522,
    "roadAttributes": 133.0,
    "swLat": 38.79164435,
@@ -921,12 +1094,16 @@ const data = [{
    "score_2018": 0.0257,
    "neLong": -76.90914996,
    "factName": "Fun Fact",
-   "key": 9
+   "key": 9,
+   "roadRelation": 0.025641026,
+   "roundabout": 0.01007326,
+   "totalArea": 499.08
 }, {
    "thumbnail": "images\/thumbnails_cities\/CT_Hartford.jpg",
    "fact": "This city is nicknamed \"Insurance Capital of the World\" as it hosts many insurance company headquarters and insurance is the region\u2019s major industry.",
    "roadGeometry": 5.0,
    "flags": 36,
+   "mapImage": "images\/SOTM-10-02-18-images\/UCT-300.jpeg",
    "swLong": -72.71803745,
    "roadAttributes": 31.0,
    "swLat": 41.72377774,
@@ -942,12 +1119,16 @@ const data = [{
    "score_2018": 0.0148,
    "neLong": -72.64228755,
    "factName": "Fun Fact",
-   "key": 8
+   "key": 8,
+   "roadRelation": 0.0,
+   "roundabout": 7.4239E-4,
+   "totalArea": 1011.44
 }, {
    "thumbnail": "images\/thumbnails_cities\/KY_Louisville.jpg",
    "fact": "This city is the birthplace of Cassius Clay, known as Muhammad Ali at the peak of his fame. The city is also the home of KFC.",
    "roadGeometry": 187.0,
    "flags": 419,
+   "mapImage": "images\/SOTM-10-02-18-images\/UKY-300.jpeg",
    "swLong": -85.94712722,
    "roadAttributes": 232.0,
    "swLat": 37.99721745,
@@ -963,12 +1144,16 @@ const data = [{
    "score_2018": 0.0271,
    "neLong": -85.40485082,
    "factName": "Fun Fact",
-   "key": 18
+   "key": 18,
+   "roadRelation": 0.001129944,
+   "roundabout": 0.0,
+   "totalArea": 399.2
 }, {
    "thumbnail": "images\/thumbnails_cities\/HI_honolulu.jpg",
    "fact": "This city consistently ranks high on the world livability rankings.",
    "roadGeometry": 69.0,
    "flags": 400,
+   "mapImage": "images\/SOTM-10-02-18-images\/UHI-300.jpeg",
    "swLong": -158.2818908,
    "roadAttributes": 331.0,
    "swLat": 21.25492348,
@@ -984,12 +1169,16 @@ const data = [{
    "score_2018": 0.0281,
    "neLong": -157.6486293,
    "factName": "Fun Fact",
-   "key": 50
+   "key": 50,
+   "roadRelation": 0.017667845,
+   "roundabout": 0.004711425,
+   "totalArea": 2258.24
 }, {
    "thumbnail": "images\/thumbnails_cities\/TX_Dallas.jpg",
    "fact": "This city is known for inventing the frozen margarita. Almost 80% of Dallas commuters drive to work alone.",
    "roadGeometry": 169.0,
    "flags": 400,
+   "mapImage": "images\/SOTM-10-02-18-images\/UTX-300.jpeg",
    "swLong": -97.00048861,
    "roadAttributes": 231.0,
    "swLat": 32.61332713,
@@ -1005,12 +1194,16 @@ const data = [{
    "score_2018": 0.0105,
    "neLong": -96.4636715,
    "factName": "Fun Fact",
-   "key": 42
+   "key": 42,
+   "roadRelation": 0.005200367,
+   "roundabout": 0.002447232,
+   "totalArea": 1679.08
 }, {
    "thumbnail": "images\/thumbnails_cities\/MA_Boston.jpg",
    "fact": "This city is the third most densely populated large US city. The city is home to some of the most renowned and highly ranked universities in the world.",
    "roadGeometry": 146.0,
    "flags": 274,
+   "mapImage": "images\/SOTM-10-02-18-images\/UMA-300.jpeg",
    "swLong": -71.191155,
    "roadAttributes": 128.0,
    "swLat": 42.227926,
@@ -1026,12 +1219,16 @@ const data = [{
    "score_2018": 0.0233,
    "neLong": -70.748802,
    "factName": "Fun Geography Fact",
-   "key": 20
+   "key": 20,
+   "roadRelation": 0.035324342,
+   "roundabout": 0.004495825,
+   "totalArea": 246.68
 }, {
    "thumbnail": "images\/thumbnails_cities\/NY_NY.jpg",
    "fact": "This city has been described as the cultural, financial and media capital of the world. As host to UN headquarters, it is also a center for international diplomacy.",
    "roadGeometry": 164.0,
    "flags": 503,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNY-300.jpeg",
    "swLong": -74.25909,
    "roadAttributes": 339.0,
    "swLat": 40.477399,
@@ -1047,12 +1244,16 @@ const data = [{
    "score_2018": 0.0101,
    "neLong": -73.700009,
    "factName": "Fun Fact",
-   "key": 4
+   "key": 4,
+   "roadRelation": 0.028955533,
+   "roundabout": 0.0,
+   "totalArea": 272.54
 }, {
    "thumbnail": "images\/thumbnails_cities\/NJ_Newark.jpg",
    "fact": "This city is the second-most racially diverse city in the US. The city's Branck Brook Park is home to the largest collection of cherry blossom trees (5,000).",
    "roadGeometry": 11.0,
    "flags": 144,
+   "mapImage": "images\/SOTM-10-02-18-images\/UNJ-300.jpeg",
    "swLong": -74.25138682,
    "roadAttributes": 133.0,
    "swLat": 40.67378838,
@@ -1068,7 +1269,10 @@ const data = [{
    "score_2018": 0.0392,
    "neLong": -74.11409582,
    "factName": "Fun Demographic Fact",
-   "key": 32
+   "key": 32,
+   "roadRelation": 0.0018331810000000001,
+   "roundabout": 0.0,
+   "totalArea": 288.54
 }];
 
 export default data;
