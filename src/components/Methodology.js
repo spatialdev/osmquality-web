@@ -98,8 +98,17 @@ const Methodology = props => {
           <h4>MQM Extent Enhancement</h4>
           <p>An addition to MQM was incorporated into our methodology this year, to better compare differences over time. The additional feature allows the extent of MQM results to be locked to a specified bounding box, as opposed to being dynamically set by the extent of the input data. This allowed the results of two MQM runs to share the same extent despite small variances in the spatial bound of the input data.</p>
 
+          <h4>Social-Economic Score in MQM</h4>
+          <p> To incorporate the social-economic metrics, we collect data from the U.S. Census Bureau's American Community Survey. This data source includes different demographic information which we used as a proxy for road usage in each city based on each census tract.</p> 
+          <p> With each tract we generated raster layers and grids using city boundaries, we focused on three main data points: population density and car ownership as two different metrics</p>
+          <p> Next, a raster layer is created by each metrics and each city for smaller and unified area of values</p>
+          <p> After that, the zonal statistics tool in QGIS is used to get the mean value of these raster values by MQM grids</p>
+          <p> Finally, once all mean values were calcualted the data was normalized between 0 - 100% scale, we called census_score</p>
 
-         
+          <h4>Re-weight MQM score by usage</h4>
+          <p> Our over-arching question here is if there are multiple area has poor road quality, how can we prioritize it with limited amout of editor efforts</p>
+          <p> We made some assumption that we want a significant portion of the final score from census score but not over powering the real issue, which is map failures in each MQM grid. Thus, we normalize the map failure counts to score between 0 - 100% and use the following formula: 0.7 * MQM Score + 0.3 * Census Score so we can re-weight the hot spot for each city </p>
+
 
           <h4>Grid Generation and Statistics</h4>
           <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error density. 
