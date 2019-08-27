@@ -10,12 +10,14 @@ import MapContext from './helpers/MapContext';
 
 import './App.css';
 import * as ReactGA from 'react-ga';
+import viewport from '@mapbox/geo-viewport';
+import square from '@turf/square';
 
 class App extends Component {
   mapContainer = document.createElement('div');
   state = {
     maxMapBounds: [[0, 0], [0, 0]],
-    mapStyle: 'mapbox://styles/spatialdev/cjzhaiba028201cpjtu0aicao'
+    mapStyle: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
   };
 
   componentDidMount() {
@@ -30,7 +32,11 @@ class App extends Component {
     const context = {
       container: this.mapContainer,
       updateBounds: (newBounds) => this.setState({maxMapBounds: newBounds}),
-      updateStyle: (newStyle) => this.setState({mapStyle: newStyle})
+      updateStyle: (newStyle) => this.setState({mapStyle: newStyle}),
+      getViewport: () => {
+        const flatBounds = [...this.state.maxMapBounds[0], ...this.state.maxMapBounds[1]];
+        return viewport.viewport(square(flatBounds), [400, 400])
+      },
     };
     const {maxMapBounds, mapStyle} = this.state;
     return (

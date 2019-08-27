@@ -29,6 +29,7 @@ import {Menu, MenuItem} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import LayersIcon from "@material-ui/icons/LayersOutlined";
+import EditIcon from "@material-ui/icons/Edit";
 
 const styles = () => ({
   root: {
@@ -53,8 +54,8 @@ const styles = () => ({
 
 const mapboxMaps = {
   nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
-  mqm: 'mapbox://styles/spatialdev/cjzhaiba028201cpjtu0aicao',
-  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc'
+  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc',
+  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
 };
 
 class CityProfileCard extends Component {
@@ -154,7 +155,7 @@ class CityProfileCard extends Component {
   render() {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes } = this.props;
-
+    const viewport = this.context.getViewport();
     if (!cityData) {
       return (
         <div>
@@ -191,27 +192,32 @@ class CityProfileCard extends Component {
                     <div style={{margin: '0 auto'}}>
                       <CardContent style={{ padding: 0 }}>
                       </CardContent>
-                      <IconButton
-                        onClick={(event) => this.setState({mapOptionsAnchor: event.currentTarget})}
-                        style={{position: "relative", top: 50, zIndex: 1000, backgroundColor: 'white'}}
-                      >
-                        <LayersIcon/>
-                      </IconButton>
-                      <Menu
-                        anchorEl={this.state.mapOptionsAnchor}
-                        keepMounted
-                        open={Boolean(this.state.mapOptionsAnchor)}
-                        onClose={this.handleCloseMapOptionsMenu}
-                      >
-                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.mqm)}>Map Quality Measurement</MenuItem>
-                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>No Cars</MenuItem>
-                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
-                      </Menu>
-                      {/* TODO
-                       //TODO
-                        TODO TODO TODO */}
-                      <Button onClick={() => console.log(`clicked button for city ${cityData}`)}>Open in iD Editor</Button>
-                      <Reparentable el={this.context.container}/>
+                      {/*This div needs to capture the position:absolute elements inside. Thus, it has an empty
+                      position:relative.*/}
+                      <div style={{position: 'relative'}}>
+                        <IconButton
+                          onClick={(event) => this.setState({mapOptionsAnchor: event.currentTarget})}
+                          style={{position: 'absolute', top: 4, left: 4, zIndex: 1000, backgroundColor: 'white'}}
+                        >
+                          <LayersIcon/>
+                        </IconButton>
+                        <Menu
+                          anchorEl={this.state.mapOptionsAnchor}
+                          keepMounted
+                          open={Boolean(this.state.mapOptionsAnchor)}
+                          onClose={this.handleCloseMapOptionsMenu}
+                        >
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.wfh)}>Working from Home</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>No Cars</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
+                        </Menu>
+                        <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
+                          <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}>
+                            <EditIcon/>
+                          </a>
+                        </IconButton>
+                        <Reparentable el={this.context.container}/>
+                      </div>
                       <MapLegend/>
                     </div>
 

@@ -6,6 +6,7 @@ import bbox from "@turf/bbox";
 import transformScale from "@turf/transform-scale";
 import bboxPolygon from "@turf/bbox-polygon";
 import {multiPoint} from "@turf/helpers";
+import square from "@turf/square";
 
 import {withStyles} from '@material-ui/core';
 
@@ -29,7 +30,7 @@ class Map extends Component {
   }
 
   getLooseBounds = (bounds, scale) => {
-    return bbox(transformScale(bboxPolygon(bbox(multiPoint(bounds))), scale));
+    return bbox(transformScale(bboxPolygon(square(bbox(multiPoint(bounds)))), scale));
   };
 
   componentDidMount = () => {
@@ -40,7 +41,7 @@ class Map extends Component {
       container: mapboxMapRef.current,
       style,
       bounds: mapBounds,
-      maxBounds: this.getLooseBounds(mapBounds, 2),
+      maxBounds: this.getLooseBounds(mapBounds, 1.25),
     };
     const map = new mapboxgl.Map(options);
     this.setState({map});
