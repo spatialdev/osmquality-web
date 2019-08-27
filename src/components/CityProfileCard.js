@@ -207,8 +207,8 @@ class CityProfileCard extends Component {
                           open={Boolean(this.state.mapOptionsAnchor)}
                           onClose={this.handleCloseMapOptionsMenu}
                         >
-                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.wfh)}>Working from Home</MenuItem>
-                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>No Cars</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.wfh)}>Default</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>Car Ownership</MenuItem>
                           <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
                         </Menu>
                         <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
