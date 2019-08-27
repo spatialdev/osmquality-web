@@ -212,7 +212,9 @@ class CityProfileCard extends Component {
                           <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
                         </Menu>
                         <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
-                          <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}>
+                          <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}
+                            target="_blank"
+                          >
                             <EditIcon/>
                           </a>
                         </IconButton>
