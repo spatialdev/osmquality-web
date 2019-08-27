@@ -14,7 +14,8 @@ import * as ReactGA from 'react-ga';
 class App extends Component {
   mapContainer = document.createElement('div');
   state = {
-    maxMapBounds: [[0, 0], [0, 0]]
+    maxMapBounds: [[0, 0], [0, 0]],
+    mapStyle: 'mapbox://styles/spatialdev/cjzhaiba028201cpjtu0aicao'
   };
 
   componentDidMount() {
@@ -28,13 +29,14 @@ class App extends Component {
   render() {
     const context = {
       container: this.mapContainer,
-      updateBounds: (newBounds) => this.setState({maxMapBounds: newBounds})
+      updateBounds: (newBounds) => this.setState({maxMapBounds: newBounds}),
+      updateStyle: (newStyle) => this.setState({mapStyle: newStyle})
     };
-    const {maxMapBounds} = this.state;
+    const {maxMapBounds, mapStyle} = this.state;
     return (
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {/* Thanks to  https://github.com/facebook/react/issues/13044#issuecomment-428815909 for the solution here!*/}
-        {createPortal(<Map maxBounds={maxMapBounds}/>, this.mapContainer)}
+        {createPortal(<Map maxBounds={maxMapBounds} style={mapStyle}/>, this.mapContainer)}
         {window.location.pathname !== '/' ? <Header/> : null}
         <MapContext.Provider value={context}>
           <Main/>

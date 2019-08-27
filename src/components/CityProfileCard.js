@@ -25,6 +25,10 @@ import MapContext from '../helpers/MapContext';
 
 import '../App.css';
 import RankingIcon from './RankingIcon';
+import {Menu, MenuItem} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import LayersIcon from "@material-ui/icons/LayersOutlined";
 
 const styles = () => ({
   root: {
@@ -47,13 +51,20 @@ const styles = () => ({
   }
 });
 
+const mapboxMaps = {
+  nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
+  mqm: 'mapbox://styles/spatialdev/cjzhaiba028201cpjtu0aicao',
+  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc'
+};
+
 class CityProfileCard extends Component {
   state = {
     cityData: null,
     prevCityData: null,
     nextCityData: null,
     checked: false,
-    direction: null
+    direction: null,
+    mapOptionsAnchor: null
   };
 
   componentDidMount() {
@@ -131,6 +142,15 @@ class CityProfileCard extends Component {
     });
   };
 
+  handleCloseMapOptionsMenu = () => {
+    this.setState({mapOptionsAnchor: null});
+  };
+
+  handleMapSelection = (url) => () => {
+    this.context.updateStyle(url);
+    this.setState({mapOptionsAnchor: null});
+  };
+
   render() {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes } = this.props;
@@ -171,6 +191,26 @@ class CityProfileCard extends Component {
                     <div style={{margin: '0 auto'}}>
                       <CardContent style={{ padding: 0 }}>
                       </CardContent>
+                      <IconButton
+                        onClick={(event) => this.setState({mapOptionsAnchor: event.currentTarget})}
+                        style={{position: "relative", top: 50, zIndex: 1000, backgroundColor: 'white'}}
+                      >
+                        <LayersIcon/>
+                      </IconButton>
+                      <Menu
+                        anchorEl={this.state.mapOptionsAnchor}
+                        keepMounted
+                        open={Boolean(this.state.mapOptionsAnchor)}
+                        onClose={this.handleCloseMapOptionsMenu}
+                      >
+                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.mqm)}>Map Quality Measurement</MenuItem>
+                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>No Cars</MenuItem>
+                        <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
+                      </Menu>
+                      {/* TODO
+                       //TODO
+                        TODO TODO TODO */}
+                      <Button onClick={() => console.log(`clicked button for city ${cityData}`)}>Open in iD Editor</Button>
                       <Reparentable el={this.context.container}/>
                       <MapLegend/>
                     </div>

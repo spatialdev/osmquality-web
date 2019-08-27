@@ -34,10 +34,11 @@ class Map extends Component {
 
   componentDidMount = () => {
     const { mapboxMapRef } = this.state;
+    const { style }  = this.props;
     const mapBounds = [[-116.3656827, 43.50939634], [-116.0941571, 43.69918141]];
     const options = {
       container: mapboxMapRef.current,
-      style: 'mapbox://styles/spatialdev/cjzhaiba028201cpjtu0aicao',
+      style,
       bounds: mapBounds,
       maxBounds: this.getLooseBounds(mapBounds, 2),
     };
@@ -46,8 +47,8 @@ class Map extends Component {
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    const {maxBounds: prevMaxBounds } = prevProps;
-    const {maxBounds: currMaxBounds } = this.props;
+    const {maxBounds: prevMaxBounds, style: prevStyle } = prevProps;
+    const {maxBounds: currMaxBounds, style: currStyle } = this.props;
     const {map} = this.state;
     if (JSON.stringify(prevMaxBounds) !== JSON.stringify(currMaxBounds)) {
       // Since we're re-using a map and div container, we need to re-size between loads to ensure that it gets the
@@ -59,6 +60,10 @@ class Map extends Component {
       map.fitBounds(currMaxBounds, {animate: false, padding: 10});
       // Once we've moved, we can set the new panning bounds
       map.setMaxBounds(this.getLooseBounds(currMaxBounds, 2));
+    }
+    if (prevStyle !== currStyle)
+    {
+      map.setStyle(currStyle);
     }
   };
 
