@@ -17,10 +17,19 @@ import Hammer from 'react-hammerjs';
 
 import CityStatsCard from '../components/CityStatsCard';
 import MapLegend from '../components/MapLegend';
+import Map from '../components/Map';
+import Reparentable from './Reparentable';
 import data from '../data/data';
+
+import MapContext from '../helpers/MapContext';
 
 import '../App.css';
 import RankingIcon from './RankingIcon';
+import {Menu, MenuItem} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import LayersIcon from "@material-ui/icons/LayersOutlined";
+import EditIcon from "@material-ui/icons/Edit";
 
 const styles = () => ({
   root: {
@@ -43,13 +52,20 @@ const styles = () => ({
   }
 });
 
+const mapboxMaps = {
+  nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
+  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc',
+  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
+};
+
 class CityProfileCard extends Component {
   state = {
     cityData: null,
     prevCityData: null,
     nextCityData: null,
     checked: false,
-    direction: null
+    direction: null,
+    mapOptionsAnchor: null
   };
 
   componentDidMount() {
@@ -57,6 +73,18 @@ class CityProfileCard extends Component {
     window.scrollTo(0, 0);
     this.getCityData(cityState);
     this.initializeSlide();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const {cityData: prevCityData} = prevState;
+    const {cityData: currCityData} = this.state;
+    // if we've changed data, change the bounds of the map
+    if ((prevCityData !== null && currCityData !== null && prevCityData.key !== currCityData.key)
+      || (prevCityData === null && currCityData !== null))
+    {
+      const bbox = [[currCityData.swLong, currCityData.swLat], [currCityData.neLong, currCityData.neLat]];
+      this.context.updateBounds(bbox);
+    }
   }
 
   initializeSlide = () => {
@@ -115,17 +143,25 @@ class CityProfileCard extends Component {
     });
   };
 
+  handleCloseMapOptionsMenu = () => {
+    this.setState({mapOptionsAnchor: null});
+  };
+
+  handleMapSelection = (url) => () => {
+    this.context.updateStyle(url);
+    this.setState({mapOptionsAnchor: null});
+  };
+
   render() {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes } = this.props;
-
+    const viewport = this.context.getViewport();
     if (!cityData) {
       return (
         <div>
           <CircularProgress/>
         </div>);
     }
-
     return (
       <Hammer key={cityData.key} onSwipe={this.handleSwipe}>
         <div className="cityProfileCard">
@@ -156,11 +192,34 @@ class CityProfileCard extends Component {
                     <div style={{margin: '0 auto'}}>
                       <CardContent style={{ padding: 0 }}>
                       </CardContent>
-                      <CardMedia
-                        component="img"
-                        className="media"
-                        image={require('../' + cityData.mapImage)}
-                      />
+                      {/*This div needs to capture the position:absolute elements inside. Thus, it has an empty
+                      position:relative.*/}
+                      <div style={{position: 'relative'}}>
+                        <IconButton
+                          onClick={(event) => this.setState({mapOptionsAnchor: event.currentTarget})}
+                          style={{position: 'absolute', top: 4, left: 4, zIndex: 1000, backgroundColor: 'white'}}
+                        >
+                          <LayersIcon/>
+                        </IconButton>
+                        <Menu
+                          anchorEl={this.state.mapOptionsAnchor}
+                          keepMounted
+                          open={Boolean(this.state.mapOptionsAnchor)}
+                          onClose={this.handleCloseMapOptionsMenu}
+                        >
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.wfh)}>Default</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>Car Ownership</MenuItem>
+                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
+                        </Menu>
+                        <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
+                          <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}
+                            target="_blank"
+                          >
+                            <EditIcon/>
+                          </a>
+                        </IconButton>
+                        <Reparentable el={this.context.container}/>
+                      </div>
                       <MapLegend/>
                     </div>
 
@@ -186,6 +245,7 @@ class CityProfileCard extends Component {
   }
 }
 
+CityProfileCard.contextType = MapContext;
 CityProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
