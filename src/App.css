@@ -394,9 +394,9 @@ h2.cityScore {
     }
 
     .cityProfileCard .cardGrid {
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         padding: 5px 8vw 0 8vw;
-
+        margin-left: 30px;
     }
 
     .navArrowLeft {
@@ -413,194 +413,22 @@ h2.cityScore {
 
 }
 
-/*!**/
- /*City Stats Card Component*/
- /**!*/
-
-/*.statsCard {*/
-    /*border-radius: 0;*/
-    /*width: 100%;*/
-/*}*/
-
-/*.cardHeader {*/
-    /*text-align: center;*/
-    /*margin: 0;*/
-    /*border-bottom: 1px solid rgba(151, 151, 151, 0.27);*/
-    /*padding: 15px 0 20px 0;*/
-/*}*/
-
-/*.gridRoot {*/
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    /*justify-content: space-around;*/
-    /*overflow: visible;*/
-/*}*/
-
-/*.gridTileRoot {*/
-    /*!*border: 1px solid rgba(151, 151, 151, 0.27);*!*/
-    /*padding: 0;*/
-/*}*/
-
-/*.gridTileTile {*/
-    /*padding: 4px;*/
-/*}*/
-
-/*.gridTileRoot:nth-child(even) {*/
-    /*border-bottom: 1px solid rgba(151, 151, 151, 0.27);*/
-/*}*/
-
-/*.gridTileRoot:nth-child(odd) {*/
-    /*border-right: 1px solid rgba(151, 151, 151, 0.27);*/
-    /*border-bottom: 1px solid rgba(151, 151, 151, 0.27);*/
-/*}*/
-
-/*.gridList {*/
-    /*width: 100%;*/
-/*}*/
-
-/*.statsIcon {*/
-    /*margin-top: 15px;*/
-    /*margin-right: 8px;*/
-    /*height: 30px;*/
-    /*width: 30px;*/
-    /*flex: 1;*/
-    /*float: left;*/
-    /*color: #7ac143;*/
-/*}*/
-
-/*.statDiv {*/
-    /*max-width: 200px;*/
-    /*height: 100%;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*!*align-items: flex-start;*!*/
-    /*!*flex-direction: row;*!*/
-    /*!*justify-content: space-evenly;*!*/
-    /*!*margin: 0 auto;*!*/
-    /*margin-left: 20px;*/
-/*}*/
-
-/*.statDiv div {*/
-    /*float: right;*/
-/*}*/
-
-/*.statDiv p {*/
-    /*margin-top: 0;*/
-    /*text-align: left;*/
-    /*white-space: nowrap;*/
-/*}*/
-
-/*.statDivFull {*/
-    /*text-align: center;*/
-    /*width: 100%;*/
-    /*max-width: 175px;*/
-/*}*/
-
-
-/*@media (max-width: 480px) {*/
-    /*.statDiv h2 {*/
-        /*font-size: 26px;*/
-    /*}*/
-
-    /*.statDiv p {*/
-        /*font-size: 13px;*/
-    /*}*/
-
-    /*.statsIcon {*/
-        /*height: 25px;*/
-        /*width: 25px;*/
-        /*margin-left: 0;*/
-        /*color: #7ac143;*/
-    /*}*/
-
-    /*.statDivFull {*/
-        /*max-width: 120px;*/
-        /*min-height: 120px;*/
-    /*}*/
-
-    /*.trendingUp {*/
-        /*width: 100px;*/
-        /*margin-left: 0;*/
-        /*color:  #fe1513;*/
-        /*background-size: 50px;*/
-    /*}*/
-
-    /*.trendingDown {*/
-        /*min-height: 25%;*/
-        /*width: 100px;*/
-        /*margin-left: 0;*/
-        /*color: #7ac143;*/
-        /*background-size: 50px;*/
-    /*}*/
-
-    /*.trendingFlat {*/
-        /*height: 50px;*/
-        /*width: 50px;*/
-        /*margin-left: 0;*/
-        /*color: #FED02D;*/
-        /*background-size: 50px;*/
-    /*}*/
-/*}*/
-
-/*@media (max-width: 320px) {*/
-    /*.statDiv h2 {*/
-        /*font-size: 20px;*/
-    /*}*/
-
-    /*.statDiv p {*/
-        /*font-size: 11px;*/
-    /*}*/
-
-    /*.statsIcon {*/
-        /*height: 20px;*/
-        /*width: 20px;*/
-        /*margin: 4px;*/
-        /*color: #7ac143;*/
-    /*}*/
-
-    /*.trendingUp {*/
-        /*height: 100px;*/
-        /*margin-left: 0;*/
-        /*color: #fe1513;*/
-        /*background-size: 50px;*/
-    /*}*/
-
-    /*.trendingDown {*/
-        /*height: 100px;*/
-        /*margin-left: 0;*/
-        /*color:#7ac143;*/
-        /*background-size: 50px;*/
-    /*}*/
-
-    /*.trendingFlat {*/
-        /*height: 50px;*/
-        /*width: 50px;*/
-        /*margin-left: 0;*/
-        /*color: #FED02D;*/
-        /*background-size: 50px;*/
-    /*}*/
-    /*i {*/
-        /*background-size: 50px;*/
-    /*}*/
-/*}*/
-/*i {*/
-    /*background-size: 50px;*/
-/*}*/
-
 /*
  City Stats Card Component
  */
 
 .statsCard {
-    border-radius: 0;
-    width: 100%;
+    /*border-radius: 0;*/
+    width: 60%;
 }
 
 .cardHeader {
-    text-align: center;
-    margin: 0;
+    text-align: left;
+    margin: 30px;
+}
+
+.cardHeaderContainer {
     border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 15px 0 20px 0;
 }
 
 .gridRoot {
@@ -629,7 +457,7 @@ h2.cityScore {
 }
 
 .gridList {
-    width: 100%;
+    width: 30%;
 }
 
 .statsIcon {
@@ -671,16 +499,16 @@ h2.cityScore {
     color: gold;
 }
 .statDiv {
-    max-width: 250px;
-    min-width: 250px;
     height: 100%;
     display: flex;
-    align-items: center;
-    margin: 0 auto;
+    align-items: flex-start;
+    margin-left: inherit;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
 }
 
 .statDiv div {
     float: right;
+    margin-left: 30px;
 }
 
 .statDiv p {
@@ -696,6 +524,12 @@ h2.cityScore {
 }
 
 @media (max-width: 480px) {
+    .statsCard {
+        width: 100%;
+    }
+    .statDiv {
+        align-items: center;
+    }
     .statDiv h2 {
         font-size: 26px;
     }
@@ -735,6 +569,12 @@ h2.cityScore {
 }
 
 @media (max-width: 320px) {
+    .statsCard {
+        width: 100%;
+    }
+    .statDiv {
+        align-items: flex-start;
+    }
     .statDiv h2 {
         font-size: 20px;
     }
@@ -747,6 +587,10 @@ h2.cityScore {
         height: 20px;
         width: 20px;
         margin: 4px;
+    }
+    .statDivFull {
+        max-width: 120px;
+        min-width: 120px;
     }
     .trendingDown {
         height: 20px;
@@ -772,34 +616,16 @@ h2.cityScore {
 /*
 Pie Chart
  */
-.pieChart {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border-top: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 20px 10px;
+.chartTitle {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }
-
-/*.pieChart svg {*/
-    /*display: inline;*/
-    /*height: 50%;*/
-    /*width: 50%;*/
-    /*margin-right: 15px;*/
-/*}*/
-
-/*@media (min-width: 960px) {*/
-    /*.pieChart svg {*/
-        /*height: 30%;*/
-        /*width: 30%;*/
-    /*}*/
-/*}*/
-
-@media (min-width: 600px)
-and (orientation: landscape) {
-    .pieChart svg {
-        height: 40%;
-        width: 40%;
-    }
+.barChart {
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 /*
@@ -974,22 +800,4 @@ Footer
 
 .methodologyContent a {
     color: #3f91cc;
-}
-
-/*.MuiSvgIcon-root-73 {*/
-    /*fill: currentColor;*/
-    /*!* width: 1em; *!*/
-    /*!* height: 1em; *!*/
-    /*display: inline-block;*/
-    /*font-size: 24px;*/
-    /*transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;*/
-    /*user-select: none;*/
-    /*flex-shrink: 0;*/
-/*}*/
-.chart-title {
-    padding-top: 10px;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 600;
 }
