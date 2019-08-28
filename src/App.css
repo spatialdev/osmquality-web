@@ -394,9 +394,9 @@ h2.cityScore {
     }
 
     .cityProfileCard .cardGrid {
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         padding: 5px 8vw 0 8vw;
-
+        margin-left: 30px;
     }
 
     .navArrowLeft {
@@ -418,44 +418,16 @@ h2.cityScore {
  */
 
 .statsCard {
-    border-radius: 0;
-    width: 100%;
+    width: 60%;
 }
 
 .cardHeader {
-    text-align: center;
-    margin: 0;
+    text-align: left;
+    margin: 30px;
+}
+
+.cardHeaderContainer {
     border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 15px 0 20px 0;
-}
-
-.gridRoot {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-}
-
-.gridTileRoot {
-    /*border: 1px solid rgba(151, 151, 151, 0.27);*/
-    padding: 0;
-}
-
-.gridTileTile {
-    padding: 4px;
-}
-
-.gridTileRoot:nth-child(even) {
-    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-}
-
-.gridTileRoot:nth-child(odd) {
-    border-right: 1px solid rgba(151, 151, 151, 0.27);
-    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-}
-
-.gridList {
-    width: 100%;
 }
 
 .statsIcon {
@@ -467,16 +439,46 @@ h2.cityScore {
     float: left;
 }
 
+.trendingUp {
+    margin-top: 12px;
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+    flex: 1;
+    float: left;
+    fill: #7AC143;
+}
+
+.trendingDown {
+    margin-top: 12px;
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+    flex: 1;
+    float: left;
+    color: red;
+}
+
+.trendingFlat {
+    margin-top: 12px;
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+    flex: 1;
+    float: left;
+    color: gold;
+}
 .statDiv {
-    max-width: 200px;
     height: 100%;
     display: flex;
-    align-items: center;
-    margin: 0 auto;
+    align-items: flex-start;
+    margin-left: inherit;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
 }
 
 .statDiv div {
     float: right;
+    margin-left: 30px;
 }
 
 .statDiv p {
@@ -492,6 +494,12 @@ h2.cityScore {
 }
 
 @media (max-width: 480px) {
+    .statsCard {
+        width: 100%;
+    }
+    .statDiv {
+        align-items: center;
+    }
     .statDiv h2 {
         font-size: 26px;
     }
@@ -508,10 +516,35 @@ h2.cityScore {
 
     .statDivFull {
         max-width: 120px;
+        min-width: 120px;
+    }
+    .trendingDown {
+        height: 25px;
+        width: 25px;
+        margin-left: 0;
+        fill: #7ac143;
+    }
+    .trendingUp {
+        height: 25px;
+        width: 25px;
+        margin-left: 0;
+        color: red;
+    }
+    .trendingFlat {
+        height: 25px;
+        width: 25px;
+        margin-left: 0;
+        color: gold;
     }
 }
 
 @media (max-width: 320px) {
+    .statsCard {
+        width: 100%;
+    }
+    .statDiv {
+        align-items: flex-start;
+    }
     .statDiv h2 {
         font-size: 20px;
     }
@@ -525,39 +558,44 @@ h2.cityScore {
         width: 20px;
         margin: 4px;
     }
+    .statDivFull {
+        max-width: 120px;
+        min-width: 120px;
+    }
+    .trendingDown {
+        height: 20px;
+        width: 20px;
+        margin: 4px;
+        color: #7ac143;
+    }
+    .trendingUp {
+        height: 20px;
+        width: 20px;
+        margin: 4px;
+        color: red;
+    }
+    .trendingFlat {
+        height: 20px;
+        width: 20px;
+        margin: 4px;
+        color: gold;
+    }
 }
+
 
 /*
 Pie Chart
  */
-.pieChart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid rgba(151, 151, 151, 0.27);
-    padding: 20px 10px;
+.chartTitle {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }
-
-.pieChart svg {
-    display: inline;
-    height: 50%;
-    width: 50%;
-    margin-right: 15px;
-}
-
-@media (min-width: 960px) {
-    .pieChart svg {
-        height: 30%;
-        width: 30%;
-    }
-}
-
-@media (min-width: 600px)
-and (orientation: landscape) {
-    .pieChart svg {
-        height: 40%;
-        width: 40%;
-    }
+.barChart {
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 /*
