@@ -430,35 +430,6 @@ h2.cityScore {
     border-bottom: 1px solid rgba(151, 151, 151, 0.27);
 }
 
-.gridRoot {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-}
-
-.gridTileRoot {
-    /*border: 1px solid rgba(151, 151, 151, 0.27);*/
-    padding: 0;
-}
-
-.gridTileTile {
-    padding: 4px;
-}
-
-.gridTileRoot:nth-child(even) {
-    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-}
-
-.gridTileRoot:nth-child(odd) {
-    border-right: 1px solid rgba(151, 151, 151, 0.27);
-    border-bottom: 1px solid rgba(151, 151, 151, 0.27);
-}
-
-.gridList {
-    width: 30%;
-}
-
 .statsIcon {
     margin-top: 12px;
     margin-right: 8px;
