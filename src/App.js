@@ -17,8 +17,14 @@ class App extends Component {
   mapContainer = document.createElement('div');
   state = {
     maxMapBounds: [[0, 0], [0, 0]],
-    mapStyle: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
+    mapStyle: 'wfh'
   };
+
+  constructor(props) {
+    super(props);
+    // We want the map's container to take up as much space as possible.
+    this.mapContainer.style.cssText = 'height:100%;width:100%;';
+  }
 
   componentDidMount() {
     // Initialize Google Analytics
@@ -37,6 +43,7 @@ class App extends Component {
         const flatBounds = [...this.state.maxMapBounds[0], ...this.state.maxMapBounds[1]];
         return viewport.viewport(square(flatBounds), [400, 400])
       },
+      style: this.state.mapStyle,
     };
     const {maxMapBounds, mapStyle} = this.state;
     return (

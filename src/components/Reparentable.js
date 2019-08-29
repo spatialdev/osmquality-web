@@ -11,7 +11,8 @@ class Reparentable extends Component {
   }
 
   render() {
-    return <div ref={this.ref}/>;
+    const { el, ...otherProps } = this.props;
+    return <div ref={this.ref} {...otherProps} />;
   }
 }
 
