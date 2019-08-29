@@ -37,7 +37,7 @@ const CityStatsCard = props => {
                     </object>
                     <div>
                         <h2 style={{margin: 0, display: 'inline'}}>{flagTrend.toFixed(2)}%</h2>
-                        <p>Quality Trend (vs. 2018)</p>
+                        <p>Error Rate (vs. 2018)</p>
                     </div>
                 </div>
             </div>
