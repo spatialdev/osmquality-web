@@ -200,15 +200,18 @@ class CityProfileCard extends Component {
                     <CardContent style={{ padding: '0px 24px 0px 24px', height: '100%', width: '100%'}}>
                       <Grid container direction={'column'} alignItems={'stretch'} style={{height: '100%', width: '100%'}}>
 
-                        {/* Controls */}
-                        <Grid item style={{display: 'flex', flex: '1 0 0'}}>
-                          <div className="cardHeaderContainer" style={{width: '100%', display: 'block'}}>
+                        {/* Title */}
+                        <Grid item style={{display: 'flex', flex: '2 0 0%'}}>
+                          <div className="cardHeaderContainer" style={{width: '100%'}}>
                             <h3 className="cardHeader" style={{marginLeft: 0}}>
                               MQM Error Rate
                             </h3>
+                            {/*blah*/}
                           </div>
+                          {/*blah*/}
                         </Grid>
-                        <Grid item style={{display: 'flex', flex: '1 0 0'}}>
+                        {/* Weights */}
+                        <Grid item style={{display: 'flex', flex: '1 0 0%'}}>
                           <div style={{margin: 'auto 8px auto 0px'}}>Weight Error Rate by: </div>
                             <MuiThemeProvider theme={theme}>
                               <FormControl component="fieldset">
@@ -229,7 +232,7 @@ class CityProfileCard extends Component {
                         </Grid>
 
                         {/* Map */}
-                        <Grid item style={{display: 'flex', flex: '7 0 0'}}>
+                        <Grid item style={{display: 'flex', flex: '7 0 0%'}}>
                         {/*This div needs to capture the position:absolute elements inside. Thus, it has an empty
                           position:relative.*/}
                           <div style={{position: 'relative', height: '100%', width: '100%'}}>
@@ -245,7 +248,7 @@ class CityProfileCard extends Component {
                         </Grid>
 
                         {/*Legend*/}
-                        <Grid item container justify='space-between' style={{display: 'flex', flex: '2 0 0'}}>
+                        <Grid item container justify='space-between' style={{display: 'flex', flex: '2 0 0%'}}>
                           <MapLegend/>
                           <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' ? 'Default MQM Error Rate' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
                         </Grid>

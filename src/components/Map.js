@@ -48,7 +48,7 @@ class Map extends Component {
       container: mapboxMapRef.current,
       style: mapboxMaps[style],
       bounds: mapBounds,
-      maxBounds: this.getLooseBounds(mapBounds, 1.25),
+      // maxBounds: this.getLooseBounds(mapBounds, 1.25),
     };
     const map = new mapboxgl.Map(options);
 
@@ -67,7 +67,7 @@ class Map extends Component {
       map.setMaxBounds(null);
       map.fitBounds(currMaxBounds, {animate: false, padding: 10});
       // Once we've moved, we can set the new panning bounds
-      map.setMaxBounds(this.getLooseBounds(currMaxBounds, 2));
+      // map.setMaxBounds(this.getLooseBounds(currMaxBounds, 2));
     }
     if (prevStyle !== currStyle)
     {
