@@ -37,7 +37,7 @@ const Methodology = props => {
           <Divider/>
           <h4>Map Quality Evaluation</h4>
           <p>
-              Map quality is evaluated by looking at the OSM features (Ways, Nodes, and Relations) detected (flagged) by Atlas Checks. 
+              Map quality is evaluated by looking at the OSM features (Ways, Tags, and Relations) detected (flagged) by Atlas Checks. 
               Built on top of Atlas, a scalable OSM graph network, Atlas Checks allows users to write quality assurance algorithms 
               to find map errors in OSM data.
           </p>
@@ -46,59 +46,33 @@ const Methodology = props => {
           </p>
 
           <Grid container className="cardGrid">
-            <Grid item md={3} sm={6} xs={12} className="gridItem">
+            <Grid item md={6} sm={12} xs={24} className="gridItem">
               <Card className={classes.root}>
                 <CardContent style={{ padding: 0 }}>
-                  <h5>Road Connections</h5>
+                  <h5>Road Geometry Checks</h5>
                   <Divider/>
                   <List>
                     <ListItem>BuildingRoadIntersectionCheck</ListItem>
-                    <ListItem>DuplicateWaysCheck</ListItem>
                     <ListItem>EdgeCrossingEdgeCheck</ListItem>
-                    <ListItem>FloatingEdgeCheck</ListItem>
-                    <ListItem>SharpAngleCheck</ListItem>
-                    <ListItem>SinkIslandCheck</ListItem>
+                    <ListItem>SnakeRoadCheck</ListItem>
+                    <ListItem>RoundaboutValenceCheck</ListItem>
+                    <ListItem>InvalidMiniRoundaboutCheck</ListItem>
                   </List>
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item md={3} sm={6} xs={12} className="gridItem">
+            <Grid item md={6} sm={12} xs={24} className="gridItem">
               <Card className={classes.root}>
                 <CardContent style={{ padding: 0 }}>
-                  <h5>Road Relations</h5>
+                  <h5>Road Tags and Relations Checks</h5>
                   <Divider/>
                   <List>
                     <ListItem>InvalidTurnRestrictionCheck</ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item md={3} sm={6} xs={12} className="gridItem">
-              <Card className={classes.root}>
-                <CardContent style={{ padding: 0 }}>
-                  <h5>Road Tags</h5>
-                  <Divider/>
-                  <List>
                     <ListItem>InvalidAccessTagCheck</ListItem>
-                    <ListItem>SignPostCheck</ListItem>
-                    <ListItem>SnakeRoadCheck</ListItem>
-                    <ListItem>StreetNameIntegersOnlyCheck</ListItem>
+                    <ListItem>InvalidLanesTagCheck</ListItem>
+                    <ListItem>SignPostcheck</ListItem>
                     <ListItem>UnusualLayerTagCheck</ListItem>
-                    <ListItem>AreaWithHighwayTagCheck</ListItem>
-                  </List>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item md={3} sm={6} xs={12} className="gridItem">
-              <Card className={classes.root}>
-                <CardContent style={{ padding: 0 }}>
-                  <h5>Roundabouts</h5>
-                  <Divider/>
-                  <List>
-                    <ListItem>MalformedRoundaboutCheck</ListItem>
-                    <ListItem>RoundaboutClosedLoopCheck</ListItem>
-                    <ListItem>RoundaboutValenceCheck</ListItem>
+                    <ListItem>StreetNameIntegerOnlyCheck</ListItem>
                   </List>
                 </CardContent>
               </Card>
@@ -107,58 +81,28 @@ const Methodology = props => {
 
           <p>These checks can be downloaded for at: <a
             href="https://github.com/osmlab/atlas-checks"
-            target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a></p>
+            target="_blank" rel="noopener noreferrer">https://github.com/osmlab/atlas-checks</a> version 5.1.3</p>
 
           <h4>City Selection</h4>
-          <p>The most populous city in each state is selected. <a
-              href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population"
-              target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify those cities.</p>
+          <p>The most populous city in each state is selected. <a href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population" target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify those cities.</p>
 
           <h4>City Ranking</h4>
-          <p>Cities are ranked based on the map error rate which is calculated as below.</p>
-          <p>For atlas features within the subject area:</p>
-          <img className="equation" src={require('../images/formula_simple.png')} alt="equation for calculating city ranking" />
-          <p>The lower error rate a city has, the higher it is ranked. The error rate is normalized so that more weights are 
-            assigned to atlas features that are flagged multiple times.</p>
+          <p>Cities are ranked based on its map error rate which is calculated by dividing the number of error OSM features by the number of total OSM features.</p>
 
-          <h4>Data Processing</h4>
-          <p>OSM data used in analyses were downloaded from <a href="https://extract.bbbike.org/" target="_blank" rel="noopener noreferrer">BBBike</a> September 2018. Processing time for a given city region including data extraction, atlas-check processing and grid generation
-            ran about 30 minutes for this exercise. When machine environment settings are optimized for data processing,
-            the time required for all 51 cities to run in batch mode is approximately 24 hours.</p>
+          <h4>OSM PBF Extraction</h4>
+          <p> The OSM data used was extracted from a full OSM history PBF file (<a href="https://planet.openstreetmap.org/">Source</a>). The full OSM history PBF was then clipped into city OSM history PBFs using each city's boundary file and <a href="https://osmcode.org/osmium-tool/">Osmium's extract tool</a>. Next, 2018 and 2019 data were extracted from each city OSM history PBF file using Osmium's 'time-filter' tool. Specifically, we kept data that was ingested before April 7th at 10am UTC in both 2018 and 2019, and call these outputs 'time slice' PBFs. Finally, Nodes without spatial information were filtered out from the time slice PBFs using a python script.</p>
+
+          <h4>MQM Extent Enhancement</h4>
+          <p>This year, we used the bounding box generated from each city's boundary file, as opposed to a user defined one that may or may not cover the entire city boundary, as the MQM extent. This allows for a more accurate representation of each city's OSM data quality.</p> 
+
+          <h4>Re-prioritize Map Error Hot-Spots by Usage</h4>
+          <p>To reprioritize map error hot-spots by usage, we collect data from the U.S. Census Bureau's American Community Survey. In particular, we used population data from 'Selected Characteristics of the Total and Native Populations in the United States' and 'no vehicle available' data from 'Means of Transportation to Work by Selected Characteristics' as estimates of road usage level in each city. Both are 2017 ACS 5-year estimates on the census tract level.</p>
+          <p>We generated the MQM grids for population and car ownership through the following steps: first, joined the census data to the city census tracts. Then, we generated raster layers for each data category. Afterwards, we generated the MQM grids using the city boundary, and calculated the mean value of the raster layer in each grid using the zonal statistics tool in QGIS. Finally, we normalized the values into a scale of 0 - 100% and reclassify them into five levels by quantile.</p>
+          <p> To combine the population and car ownership grids respectively with the MQM map error grids, we assigned a higher weight to the MQM grid because the map errors should still be the dominant factor for determining a city's map data quality. Specifically, we used the following formula: Combined Score = 0.7 × MQM Score + 0.3 × Census Score. For future enhancement, we would like to provide more flexibility for assigning weights to these layers. </p>
 
           <h4>Grid Generation and Statistics</h4>
-          <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error density. 
-            The tool automates a process to find the optimal heat-map grid size, an area containing a critical mass of errors that represents 
-            a reasonable task for an editor. The resulting grids are thematically styled as choropleth heat maps that can be used by editors 
-            to prioritize their work. For each grid cell, the following statistics are generated:</p>
-          <Grid item xs={12} className="gridItem">
-            <Card className={classes.root}>
-              <CardContent style={{ padding: 0 }}>
-                <List>
-                  <ListItem>Count of flagged Atlas features</ListItem>
-                  <ListItem>Count of flagged OSM features</ListItem>
-                  <ListItem>Count of flags</ListItem>
-                  <ListItem>Grid cell size</ListItem>
-                  <ListItem>Count of checks by type</ListItem>
-                </List>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <p>Afterwards, the grid-based statistics are used to generate the following statistics shown in the 'Quick Stats' section for each city:</p>
-
-          <Grid item xs={12} className="gridItem">
-            <Card className={classes.root}>
-              <CardContent style={{ padding: 0 }}>
-                <List>
-                  <ListItem>Count of total flagged OSM features (called OSM features)</ListItem>
-                  <ListItem>Count of total Atlas Checks flags (called Atlas Checks Flags)</ListItem>
-                  <ListItem>Total city area that are analyzed (called Total City Area)</ListItem>
-                  <ListItem>Percentages of checks by type</ListItem>
-                </List>
-              </CardContent>
-            </Card>
-          </Grid>
+          <p>MQM grids were generated using a custom python tool which optimizes grid size based on map error density. The tool generates a bounding box using the city boundary, and recursively split it into half until a user-defined termination condition is met. Splitting terminates when the vast majority (a user-defined percentage) grids contain a relatively small amount of map errors (a user-defined number), so a few grids with the highest amount of errors form hot-spots. The resulting grids are thematically styled as choropleth heat maps that can be used by editors to prioritize their work. For each grid, we show the counts of the flagged OSM features and the grid size.</p>
+  
         </div>
       </CardContent>
     </Card>
