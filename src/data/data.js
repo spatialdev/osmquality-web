@@ -1,5 +1,5 @@
 const data = [{
-   "fact": "This city was named by French-Canadian fur trappers after the trees (les bois) that line its namesake river (though accounts differ).",
+   "fact": "Legend has it the city of Boise got its name from early 19th century French-Canadian fur trappers who named the present day Boise River \"la riviere boisee\" (French for \"the wooded river\") after the trees that once lined it.",
    "roadGeometry": 28.0,
    "flags": 82,
    "roadConnections": 0.87,
@@ -26,7 +26,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 3930.74
 }, {
-   "fact": "The front range megalopolis or urban corridor is home to a population of approximately 5 million and Denver is the most populous city within a 500-mile radius.",
+   "fact": "Denver is the most populous city within a 500-mile radius. The closest city with a larger population is Phoenix.",
    "roadGeometry": 144.0,
    "flags": 352,
    "roadConnections": 0.86,
@@ -50,10 +50,10 @@ const data = [{
    "ranking": 9,
    "score_2018": 0.0094,
    "neLong": -104.600302,
-   "factName": "Fun Demographic Facts",
+   "factName": "Fun Demography Fact",
    "totalArea": 1188.12
 }, {
-   "fact": "This city was founded on an isthmus between Lake Monona and Lake Mendota",
+   "fact": "Madison, named after Founding Father and former US President James Madison, was founded on an isthmus between Lake Monona and Lake Mendota. It is one of two major US cities built on an isthmus (the other is Seattle).",
    "roadGeometry": 37.0,
    "flags": 184,
    "roadConnections": 0.81,
@@ -80,7 +80,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 683.56
 }, {
-   "fact": "This city is known to have been inhabited for about 12,000 years and derives its name from the Papago-Pima language meaning \"at the base of the black (hill)\"",
+   "fact": "Tucson is known to have been inhabited for about 12,000 years and derives its name from the Papago-Pima language meaning \"at the base of the black (hill)\".",
    "roadGeometry": 57.0,
    "flags": 185,
    "roadConnections": 0.85,
@@ -134,7 +134,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 830.1
 }, {
-   "fact": "This city is nicknamed \"Rocket City\" for it's long association with U.S. space missions and is home to NASA's Marshall Space Flight Center.",
+   "fact": "Huntsville is nicknamed \"Rocket City\" for its long association with US space missions and is home to NASA's Marshall Space Flight Center.",
    "roadGeometry": 40.0,
    "flags": 232,
    "roadConnections": 0.85,
@@ -158,10 +158,10 @@ const data = [{
    "ranking": 36,
    "score_2018": 0.0176,
    "neLong": -86.413707,
-   "factName": "Fun Fact",
+   "factName": "Fun Space Fact",
    "totalArea": 1807.48
 }, {
-   "fact": "This city sits on the \"floor\" of the Mojave Desert. On average, the temperature exceeds 100&deg F on 74 days during the year.",
+   "fact": "Las Vegas sits on the \"floor\" of the Mojave Desert. On average, the temperature exceeds 100 degrees Fahrenheit on 74 days during the year.",
    "roadGeometry": 39.0,
    "flags": 182,
    "roadConnections": 0.85,
@@ -188,7 +188,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 2240.42
 }, {
-   "fact": "This city is nearly equidistant to New York City, Tokyo and Frankfurt(Germany), which makes it a major international cargo hub.",
+   "fact": "Anchorage is nearly equidistant to New York City, Tokyo and Frankfurt, Germany, making it a major international cargo hub.",
    "roadGeometry": 20.0,
    "flags": 165,
    "roadConnections": 0.69,
@@ -215,7 +215,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 846.96
 }, {
-   "fact": "Cadillac Automobiles (headquartered in this city) was named after the founder of Detroit, Antoine de la Mothe Cadillac.",
+   "fact": "Cadillac Automobiles, who is headquartered in Detroit, was named after the founder of Detroit, Antoine de la Mothe Cadillac.",
    "roadGeometry": 22.0,
    "flags": 136,
    "roadConnections": 0.94,
@@ -239,10 +239,10 @@ const data = [{
    "ranking": 1,
    "score_2018": 0.004,
    "neLong": -82.9104229,
-   "factName": "Fun Fact",
+   "factName": "Fun History Fact",
    "totalArea": 1879.38
 }, {
-   "fact": "None of the facts about Columbus are really that fun. The Ohio State University \"Horseshoe\" Stadium is the third largest in the U.S.",
+   "fact": "The first Wendy's restaurant opened on East Broad Street in Columbus in November 1969.",
    "roadGeometry": 93.0,
    "flags": 442,
    "roadConnections": 0.85,
@@ -266,10 +266,10 @@ const data = [{
    "ranking": 30,
    "score_2018": 0.0148,
    "neLong": -82.77133481,
-   "factName": "Fun Fact",
+   "factName": "Fun Fast Food Fact",
    "totalArea": 2404.36
 }, {
-   "fact": "Albuquerque is host to the International Balloon Fiesta, the world's largest gathering of hot-air balloons in the world!",
+   "fact": "Albuquerque is host to the International Balloon Fiesta, the world's largest gathering of hot-air balloons.",
    "roadGeometry": 90.0,
    "flags": 276,
    "roadConnections": 0.77,
@@ -293,10 +293,10 @@ const data = [{
    "ranking": 28,
    "score_2018": 0.0136,
    "neLong": -106.4711832,
-   "factName": "Fun Fact",
+   "factName": "Fun Fiesta Fact",
    "totalArea": 720.48
 }, {
-   "fact": "This city has one of the largest urban parks in the nation and one of the smallest parks in the world!",
+   "fact": "Portland has both the smallest park in the world (Mills End Park) as well as the largest urban forest reserve fully contained within the limits of any US city (Forest Park).",
    "roadGeometry": 21.0,
    "flags": 188,
    "roadConnections": 0.85,
@@ -320,10 +320,10 @@ const data = [{
    "ranking": 2,
    "score_2018": 0.0055,
    "neLong": -122.4720384,
-   "factName": "Fun Fact",
+   "factName": "Fun Geography Fact",
    "totalArea": 385.74
 }, {
-   "fact": "This city is comprised of more than 240 neighborhoods which trace their roots as independent cities or sites of major events.",
+   "fact": "Kansas City is comprised of more than 240 neighborhoods which trace their roots to independent cities or sites of major events.",
    "roadGeometry": 67.0,
    "flags": 181,
    "roadConnections": 0.87,
@@ -347,10 +347,10 @@ const data = [{
    "ranking": 5,
    "score_2018": 0.0076,
    "neLong": -94.3853608,
-   "factName": "Fun Fact",
+   "factName": "Fun Geography Fact",
    "totalArea": 5248.76
 }, {
-   "fact": "This city means \"from the monks\" or \"of the monks\" based on the original name given by French colonists, or for the Algonquian name for \"loon\" (Moingona).",
+   "fact": "There are multiple origin stories of how Des Moines got its name. It was from either from French colonists (Des Moines is French for \"from the monks\" or \"of the monks\"), the Algonquian name for \"loon\" (Moingona) or in reference to a group of French Trappist monks who lived near present day Des Moines in the 17th century.",
    "roadGeometry": 8.0,
    "flags": 48,
    "roadConnections": 0.88,
@@ -374,10 +374,10 @@ const data = [{
    "ranking": 3,
    "score_2018": 0.0055,
    "neLong": -93.492881,
-   "factName": "Fun Fact",
+   "factName": "Fun History Fact",
    "totalArea": 2455.54
 }, {
-   "fact": "1 in 5 North Dakotans call Fargo home. Fargo was renamed for William Fargo of Wells Fargo from the original name of Centralia.",
+   "fact": "About 1 in 5 North Dakotans call Fargo home. Fargo was renamed for William Fargo of Wells Fargo from the original name of Centralia.",
    "roadGeometry": 50.0,
    "flags": 97,
    "roadConnections": 0.68,
@@ -401,10 +401,10 @@ const data = [{
    "ranking": 43,
    "score_2018": 0.0265,
    "neLong": -96.75273315,
-   "factName": "Fun Fact",
+   "factName": "Fun Demography/History Fact",
    "totalArea": 5087.38
 }, {
-   "fact": "The Columbia fall line separates the Piedmont region and the Atlantic Coastal Plain. Rivers drop as falls or rapids across this line.",
+   "fact": "The Congaree River, which runs through the heart of Columbia, is part of the Atlantic Seaboard fall line that separates the Piedmont region and the Atlantic Coastal Plain. Rivers drop as falls or rapids across this line.",
    "roadGeometry": 33.0,
    "flags": 72,
    "roadConnections": 0.85,
@@ -431,7 +431,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 2119.72
 }, {
-   "fact": "This city's music scene has produced or nurtured the careers of Ray Charles, Quincy Jones, Ernestine Anderson, Jimi Hendrix, Nirvana and Soundgarden.",
+   "fact": "Seattle's music scene has produced or nurtured the careers of Ray Charles, Quincy Jones, Ernestine Anderson, Jimi Hendrix, Nirvana and Soundgarden.",
    "roadGeometry": 113.0,
    "flags": 263,
    "roadConnections": 0.91,
@@ -458,7 +458,7 @@ const data = [{
    "factName": "Fun Cultural Fact",
    "totalArea": 646.9
 }, {
-   "fact": "This city has several ethnic enclaves including Little Italy, Little Bohemia, Little Mexico and Greek Town.",
+   "fact": "The Reuben sandwich is claimed to have been invented at the Blackstone Hotel in Omaha in the 1920s during a game of poker and named after one of the poker players, Reuben (Kay) Kulakofsky.",
    "roadGeometry": 75.0,
    "flags": 192,
    "roadConnections": 0.75,
@@ -482,10 +482,10 @@ const data = [{
    "ranking": 8,
    "score_2018": 0.0082,
    "neLong": -95.87113942,
-   "factName": "Fun Demographic Fact",
+   "factName": "Fun History Fact",
    "totalArea": 7021.8
 }, {
-   "fact": "This city is a major hub in the transportation and shipping industry with four interstate highways, river barges and the world\u2019s second busiest cargo airport.",
+   "fact": "Memphis is a major hub in the transportation and shipping industry with four interstate highways, river barges, the FedEx headquarters and the world's busiest cargo airport.",
    "roadGeometry": 73.0,
    "flags": 319,
    "roadConnections": 0.71,
@@ -509,10 +509,10 @@ const data = [{
    "ranking": 39,
    "score_2018": 0.0168,
    "neLong": -89.637089,
-   "factName": "Fun Fact",
+   "factName": "Fun Transportation Fact",
    "totalArea": 2937.54
 }, {
-   "fact": "This city lies within \"Tornado Alley\" and has been struck by thirteen strong tornadoes - eleven rated F4 and 2 rated F5 on the Fujita scale.",
+   "fact": "Oklahoma City is home to the world's first installed parking meter in 1935, the invention of the shopping cart in 1937, and approximately 300 days of sunshine per year.",
    "roadGeometry": 120.0,
    "flags": 528,
    "roadConnections": 0.89,
@@ -536,10 +536,10 @@ const data = [{
    "ranking": 29,
    "score_2018": 0.0159,
    "neLong": -97.12471763,
-   "factName": "Fun Weather Fact",
+   "factName": "Fun History/Weather Fact",
    "totalArea": 2368.86
 }, {
-   "fact": "This city is a \"planned city\" that was laid out by Alexander Ralston who had previously worked on the plan for Washington D.C.",
+   "fact": "The Indianapolis Motor Speedway is the largest sporting facility in the world, covering 253 acres and seating that can exceed 250,000.",
    "roadGeometry": 215.0,
    "flags": 469,
    "roadConnections": 0.89,
@@ -563,10 +563,10 @@ const data = [{
    "ranking": 23,
    "score_2018": 0.0129,
    "neLong": -85.93805709,
-   "factName": "Fun History Fact",
+   "factName": "Fun Sporting Fact",
    "totalArea": 2030.02
 }, {
-   "fact": "Drawn to the cascades of the Big Sioux River, the Ho-Chunk, Ioway, Otoe, Missouri, Omaha, Quapaw, Kansa, Osage, Arikira, Dakota and Cheyenne all inhabited the area previous to european settlement.",
+   "fact": "Drawn to the cascades of the Big Sioux River, the Ho-Chunk, Ioway, Otoe, Missouri, Omaha, Quapaw, Kansa, Osage, Arikira, Dakota and Cheyenne all inhabited the Sioux Falls area previous to European settlement.",
    "roadGeometry": 13.0,
    "flags": 98,
    "roadConnections": 0.72,
@@ -593,7 +593,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 802.64
 }, {
-   "fact": "This city was decimated during the Civil War and therefore lacks the architectural heritage one would expect for a city of its age.",
+   "fact": "Atlanta is recognized by the National Park Service as the most heavily forested urban area in the U.S., with nearly 48 percent of the city's limits covered by urban tree canopy.",
    "roadGeometry": 246.0,
    "flags": 324,
    "roadConnections": 0.9,
@@ -617,10 +617,10 @@ const data = [{
    "ranking": 35,
    "score_2018": 0.0176,
    "neLong": -84.28962051,
-   "factName": "Fun History Fact",
+   "factName": "Fun Nature Fact",
    "totalArea": 1885.22
 }, {
-   "fact": "This city is listed by the Guinness Book of Records as having the longest pleasure beach in the world.",
+   "fact": "Virginia Beach is home to the 17.6 mile long Cheasapeake Bay Bridge Tunnel, the longest bridge-tunnel complex in the world, which includes two separate mile long tunnels (one of which is underwater) and four manmade islands.",
    "roadGeometry": 93.0,
    "flags": 209,
    "roadConnections": 0.82,
@@ -644,10 +644,10 @@ const data = [{
    "ranking": 44,
    "score_2018": 0.0272,
    "neLong": -76.06519894,
-   "factName": "Fun Geography Fact",
+   "factName": "Fun Transportation Fact",
    "totalArea": 1415.54
 }, {
-   "fact": "The Salt Lake Valley floor is the ancient lakebed of Lake Bonneville which existed at the end of the last Ice Age.",
+   "fact": "Salt Lake City has the highest consumption of Jell-O per capita than anywhere else in the world.",
    "roadGeometry": 56.0,
    "flags": 131,
    "roadConnections": 0.86,
@@ -671,10 +671,10 @@ const data = [{
    "ranking": 31,
    "score_2018": 0.0138,
    "neLong": -111.73937,
-   "factName": "Fun Geography Fact",
+   "factName": "Fun Snack Fact",
    "totalArea": 4193.88
 }, {
-   "fact": "This city was developed as a great industrial center and was at one time host to the largest cotton mill in the world.",
+   "fact": "In the 19th century Manchester was home to the largest cotton textile plant in the world.",
    "roadGeometry": 5.0,
    "flags": 23,
    "roadConnections": 0.76,
@@ -701,7 +701,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 1199.28
 }, {
-   "fact": "This city is one of the most visited tourist destinations. Major attractions include Walt Disney World and Universal Studios Florida.",
+   "fact": "Orlando is home to the world famous Walt Disney World Resort, which sprawls over the same amount of land as the entire city of San Francisco and two Manhattans.",
    "roadGeometry": 58.0,
    "flags": 173,
    "roadConnections": 0.89,
@@ -725,10 +725,10 @@ const data = [{
    "ranking": 22,
    "score_2018": 0.0098,
    "neLong": -81.20062369,
-   "factName": "Fun Fact",
+   "factName": "Fun Geography Fact",
    "totalArea": 3348.9
 }, {
-   "fact": "This city is situated on the eastern shore of Lake Champlain which is home to Champ, a well-known lake monster.",
+   "fact": "Burlington is situated on the eastern shore of Lake Champlain which is home to Champ, a well-known lake monster.",
    "roadGeometry": 3.0,
    "flags": 14,
    "roadConnections": 0.88,
@@ -755,7 +755,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 2076.66
 }, {
-   "fact": "This city was named in honor of German princess Charlotte of Mecklenburg-Strelitz and enjoys the nickname \"The Hornet's Nest\".",
+   "fact": "Charlotte was named in honor of German princess Charlotte of Mecklenburg-Strelitz. The city also enjoys the nickname \"The Hornet's Nest\" which dates back to the American Revolutionary War when British command Lord Charles Cornwallis used the name to refer to the city's fierce resistance to British occupation.",
    "roadGeometry": 208.0,
    "flags": 482,
    "roadConnections": 0.8,
@@ -782,7 +782,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 2055.98
 }, {
-   "fact": "This city, located in the southeastern corner of Wyoming just 9 miles from the Colorado border, is the least centrally located state capital.",
+   "fact": "Cheyenne, located in the southeastern corner of Wyoming just 9 miles from the Colorado border, is the least centrally located U.S. state capital.",
    "roadGeometry": 4.0,
    "flags": 25,
    "roadConnections": 0.68,
@@ -809,7 +809,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 998.4
 }, {
-   "fact": "This city is a major center for the aviation industry, referred to the \"Air Capital of the World\" with several major aircraft manufacturers and aerospace companies located there.",
+   "fact": "Wichita is a major center for the aviation industry, referred to the \"Air Capital of the World\" with several major aircraft manufacturers and aerospace companies located there.",
    "roadGeometry": 24.0,
    "flags": 157,
    "roadConnections": 0.73,
@@ -833,10 +833,10 @@ const data = [{
    "ranking": 25,
    "score_2018": 0.016,
    "neLong": -97.15291869,
-   "factName": "Fun Fact",
+   "factName": "Fun Aviation Fact",
    "totalArea": 1950.04
 }, {
-   "fact": "This city sits atop an extinct volcano which is buried almost 3,000 feet underground.",
+   "fact": "Present day Jackson sits atop the location of an extinct prehistoric volcano which is buried almost 3,000 feet underground.",
    "roadGeometry": 12.0,
    "flags": 128,
    "roadConnections": 0.72,
@@ -863,7 +863,7 @@ const data = [{
    "factName": "Fun Geography Fact",
    "totalArea": 4599.64
 }, {
-   "fact": "This city has a twin, Saint Paul, and straddles both banks of the Mississippi. It also has 13 lakes within the city limits.",
+   "fact": "Minneapolis is home to the nation's largest urban sculpture garden, is the birthplace of the honeycrisp apple and is home to the Minneapolis Skyway, the longest continuous skyway system in the world spanning 7 miles and 69 blocks.",
    "roadGeometry": 39.0,
    "flags": 155,
    "roadConnections": 0.77,
@@ -887,10 +887,10 @@ const data = [{
    "ranking": 27,
    "score_2018": 0.0135,
    "neLong": -93.19432852,
-   "factName": "Fun Fact",
+   "factName": "Fun Random Fact",
    "totalArea": 3127.6
 }, {
-   "fact": "This city is a city of firsts - first public library, hospital, medical school, national capital, stock exchange, zoo and business school.",
+   "fact": "Philadelphia is a city of firsts - first U.S. public library, hospital, medical school, national capital, stock exchange, zoo and business school.",
    "roadGeometry": 125.0,
    "flags": 296,
    "roadConnections": 0.81,
@@ -917,7 +917,7 @@ const data = [{
    "factName": "Fun History Fact",
    "totalArea": 815.08
 }, {
-   "fact": "This city is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine's capital city from 1820 to 1832.",
+   "fact": "Portland is built upon the Great Neck peninsula which juts out into Casco Bay. It served as Maine's capital city from 1820 to 1832. Today, 40 percent of Maine residents live in the greater Portland area.",
    "roadGeometry": 14.0,
    "flags": 38,
    "roadConnections": 0.82,
@@ -941,10 +941,10 @@ const data = [{
    "ranking": 34,
    "score_2018": 0.0206,
    "neLong": -70.08763202,
-   "factName": "Fun Fact",
+   "factName": "Fun Demography/History Fact",
    "totalArea": 1667.8
 }, {
-   "fact": "The city motto is \"What Cheer?\", which is how the Narragansett Native Americans are said to have greeted Roger Williams - the founder of the city.",
+   "fact": "Providence's motto is \"What Cheer?\", which is how the Narragansett Native Americans are said to have greeted Roger Williams - the founder of the city.",
    "roadGeometry": 15.0,
    "flags": 85,
    "roadConnections": 0.757847534,
@@ -971,7 +971,7 @@ const data = [{
    "factName": "Fun Fact",
    "totalArea": 27.23
 }, {
-   "fact": "Adjacent to this city, Kanawha Salines, was once the top salt producer in the world. Mea Cuppa is the best coffee in town.",
+   "fact": "The Kanawha Salines district, now located in the Kanawha City neighborhood of Charleston, was once the top salt producer in the world.",
    "roadGeometry": 20.0,
    "flags": 32,
    "roadConnections": 0.9,
@@ -995,10 +995,10 @@ const data = [{
    "ranking": 32,
    "score_2018": 0.0141,
    "neLong": -81.55931,
-   "factName": "Fun Fact",
+   "factName": "Fun Geography Fact",
    "totalArea": 2094.02
 }, {
-   "fact": "Human habitation of this city dates to 3,000 BC. San Francisco was an important center for the Spanish and Mexican empires.",
+   "fact": "Of the over 2,500 U.S. historic landmarks, San Francisco's cable cars are the only ones that move (and do so at a rate of 9.5 miles per hour).",
    "roadGeometry": 57.0,
    "flags": 108,
    "roadConnections": 0.95,
@@ -1022,10 +1022,10 @@ const data = [{
    "ranking": 6,
    "score_2018": 0.0088,
    "neLong": -122.327681,
-   "factName": "Fun Fact",
+   "factName": "Fun History Fact",
    "totalArea": 840.64
 }, {
-   "fact": "This city is home to the American Taekwondo Association World Headquarters as well as several other Taekwondo organizations.",
+   "fact": "Little Rock is home to the American Taekwondo Association World Headquarters.",
    "roadGeometry": 17.0,
    "flags": 116,
    "roadConnections": 0.77,
@@ -1049,10 +1049,10 @@ const data = [{
    "ranking": 13,
    "score_2018": 0.0145,
    "neLong": -92.150649,
-   "factName": "Fun Fact",
+   "factName": "Fun Taekwondo Fact",
    "totalArea": 1788.58
 }, {
-   "fact": "Owing to its business-friendly legal climate, this city is a center for the credit card industry and corporate domicile for more than 50% of US publicly-traded companies.",
+   "fact": "Owing to its business-friendly legal climate, Wilmington is a center for the credit card industry and is the corporate domicile for more than 50% of US publicly-traded companies.",
    "roadGeometry": 3.0,
    "flags": 11,
    "roadConnections": 0.77,
@@ -1076,10 +1076,10 @@ const data = [{
    "ranking": 7,
    "score_2018": 0.0083,
    "neLong": -75.47049,
-   "factName": "Fun Fact",
+   "factName": "Fun Financial Fact",
    "totalArea": 902.66
 }, {
-   "fact": "This city is the second most visited city in the US with 55 million domestic and international visitors in 2017, second only to NYC.",
+   "fact": "Chicago is the second most visited city in the US with 55 million domestic and international visitors in 2017, second only to New York City.",
    "roadGeometry": 374.0,
    "flags": 965,
    "roadConnections": 0.92,
@@ -1103,10 +1103,10 @@ const data = [{
    "ranking": 42,
    "score_2018": 0.0211,
    "neLong": -87.5241371,
-   "factName": "Fun Fact",
+   "factName": "Fun Travel Fact",
    "totalArea": 347.3
 }, {
-   "fact": "This city has been dubbed \"city of neighborhoods\" with hundreds of identified districts. It also leads the nation in public statues and monuments per capita.",
+   "fact": "Baltimore has been dubbed \"city of neighborhoods\" with hundreds of identified districts. It also leads the nation in public statues and monuments per capita.",
    "roadGeometry": 101.0,
    "flags": 192,
    "roadConnections": 0.95,
@@ -1130,10 +1130,10 @@ const data = [{
    "ranking": 21,
    "score_2018": 0.0201,
    "neLong": -76.5296764,
-   "factName": "Fun Fact",
+   "factName": "Fun Cultural Fact",
    "totalArea": 382.28
 }, {
-   "fact": "This city is world-renowned for the Mardi Gras festival which involves 2 weeks of celebrations culminating with parades and masquerade balls organized by krewes.",
+   "fact": "New Orleans is world-renowned for the Mardi Gras festival which involves 2 weeks of celebrations culminating with parades and masquerade balls organized by krewes.",
    "roadGeometry": 127.0,
    "flags": 301,
    "roadConnections": 0.79,
@@ -1160,7 +1160,7 @@ const data = [{
    "factName": "Fun Cultural Fact",
    "totalArea": 8028.38
 }, {
-   "fact": "This city is 19% parks by area (9,122 acres), which makes it the city with the second-highest percentage of parks among high-density US cities.",
+   "fact": "Washington, D.C. is 19% parks by area (9,122 acres), which makes it the city with the second-highest percentage of parks among high-density US cities.",
    "roadGeometry": 224.0,
    "flags": 357,
    "roadConnections": 0.89,
@@ -1184,10 +1184,10 @@ const data = [{
    "ranking": 46,
    "score_2018": 0.0257,
    "neLong": -76.90914996,
-   "factName": "Fun Fact",
+   "factName": "Fun Nature Fact",
    "totalArea": 499.08
 }, {
-   "fact": "This city is nicknamed \"Insurance Capital of the World\" as it hosts many insurance company headquarters and insurance is the region\u2019s major industry.",
+   "fact": "Hartford is nicknamed \"Insurance Capital of the World\" as it hosts many insurance company headquarters and insurance is the region's major industry.",
    "roadGeometry": 5.0,
    "flags": 36,
    "roadConnections": 0.88,
@@ -1214,7 +1214,7 @@ const data = [{
    "factName": "Fun Fact",
    "totalArea": 1011.44
 }, {
-   "fact": "This city is the birthplace of Cassius Clay, known as Muhammad Ali at the peak of his fame. The city is also the home of KFC.",
+   "fact": "Louisville is the birthplace of Cassius Clay, known as Muhammad Ali at the peak of his fame. The city is also the home of KFC.",
    "roadGeometry": 187.0,
    "flags": 419,
    "roadConnections": 0.89,
@@ -1241,7 +1241,7 @@ const data = [{
    "factName": "Fun Fact",
    "totalArea": 399.2
 }, {
-   "fact": "This city consistently ranks high on the world livability rankings.",
+   "fact": "Iolani Palace, located in downtown Honolulu, is the only U.S. royal palace that had electricity 4 years before the White House did and was the first palace in the world to install flushing toilets.",
    "roadGeometry": 69.0,
    "flags": 400,
    "roadConnections": 0.74,
@@ -1265,10 +1265,10 @@ const data = [{
    "ranking": 49,
    "score_2018": 0.0281,
    "neLong": -157.6486293,
-   "factName": "Fun Fact",
+   "factName": "Fun Cultural Fact",
    "totalArea": 2258.24
 }, {
-   "fact": "This city is known for inventing the frozen margarita. Almost 80% of Dallas commuters drive to work alone.",
+   "fact": "Dallas is the birthplace for the integrated circuit computer chip (which later became the microchip) and the frozen margarita machine.",
    "roadGeometry": 169.0,
    "flags": 400,
    "roadConnections": 0.92,
@@ -1292,10 +1292,10 @@ const data = [{
    "ranking": 20,
    "score_2018": 0.0105,
    "neLong": -96.4636715,
-   "factName": "Fun Fact",
+   "factName": "Fun Invention Fact",
    "totalArea": 1679.08
 }, {
-   "fact": "This city is the third most densely populated large US city. The city is home to some of the most renowned and highly ranked universities in the world.",
+   "fact": "Boston is a city of firsts - the first U.S. public beach, subway, public park, chocolate factory, Thanksgiving, college, and Dunkin' Donuts.",
    "roadGeometry": 146.0,
    "flags": 274,
    "roadConnections": 0.89,
@@ -1319,10 +1319,10 @@ const data = [{
    "ranking": 45,
    "score_2018": 0.0233,
    "neLong": -70.748802,
-   "factName": "Fun Geography Fact",
+   "factName": "Fun History Fact",
    "totalArea": 246.68
 }, {
-   "fact": "This city has been described as the cultural, financial and media capital of the world. As host to UN headquarters, it is also a center for international diplomacy.",
+   "fact": "New York City has been described as the cultural, financial and media capital of the world. As host to UN headquarters, it is also a center for international diplomacy.",
    "roadGeometry": 164.0,
    "flags": 503,
    "roadConnections": 0.91,
@@ -1346,10 +1346,10 @@ const data = [{
    "ranking": 12,
    "score_2018": 0.0101,
    "neLong": -73.700009,
-   "factName": "Fun Fact",
+   "factName": "Fun Cultural Fact",
    "totalArea": 272.54
 }, {
-   "fact": "This city is the second-most racially diverse city in the US. The city's Branck Brook Park is home to the largest collection of cherry blossom trees (5,000).",
+   "fact": "Newark is the second-most racially diverse city in the U.S. and the city's Branck Brook Park is home to the largest collection of cherry blossom trees (5,000).",
    "roadGeometry": 11.0,
    "flags": 144,
    "roadConnections": 0.8,
@@ -1373,7 +1373,7 @@ const data = [{
    "ranking": 50,
    "score_2018": 0.0392,
    "neLong": -74.11409582,
-   "factName": "Fun Demographic Fact",
+   "factName": "Fun Demography/Geography Fact",
    "totalArea": 288.54
 }];
 
