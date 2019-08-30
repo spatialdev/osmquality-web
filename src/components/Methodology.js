@@ -87,34 +87,21 @@ const Methodology = props => {
           <p>The most populous city in each state is selected. <a href="https://en.wikipedia.org/wiki/List_of_largest_cities_of_U.S._states_and_territories_by_population" target="_blank" rel="noopener noreferrer">Wikipedia</a> was used to identify those cities.</p>
 
           <h4>City Ranking</h4>
-          <p>Cities are ranked based on the map error rate with error OSM features over all OSM features. The lower error rate a city has, the higher it is ranked.</p>
+          <p>Cities are ranked based on its map error rate which is calculated by dividing the number of error OSM features by the number of total OSM features.</p>
 
           <h4>OSM PBF Extraction</h4>
-          <p> The OSM data used was extracted from a full OSM history PBF file (<a href="https://planet.openstreetmap.org/">Source</a>). The goal of the initial phase of data processing was to have two extracts for each city, one containing 2018 data and the other 2019 data. This was achieved using a tool called <a href="https://osmcode.org/osmium-tool/">Osmium</a>.</p>
-          <p> The first step was to cut the full planet OSM history PBF into a history file for each city using Osmium's 'extract' tool. The tool used geojson boundaries of each city to perform a soft clip for each, generating the new city history PBFs.</p>
-          <p>Next, each of the city history files were time sliced. Using Osmium's 'time-filter' tool each history file was filtered so that the data appeared the same as it would have at a specific point in time in OSM. For each city this was done twice, creating a PBF for April 7th at 10am UTC for both 2018 and 2019. At this point, the new time slice PBFs were in standard OSM PBF format, as opposed to OSM history files.</p>
-          <p>Finally, extraneous Nodes were cleaned from the time slice PBFs using a simple python script. The Nodes in question did not have an spatial information, as they were remnants of features that had been deleted at that point in time.</p>
+          <p> The OSM data used was extracted from a full OSM history PBF file (<a href="https://planet.openstreetmap.org/">Source</a>). The full OSM history PBF was then clipped into city OSM history PBFs using each city's boundary file and <a href="https://osmcode.org/osmium-tool/">Osmium's extract tool</a>. Next, 2018 and 2019 data were extracted from each city OSM history PBF file using Osmium's 'time-filter' tool. Specifically, we kept data that was ingested before April 7th at 10am UTC in both 2018 and 2019, and call these outputs 'time slice' PBFs. Finally, Nodes without spatial information were filtered out from the time slice PBFs using a python script.</p>
 
           <h4>MQM Extent Enhancement</h4>
-          <p>An addition to MQM was incorporated into our methodology this year, to better compare differences over time. The additional feature allows the extent of MQM results to be locked to a specified bounding box, as opposed to being dynamically set by the extent of the input data. This allowed the results of two MQM runs to share the same extent despite small variances in the spatial bound of the input data.</p>
+          <p>This year, we used the bounding box generated from each city's boundary file, as opposed to a user defined one that may or may not cover the entire city boundary, as the MQM extent. This allows for a more accurate representation of each city's OSM data quality.</p> 
 
-          <h4>Social-Economic Score in MQM</h4>
-          <p> To incorporate the social-economic metrics, we collect data from the U.S. Census Bureau's American Community Survey. This data source includes different demographic information which we used as a proxy for road usage in each city based on each census tract.</p> 
-          <p> With each tract we generated raster layers and grids using city boundaries, we focused on three main data points: population density and car ownership as two different metrics</p>
-          <p> Next, a raster layer is created by each metrics and each city for smaller and unified area of values</p>
-          <p> After that, the zonal statistics tool in QGIS is used to get the mean value of these raster values by MQM grids</p>
-          <p> Finally, once all mean values were calcualted the data was normalized between 0 - 100% scale, we called census_score</p>
-
-          <h4>Re-weight MQM score by usage</h4>
-          <p> Our over-arching question here is if there are multiple area has poor road quality, how can we prioritize it with limited amout of editor efforts</p>
-          <p> We made some assumption that we want a significant portion of the final score from census score but not over powering the real issue, which is map failures in each MQM grid. Thus, we normalize the map failure counts to score between 0 - 100% and use the following formula: 0.7 * MQM Score + 0.3 * Census Score so we can re-weight the hot spot for each city </p>
-
+          <h4>Re-prioritize Map Error Hot-Spots by Usage</h4>
+          <p>To reprioritize map error hot-spots by usage, we collect data from the U.S. Census Bureau's American Community Survey. In particular, we used population data from 'Selected Characteristics of the Total and Native Populations in the United States' and 'no vehicle available' data from 'Means of Transportation to Work by Selected Characteristics' as estimates of road usage level in each city. Both are 2017 ACS 5-year estimates on the census tract level.</p>
+          <p>We generated the MQM grids for population and car ownership through the following steps: first, joined the census data to the city census tracts. Then, we generated raster layers for each data category. Afterwards, we generated the MQM grids using the city boundary, and calculated the mean value of the raster layer in each grid using the zonal statistics tool in QGIS. Finally, we normalized the values into a scale of 0 - 100% and reclassify them into five levels by quantile.</p>
+          <p> To combine the population and car ownership grids respectively with the MQM map error grids, we assigned a higher weight to the MQM grid because the map errors should still be the dominant factor for determining a city's map data quality. Specifically, we used the following formula: Combined Score = 0.7 × MQM Score + 0.3 × Census Score. For future enhancement, we would like to provide more flexibility for assigning weights to these layers. </p>
 
           <h4>Grid Generation and Statistics</h4>
-          <p>Analysis grids were generated using a custom python tool which optimizes grid size based on map error density. 
-            The tool automates a process to find the optimal heat-map grid size, an area containing a critical mass of errors that represents 
-            a reasonable task for an editor. The resulting grids are thematically styled as choropleth heat maps that can be used by editors 
-            to prioritize their work. For each grid cell, we have counts on flagged OSM features and the size</p>
+          <p>MQM grids were generated using a custom python tool which optimizes grid size based on map error density. The tool generates a bounding box using the city boundary, and recursively split it into half until a user-defined termination condition is met. Splitting terminates when the vast majority (a user-defined percentage) grids contain a relatively small amount of map errors (a user-defined number), so a few grids with the highest amount of errors form hot-spots. The resulting grids are thematically styled as choropleth heat maps that can be used by editors to prioritize their work. For each grid, we show the counts of the flagged OSM features and the grid size.</p>
   
         </div>
       </CardContent>
