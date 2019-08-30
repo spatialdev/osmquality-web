@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid/Grid';
 import Paper from '@material-ui/core/Paper/Paper';
@@ -17,7 +16,6 @@ import Hammer from 'react-hammerjs';
 
 import CityStatsCard from '../components/CityStatsCard';
 import MapLegend from '../components/MapLegend';
-import Map from '../components/Map';
 import Reparentable from './Reparentable';
 import data from '../data/data';
 
@@ -25,11 +23,21 @@ import MapContext from '../helpers/MapContext';
 
 import '../App.css';
 import RankingIcon from './RankingIcon';
-import {Menu, MenuItem} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+import {createMuiTheme} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-import LayersIcon from "@material-ui/icons/LayersOutlined";
 import EditIcon from "@material-ui/icons/Edit";
+import FormControl from "@material-ui/core/FormControl";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+import MuiThemeProvider from "@material-ui/core/es/styles/MuiThemeProvider";
+
+// In order to override the default pink color for the radio buttons, we need to create a theme.
+const theme = createMuiTheme({
+  palette: {
+    secondary: { main: '#4A4A4A' }, // This is a dark grey
+  },
+});
 
 const styles = () => ({
   root: {
@@ -187,45 +195,69 @@ class CityProfileCard extends Component {
                 <h2 className="cityScore">Errors: {(cityData.score * 100).toFixed(2)}%</h2>
               </div>
               <Grid container className="cardGrid">
-                <Grid item md={6} sm={12} xs={12} className="gridItem">
+                <Grid item md={8} sm={12} xs={12} className="gridItem">
                   <Card className={classes.root}>
-                    <div style={{margin: '0 auto'}}>
-                      <CardContent style={{ padding: 0 }}>
-                      </CardContent>
-                      {/*This div needs to capture the position:absolute elements inside. Thus, it has an empty
-                      position:relative.*/}
-                      <div style={{position: 'relative'}}>
-                        <IconButton
-                          onClick={(event) => this.setState({mapOptionsAnchor: event.currentTarget})}
-                          style={{position: 'absolute', top: 4, left: 4, zIndex: 1000, backgroundColor: 'white'}}
-                        >
-                          <LayersIcon/>
-                        </IconButton>
-                        <Menu
-                          anchorEl={this.state.mapOptionsAnchor}
-                          keepMounted
-                          open={Boolean(this.state.mapOptionsAnchor)}
-                          onClose={this.handleCloseMapOptionsMenu}
-                        >
-                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.wfh)}>Default</MenuItem>
-                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.nocar)}>Car Ownership</MenuItem>
-                          <MenuItem onClick={this.handleMapSelection(mapboxMaps.ppl)}>Population</MenuItem>
-                        </Menu>
-                        <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
-                          <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}
-                            target="_blank"
-                          >
-                            <EditIcon/>
-                          </a>
-                        </IconButton>
-                        <Reparentable el={this.context.container}/>
-                      </div>
-                      <MapLegend/>
-                    </div>
+                    <CardContent style={{ padding: '0px 24px 0px 24px', height: '100%', width: '100%'}}>
+                      <Grid container direction={'column'} alignItems={'stretch'} style={{height: '100%', width: '100%'}}>
 
+                        {/* Title */}
+                        <Grid item style={{display: 'flex', flex: '2 0 0%'}}>
+                          <div className="cardHeaderContainer" style={{width: '100%'}}>
+                            <h3 className="cardHeader" style={{marginLeft: 0}}>
+                              MQM Error Rate
+                            </h3>
+                            {/*blah*/}
+                          </div>
+                          {/*blah*/}
+                        </Grid>
+                        {/* Weights */}
+                        <Grid item style={{display: 'flex', flex: '1 0 0%'}}>
+                          <div style={{margin: 'auto 8px auto 0px'}}>Weight Error Rate by: </div>
+                            <MuiThemeProvider theme={theme}>
+                              <FormControl component="fieldset">
+                                <RadioGroup
+                                  aria-label="gender"
+                                  name="gender1"
+                                  className={classes.group}
+                                  value={this.context.style}
+                                  onChange={(e) => this.context.updateStyle(e.target.value)}
+                                  row
+                                >
+                                  <FormControlLabel value="wfh" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="None" />
+                                  <FormControlLabel value="ppl" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Population" />
+                                  <FormControlLabel value="nocar" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Car Ownership" />
+                                </RadioGroup>
+                              </FormControl>
+                            </MuiThemeProvider>
+                        </Grid>
+
+                        {/* Map */}
+                        <Grid item style={{display: 'flex', flex: '7 0 0%'}}>
+                        {/*This div needs to capture the position:absolute elements inside. Thus, it has an empty
+                          position:relative.*/}
+                          <div style={{position: 'relative', height: '100%', width: '100%'}}>
+                            <IconButton style={{position: 'absolute', top: 4, right: 4, zIndex: 1000, backgroundColor: 'white'}}>
+                              <a href={`https://openstreetmap.org/edit#map=${viewport.zoom}/${viewport.center[1]}/${viewport.center[0]}`}
+                                target="_blank"
+                              >
+                                <EditIcon/>
+                              </a>
+                            </IconButton>
+                            <Reparentable el={this.context.container} style={{height: '100%', width: '100%'}}/>
+                          </div>
+                        </Grid>
+
+                        {/*Legend*/}
+                        <Grid item container justify='space-between' style={{display: 'flex', flex: '2 0 0%'}}>
+                          <MapLegend/>
+                          <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' ? 'Default MQM Error Rate' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
+                        </Grid>
+                      </Grid>
+                    </CardContent>
                   </Card>
                 </Grid>
-                <Grid item md={6} sm={12} xs={12} className="gridItem">
+
+                <Grid item md={4} sm={12} xs={12} className="gridItem">
                   <CityStatsCard data={cityData}/>
                 </Grid>
                 <Grid item md={12} sm={12} xs={12} className="gridItem">

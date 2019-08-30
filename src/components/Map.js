@@ -9,15 +9,22 @@ import {multiPoint} from "@turf/helpers";
 import square from "@turf/square";
 
 import {withStyles} from '@material-ui/core';
+import Measure from "react-measure";
 
 const styles = () => ({
   map: {
-    height: '400px',
-    width: '400px'
+    height: '100%',
+    width: '100%',
+    minHeight: 300
   }
 });
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhdGlhbGRldiIsImEiOiJjanpoYWFyZTkwaW4xM25vNWs2cWt6NWFqIn0.pjqihTlW7bHAp8bC8SaiNQ';
+const mapboxMaps = {
+  nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
+  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc',
+  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
+};
 class Map extends Component {
 
   state = {
@@ -39,39 +46,53 @@ class Map extends Component {
     const mapBounds = [[-116.3656827, 43.50939634], [-116.0941571, 43.69918141]];
     const options = {
       container: mapboxMapRef.current,
-      style,
+      style: mapboxMaps[style],
       bounds: mapBounds,
-      maxBounds: this.getLooseBounds(mapBounds, 1.25),
+      // maxBounds: this.getLooseBounds(mapBounds, 1.25),
     };
     const map = new mapboxgl.Map(options);
+
+    map.addControl(new mapboxgl.NavigationControl({showCompass: false}), 'bottom-right');
     this.setState({map});
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    const {maxBounds: prevMaxBounds, style: prevStyle } = prevProps;
-    const {maxBounds: currMaxBounds, style: currStyle } = this.props;
+    const {maxBounds: prevMaxBounds, style: prevStyle} = prevProps;
+    const {maxBounds: currMaxBounds, style: currStyle} = this.props;
     const {map} = this.state;
+
     if (JSON.stringify(prevMaxBounds) !== JSON.stringify(currMaxBounds)) {
-      // Since we're re-using a map and div container, we need to re-size between loads to ensure that it gets the
-      // size of its new container.
-      map.resize();
 
       // Before we can fly to a new location, we need to allow the camera to move
       map.setMaxBounds(null);
       map.fitBounds(currMaxBounds, {animate: false, padding: 10});
       // Once we've moved, we can set the new panning bounds
-      map.setMaxBounds(this.getLooseBounds(currMaxBounds, 2));
+      // map.setMaxBounds(this.getLooseBounds(currMaxBounds, 2));
     }
     if (prevStyle !== currStyle)
     {
-      map.setStyle(currStyle);
+      map.setStyle(mapboxMaps[currStyle]);
+    }
+  };
+
+  handleResize = () => {
+    if (this.state.map) {
+      this.state.map.resize();
     }
   };
 
   render = () => {
     const { classes } = this.props;
     const { mapboxMapRef } = this.state;
-    return <div ref={mapboxMapRef} className={classes.map}/>;
+    return <Measure onResize={this.handleResize}>
+      {({measureRef}) => {
+        return (
+          <div ref={measureRef} className={classes.map}>
+            <div ref={mapboxMapRef} className={classes.map}/>
+          </div>
+        );
+      }}
+    </Measure>;
   };
 }
 
