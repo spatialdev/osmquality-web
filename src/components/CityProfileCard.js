@@ -204,7 +204,7 @@ class CityProfileCard extends Component {
                         <Grid item style={{display: 'flex', flex: '2 0 0%'}}>
                           <div className="cardHeaderContainer" style={{width: '100%'}}>
                             <h3 className="cardHeader" style={{marginLeft: 0}}>
-                              MQM Error Rate
+                              MQM Results
                             </h3>
                             {/*blah*/}
                           </div>
@@ -212,7 +212,7 @@ class CityProfileCard extends Component {
                         </Grid>
                         {/* Weights */}
                         <Grid item style={{display: 'flex', flex: '1 0 0%'}}>
-                          <div style={{margin: 'auto 8px auto 0px'}}>Weight Error Rate by: </div>
+                          <div style={{margin: 'auto 8px auto 0px'}}>Weight MQM Results by: </div>
                             <MuiThemeProvider theme={theme}>
                               <FormControl component="fieldset">
                                 <RadioGroup
@@ -250,7 +250,7 @@ class CityProfileCard extends Component {
                         {/*Legend*/}
                         <Grid item container justify='space-between' style={{display: 'flex', flex: '2 0 0%'}}>
                           <MapLegend/>
-                          <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' ? 'Default MQM Error Rate' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
+                          <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' ? 'Default MQM Results' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
                         </Grid>
                       </Grid>
                     </CardContent>
