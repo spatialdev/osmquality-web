@@ -10,11 +10,10 @@ class DesktopHeader extends Component {
 
   render() {
     const { history } = this.props;
-    const isTacoma = history.location.pathname.indexOf('tacoma') !== -1;
     return (
       <Sticky style={{top: 0, width: '100%', zIndex: 100}} >
         <AppBar position="static" className="appBar">
-          <div className={"categories"}>
+          <div className="categories">
             <h1  onClick={() => history.push('/')} style={{ cursor: 'pointer' }}>
             CRITIGEN
           </h1>

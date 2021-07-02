@@ -56,14 +56,262 @@ a {
 Splash
  */
 .splashPage {
-    background-color: #7ac143;
+    background-color: #F7F8F6;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.splashPageFirstHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+      background-color: #F7F8F6;
+}
+
+.splashPageThumbnailPart {
+    height: 427px;
+    margin-top: 164px;
+    margin-left: 152px;
+    /*margin-right: 152px;*/
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    /*align-items: flex-start;*/
+    /*align-content: space-between;*/
+}
+
+.splashPageIntro {
+    height: 657px;
+    width: auto;
+    text-align: left;
+    margin-right: 100px;
+}
+
+.which-city-has-the-b {
+  height: 216px;
+  width: 368px;
+  color: #000000;
+  font-family: mit;
+  font-size: 56px;
+  letter-spacing: 0;
+  line-height: 72px;
+  font-weight: normal;
+  text-align: left;
+  line-height: 72px;
+}
+
+.critigen-created-thi {
+  height: 128px;
+  width: 464px;
+  color: rgba(0,0,0,0.7);
+  font-family: "Open Sans";
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 32px;
+  font-weight: normal;
+}
+
+
+.splashPageIntroPic {
+  margin-left: 100px;
+  height: 657px;
+  width: auto;
+  background-color: #F7F8F6;
+}
+
+.landing_page_image {
+    height: content-box;
+    width: content-box;
+}
+
+.splashPageExplorePart{
+  height: 326px;
+  border-radius: 16px;
+  background-color: #F7F8F6;
+  display: flex;
+  flex-direction: row;
+    position: absolute;
+  left: 152px;
+  top: 681px;
+
+}
+
+.splashPageCoastalCitiesExploreButtonPart {
+    display: flex;
+  flex-direction: row;
+    justify-items: center;
+    justify-content: left;
+
+}
+
+.splashPageCoastalCitiesExploreCitiesPart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.cityThumbnail1 {
+  height: 144px;
+  width: 144px;
+  left: 192px;
+    top: 793px;
+    align-content: center;
+    justify-content: center;
+    margin: 40px;
+}
+.cityThumbnailImage {
+     transform: scale(2);
+    position: absolute;
+    justify-items: center;
+    margin: 40px;
+    border-radius: 8px;
+}
+
+.numberCircle {
+    line-height: 120px;
+    border-radius: 50%;
     text-align: center;
+    font-size: 40px;
+    background-color: rgba(131, 125, 131, 0.83);
+    opacity: 70%;
+    font-family: "Open Sans Condensed";
+    font-weight: bold;
+    position: relative;
+    margin: 10px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    color: #FFFFFF;
+}
+
+.splashPageCoastalCitiesExplore{
+    position: absolute;
+  height: 326px;
+  width: inherit;
+  border-radius: 16px;
+  background-color: #CACACA;
+}
+
+.splashPageUSCitiesExplore {
+  height: 326px;
+  border-radius: 16px;
+  background-color: #CACACA;
+   position: relative;
+  left: 728px
+}
+.coastal-cities {
+  height: 40px;
+  width: 167px;
+  color: #000000;
+  font-family: "Open Sans", serif;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 38px;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.button {
+  height: 40px;
+  width: 220px;
+  border-radius: 8px;
+  background-color: #000000;
+  margin-top: 40px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.explore-rankings {
+
+  color: #f0f0f0;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.31px;
+  line-height: 16px;
+  margin-left: 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.arrow {
+ height: 30px;
+ margin-top: 5px;
+ margin-left: 8px;
+}
+
+.splashPageSecondHalf {
+  position: absolute;
+    top: 1081px;
+  width:100%;
+height:100%;
+  background-color: #F7F8F6;
+}
+
+.splashPageSecondHalfContainer {
+    position: absolute;
+}
+
+.splashPageSecondHalfImage {
+  max-width:100%;
+max-height:100%;
+    position: absolute;
+}
+
+.about-critigen {
+  height: 294px;
+  width: 944px;
+  margin-left: 48px;
+    position: absolute;
+    font-family: "Open Sans", serif;
+    font-weight: bold;
+}
+
+.critigen-is-a-global {
+  height: 150px;
+  width: 848px;
+  color: rgba(0,0,0,0.7);
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+    position: relative;
+    top: 96px;
+    margin-left: 48px;
+}
+
+.about-critigen-rectangle {
+  height: 294px;
+  width: 944px;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 40px 0 rgba(191,201,185,0.2);
+    position: relative;
+  top: 64px;
+  left: 248px;
+
+}
+
+.osm-community-rectangle {
+    margin-top: 56px;
+  height: 231px;
+  width: 944px;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 40px 0 rgba(191,201,185,0.2);
+  top: 56px;
+    position: relative;
+      left: 248px;
+
 }
 
 .splashContent {
@@ -71,7 +319,7 @@ Splash
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .splashContent .osmTeamLogo {
@@ -165,7 +413,7 @@ Header
 
 .headerDiv {
     background-color: #7AC143;
-    position: relative;
+    position: absolute;
     height: 60px;
     display: table;
     width: 100%;
@@ -778,6 +1026,7 @@ Footer
 }
 
 .nav {
+    height: 100%;
     display: inline-block;
     float: right;
 }
@@ -808,4 +1057,10 @@ Footer
     font-weight: normal;
     letter-spacing: 7px;
     cursor: pointer;
+}
+
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }

@@ -179,7 +179,6 @@ const data = [{
    "headerImage": "images/headerImages/MI_Detroit.jpg",
    "neLat": 42.45037429,
    "state": "MI",
-   "key": 23,
    "thumbnail": "images/thumbnails_cities/MI_Detroit.jpg",
    "swLong": -83.28780572,
    "roadAttributes": 114.0,

@@ -59,7 +59,7 @@ class App extends Component {
     const header = isMobile ? <Header/> : <DesktopHeader/>;
 
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={{ position: 'static', minHeight: '100vh', width: '100%' }}>
         {/* Thanks to  https://github.com/facebook/react/issues/13044#issuecomment-428815909 for the solution here!*/}
         {createPortal(<Map maxBounds={maxMapBounds} style={mapStyle}/>, this.mapContainer)}
         <MapContext.Provider value={context}>
