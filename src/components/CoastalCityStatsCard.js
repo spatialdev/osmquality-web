@@ -10,14 +10,19 @@ import numberWithCommas from '../helpers/helpers';
 
 import flag_icon from '../images/flag_icon.svg';
 import shape_icon from '../images/shape_icon.svg';
-import grid_icon from '../images/grid_icon.svg';
+import grid_four from '../images/grid-four.svg';
 import trending_flat from '../images/trending_flat.svg';
 import trending_down from '../images/trending_down.svg';
 import trending_up from '../images/trending_up.svg';
+import warning_circle from '../images/warning-circle.svg';
+import building from '../images/buildings.svg';
+import road from '../images/Road.svg';
 
-const CityStatsCard = props => {
+const CoastalCityStatsCard = props => {
   const { data, history } = props;
-  const flagTrend = (data.score-data.score_2018)*100;
+  const flagTrend = (data.score)*100;
+  const buildingErrorRate = (data.osmBuildingErrorRate)*100;
+  const roadErrorRate =  (data.osmRoadErrorRate)*100;
   return (
     <Card className="statsCard" style={{
       margin: '10px'
@@ -31,39 +36,41 @@ const CityStatsCard = props => {
         <div >
             <div className="statDiv">
                 <div>
-                    <object data={flagTrend > 0 ? trending_up : flagTrend < 0 ? trending_down : trending_flat}
-                            className={flagTrend > 0 ? "trendingUp" :
-                                flagTrend < 0 ? "trendingDown" : "trendingFlat"}>Flag Icon
+                    <object data={warning_circle} className="statsIcon">Flag Icon
                     </object>
                     <div>
                         <h2 style={{margin: 0, display: 'inline'}}>{flagTrend.toFixed(2)}%</h2>
-                        <p>Error Rate (vs. 2018)</p>
+                        <p>Average Error Rate</p>
                     </div>
                 </div>
             </div>
-            <div className="statDiv">
+
+             <div className="statDiv">
                 <div>
-                    <object data={flag_icon} className="statsIcon">Flag Icon</object>
+                   <object data={building} className="statsIcon">Flag Icon
+                    </object>
+
                     <div>
-                        <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.flags)}</h2>
-                        <p>Affected OSM features</p>
+                        <h2 style={{margin: 0, display: 'inline'}}>{(buildingErrorRate).toFixed(2)}%</h2>
+                        <p>OSM Building Feature Error Rate</p>
                     </div>
                 </div>
             </div>
 
             <div className="statDiv">
                 <div>
-                    <object data={shape_icon} className="statsIcon">Shape Icon</object>
+                    <object data={road} className="statsIcon">Flag Icon
+                    </object>
                     <div>
-                        <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.totalRoads.toFixed(0))}</h2>
-                        <p>Total OSM Road Features </p>
+                        <h2 style={{margin: 0, display: 'inline'}}>{(roadErrorRate).toFixed(2)}%</h2>
+                        <p>OSM Road Feature Error Rate</p>
                     </div>
                 </div>
             </div>
 
             <div className="statDiv">
                 <div>
-                    <object data={grid_icon} className="statsIcon">Grid Icon</object>
+                    <object data={grid_four} className="statsIcon">Grid Icon</object>
                     <div>
                         <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.gridSize.toFixed(1))}</h2>
                         <p>Grid Cell Size (km<sup>2</sup>)</p>
@@ -89,12 +96,13 @@ const CityStatsCard = props => {
                                 calc: 'stringify',
                             },
                         ],
-                        ['Road Geometry', data.roadGeometry, '#1802b1', null],
-                        ['Road Attributes', data.roadAttributes, '#129BB1', null],
+                        ['Natural Features', data.WaterFlags, '#000000', null],
+                        ['Building', data.BuildingFlags, '#000000', null],
+                        ['Road', data.RoadFlags, '#000000', null],
                     ]}
                     options={{
-                        width: 300,
-                        height: 120,
+
+                        height: 177,
                         bar: { groupWidth: '50%' },
                         legend: { position: 'none' },
 
@@ -107,8 +115,8 @@ const CityStatsCard = props => {
   );
 };
 
-CityStatsCard.propTypes = {
+CoastalCityStatsCard.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default CityStatsCard;
+export default CoastalCityStatsCard;

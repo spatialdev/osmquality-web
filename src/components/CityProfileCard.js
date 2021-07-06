@@ -32,6 +32,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import MuiThemeProvider from "@material-ui/core/es/styles/MuiThemeProvider";
+import CoastalCityStatsCard from "./CoastalCityStatsCard";
 
 // In order to override the default pink color for the radio buttons, we need to create a theme.
 const theme = createMuiTheme({
@@ -121,6 +122,38 @@ class CityProfileCard extends Component {
     });
   };
 
+  getCityStatsCard = cityData => {
+    const {history} = this.props;
+    if(history.location.pathname.indexOf("us-city") !== -1)
+    {
+      return ( <Grid item md={4} sm={12} xs={12} className="gridItem">
+                  <CityStatsCard data={cityData}/>
+                </Grid>)
+    }
+    else return ( <Grid item md={4} sm={12} xs={12} className="gridItem">
+                  <CoastalCityStatsCard data={cityData}/>
+                </Grid>)
+
+  };
+
+    getFunFact = cityData => {
+    const {history, classes} = this.props;
+    if(history.location.pathname.indexOf("us-city") !== -1)
+    {
+        return ( <Grid item md={12} sm={12} xs={12} className="gridItem">
+                  <Card className={classes.root} style={{ width: '100%' }}>
+                    <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
+                      <h3>{cityData.factName}</h3>
+                      <p>{cityData.fact}</p>
+                    </CardContent>
+                  </Card>
+                </Grid>)
+    }
+  };
+
+
+
+
   handleSwipe = e => {
     const { prevCityData, nextCityData } = this.state;
     //swipe right
@@ -164,7 +197,6 @@ class CityProfileCard extends Component {
 
   handleMapSelection = () => {
     const {classes, history} = this.props;
-    console.log(history.location.pathname.indexOf("us-city"));
     if(history.location.pathname.indexOf("us-city") !== -1)
     {
       return  (<Grid item style={{display: 'flex', flex: '1 0 0%'}}>
@@ -182,7 +214,6 @@ class CityProfileCard extends Component {
                                   <FormControlLabel value="wfh" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="None" />
                                   <FormControlLabel value="ppl" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Population" />
                                   <FormControlLabel value="nocar" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Car Ownership" />
-                                  <FormControlLabel value="coastal" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Coastal" />
                                 </RadioGroup>
                               </FormControl>
                             </MuiThemeProvider>
@@ -194,10 +225,6 @@ class CityProfileCard extends Component {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
     const { classes, history } = this.props;
     const viewport = this.context.getViewport();
-    // if(history.location.pathname.indexOf("us-city") === -1 )
-    // {
-    //   this.handleMapSelection('coastal')
-    // }
     if (!cityData) {
       return (
         <div>
@@ -272,18 +299,8 @@ class CityProfileCard extends Component {
                     </CardContent>
                   </Card>
                 </Grid>
-
-                <Grid item md={4} sm={12} xs={12} className="gridItem">
-                  <CityStatsCard data={cityData}/>
-                </Grid>
-                <Grid item md={12} sm={12} xs={12} className="gridItem">
-                  <Card className={classes.root} style={{ width: '100%' }}>
-                    <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
-                      <h3>{cityData.factName}</h3>
-                      <p>{cityData.fact}</p>
-                    </CardContent>
-                  </Card>
-                </Grid>
+                {this.getCityStatsCard(cityData)}
+                {this.getFunFact(cityData)}
               </Grid>
             </Paper>
           </Slide>
