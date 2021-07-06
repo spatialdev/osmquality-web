@@ -11,9 +11,10 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path="/" component={Splash}/>
-      <Route exact path="/coastal" component={CityRankingTable}/>
-      <Route exact path="/us-cities" component={CityRankingTable}/>
-      <Route exact path="/city/:cityState" component={CityProfileCard}/>
+      <Route exact path="/coastal-cities-ranking" component={CityRankingTable}/>
+      <Route exact path="/us-cities-ranking" component={CityRankingTable}/>
+      <Route exact path="/us-city/:cityState" component={CityProfileCard}/>
+      <Route exact path="/coastal-city/:cityState" component={CityProfileCard}/>
       <Route exact path="/about-us" component={AboutUs}/>
       <Route exact path="/methodology" component={Methodology}/>
     </Switch>

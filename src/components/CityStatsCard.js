@@ -16,7 +16,7 @@ import trending_down from '../images/trending_down.svg';
 import trending_up from '../images/trending_up.svg';
 
 const CityStatsCard = props => {
-  const { data } = props;
+  const { data, history } = props;
   const flagTrend = (data.score-data.score_2018)*100;
   return (
     <Card className="statsCard" style={{
@@ -41,66 +41,66 @@ const CityStatsCard = props => {
                     </div>
                 </div>
             </div>
-            <div className="statDiv">
-                <div>
-                    <object data={flag_icon} className="statsIcon">Flag Icon</object>
-                    <div>
-                        <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.flags)}</h2>
-                        <p>Affected OSM features</p>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="statDiv">*/}
+                {/*<div>*/}
+                    {/*<object data={flag_icon} className="statsIcon">Flag Icon</object>*/}
+                    {/*<div>*/}
+                        {/*<h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.flags)}</h2>*/}
+                        {/*<p>Affected OSM features</p>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
 
-            <div className="statDiv">
-                <div>
-                    <object data={shape_icon} className="statsIcon">Shape Icon</object>
-                    <div>
-                        <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.totalRoads.toFixed(0))}</h2>
-                        <p>Total OSM Road Features </p>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="statDiv">*/}
+                {/*<div>*/}
+                    {/*<object data={shape_icon} className="statsIcon">Shape Icon</object>*/}
+                    {/*<div>*/}
+                        {/*<h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.totalRoads.toFixed(0))}</h2>*/}
+                        {/*<p>Total OSM Road Features </p>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
 
-            <div className="statDiv">
-                <div>
-                    <object data={grid_icon} className="statsIcon">Grid Icon</object>
-                    <div>
-                        <h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.gridSize.toFixed(1))}</h2>
-                        <p>Grid Cell Size (km<sup>2</sup>)</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div className ='chartTitle'>Map Errors by Type</div>
+            {/*<div className="statDiv">*/}
+                {/*<div>*/}
+                    {/*<object data={grid_icon} className="statsIcon">Grid Icon</object>*/}
+                    {/*<div>*/}
+                        {/*<h2 style={{margin: 0, display: 'inline'}}>{numberWithCommas(data.gridSize.toFixed(1))}</h2>*/}
+                        {/*<p>Grid Cell Size (km<sup>2</sup>)</p>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+                {/*<div className ='chartTitle'>Map Errors by Type</div>*/}
 
-                <Chart
-                    className="barChart"
-                    chartType="BarChart"
-                    loader={<div>Loading Chart</div>}
-                    data={[
-                        [
-                            'Item',
-                            'Count',
-                            { role: 'style' },
-                            {
-                                sourceColumn: 0,
-                                role: 'annotation',
-                                type: 'string',
-                                calc: 'stringify',
-                            },
-                        ],
-                        ['Road Geometry', data.roadGeometry, '#1802b1', null],
-                        ['Road Attributes', data.roadAttributes, '#129BB1', null],
-                    ]}
-                    options={{
-                        width: 300,
-                        height: 120,
-                        bar: { groupWidth: '50%' },
-                        legend: { position: 'none' },
+                {/*<Chart*/}
+                    {/*className="barChart"*/}
+                    {/*chartType="BarChart"*/}
+                    {/*loader={<div>Loading Chart</div>}*/}
+                    {/*data={[*/}
+                        {/*[*/}
+                            {/*'Item',*/}
+                            {/*'Count',*/}
+                            {/*{ role: 'style' },*/}
+                            {/*{*/}
+                                {/*sourceColumn: 0,*/}
+                                {/*role: 'annotation',*/}
+                                {/*type: 'string',*/}
+                                {/*calc: 'stringify',*/}
+                            {/*},*/}
+                        {/*],*/}
+                        {/*['Road Geometry', data.roadGeometry, '#1802b1', null],*/}
+                        {/*['Road Attributes', data.roadAttributes, '#129BB1', null],*/}
+                    {/*]}*/}
+                    {/*options={{*/}
+                        {/*width: 300,*/}
+                        {/*height: 120,*/}
+                        {/*bar: { groupWidth: '50%' },*/}
+                        {/*legend: { position: 'none' },*/}
 
-                    }}
-                />
-            </div>
+                    {/*}}*/}
+                {/*/>*/}
+            {/*</div>*/}
         </div>
       </CardContent>
     </Card>

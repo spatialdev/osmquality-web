@@ -1,4 +1,4 @@
-const data = [{
+const usCitiesData = [{
    "fact": "Legend has it the city of Boise got its name from early 19th century French-Canadian fur trappers who named the present day Boise River \"la riviere boisee\" (French for \"the wooded river\") after the trees that once lined it.",
    "roadGeometry": 28.0,
    "flags": 82,
@@ -1070,4 +1070,4 @@ const data = [{
    "factName": "Fun Demography/Geography Fact"
 }];
 
-export default data;
+export default usCitiesData;

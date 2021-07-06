@@ -77,7 +77,9 @@ const Splash = props => {
                       </div>
                   </div>
               </div>
-              <div className="splashPageSecondHalf">
+
+          </div>
+          <div className="splashPageSecondHalf">
                    <img  className="splashPageSecondHalfImage" src={mapBackground} alt="mapBackground"/>
                   <div className="splashPageSecondHalfContainer">
                       <div className="about-critigen-rectangle">
@@ -96,7 +98,6 @@ const Splash = props => {
                   </div>
 
               </div>
-          </div>
 
       </div>
     // <div className="splashPage">

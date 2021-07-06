@@ -75,7 +75,7 @@ Splash
 }
 
 .splashPageThumbnailPart {
-    height: 427px;
+    /*height: 427px;*/
     margin-top: 164px;
     margin-left: 152px;
     /*margin-right: 152px;*/
@@ -87,15 +87,15 @@ Splash
 }
 
 .splashPageIntro {
-    height: 657px;
+    /*height: 657px;*/
     width: auto;
     text-align: left;
     margin-right: 100px;
 }
 
 .which-city-has-the-b {
-  height: 216px;
-  width: 368px;
+  /*height: 216px;*/
+  /*width: 368px;*/
   color: #000000;
   font-family: mit;
   font-size: 56px;
@@ -107,8 +107,8 @@ Splash
 }
 
 .critigen-created-thi {
-  height: 128px;
-  width: 464px;
+  /*height: 128px;*/
+  /*width: 464px;*/
   color: rgba(0,0,0,0.7);
   font-family: "Open Sans";
   font-size: 20px;
@@ -120,7 +120,7 @@ Splash
 
 .splashPageIntroPic {
   margin-left: 100px;
-  height: 657px;
+  /*height: 657px;*/
   width: auto;
   background-color: #F7F8F6;
 }
@@ -131,7 +131,7 @@ Splash
 }
 
 .splashPageExplorePart{
-  height: 326px;
+  /*height: 326px;*/
   border-radius: 16px;
   background-color: #F7F8F6;
   display: flex;
@@ -192,22 +192,22 @@ Splash
 
 .splashPageCoastalCitiesExplore{
     position: absolute;
-  height: 326px;
+  /*height: 326px;*/
   width: inherit;
   border-radius: 16px;
   background-color: #CACACA;
 }
 
 .splashPageUSCitiesExplore {
-  height: 326px;
+  /*height: 326px;*/
   border-radius: 16px;
   background-color: #CACACA;
    position: relative;
   left: 728px
 }
 .coastal-cities {
-  height: 40px;
-  width: 167px;
+  /*height: 40px;*/
+  /*width: 167px;*/
   color: #000000;
   font-family: "Open Sans", serif;
   font-size: 24px;
@@ -218,8 +218,8 @@ Splash
 }
 
 .button {
-  height: 40px;
-  width: 220px;
+  /*height: 40px;*/
+  /*width: 220px;*/
   border-radius: 8px;
   background-color: #000000;
   margin-top: 40px;

@@ -20,8 +20,8 @@ class DesktopHeader extends Component {
           </div>
           <div className="nav">
             <div id="about" className="categories" onClick={() => history.push('/')}><h4 style={{textDecoration: history.location.pathname==='/'? "underline":""}}>About</h4></div>
-            <div id="us-cities" className="categories" onClick={() => history.push('/us-cities')}><h4 style={{textDecoration: history.location.pathname==='/us-cities'? "underline":""}}>US Cities</h4></div>
-            <div id="coastal-cities" className="categories" onClick={() => history.push('/coastal-cities')}><h4 style={{textDecoration: history.location.pathname==='/coastal-cities'? "underline":""}}>Coastal Cities</h4></div>
+            <div id="us-cities" className="categories" onClick={() => history.push('/us-cities-ranking')}><h4 style={{textDecoration: history.location.pathname==='/us-cities-ranking'? "underline":""}}>US Cities</h4></div>
+            <div id="coastal-cities" className="categories" onClick={() => history.push('/coastal-cities-ranking')}><h4 style={{textDecoration: history.location.pathname==='/coastal-cities-ranking'? "underline":""}}>Coastal Cities</h4></div>
             <div id="methodology" className="categories" onClick={() => history.push('/methodology')}><h4 style={{textDecoration: history.location.pathname==='/methodology'? "underline":""}}>Methodology</h4></div>
           </div>
         </AppBar>
