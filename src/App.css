@@ -56,9 +56,9 @@ a {
 Splash
  */
 .splashPage {
-    background-color: #F7F8F6;
+    background-color: #1ef813;
     height: 100vh;
-    width: 100%;
+    /*width: 100%;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -90,12 +90,14 @@ Splash
     /*height: 657px;*/
     width: auto;
     text-align: left;
-    margin-right: 100px;
+    position: fixed;
+    left: 152px;
+    top: 198px;
 }
 
 .which-city-has-the-b {
-  /*height: 216px;*/
-  /*width: 368px;*/
+  height: 144px;
+  width: 310px;
   color: #000000;
   font-family: mit;
   font-size: 56px;
@@ -136,7 +138,7 @@ Splash
   background-color: #F7F8F6;
   display: flex;
   flex-direction: row;
-    position: absolute;
+  position: absolute;
   left: 152px;
   top: 681px;
 
@@ -144,16 +146,16 @@ Splash
 
 .splashPageCoastalCitiesExploreButtonPart {
     display: flex;
-  flex-direction: row;
+    flex-direction: row;
     justify-items: center;
     justify-content: left;
-
 }
 
 .splashPageCoastalCitiesExploreCitiesPart {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    max-width: 100%;
 }
 
 .cityThumbnail1 {
@@ -191,8 +193,7 @@ Splash
 }
 
 .splashPageCoastalCitiesExplore{
-    position: absolute;
-  /*height: 326px;*/
+  height: 326px;
   width: inherit;
   border-radius: 16px;
   background-color: #CACACA;
@@ -206,32 +207,43 @@ Splash
   left: 728px
 }
 .coastal-cities {
-  /*height: 40px;*/
-  /*width: 167px;*/
+  max-width: 167px;
+  height: 40px;
   color: #000000;
   font-family: "Open Sans", serif;
   font-size: 24px;
   letter-spacing: 0;
   line-height: 38px;
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 24px;
+  margin-top: 24px;
+  margin-bottom: 17px;
 }
 
 .button {
-  /*height: 40px;*/
-  /*width: 220px;*/
+  height: 40px;
+  width: 206px;
   border-radius: 8px;
   background-color: #000000;
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 107px;
   display: flex;
   flex-direction: row;
   margin-right: 40px;
   cursor: pointer;
 }
 
-.explore-rankings {
+.coastal-cities-is-a {
+  height: 120px;
+  max-width: 100%;
+  color: rgba(0,0,0,0.7);
+  font-family: "Open Sans";
+  font-size: 3vw;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 40px;
+}
 
+.explore-rankings {
   color: #f0f0f0;
   font-family: "Open Sans";
   font-size: 14px;
@@ -258,60 +270,78 @@ height:100%;
 }
 
 .splashPageSecondHalfContainer {
-    position: absolute;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ align-items: flex-start;
+
 }
 
 .splashPageSecondHalfImage {
-  max-width:100%;
-max-height:100%;
-    position: absolute;
+  position: absolute;
+  width:100%;
+  height: 100%
 }
 
 .about-critigen {
-  height: 294px;
-  width: 944px;
-  margin-left: 48px;
+  /*height: 294px;*/
+  /*width: 944px;*/
+  /*margin-left: 48px;*/
     position: absolute;
     font-family: "Open Sans", serif;
-    font-weight: bold;
+    font-weight: normal;
+    margin-left: 24px;
 }
 
 .critigen-is-a-global {
-  height: 150px;
-  width: 848px;
+  /*height: 150px;*/
+  /*width: 848px;*/
   color: rgba(0,0,0,0.7);
   font-family: "Open Sans";
-  font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;
-    position: relative;
-    top: 96px;
-    margin-left: 48px;
+  position: relative;
+  top: 50px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-size: 3vw;
 }
 
+.part-of-osm {
+  /*height: 150px;*/
+  /*width: 848px;*/
+  color: rgba(0,0,0,0.7);
+  font-family: "Open Sans";
+  letter-spacing: 0;
+  line-height: 30px;
+  position: relative;
+  top: 100px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-size: 3vw;
+}
 .about-critigen-rectangle {
-  height: 294px;
-  width: 944px;
-  border-radius: 16px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 40px 0 rgba(191,201,185,0.2);
-    position: relative;
-  top: 64px;
-  left: 248px;
-
-}
-
-.osm-community-rectangle {
-    margin-top: 56px;
-  height: 231px;
-  width: 944px;
-  border-radius: 16px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 40px 0 rgba(191,201,185,0.2);
-  top: 56px;
-    position: relative;
-      left: 248px;
-
+    margin: 24px;
+    display: flex;
+    max-width: 100%;
+    min-height: 344px;
+    align-items: flex-start;
+    padding-left: 17px;
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #006ff5;
+    /*height: 100%;*/
+    /*width: 100%;*/
+  /*!*height: 294px;*!*/
+  /*!*width: 944px;*!*/
+  /*border-radius: 16px;*/
+  /*background-color: #FFFFFF;*/
+  /*box-shadow: 0 2px 40px 0 rgba(191,201,185,0.2);*/
+  /*position: relative;*/
+  /*top: 64px;*/
+  /*padding: 17px;*/
+  /*margin: 5px;*/
 }
 
 .splashContent {
@@ -412,19 +442,17 @@ Header
 }
 
 .headerDiv {
-    background-color: #7AC143;
-    position: absolute;
+    background-color: #000000;
     height: 60px;
     display: table;
     width: 100%;
+    text-align: left;
 }
 
 .header {
-    display: inline-block;
     color: #FFFFFF;
     font-size: 20px;
     margin: 0;
-    vertical-align: middle;
 }
 
 .toolbar {
@@ -979,7 +1007,7 @@ Footer
     overflow: hidden;
     width: 100%;
     padding: 0 16px;
-    position: absolute;
+    position: fixed;
 }
 
 .footerP {

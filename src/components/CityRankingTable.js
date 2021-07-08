@@ -53,7 +53,7 @@ class CityRankingTable extends Component {
     }
     else if(history.location.pathname === '/coastal-cities-ranking')
     {
-      this.context.updateStyle('coastal')
+      this.context.updateStyle('coastal');
        this.props.history.push(`/coastal-city/${city.cityName}${city.country}`);
     }
   };

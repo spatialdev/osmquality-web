@@ -19,7 +19,6 @@ const styles = () => ({
   }
 });
 
-// mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhdGlhbGRldiIsImEiOiJjanpoYWFyZTkwaW4xM25vNWs2cWt6NWFqIn0.pjqihTlW7bHAp8bC8SaiNQ';
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhdGlhbGRldiIsImEiOiJjamxuN2kydGIxZzhsM3BwbmNrYmhpaWRkIn0.51uF3UCh8Vpb2M3Y-glu2g';
 const mapboxMaps = {
   nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',

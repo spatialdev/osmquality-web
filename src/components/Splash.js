@@ -13,6 +13,7 @@ import mapBackground from '../images/Map-Background.svg';
 import '../App.css';
 
 const Splash = props => {
+
   return (
       <div className="splashPage">
           <div className="splashPageFirstHalf">
@@ -29,7 +30,7 @@ const Splash = props => {
                   <div className="splashPageCoastalCitiesExplore">
                       <div className="splashPageCoastalCitiesExploreButtonPart">
                           <div className="coastal-cities">Coastal Cities</div>
-                          <div className="button" onClick={() => props.history.push('/us-cities')}>
+                          <div className="button" onClick={() => props.history.push('/coastal-cities-ranking')}>
                               <div className="explore-rankings">EXPLORE RANKINGS</div>
                                <img className="arrow" src={arrow} alt="Arrow"/>
                           </div>
@@ -54,7 +55,7 @@ const Splash = props => {
                   <div className="splashPageUSCitiesExplore">
                       <div className="splashPageCoastalCitiesExploreButtonPart">
                           <div className="coastal-cities">US Cities</div>
-                          <div className="button" onClick={() => props.history.push('/us-cities')}>
+                          <div className="button" onClick={() => props.history.push('/us-cities-ranking')}>
                               <div className="explore-rankings">EXPLORE RANKINGS</div>
                                <img className="arrow" src={arrow} alt="Arrow"/>
                           </div>

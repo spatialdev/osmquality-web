@@ -35,10 +35,15 @@ class App extends Component {
     ReactGA.initialize('UA-126802064-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
     this.checkIfMobile();
+    window.addEventListener('resize', this.checkIfMobile);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.checkIfMobile);
   }
 
   checkIfMobile = () => {
-    setMobile(window.innerWidth < 768);
+    setMobile(window.innerWidth <= 768);
   };
 
   //Note that we have the fontFamily div to make sure that the font is loaded when the DOM is rendered. This is important
@@ -56,6 +61,8 @@ class App extends Component {
     };
     const {maxMapBounds, mapStyle} = this.state;
     const {isMobile} = this.props;
+    console.log("isMobile");
+    console.log(isMobile);
     const header = isMobile ? <Header/> : <DesktopHeader/>;
 
     return (
@@ -66,7 +73,7 @@ class App extends Component {
           {header}
           <Main/>
         </MapContext.Provider>
-        {window.location.pathname !== '/' ? <Footer/> : null}
+        <Footer/>
       </div>
     );
   }

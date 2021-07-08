@@ -19,7 +19,7 @@ import building from '../images/buildings.svg';
 import road from '../images/Road.svg';
 
 const CoastalCityStatsCard = props => {
-  const { data, history } = props;
+  const { data } = props;
   const flagTrend = (data.score)*100;
   const buildingErrorRate = (data.osmBuildingErrorRate)*100;
   const roadErrorRate =  (data.osmRoadErrorRate)*100;

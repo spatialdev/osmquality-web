@@ -109,8 +109,9 @@ class CityProfileCard extends Component {
 
   getCityData = cityState => {
      const { history} = this.props;
-     const data = history.location.pathname.indexOf("us-city") !== -1 ? usCitiesData: coastalCitiesData;
-     const cityData = history.location.pathname.indexOf("us-city") !== -1 ?
+     const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+     const data = isUSCities ? usCitiesData: coastalCitiesData;
+     const cityData = isUSCities ?
          data.find(obj => obj.cityName.toLowerCase() + obj.state.toLowerCase() === cityState.toLowerCase()) :
          data.find(obj => obj.cityName.toLowerCase() + obj.country.toLowerCase() === cityState.toLowerCase())
      const prevCityData = data.find(obj => obj.ranking === cityData.ranking - 1);
@@ -169,8 +170,9 @@ class CityProfileCard extends Component {
   handleNavForward = () => {
     const { nextCityData } = this.state;
     const { history} = this.props;
-    const nextCityState = history.location.pathname.indexOf("us-city") !== -1 ? nextCityData.cityName + nextCityData.state : nextCityData.cityName + nextCityData.country;
-    history.location.pathname.indexOf("us-city") !== -1 ? this.props.history.push(`/us-city/${nextCityState}`) :
+    const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+    const nextCityState = isUSCities ? nextCityData.cityName + nextCityData.state : nextCityData.cityName + nextCityData.country;
+    isUSCities ? this.props.history.push(`/us-city/${nextCityState}`) :
         this.props.history.push(`/coastal-city/${nextCityState}`);
     this.getCityData(nextCityState);
     this.setState({
@@ -181,7 +183,8 @@ class CityProfileCard extends Component {
   handleNavBackward = () => {
     const { prevCityData } = this.state;
     const { history} = this.props;
-    const prevCityState = history.location.pathname.indexOf("us-city") !== -1 ? prevCityData.cityName + prevCityData.state : prevCityData.cityName + prevCityData.country;
+     const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+    const prevCityState = isUSCities ? prevCityData.cityName + prevCityData.state : prevCityData.cityName + prevCityData.country;
       history.location.pathname.indexOf("us-city") !== -1 ? this.props.history.push(`/us-city/${prevCityState}`) :
         this.props.history.push(`/coastal-city/${prevCityState}`);
     this.getCityData(prevCityState);

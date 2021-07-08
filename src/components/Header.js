@@ -12,6 +12,12 @@ import Menu from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
 import '../App.css';
+import Grid from "../../node_modules/@material-ui/core/Grid/Grid";
+import MuiThemeProvider from "../../node_modules/@material-ui/core/es/styles/MuiThemeProvider";
+import FormControl from "@material-ui/core/FormControl";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
 
 
 const styles = {
@@ -23,11 +29,10 @@ const styles = {
     width: 250,
   },
   moreIcon: {
-    color: '#FFFFFF',
-    position: 'absolute',
-    left: 0,
+    color: '#fff',
+    right: 0,
     top: 0,
-    height: '100%',
+    height: '100%'
   },
 
   shareIcon: {
@@ -76,31 +81,35 @@ class Header extends Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <div className="headerDiv">
-            <div style={{ textAlign: 'center', display: 'table-cell', verticalAlign: 'middle', cursor: 'pointer' }}
+            <div style={{ textAlign: 'left', display: 'inline-block', cursor: 'pointer', float: 'left', padding: '20px'}}
                  onClick={() => history.push('/')}>
               <h1 className="header">
-                OSM Quality Ranking
+                CRITIGEN
               </h1>
-              <p className="beta">BETA</p>
             </div>
-            <Button className={classes.moreIcon} onClick={this.toggleDrawer('left', true)}><Menu/></Button>
+            <div style={{ textAlign: 'left', display: 'inline-block', cursor: 'pointer', float: 'right', padding: '20px'}}>
+                  <Button className={classes.moreIcon} onClick={this.toggleDrawer('right', true)}><Menu/></Button>
+                </div>
+
             <SwipeableDrawer
               disableBackdropTransition={!iOS}
               disableDiscovery={iOS}
-              anchor="left"
-              open={this.state.left}
-              onClose={this.toggleDrawer('left', false)}
-              onOpen={this.toggleDrawer('left', true)}
+              anchor="right"
+              open={this.state.right}
+              onClose={this.toggleDrawer('right', false)}
+              onOpen={this.toggleDrawer('right', true)}
             >
               <div
                 tabIndex={0}
                 role="button"
-                onClick={this.toggleDrawer('left', false)}
-                onKeyDown={this.toggleDrawer('left', false)}
+                onClick={this.toggleDrawer('right', false)}
+                onKeyDown={this.toggleDrawer('right', false)}
                 style={{ width: '250px' }}
               >
                 <List>
-                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/rankings')}>Rankings</h3>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/us-cities-ranking')}>US Cities</h3>
+                  </ListItem>
+                  <ListItem className="drawerItem"><h3 onClick={() => history.push('/coastal-cities-ranking')}>Coastal Cities</h3>
                   </ListItem>
                   <ListItem className="drawerItem"><h3 onClick={() => history.push('/about-us')}>About Us</h3>
                   </ListItem>
@@ -112,11 +121,14 @@ class Header extends Component {
           </div>
 
           <Toolbar className="toolbar">
-            {location.pathname === '/rankings' ?
+            {location.pathname === '/us-cities-ranking' || location.pathname === '/coastal-cities-ranking' ?
               <h3 className="rankingHeader">Explore city rankings based on their OSM quality</h3> : null}
-            {location.pathname !== '/rankings' && location.pathname !== '/methodology' && location.pathname !== '/about-us' ?
+            {location.pathname.indexOf('us-city') !== -1 ?
               <Button className={classes.buttonLeft}
-                      onClick={() => history.push('/rankings')}><KeyboardArrowLeft
+                      onClick={() => history.push('/us-cities-ranking')}><KeyboardArrowLeft
+                className={classes.backIcon}/>Back to list</Button> : location.pathname.indexOf('coastal-city') !== -1 ?
+            <Button className={classes.buttonLeft}
+                      onClick={() => history.push('/coastal-cities-ranking')}><KeyboardArrowLeft
                 className={classes.backIcon}/>Back to list</Button> : null}
           </Toolbar>
         </AppBar>
