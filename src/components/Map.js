@@ -19,11 +19,12 @@ const styles = () => ({
   }
 });
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhdGlhbGRldiIsImEiOiJjanpoYWFyZTkwaW4xM25vNWs2cWt6NWFqIn0.pjqihTlW7bHAp8bC8SaiNQ';
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3BhdGlhbGRldiIsImEiOiJjamxuN2kydGIxZzhsM3BwbmNrYmhpaWRkIn0.51uF3UCh8Vpb2M3Y-glu2g';
 const mapboxMaps = {
   nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
+  coastal: 'mapbox://styles/spatialdev/ckqe3io6f1civ18qqlunwg3zd',
   ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc',
-  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
+  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88',
 };
 class Map extends Component {
 

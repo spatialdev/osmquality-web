@@ -1,4 +1,4 @@
-const data = [{
+const usCitiesData = [{
    "fact": "Legend has it the city of Boise got its name from early 19th century French-Canadian fur trappers who named the present day Boise River \"la riviere boisee\" (French for \"the wooded river\") after the trees that once lined it.",
    "roadGeometry": 28.0,
    "flags": 82,
@@ -179,7 +179,6 @@ const data = [{
    "headerImage": "images/headerImages/MI_Detroit.jpg",
    "neLat": 42.45037429,
    "state": "MI",
-   "key": 23,
    "thumbnail": "images/thumbnails_cities/MI_Detroit.jpg",
    "swLong": -83.28780572,
    "roadAttributes": 114.0,
@@ -1071,4 +1070,4 @@ const data = [{
    "factName": "Fun Demography/Geography Fact"
 }];
 
-export default data;
+export default usCitiesData;

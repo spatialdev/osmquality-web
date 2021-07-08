@@ -17,7 +17,8 @@ import Hammer from 'react-hammerjs';
 import CityStatsCard from '../components/CityStatsCard';
 import MapLegend from '../components/MapLegend';
 import Reparentable from './Reparentable';
-import data from '../data/data';
+import usCitiesData from '../data/usCitiesData';
+import coastalCitiesData from '../data/coastalCitiesData';
 
 import MapContext from '../helpers/MapContext';
 
@@ -31,6 +32,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import MuiThemeProvider from "@material-ui/core/es/styles/MuiThemeProvider";
+import CoastalCityStatsCard from "./CoastalCityStatsCard";
 
 // In order to override the default pink color for the radio buttons, we need to create a theme.
 const theme = createMuiTheme({
@@ -60,11 +62,6 @@ const styles = () => ({
   }
 });
 
-const mapboxMaps = {
-  nocar: 'mapbox://styles/spatialdev/cjzmwlydi16yb1cmlney5rj52',
-  ppl: 'mapbox://styles/spatialdev/cjzn2f2n11cic1cqdem3yxbvc',
-  wfh: 'mapbox://styles/spatialdev/cjzn6045h1fwd1crrzvg29d88'
-};
 
 class CityProfileCard extends Component {
   state = {
@@ -86,7 +83,9 @@ class CityProfileCard extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {cityData: prevCityData} = prevState;
     const {cityData: currCityData} = this.state;
-    // if we've changed data, change the bounds of the map
+    const {history} = this.props;
+
+    // if we've changed usCitiesData, change the bounds of the map
     if ((prevCityData !== null && currCityData !== null && prevCityData.key !== currCityData.key)
       || (prevCityData === null && currCityData !== null))
     {
@@ -109,15 +108,52 @@ class CityProfileCard extends Component {
   };
 
   getCityData = cityState => {
-    const cityData = data.find(obj => obj.cityName.toLowerCase() + obj.state.toLowerCase() === cityState.toLowerCase());
-    const prevCityData = data.find(obj => obj.ranking === cityData.ranking - 1);
-    const nextCityData = data.find(obj => obj.ranking === cityData.ranking + 1);
-    this.setState({
-      cityData,
-      prevCityData,
-      nextCityData
+     const { history} = this.props;
+     const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+     const data = isUSCities ? usCitiesData: coastalCitiesData;
+     const cityData = isUSCities ?
+         data.find(obj => obj.cityName.toLowerCase() + obj.state.toLowerCase() === cityState.toLowerCase()) :
+         data.find(obj => obj.cityName.toLowerCase() + obj.country.toLowerCase() === cityState.toLowerCase())
+     const prevCityData = data.find(obj => obj.ranking === cityData.ranking - 1);
+     const nextCityData = data.find(obj => obj.ranking === cityData.ranking + 1);
+     this.setState({
+       cityData,
+       prevCityData,
+       nextCityData
     });
   };
+
+  getCityStatsCard = cityData => {
+    const {history} = this.props;
+    if(history.location.pathname.indexOf("us-city") !== -1)
+    {
+      return ( <Grid item md={4} sm={12} xs={12} className="gridItem">
+                  <CityStatsCard data={cityData}/>
+                </Grid>)
+    }
+    else return ( <Grid item md={4} sm={12} xs={12} className="gridItem">
+                  <CoastalCityStatsCard data={cityData}/>
+                </Grid>)
+
+  };
+
+    getFunFact = cityData => {
+    const {history, classes} = this.props;
+    if(history.location.pathname.indexOf("us-city") !== -1)
+    {
+        return ( <Grid item md={12} sm={12} xs={12} className="gridItem">
+                  <Card className={classes.root} style={{ width: '100%' }}>
+                    <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
+                      <h3>{cityData.factName}</h3>
+                      <p>{cityData.fact}</p>
+                    </CardContent>
+                  </Card>
+                </Grid>)
+    }
+  };
+
+
+
 
   handleSwipe = e => {
     const { prevCityData, nextCityData } = this.state;
@@ -133,8 +169,11 @@ class CityProfileCard extends Component {
 
   handleNavForward = () => {
     const { nextCityData } = this.state;
-    const nextCityState = nextCityData.cityName + nextCityData.state;
-    this.props.history.push(`/city/${nextCityState}`);
+    const { history} = this.props;
+    const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+    const nextCityState = isUSCities ? nextCityData.cityName + nextCityData.state : nextCityData.cityName + nextCityData.country;
+    isUSCities ? this.props.history.push(`/us-city/${nextCityState}`) :
+        this.props.history.push(`/coastal-city/${nextCityState}`);
     this.getCityData(nextCityState);
     this.setState({
       direction: 'left'
@@ -143,8 +182,11 @@ class CityProfileCard extends Component {
 
   handleNavBackward = () => {
     const { prevCityData } = this.state;
-    const prevCityState = prevCityData.cityName + prevCityData.state;
-    this.props.history.push(`/city/${prevCityState}`);
+    const { history} = this.props;
+     const isUSCities = history.location.pathname.indexOf("us-city") !== -1;
+    const prevCityState = isUSCities ? prevCityData.cityName + prevCityData.state : prevCityData.cityName + prevCityData.country;
+      history.location.pathname.indexOf("us-city") !== -1 ? this.props.history.push(`/us-city/${prevCityState}`) :
+        this.props.history.push(`/coastal-city/${prevCityState}`);
     this.getCityData(prevCityState);
     this.setState({
       direction: 'right'
@@ -155,14 +197,36 @@ class CityProfileCard extends Component {
     this.setState({mapOptionsAnchor: null});
   };
 
-  handleMapSelection = (url) => () => {
-    this.context.updateStyle(url);
-    this.setState({mapOptionsAnchor: null});
+
+  handleMapSelection = () => {
+    const {classes, history} = this.props;
+    if(history.location.pathname.indexOf("us-city") !== -1)
+    {
+      return  (<Grid item style={{display: 'flex', flex: '1 0 0%'}}>
+                          <div style={{margin: 'auto 8px auto 0px'}}>Weight MQM Results by: </div>
+                            <MuiThemeProvider theme={theme}>
+                              <FormControl component="fieldset">
+                                <RadioGroup
+                                  aria-label="gender"
+                                  name="gender1"
+                                  className={classes.group}
+                                  value={this.context.style}
+                                  onChange={(e) => this.context.updateStyle(e.target.value)}
+                                  row
+                                >
+                                  <FormControlLabel value="wfh" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="None" />
+                                  <FormControlLabel value="ppl" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Population" />
+                                  <FormControlLabel value="nocar" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Car Ownership" />
+                                </RadioGroup>
+                              </FormControl>
+                            </MuiThemeProvider>
+                        </Grid>)
+    }
   };
 
   render() {
     const { cityData, prevCityData, nextCityData, checked, direction } = this.state;
-    const { classes } = this.props;
+    const { classes, history } = this.props;
     const viewport = this.context.getViewport();
     if (!cityData) {
       return (
@@ -211,25 +275,7 @@ class CityProfileCard extends Component {
                           {/*blah*/}
                         </Grid>
                         {/* Weights */}
-                        <Grid item style={{display: 'flex', flex: '1 0 0%'}}>
-                          <div style={{margin: 'auto 8px auto 0px'}}>Weight MQM Results by: </div>
-                            <MuiThemeProvider theme={theme}>
-                              <FormControl component="fieldset">
-                                <RadioGroup
-                                  aria-label="gender"
-                                  name="gender1"
-                                  className={classes.group}
-                                  value={this.context.style}
-                                  onChange={(e) => this.context.updateStyle(e.target.value)}
-                                  row
-                                >
-                                  <FormControlLabel value="wfh" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="None" />
-                                  <FormControlLabel value="ppl" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Population" />
-                                  <FormControlLabel value="nocar" control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>} label="Car Ownership" />
-                                </RadioGroup>
-                              </FormControl>
-                            </MuiThemeProvider>
-                        </Grid>
+                          {this.handleMapSelection()}
 
                         {/* Map */}
                         <Grid item style={{display: 'flex', flex: '7 0 0%'}}>
@@ -250,24 +296,14 @@ class CityProfileCard extends Component {
                         {/*Legend*/}
                         <Grid item container justify='space-between' style={{display: 'flex', flex: '2 0 0%'}}>
                           <MapLegend/>
-                          <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' ? 'Default MQM Results' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
+                          <div style={{margin: 'auto 0px', height: 45}}>{this.context.style === 'wfh' || this.context.style === 'coastal' ? 'Default MQM Results' : this.context.style === 'ppl' ? 'Weighted by Population' : 'Weighted by Car Ownership'}</div>
                         </Grid>
                       </Grid>
                     </CardContent>
                   </Card>
                 </Grid>
-
-                <Grid item md={4} sm={12} xs={12} className="gridItem">
-                  <CityStatsCard data={cityData}/>
-                </Grid>
-                <Grid item md={12} sm={12} xs={12} className="gridItem">
-                  <Card className={classes.root} style={{ width: '100%' }}>
-                    <CardContent style={{ padding: '0 10px 15px 10px', width: '100%', textAlign: 'center' }}>
-                      <h3>{cityData.factName}</h3>
-                      <p>{cityData.fact}</p>
-                    </CardContent>
-                  </Card>
-                </Grid>
+                {this.getCityStatsCard(cityData)}
+                {this.getFunFact(cityData)}
               </Grid>
             </Paper>
           </Slide>

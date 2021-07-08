@@ -1,0 +1,2 @@
+const SET_MOBILE = 'SET_MOBILE';
+export {SET_MOBILE}

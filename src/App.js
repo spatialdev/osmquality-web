@@ -12,6 +12,10 @@ import './App.css';
 import * as ReactGA from 'react-ga';
 import viewport from '@mapbox/geo-viewport';
 import square from '@turf/square';
+import {connect} from "react-redux";
+import withRouter from "react-router/es/withRouter";
+import {setMobile} from "./store/actions";
+import DesktopHeader from "./components/DesktopHeader";
 
 class App extends Component {
   mapContainer = document.createElement('div');
@@ -30,7 +34,17 @@ class App extends Component {
     // Initialize Google Analytics
     ReactGA.initialize('UA-126802064-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
+    this.checkIfMobile();
+    window.addEventListener('resize', this.checkIfMobile);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.checkIfMobile);
+  }
+
+  checkIfMobile = () => {
+    setMobile(window.innerWidth <= 768);
+  };
 
   //Note that we have the fontFamily div to make sure that the font is loaded when the DOM is rendered. This is important
   // for rendering the ranking icon on the CityProfileCards
@@ -46,18 +60,27 @@ class App extends Component {
       style: this.state.mapStyle,
     };
     const {maxMapBounds, mapStyle} = this.state;
+    const {isMobile} = this.props;
+    console.log("isMobile");
+    console.log(isMobile);
+    const header = isMobile ? <Header/> : <DesktopHeader/>;
+
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={{ position: 'absolute', minHeight: '100vh', width: '100%' }}>
         {/* Thanks to  https://github.com/facebook/react/issues/13044#issuecomment-428815909 for the solution here!*/}
         {createPortal(<Map maxBounds={maxMapBounds} style={mapStyle}/>, this.mapContainer)}
-        {window.location.pathname !== '/' ? <Header/> : null}
         <MapContext.Provider value={context}>
+          {header}
           <Main/>
         </MapContext.Provider>
-        {window.location.pathname !== '/' ? <Footer/> : null}
+        <Footer/>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {isMobile: state.isMobile};
+};
+
+export default withRouter(connect(mapStateToProps)(App));
