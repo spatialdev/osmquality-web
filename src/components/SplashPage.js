@@ -491,7 +491,7 @@
                         <div className={isMobile ? classes.usCityContainerMobile : classes.usCityContainerDesktop}>
                             <div className={isMobile ? classes.splashPageExploreButtonPartMobile : classes.splashPageExploreButtonPartDesktop}>
                                      <p className={isMobile ? classes.coastalCitiesMobile : classes.coastalCitiesDesktop}>US Cities</p>
-                                     <div className={isMobile ? classes.buttonMobile : classes.buttonDesktop} onClick={() => history.push('/coastal-cities-ranking')}>
+                                     <div className={isMobile ? classes.buttonMobile : classes.buttonDesktop} onClick={() => history.push('/us-cities-ranking')}>
                                           <div className="explore-rankings">EXPLORE RANKINGS</div>
                                           <img className="arrow" src={arrow} alt="Arrow"/>
                                      </div>
