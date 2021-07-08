@@ -4,8 +4,6 @@ import CityRankingTable from './CityRankingTable';
 import CityProfileCard from './CityProfileCard';
 import Methodology from './Methodology';
 import AboutUs from './AboutUs';
-import Splash from './Splash';
-import SplashPageOld from "./SplashPageOld";
 import SplashPage from "./SplashPage";
 
 

@@ -16,7 +16,7 @@ import trending_down from '../images/trending_down.svg';
 import trending_up from '../images/trending_up.svg';
 
 const CityStatsCard = props => {
-  const { data, history } = props;
+  const { data } = props;
   const flagTrend = (data.score-data.score_2018)*100;
   return (
     <Card className="statsCard" style={{

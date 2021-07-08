@@ -12,21 +12,10 @@ import Menu from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer/SwipeableDrawer';
 
 import '../App.css';
-import Grid from "../../node_modules/@material-ui/core/Grid/Grid";
-import MuiThemeProvider from "../../node_modules/@material-ui/core/es/styles/MuiThemeProvider";
-import FormControl from "@material-ui/core/FormControl";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Radio from "@material-ui/core/Radio";
-
 
 const styles = {
   root: {
     flexGrow: 1,
-  },
-
-  list: {
-    width: 250,
   },
   moreIcon: {
     color: '#fff',

@@ -18,18 +18,7 @@ const styles = {
   list: {
     width: 250,
   },
-  moreIcon: {
-    color: '#fff',
-    right: 0,
-    top: 0,
-    height: '100%'
-  },
 
-  shareIcon: {
-    height: '20px',
-    width: '20px',
-    marginLeft: '5px',
-  },
   backIcon: {
     height: '20px',
     width: '20px',
@@ -38,11 +27,6 @@ const styles = {
   buttonLeft: {
     position: 'absolute',
     left: '-8px',
-    height: '100%',
-  },
-  buttonRight: {
-    position: 'absolute',
-    right: 0,
     height: '100%',
   }
 };

@@ -4,7 +4,6 @@
     import {withRouter} from "react-router-dom";
     import landing_page_image from "../images/LandingPage.svg";
     import arrow from "../images/arrow.svg";
-    import anchorage from "../images/thumbnails_cities/AK_Anchorage_AK.jpg";
     import mapBackground from "../images/Map-Background.svg";
 
     const styles = {
@@ -160,53 +159,33 @@
             }
         },
         splashPageIntroContainer: {
-            // position: 'fixed',
-            // left: '152px',
-            // width: '464px',
-            // right: '824px',
             height: '100%',
             minWidth: '464px',
             maxWidth: '40%',
             backgroundColor: '#FFFFFF',
             paddingLeft: '152px',
             paddingTop: '164px',
-            // height: '427px',
             '& h1': {
-                   // height: '216px',
-                   // width: '368px',
                    color: '#000000',
                    fontFamily: 'Mitr',
                    fontSize: '56px',
                    letterSpacing: '0',
-                   lineHeight: '72px',
-                   // position: 'relative',
-                   // left: '0px',
-                   // top: '34px',
-                   // right: '96px',
-
+                   lineHeight: '72px'
             },
             '& p': {
-                  // height: '192px',
-                  // width: '464px',
                   color: 'rgba(0,0,0,0.7)',
                   fontFamily: 'Open Sans',
                   fontSize: '20px',
                   letterSpacing: '0',
-                  lineHeight: '32px',
-                  // position: 'relative',
-                  // left: '0px',
-                  // top: '8px',
-                  // right: '0px'
+                  lineHeight: '32px'
             }
         },
         landingPageImageDesktop : {
             '& img': {
-                // height: '100%',
                 minWidth: '613.65px',
                 backgroundColor: '#FFFFFF',
                 maxWidth: '100%'
             },
-            // paddingTop: '179px',
             paddingLeft: '15px',
             height: '100%',
             overflowX: 'hidden',
@@ -255,8 +234,7 @@
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
             borderRadius: '16px',
-            margin: '5px',
-            //marginLeft: '152px'
+            margin: '5px'
         },
 
         usCityContainerDesktop: {
@@ -269,8 +247,7 @@
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
             borderRadius: '16px',
-            margin: '5px',
-            //marginRight: '152px'
+            margin: '5px'
         },
 
         exploreContainerMobile: {
@@ -313,7 +290,6 @@
         secondHalfContainerMobile: {
             backgroundColor: '#FFFFFF',
             maxWidth: '100%',
-            // minHeight: '344px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
@@ -328,7 +304,6 @@
             backgroundColor: '#FFFFFF',
             maxWidth: '100%',
             maxHeight: '294px',
-            // minHeight: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
@@ -367,10 +342,6 @@
         splashPageExploreButtonPartMobile: {
             display: 'flex',
             flexDirection: 'column',
-            // justifyItems: 'center',
-            // justifyContent: 'left',
-            // paddingLeft: '24px',
-            // paddingDown: '16px',
             maxWidth: '100%',
             marginLeft: '24px'
         },
@@ -486,10 +457,7 @@
             marginLeft: '24px',
             marginRight: '24px',
             fontSize: '16px',
-        },
-
-
-
+        }
     };
     class SplashPage extends Component {
 
@@ -532,22 +500,6 @@
                                 <p>US Cities is a related quality ranking approach generated for 51 well known cities throughout the United States. We selected these cities to evaluate the trend of data quality.</p>
                             </div>
                         </div>
-                          {/*<div className="splashPageCoastalCitiesExploreCitiesPart">*/}
-                              {/*<div className="cityThumbnail1">*/}
-                                  {/*<img className="cityThumbnailImage" src={anchorage} alt="anchorage"/>*/}
-                                  {/*<div className="numberCircle">1</div>*/}
-                              {/*</div>*/}
-                               {/*<div className="cityThumbnail1">*/}
-                                  {/*<img className="cityThumbnailImage" src={anchorage} alt="anchorage"/>*/}
-                                  {/*<div className="numberCircle">2</div>*/}
-                              {/*</div>*/}
-                               {/*<div className="cityThumbnail1">*/}
-                                  {/*<img className="cityThumbnailImage" src={anchorage} alt="anchorage"/>*/}
-                                  {/*<div className="numberCircle">3</div>*/}
-                              {/*</div>*/}
-
-                          {/*</div>*/}
-                        {/*</div>*/}
                      </div>
                      <div className={isMobile ? classes.secondHalfContainerMobile : classes.secondHalfContainerDesktop}>
                        <img  className="splashPageSecondHalfImage" src={mapBackground} alt="mapBackground"/>
